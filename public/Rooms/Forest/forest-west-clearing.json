@@ -1,6 +1,6 @@
 {
   "name": "Clearing in a Forest",
-  "description": "You are in a small clearing in a dense forest. The grass is crushed down all about. Narrow trails leads to the north and east.",
+  "description": "You are in a small clearing in a dense forest. The grass is crushed down all around. Narrow trails leads to the north and east.",
   "onLook": [
     {
       "cmd": "ifLVar",
