@@ -1,20 +1,36 @@
 <script>
   import { onMount } from "svelte";
   import config from "./config.json";
+  let output = null;
+  
+  let items = [];
 
+  let inventory = [];
   let gameVars = {};
+
+  let rooms = {};
+
   let room = null;
   let text = "";
   let title = "";
+  
   let entry = "";
-  let output = null;
 
   onMount(async () => {
     const resp = await fetch(
       `/Rooms/${config.initial_area}/${config.initial_room}.json`
     );
     const j = await resp.json();
-    start(j);
+
+    rooms[`${j.area}/${j.name}`] = j;
+
+    const itemsF = await fetch(
+      `/Rooms/${config.initial_area}/${config.initial_room}.json`
+    );
+    const itemsJ = await itemsF.json();
+    items = itemsJ;
+
+    start(rooms[`${j.area}/${j.name}`]);
   });
 
   const start = r => {
@@ -27,6 +43,10 @@
 
   const parseRoomCmds = cmds => {
     cmds.forEach(cmd => {
+      if (typeof cmd === "string") {
+        write(cmd);
+        return;
+      }
       switch (cmd.cmd) {
         case "write":
           write.apply(this, cmd.args);
@@ -38,16 +58,16 @@
           setVar.apply(this, [gameVars, ...cmd.args]);
           break;
         case "ifLVar":
-          if (!gameVars[room.name]) {
-            gameVars[room.name] = {};
-          }
-          ifVar.apply(this, [gameVars[room.name], ...cmd.args]);
+          ifVar.apply(this, [getLocalVars(), ...cmd.args]);
           break;
         case "setLVar":
-          if (!gameVars[room.name]) {
-            gameVars[room.name] = {};
-          }
-          setVar.apply(this, [gameVars[room.name], ...cmd.args]);
+          setVar.apply(this, [getLocalVars(), ...cmd.args]);
+          break;
+        case "addItem":
+          addItem.apply(this, cmd.args);
+          break;
+        case "destroyFeature":
+          destroyFeature.apply(this, cmd.args);
           break;
       }
     });
@@ -73,9 +93,25 @@
     vars[name] = value;
   };
 
+  const addItem = (slug) => {
+    inventory.push(Object.assign({}, items[slug]));
+  }
+
+  const destroyFeature = (slug) => {
+    room.features = room.features.filter(x => x.slug !== slug);
+  }
+
+  const getLocalVars = () => {
+    if (!gameVars[room.name]) {
+      gameVars[room.name] = {};
+    }
+
+    return gameVars[room.name];
+  };
+
   const showFeatures = features => {
     features
-      .filter(x => !x.needNotice)
+      .filter(x => !x.hidden)
       .forEach(f => {
         write(f.description);
       });
@@ -93,10 +129,17 @@
       case "look":
         look.apply(this, args);
         break;
+      case "inventory":
+        listInventory();
+        break;
+      case "take":
+        take.apply(this, args);
+        break;
       default:
         unknownCmd(cmd);
         break;
     }
+    entry = "";
   };
 
   const look = target => {
@@ -112,18 +155,83 @@
       if (room.onLook) {
         parseRoomCmds(room.onLook);
       }
+
+      write("...");
     } else {
-      // TODO: check look target
+      let t = findTarget(target);
+
+      if (!t) {
+        write(`I don't see ${target} anywhere.`);
+        return;
+      }
+
+      if (t.onLook) {
+        parseRoomCmds(t.onLook);
+      } else {
+        write(t.description);
+      }
     }
   };
+
+  const take = target => {
+    if (!target) {
+      write("Take what?");
+    } else {
+      let t = findTarget(target);
+
+      if (!t) {
+        unknownTarget(target);
+        return;
+      }
+
+      if (t.onTake) {
+        parseRoomCmds(t.onTake);
+      } else {
+        write("I can't take that.");
+      }
+    }
+  };
+
+  const findTarget = slug => {
+    // TODO: search other places for the target too! (e.g. inventory)
+    return room.features.find(x => {
+      if (x.slug === slug) {
+        if (x.untargetableUntilLVar) {
+          if (getLocalVars()[x.untargetableUntilLVar]) {
+            return true;
+          } else {
+            return false;
+          }
+        } else if (x.untargetableUntilGVar) {
+          if (gameVars[x.untargetableUntilGVar]) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+        return true;
+      } else {
+        return false;
+      }
+    });
+  };
+
+  const listInventory = () => {
+    text = "You check what you're carrying...";
+    if (inventory.length) {
+      write("You have:");
+      inventory.forEach(x => write(x));
+    } else {
+      write("I don't have anything.");
+    }
+  }
 
   const unknownCmd = cmd => {
     write(`I don't know how to ${cmd}.`);
   };
 
-  const unknownTargets = targets => {
-    let t = targets.join(", ");
-    write(`I'm not sure what a ${t} is.`);
+  const unknownTarget = target => {
+    write(`I don't see ${target} anywhere.`);
   };
 </script>
 

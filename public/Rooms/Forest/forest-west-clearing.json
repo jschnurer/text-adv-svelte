@@ -1,4 +1,5 @@
 {
+  "area": "Forest",
   "name": "Clearing in a Forest",
   "description": "You are in a small clearing in a dense forest. The grass is crushed down all around. Narrow trails leads to the north and east.",
   "onLook": [
@@ -8,12 +9,7 @@
         "GAME_STARTED",
         false,
         [
-          {
-            "cmd": "write",
-            "args": [
-              "A slight glimmer in the air dissipates as you get your bearings. Before you know it, it's gone."
-            ]
-          },
+          "A slight glimmer in the air dissipates as you get your bearings. Before you know it, it's gone.",
           {
             "cmd": "setLVar",
             "args": [
@@ -29,7 +25,39 @@
   "features": [
     {
       "slug": "hole",
-      "description": "A small hole, about 2' in diameter and 6 inches deep, was dug here recently, revealing smooth stone beneath the soil."
+      "description": "There is a small, freshly dug hole here.",
+      "onLook": [
+        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. The bottom of the hole is rock. Sitting in the center of the hole is a dirty red gemstone.",
+        {
+          "cmd": "setLVar",
+          "args": [
+            "GEM_NOTICED",
+            true
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "gemstone",
+      "altSlugs": ["dirty gemstone", "red gemstone"],
+      "description": "It is a roughly cut, pale red gemstone. It's covered in dirt and grime.",
+      "hidden": true,
+      "untargetableUntilLVar": "GEM_NOTICED",
+      "onTake": [
+        {
+          "cmd": "addItem",
+          "args": [
+            "red gemstone"
+          ]
+        },
+        "You take the gemstone from the hole and put it in your pocket.",
+        {
+          "cmd": "destroyFeature",
+          "args": [
+            "gemstone"
+          ]
+        }
+      ]
     }
   ]
 }
