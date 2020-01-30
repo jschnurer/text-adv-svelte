@@ -54,19 +54,22 @@
           write.apply(this, cmd.args);
           break;
         case "ifGVar":
-          ifVar.apply(this, [gameVars, ...cmd.args]);
+          ifVar.apply(this, [gameVars, ...cmd.args, feature]);
           break;
         case "setGVar":
-          setVar.apply(this, [gameVars, ...cmd.args]);
+          setVar.apply(this, [gameVars, ...cmd.args, feature]);
           break;
         case "ifLVar":
-          ifVar.apply(this, [getLocalVars(), ...cmd.args]);
+          ifVar.apply(this, [getLocalVars(), ...cmd.args, feature]);
           break;
         case "setLVar":
-          setVar.apply(this, [getLocalVars(), ...cmd.args]);
+          setVar.apply(this, [getLocalVars(), ...cmd.args, feature]);
           break;
         case "addItem":
           addItem.apply(this, cmd.args);
+          break;
+        case "removeItem":
+          removeItem.apply(this, cmd.args);
           break;
         case "destroyFeature":
           destroyFeature.apply(this, cmd.args);
@@ -84,7 +87,10 @@
       let vars = getLocalVars();
       return !!vars[cmd.split(':')[1]];
     } else if (cmd.startsWith('ADDITEM')) {
-      inventory.push(Object.assign({}, items.find(x => x.slug === cmd.split(':')[1])));
+      addItem(cmd.split(':')[1]);
+      return true;
+    } else if (cmd.startsWith('REMOVEITEM')) {
+      removeItem(cmd.split(':')[1]);
       return true;
     } else if (cmd.startsWith('DESTROY')) {
       if (cmd === 'DESTROY') {
@@ -121,12 +127,12 @@
     output.scrollTop = output.scrollHeight;
   };
 
-  const ifVar = (vars, name, checkVal, trueCmds, falseCmds) => {
+  const ifVar = (vars, name, checkVal, trueCmds, falseCmds, feature) => {
     if ((checkVal == false && !(name in vars)) || vars[name] == checkVal) {
-      parseRoomCmds(trueCmds);
+      parseRoomCmds(trueCmds, feature);
     } else {
       if (falseCmds) {
-        parseRoomCmds(falseCmds);
+        parseRoomCmds(falseCmds, feature);
       }
     }
   };
@@ -136,8 +142,13 @@
   };
 
   const addItem = (slug) => {
-    inventory.push(Object.assign({}, items[slug]));
+    inventory.push(Object.assign({}, items.find(x => x.slug === slug)));
   }
+
+  const removeItem = (slug) => {
+    inventory = inventory.filter(x => x.slug !== slug);
+  }
+
 
   const destroyFeature = (slug) => {
     room.features = room.features.filter(x => x.slug !== slug);
@@ -191,6 +202,9 @@
         break;
       case "west":
         move("west");
+        break;
+      case "throw":
+        throwItem.apply(this, args);
         break;
       default:
         unknownCmd(cmd);
@@ -293,6 +307,20 @@
     loadRoom(room[dir]);
   }
 
+  const throwItem = (slug) => {
+    if (!inventory.filter(x => x.slug === slug)) {
+      write(`You don't have a ${slug}.`);
+      return false;
+    }
+
+    if (!room.throw || !room.throw[slug]) {
+      write(`You don't see any reason to.`);
+      return false;
+    }
+
+    parseRoomCmds(room.throw[slug]);
+  }
+
   const loadRoom = async (roomAreaSlug) => {
     if (rooms[roomAreaSlug]) {
       room = rooms[roomAreaSlug];
@@ -314,7 +342,7 @@
   }
 
   const unknownCmd = cmd => {
-    write(`I don't know how to ${cmd}.`);
+    write(`You don't know how to ${cmd}.`);
   };
 
   const unknownTarget = target => {
