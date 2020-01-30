@@ -348,7 +348,35 @@
   const unknownTarget = target => {
     write(`You don't see ${target} anywhere.`);
   };
+
+  const help = () => {
+    alert('TODO: add help');
+  }
 </script>
+
+<style>
+  form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  form > input {
+    flex: auto;
+  }
+
+  form > button {
+    background-color: transparent;
+    color: white;
+    border: 1px white solid;
+    border-radius: 2em;
+    vertical-align: middle;
+    height: 2.5em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    margin: .5em 0 0 .5em;
+  }
+</style>
 
 <main>
   <room bind:this={output}>
@@ -360,6 +388,7 @@
   {#if !isGameOver}
     <form on:submit|preventDefault={submit}>
       <input use:focus bind:value={entry} />
+      <button on:click|preventDefault={help}>❔</button>
     </form>
   {:else}
     <button on:click={() => location.reload()}>Try again</button>
