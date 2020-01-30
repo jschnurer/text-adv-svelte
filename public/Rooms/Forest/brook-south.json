@@ -1,0 +1,45 @@
+{
+  "area": "Forest",
+  "name": "Babbling Brook South Bank",
+  "description": "The sound of a babbling brook breaks the eerie silence. An old wooden bridge once spanned the river but at some point collapsed and washed away. Part of it still remains, but it is impassable.",
+  "south": "Forest/forest-west-clearing",
+  "features": [
+    {
+      "slug": "bridge",
+      "look": [
+        "The bridge is ancient and rotting. Most of it has fallen and been swept away.",
+        "In the shadow beneath the bridge, something shiny catches your eye in the water. It looks like an old, golden coin.",
+        "SETFLAG:SeeCoin"
+      ]
+    },
+    {
+      "slug": "coin",
+      "look": [
+        "It's a tarnished golden coin, caught in the rocks in about 3 feet of water."
+      ],
+      "hidden": true,
+      "targetFlag": "SeeCoin",
+      "take": [
+        {
+          "cmd": "ifLVar",
+          "args": [
+            "FISH_DISTRACTED",
+            false,
+            [
+              "GAMEOVER:You step into the brook, roll up your sleeve, and reach down into the cold water. You fumble about the rocks trying to get hold of the coin when you feel a stabbing pain in your wrist. It's quickly followed by another and another and another. A vortex of red water begins churning around your arm as you feel pain in your legs as well. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky brook. You pull yourself free and back onto the bank but it's too late. Your head spins and you lose consciousness."
+            ],
+            [
+              "TODO: fish are distracted. Implement!"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "water",
+      "look": [
+        "The water is a little murky. You can see dark shapes moving around in it."
+      ]
+    }
+  ]
+}

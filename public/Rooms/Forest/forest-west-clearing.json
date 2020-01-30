@@ -1,8 +1,8 @@
 {
   "area": "Forest",
   "name": "Clearing in a Forest",
-  "description": "You are in a small clearing in a dense forest. The grass is crushed down all around. Narrow trails leads to the north and east.",
-  "onLook": [
+  "description": "You are in a small clearing in a dense forest. The grass is crushed down all around. A narrow trail leads through the trees to the north.",
+  "look": [
     {
       "cmd": "ifLVar",
       "args": [
@@ -22,41 +22,28 @@
       ]
     }
   ],
+  "north": "Forest/brook-south",
   "features": [
     {
       "slug": "hole",
-      "description": "There is a small, freshly dug hole here.",
-      "onLook": [
-        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. The bottom of the hole is rock. Sitting in the center of the hole is a dirty red gemstone.",
-        {
-          "cmd": "setLVar",
-          "args": [
-            "GEM_NOTICED",
-            true
-          ]
-        }
+      "roomDesc": "There is a small, freshly dug hole here.",
+      "look": [
+        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. Sitting at the bottom of the hole is a baseball.",
+        "SETFLAG:SeeBaseball"
       ]
     },
     {
-      "slug": "gemstone",
-      "altSlugs": ["dirty gemstone", "red gemstone"],
-      "description": "It is a roughly cut, pale red gemstone. It's covered in dirt and grime.",
+      "slug": "baseball",
+      "look": [
+        "It's a totally ordinary baseball--though really, REALLY clean."
+      ],
       "hidden": true,
-      "untargetableUntilLVar": "GEM_NOTICED",
-      "onTake": [
-        {
-          "cmd": "addItem",
-          "args": [
-            "red gemstone"
-          ]
-        },
-        "You take the gemstone from the hole and put it in your pocket.",
-        {
-          "cmd": "destroyFeature",
-          "args": [
-            "gemstone"
-          ]
-        }
+      "targetFlag": "SeeBaseball",
+      "take": [
+        "ADDITEM:baseball",
+        "You take the baseball.",
+        "UPDATELOOK:hole:Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep.",
+        "DESTROY"
       ]
     }
   ]

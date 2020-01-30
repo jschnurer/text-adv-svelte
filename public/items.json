@@ -1,8 +1,14 @@
 [
   {
-    "slug": "red gemstone",
-    "onLook": [
-      "It is a roughly cut, pale red gemstone. It's covered in dirt and grime."
+    "slug": "baseball",
+    "look": [
+      "It's a very clean baseball."
+    ]
+  },
+  {
+    "slug": "coin",
+    "look": [
+      "It's a tarnished golden coin. Who knows how old it is?"
     ]
   }
 ]

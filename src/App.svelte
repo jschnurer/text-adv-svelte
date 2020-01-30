@@ -10,6 +10,7 @@
 
   let rooms = {};
 
+  let isGameOver = false;
   let room = null;
   let text = "";
   let title = "";
@@ -17,34 +18,35 @@
   let entry = "";
 
   onMount(async () => {
-    const resp = await fetch(
-      `/Rooms/${config.initial_area}/${config.initial_room}.json`
-    );
-    const j = await resp.json();
-
-    rooms[`${j.area}/${j.name}`] = j;
+    await loadRoom(`${config.initial_area}/${config.initial_room}`);
 
     const itemsF = await fetch(
-      `/Rooms/${config.initial_area}/${config.initial_room}.json`
+      `/items.json`
     );
     const itemsJ = await itemsF.json();
     items = itemsJ;
-
-    start(rooms[`${j.area}/${j.name}`]);
   });
 
-  const start = r => {
-    room = r;
+  const getRoom = async (roomAreaSlug) => {
+    const resp = await fetch(
+      `/Rooms/${roomAreaSlug}.json`
+    );
+    const j = await resp.json();
+    return j;
+  }
 
-    title = r.name;
+  const parseRoomCmds = (cmds, feature) => {
+    let bail = false;
 
-    look();
-  };
-
-  const parseRoomCmds = cmds => {
     cmds.forEach(cmd => {
+      if (bail) {
+        return;
+      }
+
       if (typeof cmd === "string") {
-        write(cmd);
+        if (!parseStringCmd(cmd, feature)) {
+          bail = true;
+        }
         return;
       }
       switch (cmd.cmd) {
@@ -72,6 +74,46 @@
       }
     });
   };
+
+  const parseStringCmd = (cmd, feature) => {
+    if (cmd.startsWith('SETFLAG')) {
+      let vars = getLocalVars();
+      vars[cmd.split(':')[1]] = true;
+      return true;
+    } else if (cmd.startsWith('CHECKFLAG')) {
+      let vars = getLocalVars();
+      return !!vars[cmd.split(':')[1]];
+    } else if (cmd.startsWith('ADDITEM')) {
+      inventory.push(Object.assign({}, items.find(x => x.slug === cmd.split(':')[1])));
+      return true;
+    } else if (cmd.startsWith('DESTROY')) {
+      if (cmd === 'DESTROY') {
+        destroyFeature(feature.slug);
+        return true;
+      } else {
+        // TODO: allow destroying other things
+        return true;
+      }
+    } else if(cmd.startsWith('UPDATELOOK')) {
+      let chunks = cmd.split(':');
+      let numChunks = cmd.length;
+      if (numChunks === 2) {
+        // TODO: Update own look
+      } else if (numChunks >= 3) {
+        // update other look
+        let f = room.features.find(x => x.slug === chunks[1]);
+        f.look = [ chunks[2] ];
+      }
+      return true;
+    } else if(cmd.startsWith('GAMEOVER')) {
+      let chunks = cmd.split(':');
+      gameOver(chunks[1]);
+      return false;
+    } else {
+      write(cmd);
+      return true;
+    }
+  }
 
   const write = msg => {
     text += "\n" + msg;
@@ -110,10 +152,13 @@
   };
 
   const showFeatures = features => {
+    let lVars = getLocalVars();
+    let gVars = gameVars;
+
     features
-      .filter(x => !x.hidden)
+      .filter(x => x.roomDesc && !x.hidden)
       .forEach(f => {
-        write(f.description);
+        write(f.roomDesc);
       });
   };
 
@@ -135,6 +180,18 @@
       case "take":
         take.apply(this, args);
         break;
+      case "north":
+        move("north");
+        break;
+      case "south":
+        move("south");
+        break;
+      case "east":
+        move("east");
+        break;
+      case "west":
+        move("west");
+        break;
       default:
         unknownCmd(cmd);
         break;
@@ -152,8 +209,8 @@
         showFeatures(room.features);
       }
 
-      if (room.onLook) {
-        parseRoomCmds(room.onLook);
+      if (room.look) {
+        parseRoomCmds(room.look);
       }
 
       write("...");
@@ -165,8 +222,8 @@
         return;
       }
 
-      if (t.onLook) {
-        parseRoomCmds(t.onLook);
+      if (t.look) {
+        parseRoomCmds(t.look);
       } else {
         write(t.description);
       }
@@ -184,26 +241,19 @@
         return;
       }
 
-      if (t.onTake) {
-        parseRoomCmds(t.onTake);
+      if (t.take) {
+        parseRoomCmds(t.take, t);
       } else {
-        write("I can't take that.");
+        write("You can't take that.");
       }
     }
   };
 
   const findTarget = slug => {
-    // TODO: search other places for the target too! (e.g. inventory)
-    return room.features.find(x => {
+    let roomFeature = room.features.find(x => {
       if (x.slug === slug) {
-        if (x.untargetableUntilLVar) {
-          if (getLocalVars()[x.untargetableUntilLVar]) {
-            return true;
-          } else {
-            return false;
-          }
-        } else if (x.untargetableUntilGVar) {
-          if (gameVars[x.untargetableUntilGVar]) {
+        if (x.targetFlag) {
+          if (getLocalVars()[x.targetFlag] || gameVars[x.targetFlag]) {
             return true;
           } else {
             return false;
@@ -214,16 +264,53 @@
         return false;
       }
     });
+
+    if (roomFeature) {
+      return roomFeature;
+    }
+
+    let invItem = inventory.find(x => x.slug === slug);
+
+    return invItem;
   };
 
   const listInventory = () => {
     text = "You check what you're carrying...";
     if (inventory.length) {
       write("You have:");
-      inventory.forEach(x => write(x));
+      inventory.forEach(x => write(x.slug));
     } else {
-      write("I don't have anything.");
+      write("You don't have anything.");
     }
+  }
+
+  const move = (dir) => {
+    if (!room[dir]) {
+      write("You can't go that way.");
+      return false;
+    }
+
+    loadRoom(room[dir]);
+  }
+
+  const loadRoom = async (roomAreaSlug) => {
+    if (rooms[roomAreaSlug]) {
+      room = rooms[roomAreaSlug];
+      title = room.name;
+      look();
+    } else {
+      let j = await getRoom(roomAreaSlug);
+      rooms[roomAreaSlug] = j;
+      room = rooms[roomAreaSlug];
+      title = room.name;
+      look();
+    }
+  }
+
+  const gameOver = (msg) => {
+    title = "GAME OVER";
+    text = msg;
+    isGameOver = true;
   }
 
   const unknownCmd = cmd => {
@@ -231,7 +318,7 @@
   };
 
   const unknownTarget = target => {
-    write(`I don't see ${target} anywhere.`);
+    write(`You don't see ${target} anywhere.`);
   };
 </script>
 
@@ -242,7 +329,11 @@
       <p>{line}</p>
     {/each}
   </room>
-  <form on:submit|preventDefault={submit}>
-    <input use:focus bind:value={entry} />
-  </form>
+  {#if !isGameOver}
+    <form on:submit|preventDefault={submit}>
+      <input use:focus bind:value={entry} />
+    </form>
+  {:else}
+    <button on:click={() => location.reload()}>Try again</button>
+  {/if}
 </main>
