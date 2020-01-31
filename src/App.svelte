@@ -19,6 +19,8 @@
 
   let entry = "";
 
+  let choiceObj;
+
   onMount(async () => {
     await loadRoom(`${config.initial_area}/${config.initial_room}`);
 
@@ -74,6 +76,9 @@
           break;
         case "ifRoom":
           ifRoom.apply(this, cmd.args);
+          break;
+        case "choice":
+          choice.apply(this, cmd.args);
           break;
       }
     });
@@ -199,12 +204,26 @@
       });
   };
 
+  const choice = (repeatText, options, resolutionObj) => {
+    choiceObj = {
+      repeat: repeatText,
+      options,
+      resolution: resolutionObj
+    }
+  }
+
   const focus = el => {
     el.focus();
   };
 
   const submit = () => {
-    let chunks = entry.split(/ (.+)/).filter(x => x);
+    if (choiceObj) {
+      handleChoiceInput();
+      entry = '';
+      return;
+    }
+
+    let chunks = entry.toLowerCase().split(/ (.+)/).filter(x => x);
     let cmd = chunks[0];
     let args = chunks.filter((_, ix) => ix > 0);
     let target = null;
@@ -230,6 +249,7 @@
 
     switch (cmd) {
       case "look":
+      case "l":
         look.apply(this, args);
         break;
       case "inventory":
@@ -259,6 +279,18 @@
         break;
     }
   };
+
+  const handleChoiceInput = () => {
+    if (choiceObj.options
+      .map(x => x.toLowerCase())
+      .indexOf(entry.toLowerCase()) === -1) {
+      write(choiceObj.repeat);
+      return;
+    }
+    let resolutionPath = choiceObj.resolution[entry.toLowerCase()];
+    choiceObj = null;
+    parseRoomCmds(resolutionPath);
+  }
 
   const look = target => {
     if (!target) {

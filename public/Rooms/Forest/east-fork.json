@@ -5,6 +5,12 @@
   "west": "Forest/forest-west-clearing",
   "features": [
     {
+      "slug": "bird",
+      "look": [
+        "I can hear it but can't see it."
+      ]
+    },
+    {
       "slug": "fork",
       "look": [
         "Oddly enough, there IS a wooden fork laying where the path splits.",

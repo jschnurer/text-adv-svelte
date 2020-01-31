@@ -2,7 +2,7 @@
   "area": "Forest",
   "name": "Clearing in a Forest",
   "slug": "forest-west-clearing",
-  "description": "You are in a small clearing in a dense forest. The grass is crushed flat all around you. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
+  "description": "You are in a small clearing in a dense forest. The grass is crushed flat all around you. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "look": [
     {
       "cmd": "ifLVar",
@@ -28,7 +28,6 @@
   "features": [
     {
       "slug": "hole",
-      "roomDesc": "There is a small, freshly dug hole here.",
       "look": [
         "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. Sitting at the bottom of the hole is a baseball.",
         "SETFLAG:SeeBaseball"
