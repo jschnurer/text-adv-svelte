@@ -3,12 +3,32 @@
     "slug": "baseball",
     "look": [
       "It's a very clean baseball."
+    ],
+    "throw": [
+      {
+        "cmd": "ifRoom",
+        "args": [
+          "Forest/brook-south",
+          [
+            "INVOKEROOM:throwBaseball"
+          ],
+          [
+            "You really don't see the point of throwing the baseball here."
+          ]
+        ]
+      }
     ]
   },
   {
     "slug": "coin",
     "look": [
       "It's a tarnished golden coin. Who knows how old it is?"
+    ]
+  },
+  {
+    "slug": "fork",
+    "look": [
+      "It's an old, wooden fork. It's a little stained."
     ]
   }
 ]

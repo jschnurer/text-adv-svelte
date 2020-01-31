@@ -1,7 +1,8 @@
 {
   "area": "Forest",
   "name": "Clearing in a Forest",
-  "description": "You are in a small clearing in a dense forest. The grass is crushed down all around. A narrow trail leads through the trees to the north.",
+  "slug": "forest-west-clearing",
+  "description": "You are in a small clearing in a dense forest. The grass is crushed flat all around you. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "look": [
     {
       "cmd": "ifLVar",
@@ -23,6 +24,7 @@
     }
   ],
   "north": "Forest/brook-south",
+  "east": "Forest/east-fork",
   "features": [
     {
       "slug": "hole",

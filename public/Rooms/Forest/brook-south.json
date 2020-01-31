@@ -1,6 +1,7 @@
 {
   "area": "Forest",
   "name": "Babbling Brook South Bank",
+  "slug": "brook-south",
   "description": "The sound of a babbling brook breaks the eerie silence. An old wooden bridge once spanned the river but at some point collapsed and washed away. Part of it still remains, but it is impassable.",
   "south": "Forest/forest-west-clearing",
   "features": [
@@ -44,18 +45,16 @@
       ]
     }
   ],
-  "throw": {
-    "baseball": [
-      {
-        "cmd": "setLVar",
-        "args": [
-          "FISH_DISTRACTED",
-          true
-        ]
-      },
-      "REMOVEITEM:baseball",
-      "You throw the baseball into the brook. Dark shapes beneath the murky water swim quickly downstream to where the baseball splashed.",
-      "UPDATELOOK:water:The water is a little murky."
-    ]
-  }
+  "throwBaseball": [
+    {
+      "cmd": "setLVar",
+      "args": [
+        "FISH_DISTRACTED",
+        true
+      ]
+    },
+    "REMOVEITEM:baseball",
+    "You throw the baseball into the brook. Dark shapes beneath the murky water swim quickly downstream to where the baseball splashed.",
+    "UPDATELOOK:water:The water is a little murky."
+  ]
 }

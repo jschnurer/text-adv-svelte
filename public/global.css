@@ -14,11 +14,17 @@ body {
 }
 
 main {
-  max-width: 800px;
+  width: 800px;
   margin: auto;
+  position: fixed;
   display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   flex-direction: column;
-  height: 100vh;
+  height: 50vh;
+  box-shadow: 0 0 10em #333;
+  padding: 1em;
 }
 
 room {

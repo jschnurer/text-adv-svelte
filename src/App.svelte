@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
+  import verbs from './verbs.json';
   import config from "./config.json";
   let output = null;
-  
+
   let items = [];
 
   let inventory = [];
@@ -14,26 +15,22 @@
   let room = null;
   let text = "";
   let title = "";
-  
+
   let entry = "";
 
   onMount(async () => {
     await loadRoom(`${config.initial_area}/${config.initial_room}`);
 
-    const itemsF = await fetch(
-      `/items.json`
-    );
+    const itemsF = await fetch(`/items.json`);
     const itemsJ = await itemsF.json();
     items = itemsJ;
   });
 
-  const getRoom = async (roomAreaSlug) => {
-    const resp = await fetch(
-      `/Rooms/${roomAreaSlug}.json`
-    );
+  const getRoom = async roomAreaSlug => {
+    const resp = await fetch(`/Rooms/${roomAreaSlug}.json`);
     const j = await resp.json();
     return j;
-  }
+  };
 
   const parseRoomCmds = (cmds, feature) => {
     let bail = false;
@@ -74,51 +71,72 @@
         case "destroyFeature":
           destroyFeature.apply(this, cmd.args);
           break;
+        case "ifRoom":
+          ifRoom.apply(this, cmd.args);
+          break;
       }
     });
   };
 
   const parseStringCmd = (cmd, feature) => {
-    if (cmd.startsWith('SETFLAG')) {
+    let chunks = cmd.split(":");
+
+    if (cmd.startsWith("SETFLAG")) {
       let vars = getLocalVars();
-      vars[cmd.split(':')[1]] = true;
+      vars[chunks[1]] = true;
       return true;
-    } else if (cmd.startsWith('CHECKFLAG')) {
+    } else if (cmd.startsWith("CHECKFLAG")) {
       let vars = getLocalVars();
-      return !!vars[cmd.split(':')[1]];
-    } else if (cmd.startsWith('ADDITEM')) {
-      addItem(cmd.split(':')[1]);
+      return !!vars[chunks[1]];
+    } else if (cmd.startsWith("ADDITEM")) {
+      addItem(chunks[1]);
       return true;
-    } else if (cmd.startsWith('REMOVEITEM')) {
-      removeItem(cmd.split(':')[1]);
+    } else if (cmd.startsWith("REMOVEITEM")) {
+      removeItem(chunks[1]);
       return true;
-    } else if (cmd.startsWith('DESTROY')) {
-      if (cmd === 'DESTROY') {
+    } else if (cmd.startsWith("DESTROY")) {
+      if (cmd === "DESTROY") {
         destroyFeature(feature.slug);
         return true;
       } else {
         // TODO: allow destroying other things
         return true;
       }
-    } else if(cmd.startsWith('UPDATELOOK')) {
-      let chunks = cmd.split(':');
+    } else if (cmd.startsWith("UPDATELOOK")) {
       let numChunks = cmd.length;
       if (numChunks === 2) {
         // TODO: Update own look
       } else if (numChunks >= 3) {
         // update other look
-        let f = room.features.find(x => x.slug === chunks[1]);
-        f.look = [ chunks[2] ];
+        let f = getFeature(chunks[1]);
+        f.look = [chunks[2]];
       }
       return true;
-    } else if(cmd.startsWith('GAMEOVER')) {
-      let chunks = cmd.split(':');
+    } else if (cmd.startsWith("GAMEOVER")) {
       gameOver(chunks[1]);
       return false;
+    } else if (cmd.startsWith("INVOKEROOM")) {
+      invokeRoom(chunks[1]);
+      return false;
+    } else if(cmd.startsWith("UPDATEROOMDESC")) {
+      updateRoomDesc(chunks[1], chunks[2]);
+      return true;
+    } else if(cmd.startsWith("UNKNOWNTARGET")) {
+      unknownTarget(feature.slug);
+      return true;
     } else {
       write(cmd);
       return true;
     }
+  };
+
+  const getFeature = (slug) => {
+    return room.features.find(x => x.slug === slug);
+  }
+
+  const updateRoomDesc = (slug, roomDesc) => {
+    let f = getFeature(slug);
+    f.roomDesc = roomDesc;
   }
 
   const write = msg => {
@@ -137,22 +155,29 @@
     }
   };
 
+  const ifRoom = (roomAreaSlug, trueCmds, falseCmds, feature) => {
+    if (roomAreaSlug === `${room.area}/${room.slug}`) {
+      parseRoomCmds(trueCmds, feature);
+    } else if (falseCmds) {
+      parseRoomCmds(falseCmds, feature);
+    }
+  };
+
   const setVar = (vars, name, value) => {
     vars[name] = value;
   };
 
-  const addItem = (slug) => {
+  const addItem = slug => {
     inventory.push(Object.assign({}, items.find(x => x.slug === slug)));
-  }
+  };
 
-  const removeItem = (slug) => {
+  const removeItem = slug => {
     inventory = inventory.filter(x => x.slug !== slug);
-  }
+  };
 
-
-  const destroyFeature = (slug) => {
+  const destroyFeature = slug => {
     room.features = room.features.filter(x => x.slug !== slug);
-  }
+  };
 
   const getLocalVars = () => {
     if (!gameVars[room.name]) {
@@ -181,6 +206,27 @@
     let chunks = entry.split(/ (.+)/).filter(x => x);
     let cmd = chunks[0];
     let args = chunks.filter((_, ix) => ix > 0);
+    let target = null;
+    entry = "";
+
+    if (!verbs.find(x => x === cmd)) {
+      unknownCmd(cmd);
+      return;
+    }
+
+    if (args.length > 0) {
+      target = findTarget(args[0]);
+      if (!target) {
+        unknownTarget(args[0]);
+        return;
+      }
+    }
+
+    if (target && target[cmd]) {
+      parseRoomCmds(target[cmd], target);
+      return;
+    }
+
     switch (cmd) {
       case "look":
         look.apply(this, args);
@@ -189,7 +235,7 @@
         listInventory();
         break;
       case "take":
-        take.apply(this, args);
+        take(target);
         break;
       case "north":
         move("north");
@@ -203,14 +249,10 @@
       case "west":
         move("west");
         break;
-      case "throw":
-        throwItem.apply(this, args);
-        break;
       default:
         unknownCmd(cmd);
         break;
     }
-    entry = "";
   };
 
   const look = target => {
@@ -248,15 +290,8 @@
     if (!target) {
       write("Take what?");
     } else {
-      let t = findTarget(target);
-
-      if (!t) {
-        unknownTarget(target);
-        return;
-      }
-
-      if (t.take) {
-        parseRoomCmds(t.take, t);
+      if (target.take) {
+        parseRoomCmds(target.take, target);
       } else {
         write("You can't take that.");
       }
@@ -296,18 +331,18 @@
     } else {
       write("You don't have anything.");
     }
-  }
+  };
 
-  const move = (dir) => {
+  const move = dir => {
     if (!room[dir]) {
       write("You can't go that way.");
       return false;
     }
 
     loadRoom(room[dir]);
-  }
+  };
 
-  const throwItem = (slug) => {
+  const throwItem = slug => {
     if (!inventory.filter(x => x.slug === slug)) {
       write(`You don't have a ${slug}.`);
       return false;
@@ -319,9 +354,13 @@
     }
 
     parseRoomCmds(room.throw[slug]);
+  };
+
+  const invokeRoom = cmdName => {
+    parseRoomCmds(room[cmdName]);
   }
 
-  const loadRoom = async (roomAreaSlug) => {
+  const loadRoom = async roomAreaSlug => {
     if (rooms[roomAreaSlug]) {
       room = rooms[roomAreaSlug];
       title = room.name;
@@ -333,13 +372,13 @@
       title = room.name;
       look();
     }
-  }
+  };
 
-  const gameOver = (msg) => {
+  const gameOver = msg => {
     title = "GAME OVER";
     text = msg;
     isGameOver = true;
-  }
+  };
 
   const unknownCmd = cmd => {
     write(`You don't know how to ${cmd}.`);
@@ -350,8 +389,8 @@
   };
 
   const help = () => {
-    alert('TODO: add help');
-  }
+    alert("TODO: add help");
+  };
 </script>
 
 <style>
@@ -364,17 +403,18 @@
     flex: auto;
   }
 
-  form > button {
+  form > span {
     background-color: transparent;
     color: white;
     border: 1px white solid;
     border-radius: 2em;
     vertical-align: middle;
-    height: 2.5em;
+    height: 1.5em;
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    margin: .5em 0 0 .5em;
+    padding: 0 .2em;
+    margin: 0.3em 0 0 0.5em;
   }
 </style>
 
@@ -388,7 +428,7 @@
   {#if !isGameOver}
     <form on:submit|preventDefault={submit}>
       <input use:focus bind:value={entry} />
-      <button on:click|preventDefault={help}>❔</button>
+      <span on:click={help}>❔</span>
     </form>
   {:else}
     <button on:click={() => location.reload()}>Try again</button>
