@@ -13,7 +13,19 @@ body {
   font-size: 1.25em;
 }
 
+bg {
+  background-image: url(/bg.jpeg);
+  background-size: cover;
+  opacity: 0.12;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
 main {
+  z-index: 1;
   width: 800px;
   margin: auto;
   position: fixed;
@@ -23,7 +35,8 @@ main {
   transform: translate(-50%, -50%);
   flex-direction: column;
   height: 75vh;
-  box-shadow: 0 0 10em #333;
+  box-shadow: 0 0 10em #222;
+  background-color: #222;
   padding: 1em;
 }
 

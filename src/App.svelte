@@ -425,6 +425,7 @@
   }
 </style>
 
+<bg />
 <main>
   {#if helpVisible}
     <h3>Help</h3>
