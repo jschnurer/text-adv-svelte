@@ -6,7 +6,6 @@
   "features": [
     {
       "slug": "fork",
-      "roomDesc": "",
       "look": [
         "Oddly enough, there IS a wooden fork laying where the path splits.",
         "UPDATEROOMDESC:fork:There is a wooden fork laying in the path.",
@@ -26,6 +25,26 @@
             ["UNKNOWNTARGET"]
           ]
         }
+      ]
+    },
+    {
+      "slug": "signpost",
+      "look": [
+        "It's been rotting away for a long, long time. The single nail that holds it together is rusty but still doing its job.",
+        "SETFLAG:sawNail"
+      ]
+    },
+    {
+      "slug": "nail",
+      "targetFlag": "sawNail",
+      "look": [
+        "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose."
+      ],
+      "take": [
+        "ADDITEM:nail",
+        "UPDATELOOK:signpost:It's been rotting away for a long, long time. It's falling apart.",
+        "You get your fingernails under the head of the nail and give it a good couple tugs. Eventually, you work it out of the signpost and take it with you.",
+        "DESTROY"
       ]
     }
   ]

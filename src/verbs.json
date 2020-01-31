@@ -2,9 +2,13 @@
   "throw",
   "take",
   "look",
+  "n",
   "north",
+  "s",
   "south",
+  "e",
   "east",
+  "w",
   "west",
   "inventory"
 ]

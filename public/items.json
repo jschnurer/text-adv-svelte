@@ -30,5 +30,11 @@
     "look": [
       "It's an old, wooden fork. It's a little stained."
     ]
+  },
+  {
+    "slug": "nail",
+    "look": [
+      "It's rusty but should still do its job well enough."
+    ]
   }
 ]

@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
-  import verbs from './verbs.json';
+  import verbs from "./verbs.json";
   import config from "./config.json";
   let output = null;
+  let helpVisible = false;
 
   let items = [];
 
@@ -118,10 +119,10 @@
     } else if (cmd.startsWith("INVOKEROOM")) {
       invokeRoom(chunks[1]);
       return false;
-    } else if(cmd.startsWith("UPDATEROOMDESC")) {
+    } else if (cmd.startsWith("UPDATEROOMDESC")) {
       updateRoomDesc(chunks[1], chunks[2]);
       return true;
-    } else if(cmd.startsWith("UNKNOWNTARGET")) {
+    } else if (cmd.startsWith("UNKNOWNTARGET")) {
       unknownTarget(feature.slug);
       return true;
     } else {
@@ -130,14 +131,14 @@
     }
   };
 
-  const getFeature = (slug) => {
+  const getFeature = slug => {
     return room.features.find(x => x.slug === slug);
-  }
+  };
 
   const updateRoomDesc = (slug, roomDesc) => {
     let f = getFeature(slug);
     f.roomDesc = roomDesc;
-  }
+  };
 
   const write = msg => {
     text += "\n" + msg;
@@ -238,15 +239,19 @@
         take(target);
         break;
       case "north":
+      case "n":
         move("north");
         break;
       case "south":
+      case "s":
         move("south");
         break;
       case "east":
+      case "e":
         move("east");
         break;
       case "west":
+      case "w":
         move("west");
         break;
       default:
@@ -328,8 +333,10 @@
     if (inventory.length) {
       write("You have:");
       inventory.forEach(x => write(x.slug));
+      write("...");
     } else {
       write("You don't have anything.");
+      write("...");
     }
   };
 
@@ -358,7 +365,7 @@
 
   const invokeRoom = cmdName => {
     parseRoomCmds(room[cmdName]);
-  }
+  };
 
   const loadRoom = async roomAreaSlug => {
     if (rooms[roomAreaSlug]) {
@@ -389,7 +396,7 @@
   };
 
   const help = () => {
-    alert("TODO: add help");
+    helpVisible = true;
   };
 </script>
 
@@ -413,24 +420,47 @@
     text-align: center;
     display: inline-block;
     cursor: pointer;
-    padding: 0 .2em;
+    padding: 0 0.2em;
     margin: 0.3em 0 0 0.5em;
   }
 </style>
 
 <main>
-  <room bind:this={output}>
-    <h3>{title}</h3>
-    {#each text.split('\n') as line}
-      <p>{line}</p>
-    {/each}
-  </room>
-  {#if !isGameOver}
-    <form on:submit|preventDefault={submit}>
-      <input use:focus bind:value={entry} />
-      <span on:click={help}>❔</span>
-    </form>
+  {#if helpVisible}
+    <h3>Help</h3>
+    <p>
+      Type commands to try things in the game. You can move between areas by
+      using the commands "north", "south", "east", and "west" (or "n", "s", "e",
+      "w" for short).
+    </p>
+    <p>
+      You can do things like "look" or "take" (and many other things too!) When
+      you want to interact with something specific, type it after your command.
+      The commands should be very simple. For example, instead of saying "look
+      at the tree" you would say "look tree". Generally, anything you type
+      should be either one or two words (separated by a space).
+    </p>
+    <p>You can check what you're carrying with the "inventory" command too!</p>
+    <p>
+      Hint: You should probably "look" at things a lot. Who know's what might be
+      useful? And death lurks around every corner.
+    </p>
+    <p>&nbsp;</p>
+    <button on:click={() => (helpVisible = false)}>Ok, ok. Let me play!</button>
   {:else}
-    <button on:click={() => location.reload()}>Try again</button>
+    <room bind:this={output}>
+      <h3>{title}</h3>
+      {#each text.split('\n') as line}
+        <p>{line}</p>
+      {/each}
+    </room>
+    {#if !isGameOver}
+      <form on:submit|preventDefault={submit}>
+        <input use:focus bind:value={entry} />
+        <span on:click={help}>❔</span>
+      </form>
+    {:else}
+      <button on:click={() => location.reload()}>Try again</button>
+    {/if}
   {/if}
 </main>
