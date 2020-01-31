@@ -22,13 +22,13 @@
   onMount(async () => {
     await loadRoom(`${config.initial_area}/${config.initial_room}`);
 
-    const itemsF = await fetch(`/items.json`);
+    const itemsF = await fetch(`${window.hostDir}/items.json`);
     const itemsJ = await itemsF.json();
     items = itemsJ;
   });
 
   const getRoom = async roomAreaSlug => {
-    const resp = await fetch(`/Rooms/${roomAreaSlug}.json`);
+    const resp = await fetch(`${window.hostDir}/Rooms/${roomAreaSlug}.json`);
     const j = await resp.json();
     return j;
   };

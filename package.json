@@ -2,14 +2,22 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "start": "sirv public"
+    "host:server": "replace-in-file /__hostdir__/g /adventure ./public/index.html --isRegex",
+    "host:local": "replace-in-file /__hostdir__/g \"\" ./public/index.html --isRegex",
+    "build": "run-s copy:templates host:server run:build",
+    "dev": "run-s copy:templates host:local run:dev",
+    "run:dev": "rollup -c -w",
+    "run:build": "rollup -c",
+    "start": "sirv public",
+    "copy:templates": "copy-files-from-to"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-json": "^4.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "copy-files-from-to": "^2.1.0",
+    "npm-run-all": "^4.1.5",
+    "replace-in-file": "^5.0.2",
     "rollup": "^1.20.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
@@ -18,5 +26,14 @@
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"
+  },
+  "copyFiles": [
+    {
+      "from": "/templates/index.html",
+      "to": "/public/index.html"
+    }
+  ],
+  "copyFilesSettings": {
+    "whenFileExists": "overwrite"
   }
 }
