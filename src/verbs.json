@@ -1,6 +1,7 @@
 [
   "throw",
   "take",
+  "t",
   "l",
   "look",
   "n",
@@ -11,5 +12,6 @@
   "east",
   "w",
   "west",
-  "inventory"
+  "inventory",
+  "i"
 ]
