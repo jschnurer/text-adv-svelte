@@ -46,13 +46,7 @@
     }
   ],
   "throwBaseball": [
-    {
-      "cmd": "setLVar",
-      "args": [
-        "FISH_DISTRACTED",
-        true
-      ]
-    },
+    "SETFLAG:FISH_DISTRACTED",
     "REMOVEITEM:baseball",
     "You throw the baseball into the brook. Dark shapes beneath the murky water swim quickly downstream to where the baseball splashed.",
     "UPDATELOOK:water:The water is a little murky."

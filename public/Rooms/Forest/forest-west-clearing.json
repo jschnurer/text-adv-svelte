@@ -11,13 +11,7 @@
         false,
         [
           "A slight glimmer in the air dissipates as you get your bearings. Before you know it, it's gone.",
-          {
-            "cmd": "setLVar",
-            "args": [
-              "GAME_STARTED",
-              true
-            ]
-          }
+          "SETFLAG:GAME_STARTED"
         ],
         null
       ]
@@ -38,7 +32,6 @@
       "look": [
         "It's a totally ordinary baseball--though really, REALLY clean."
       ],
-      "hidden": true,
       "targetFlag": "SeeBaseball",
       "take": [
         "ADDITEM:baseball",

@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   import verbs from "./verbs.json";
   import config from "./config.json";
+
   let output = null;
   let helpVisible = false;
 
@@ -209,8 +210,8 @@
       repeat: repeatText,
       options,
       resolution: resolutionObj
-    }
-  }
+    };
+  };
 
   const focus = el => {
     el.focus();
@@ -219,11 +220,14 @@
   const submit = () => {
     if (choiceObj) {
       handleChoiceInput();
-      entry = '';
+      entry = "";
       return;
     }
 
-    let chunks = entry.toLowerCase().split(/ (.+)/).filter(x => x);
+    let chunks = entry
+      .toLowerCase()
+      .split(/ (.+)/)
+      .filter(x => x);
     let cmd = chunks[0];
     let args = chunks.filter((_, ix) => ix > 0);
     let target = null;
@@ -281,16 +285,18 @@
   };
 
   const handleChoiceInput = () => {
-    if (choiceObj.options
-      .map(x => x.toLowerCase())
-      .indexOf(entry.toLowerCase()) === -1) {
+    if (
+      choiceObj.options
+        .map(x => x.toLowerCase())
+        .indexOf(entry.toLowerCase()) === -1
+    ) {
       write(choiceObj.repeat);
       return;
     }
     let resolutionPath = choiceObj.resolution[entry.toLowerCase()];
     choiceObj = null;
     parseRoomCmds(resolutionPath);
-  }
+  };
 
   const look = target => {
     if (!target) {
