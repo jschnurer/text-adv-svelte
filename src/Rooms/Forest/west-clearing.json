@@ -7,11 +7,11 @@
     {
       "cmd": "ifLVar",
       "args": [
-        "GAME_STARTED",
+        "glimmerGone",
         false,
         [
           "A slight glimmer in the air dissipates as you get your bearings. Before you know it, it's gone.",
-          "SETFLAG:GAME_STARTED"
+          "setFlag:glimmerGone"
         ],
         null
       ]
@@ -24,7 +24,7 @@
       "slug": "hole",
       "look": [
         "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. Sitting at the bottom of the hole is a baseball.",
-        "SETFLAG:SeeBaseball"
+        "setFlag:SeeBaseball"
       ]
     },
     {
@@ -34,10 +34,10 @@
       ],
       "targetFlag": "SeeBaseball",
       "take": [
-        "ADDITEM:baseball",
+        "addItem:baseball",
         "You take the baseball.",
-        "UPDATELOOK:hole:Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep.",
-        "DESTROY"
+        "updateLook:hole:Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep.",
+        "destroyFeature:baseball"
       ]
     }
   ]

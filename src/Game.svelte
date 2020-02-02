@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import config from "./config.json";
-  import getGameState from "./Commands/getGameState.js";
+  import getGameState from "./Helpers/getGameState.js";
 
   let gs = getGameState();
   gs.updateScroll = () => window.setTimeout(() => output.scrollTop = output.scrollHeight + output.offsetTop, 1);

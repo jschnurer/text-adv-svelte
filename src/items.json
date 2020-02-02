@@ -10,7 +10,7 @@
         "args": [
           "Forest/brook-south",
           [
-            "INVOKEROOM:throwBaseball"
+            "invokeRoom:throwBaseball"
           ],
           [
             "You really don't see the point of throwing the baseball here."

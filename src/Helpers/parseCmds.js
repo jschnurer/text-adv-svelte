@@ -17,10 +17,10 @@ export default function parseCmds(cmds, feature) {
         this.write.apply(this, cmd.args);
         break;
       case "ifGVar":
-        this.ifVar.apply(this, [this.gameVars, ...cmd.args, feature]);
+        this.ifVar.apply(this, [this.globalVars, ...cmd.args, feature]);
         break;
       case "setGVar":
-        this.setVar.apply(this, [this.gameVars, ...cmd.args, feature]);
+        this.setVar.apply(this, [this.globalVars, ...cmd.args, feature]);
         break;
       case "ifLVar":
         this.ifVar.apply(this, [this.getLocalVars(), ...cmd.args, feature]);

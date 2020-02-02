@@ -9,7 +9,7 @@
       "slug": "bridge",
       "look": [
         "The bridge is ancient and rotting. Most of it has fallen and been swept away. In the shadow beneath the bridge, something shiny catches your eye in the water. It looks like an old, golden coin.",
-        "SETFLAG:SeeCoin"
+        "setFlag:SeeCoin"
       ]
     },
     {
@@ -26,13 +26,13 @@
             "FISH_DISTRACTED",
             false,
             [
-              "GAMEOVER:You step into the brook, roll up your sleeve, and reach down into the cold water. You fumble about the rocks trying to get hold of the coin when you feel a stabbing pain in your wrist. It's quickly followed by another and another and another. A vortex of red water begins churning around your arm as you feel pain in your legs as well. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky brook. You pull yourself free and back onto the bank but it's too late. Your head spins and you lose consciousness."
+              "gameOver:You step into the brook, roll up your sleeve, and reach down into the cold water. You fumble about the rocks trying to get hold of the coin when you feel a stabbing pain in your wrist. It's quickly followed by another and another and another. A vortex of red water begins churning around your arm as you feel pain in your legs as well. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky brook. You pull yourself free and back onto the bank but it's too late. Your head spins and you lose consciousness."
             ],
             [
-              "ADDITEM:coin",
+              "addItem:coin",
               "You quickly pluck the coin out of the water and retreat back to shore.",
-              "UPDATELOOK:bridge:The bridge is ancient and rotting. Most of it has fallen and been swept away.",
-              "DESTROY"
+              "updateLook:bridge:The bridge is ancient and rotting. Most of it has fallen and been swept away.",
+              "destroyFeature:coin"
             ]
           ]
         }
@@ -46,9 +46,9 @@
     }
   ],
   "throwBaseball": [
-    "SETFLAG:FISH_DISTRACTED",
-    "REMOVEITEM:baseball",
+    "setFlag:FISH_DISTRACTED",
+    "removeItem:baseball",
     "You throw the baseball into the brook. Dark shapes beneath the murky water swim quickly downstream to where the baseball splashed.",
-    "UPDATELOOK:water:The water is a little murky."
+    "updateLook:water:The water is a little murky."
   ]
 }

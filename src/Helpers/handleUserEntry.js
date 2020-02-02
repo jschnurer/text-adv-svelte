@@ -61,5 +61,8 @@ export default function handleUserEntry(entry) {
     case "w":
       this.move("west");
       break;
+    default:
+      this.write("What do you want to " + cmd + "?");
+      break;
   }
 };
