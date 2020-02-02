@@ -1,6 +1,4 @@
 export default function look(target) {
-  debugger;
-  
   if (!target) {
     if (this.room.description) {
       this.text = this.room.description;

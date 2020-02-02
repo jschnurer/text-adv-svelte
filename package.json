@@ -4,12 +4,13 @@
   "scripts": {
     "host:server": "replace-in-file /__hostdir__/g /adventure ./public/index.html --isRegex",
     "host:local": "replace-in-file /__hostdir__/g \"\" ./public/index.html --isRegex",
-    "build": "run-s copy:templates host:server run:build",
-    "dev": "run-s copy:templates host:local run:dev",
-    "run:dev": "rollup -c -w",
-    "run:build": "rollup -c",
-    "start": "sirv public",
-    "copy:templates": "copy-files-from-to"
+    "build": "run-s copy:templates host:server build:rollup",
+    "build:rollup": "rollup -c",
+    "autobuild": "rollup -c -w",
+    "copy:templates": "copy-files-from-to",
+    "dev": "run-s copy:templates host:local autobuild start:dev",
+    "start": "sirv public --single",
+    "start:dev": "sirv public --single --dev"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
@@ -22,7 +23,8 @@
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
-    "svelte": "^3.0.0"
+    "svelte": "^3.0.0",
+    "svelte-routing": "^1.4.0"
   },
   "dependencies": {
     "sirv-cli": "^0.4.4"
