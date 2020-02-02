@@ -1,8 +1,8 @@
 [
   {
-    "slug": "baseball",
+    "slug": "stone",
     "look": [
-      "It's a very clean baseball."
+      "It's a small, smooth stone. You feel the urge to throw it for some reason."
     ],
     "throw": [
       {
@@ -10,10 +10,10 @@
         "args": [
           "Forest/brook-south",
           [
-            "invokeRoom:throwBaseball"
+            "invokeRoom:throwStone"
           ],
           [
-            "You really don't see the point of throwing the baseball here."
+            "You really don't see the point of throwing the stone right now."
           ]
         ]
       }

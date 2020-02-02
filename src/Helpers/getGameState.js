@@ -38,6 +38,9 @@ import getLocalVars from "./getLocalVars.js";
 
 export default function getGameState() {
   return {
+    options: {
+      showHints: true,
+    },
     inventory: [],
     roomVars: [],
     globalVars: [],
@@ -47,7 +50,6 @@ export default function getGameState() {
     text: '',
     allowedVerbs: verbs,
     items,
-    handleUserEntry,
 
     // User Commands
     listInventory,
@@ -81,5 +83,6 @@ export default function getGameState() {
     unknownTarget,
     findTarget,
     handleChoiceInput,
+    handleUserEntry,
   };
 }

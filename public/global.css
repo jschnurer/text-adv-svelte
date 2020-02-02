@@ -43,7 +43,7 @@ main {
 room {
   display: block;
   flex: 1;
-  overflow: hidden;
+  overflow: auto;
 }
 
 input {
@@ -57,4 +57,11 @@ input {
 button {
   font-size: 1em;
   padding: .25em;
+}
+
+hint {
+  text-decoration: underline;
+  text-decoration-color: #6a6a6a;
+  text-decoration-style: dashed;
+  cursor: help;
 }

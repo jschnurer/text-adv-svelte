@@ -1,24 +1,30 @@
 {
   "area": "Forest",
-  "name": "Babbling Brook South Bank",
+  "name": "River, South Bank",
   "slug": "brook-south",
-  "description": "The sound of a babbling brook breaks the eerie silence. An old wooden bridge once spanned the river but at some point collapsed and washed away. Part of it still remains, but it is impassable.",
+  "description": "The sound of a river breaks the eerie silence. An old wooden bridge once spanned the river but has since mostly collapsed and washed away. Part of it still juts out from either bank of the river, casting shadows on the water beneath it.",
   "south": "Forest/west-clearing",
   "features": [
     {
       "slug": "bridge",
       "look": [
-        "The bridge is ancient and rotting. Most of it has fallen and been swept away. In the shadow beneath the bridge, something shiny catches your eye in the water. It looks like an old, golden coin.",
-        "setFlag:SeeCoin"
+        "The bridge is ancient and rotting. It sticks out over the river maybe 10 feet. The water underneath the bridge is in shadows."
       ]
     },
     {
-      "slug": "coin",
+      "slug": "shadows",
       "look": [
-        "It's a tarnished golden coin, caught in the rocks in about 3 feet of water."
+        "In the shadows beneath the bridge you see a rusty metal rod sticking out of the river about 5 feet from shore.",
+        "setFlag:SEEROD"
+      ]
+    },
+    {
+      "slug": "rod",
+      "look": [
+        "It's a cylindrical, rusty metal rod sticking out of the water about 5 feet from shore."
       ],
       "hidden": true,
-      "targetFlag": "SeeCoin",
+      "targetFlag": "SEEROD",
       "take": [
         {
           "cmd": "ifLVar",
@@ -26,13 +32,13 @@
             "FISH_DISTRACTED",
             false,
             [
-              "gameOver:You step into the brook, roll up your sleeve, and reach down into the cold water. You fumble about the rocks trying to get hold of the coin when you feel a stabbing pain in your wrist. It's quickly followed by another and another and another. A vortex of red water begins churning around your arm as you feel pain in your legs as well. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky brook. You pull yourself free and back onto the bank but it's too late. Your head spins and you lose consciousness."
+              "gameOver:You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
             ],
             [
-              "addItem:coin",
-              "You quickly pluck the coin out of the water and retreat back to shore.",
-              "updateLook:bridge:The bridge is ancient and rotting. Most of it has fallen and been swept away.",
-              "destroyFeature:coin"
+              "addItem:rod",
+              "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
+              "updateLook:shadows:The shadows beneath the bridge conceal no further secrets, as far as you can tell.",
+              "destroyFeature:rod"
             ]
           ]
         }
@@ -43,12 +49,19 @@
       "look": [
         "The water is a little murky. You can see dark shapes moving around in it."
       ]
+    },
+    {
+      "slug": "river",
+      "look": [
+        "The river is a little murky. You can see dark shapes moving around in it."
+      ]
     }
   ],
-  "throwBaseball": [
+  "throwStone": [
     "setFlag:FISH_DISTRACTED",
-    "removeItem:baseball",
-    "You throw the baseball into the brook. Dark shapes beneath the murky water swim quickly downstream to where the baseball splashed.",
-    "updateLook:water:The water is a little murky."
+    "removeItem:stone",
+    "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed.",
+    "updateLook:water:The water is a little murky.",
+    "updateLook:river:The river is a little murky."
   ]
 }

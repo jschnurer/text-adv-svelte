@@ -2,16 +2,28 @@
   "area": "Forest",
   "name": "Clearing in a Forest",
   "slug": "west-clearing",
-  "description": "You are in a small clearing in a dense forest. The grass is crushed flat all around you. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
+  "description": "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache. You pick yourself up and manage to get on your feet.\nYou are in a small clearing in a dense forest. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "look": [
     {
       "cmd": "ifLVar",
       "args": [
-        "glimmerGone",
+        "GAMESTARTED",
+        false,
+        [
+          "updateRoomDesc:ROOM:You are in a small clearing in a dense forest. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
+          "setFlag:GAMESTARTED"
+        ],
+        null
+      ]
+    },
+    {
+      "cmd": "ifLVar",
+      "args": [
+        "GLIMMERGONE",
         false,
         [
           "A slight glimmer in the air dissipates as you get your bearings. Before you know it, it's gone.",
-          "setFlag:glimmerGone"
+          "setFlag:GLIMMERGONE"
         ],
         null
       ]
@@ -23,21 +35,27 @@
     {
       "slug": "hole",
       "look": [
-        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. Sitting at the bottom of the hole is a baseball.",
-        "setFlag:SeeBaseball"
+        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. At the bottom of the hole is a small, smooth stone.",
+        "setFlag:SEESTONE"
       ]
     },
     {
-      "slug": "baseball",
+      "slug": "stone",
       "look": [
-        "It's a totally ordinary baseball--though really, REALLY clean."
+        "It's a small, smooth stone that could easily fit in your hand."
       ],
-      "targetFlag": "SeeBaseball",
+      "targetFlag": "SEESTONE",
       "take": [
-        "addItem:baseball",
-        "You take the baseball.",
+        "addItem:stone",
+        "You take the stone.",
         "updateLook:hole:Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep.",
-        "destroyFeature:baseball"
+        "destroyFeature:stone"
+      ]
+    },
+    {
+      "slug": "grass",
+      "look": [
+        "There's a patch of grass that's crushed flat."
       ]
     }
   ]

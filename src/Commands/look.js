@@ -1,7 +1,9 @@
 export default function look(target) {
   if (!target) {
+    this.write(`^${this.room.name}^`);
+
     if (this.room.description) {
-      this.text = this.room.description;
+      this.write(this.room.description);
     }
 
     if (this.room.features) {
