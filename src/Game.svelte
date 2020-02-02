@@ -1,6 +1,5 @@
 <script>
   import { onMount } from "svelte";
-  import verbs from "./verbs.json";
   import config from "./config.json";
   import getGameState from "./Commands/getGameState.js";
 
@@ -18,9 +17,6 @@
   let entry = "";
 
   onMount(async () => {
-    const itemsF = await fetch(`${window.hostDir}/items.json`);
-    gameState.items = await itemsF.json();
-
     await gameState.loadRoom(`${config.initial_area}/${config.initial_room}`);
   });
 
@@ -32,72 +28,8 @@
     if (!entry) {
       return;
     }
-
-    if (gameState.choiceObj) {
-      gameState.handleChoiceInput(entry);
-      entry = "";
-      return;
-    }
-
-    let chunks = entry
-      .toLowerCase()
-      .split(/ (.+)/)
-      .filter(x => x);
-    let cmd = chunks[0];
-    let args = chunks.filter((_, ix) => ix > 0);
-    let target = null;
+    gameState.handleUserEntry(entry.trim());
     entry = "";
-
-    if (!verbs.find(x => x === cmd)) {
-      gameState.unknownCmd(cmd);
-      return;
-    }
-
-    if (args.length > 0) {
-      target = gameState.findTarget(args[0]);
-      if (!target) {
-        gameState.unknownTarget(args[0]);
-        return;
-      }
-    }
-
-    // Shorthand.
-    if (cmd === "t") {
-      cmd = "take";
-    } else if (cmd === "l") {
-      cmd = "look";
-    }
-
-    if (target && target[cmd]) {
-      gameState.parseCmds(target[cmd], target);
-      return;
-    }
-
-    switch (cmd) {
-      case "look":
-        gameState.look();
-        break;
-      case "inventory":
-      case "i":
-        gameState.listInventory();
-        break;
-      case "north":
-      case "n":
-        gameState.move("north");
-        break;
-      case "south":
-      case "s":
-        gameState.move("south");
-        break;
-      case "east":
-      case "e":
-        gameState.move("east");
-        break;
-      case "west":
-      case "w":
-        gameState.move("west");
-        break;
-    }
   };
 
   const help = () => {

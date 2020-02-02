@@ -3,7 +3,7 @@
   "name": "Babbling Brook South Bank",
   "slug": "brook-south",
   "description": "The sound of a babbling brook breaks the eerie silence. An old wooden bridge once spanned the river but at some point collapsed and washed away. Part of it still remains, but it is impassable.",
-  "south": "Forest/forest-west-clearing",
+  "south": "Forest/west-clearing",
   "features": [
     {
       "slug": "bridge",

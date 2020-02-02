@@ -1,7 +1,7 @@
 {
   "area": "Forest",
   "name": "Clearing in a Forest",
-  "slug": "forest-west-clearing",
+  "slug": "west-clearing",
   "description": "You are in a small clearing in a dense forest. The grass is crushed flat all around you. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "look": [
     {

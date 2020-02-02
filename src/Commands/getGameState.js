@@ -1,4 +1,7 @@
-import loadRoom from "./loadRoom.js";
+import verbs from "../verbs.json";
+import items from "../items.json";
+
+import loadRoom from "../Helpers/loadRoom.js";
 import look from "./look.js";
 import showFeatures from "./showFeatures.js";
 import parseCmds from "./parseCmds.js";
@@ -23,15 +26,21 @@ import listInventory from "./listInventory.js";
 import gameOver from "./gameOver.js";
 import handleChoiceInput from "./handleChoiceInput.js";
 import choice from "./choice.js";
+import getRoomDictionary from "../Helpers/getRoomDictionary.js";
+import handleUserEntry from "./handleUserEntry.js";
 
 export default function getGameState() {
   return {
     inventory: [],
     gameVars: [],
-    rooms: {},
+    rooms: getRoomDictionary(),
     isGameOver: false,
     room: null,
     text: '',
+    allowedVerbs: verbs,
+    items,
+    handleUserEntry,
+
     loadRoom,
     look,
     showFeatures,
