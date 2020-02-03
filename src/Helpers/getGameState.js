@@ -44,17 +44,28 @@ export default function getGameState() {
   }
 
   let gameState = {
+    // Options for the game.
     options: {
+      // Determines whether or not to highlight interactable words.
       showHints: false,
     },
+    // The player's current inventory of items.
     inventory: [],
+    // Variables that are isolated by room.
     roomVars: [],
+    // Variables that are global to the entire game.
     globalVars: [],
+    // The database of rooms.
     rooms: getRoomDictionary(),
+    // Whether or not the game is in a game over state.
     isGameOver: false,
+    // The current room.
     room: null,
+    // The current text being outputted to the screen.
     text: '',
+    // The list of allowed verbs the player can type.
     allowedVerbs: verbs,
+    // The database of items.
     items,
 
     // User Commands
