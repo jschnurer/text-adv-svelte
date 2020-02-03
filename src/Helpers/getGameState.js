@@ -104,14 +104,10 @@ export default function getGameState() {
   };
 
   if (savedGame) {
-    let exploredRooms = savedGame.exploredRooms;
-    delete savedGame.exploredRooms;
+    let currRoomSlug = savedGame.currRoomSlug;
+    delete savedGame.currRoomSlug;
     Object.assign(gameState, savedGame);
-    exploredRooms.forEach(x => {
-      gameState.rooms[gameState.room.slug] = x;
-    });
-
-    gameState.rooms[gameState.room.slug] = gameState.room;
+    gameState.room = gameState.rooms[currRoomSlug];
   }
   
   return gameState;
