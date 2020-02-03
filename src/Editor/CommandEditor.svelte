@@ -33,13 +33,13 @@
     display: block;
     font-size: 1.5em;
   }
-  content {
+  form {
     display: block;
     flex: auto;
     overflow: auto;
     overflow-x: hidden;
   }
-  content > div {
+  form > div {
     margin-bottom: 0.5em;
   }
   actions {
@@ -69,7 +69,7 @@
     {#if cmd}Edit{:else}New{/if}
     Command
   </header>
-  <content>
+  <form on:submit|preventDefault={save}>
     <div>
       Cmd Type:
       <br />
@@ -90,7 +90,7 @@
         </row>
       {:else}...{/if}
     </div>
-  </content>
+  </form>
   <actions>
     <button on:click={save}>Save</button>
     <button on:click={() => dispatch('close')}>Cancel</button>

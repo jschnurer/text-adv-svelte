@@ -1,11 +1,28 @@
 <script>
   import Modal from "../Modal.svelte";
   import CommandEditor from "./CommandEditor.svelte";
+  import Command from "./Command.svelte";
+
+  let output = '';
 
   let room = {
-    look: []
+    name: "",
+    slug: "",
+    description: "",
+    exits: {
+      north: [],
+      south: [],
+      east: [],
+      west: []
+    },
+    cmds: {
+      look: []
+    }
   };
+
   let saver;
+  let cmdList = null;
+  let cmdIx = -1;
   let editCmd = null;
   let cmdEditorVisible = false;
 
@@ -18,18 +35,24 @@
     room[prop] = [];
   };
 
-  const newCmd = (prop) => {
-    prop = [...prop, ""];
-    saver = (newVal) =>  {
-      prop[prop.length - 1] = newVal
-    };
-    editCmd = prop[prop.length - 1];
+  const newCmd = prop => {
+    // List of commands in this property.
+    cmdList = prop;
+    // Cmd to send to editor.
+    editCmd = "";
+    // Save index for updating later.
+    cmdIx = prop.length;
+    // Show editor
     cmdEditorVisible = true;
   };
 
-  const saveCmd = ({detail}) => {
-    // todo: this doesn't work.
-    saver(detail);
+  const saveCmd = ({ detail }) => {
+    cmdList[cmdIx] = detail;
+    room = room;
+  };
+
+  const exportJson = () => {
+    output = JSON.stringify(room);
   }
 </script>
 
@@ -44,51 +67,72 @@
     flex: auto;
     overflow: auto;
   }
-  content > div {
-    margin: 0.5em 0;
-    border-top: 1px #aaa solid;
-    padding-top: 0.5em;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+  input[type="text"],
+  textarea {
+    font-size: 1em;
   }
-  content > div:first-child {
-    border-top: none;
-  }
-  content > div > label {
-    width: 10em;
-  }
-  content > div > div {
+  .room-name {
+    font-size: 1.25em !important;
     flex: auto;
   }
-  span {
+  button {
+    font-size: 0.75em;
+    color: #222;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  row {
+    display: flex;
+    flex-direction: row;
+  }
+  .save-button {
+    flex: 0;
     display: block;
+    padding: 0 2em;
   }
 </style>
 
 <bg />
 <main>
-  <input class="room-name" type="text" placeholder="Room Name" />
+  <row>
+    <input
+      class="room-name"
+      type="text"
+      placeholder="Room Name (shown to player)" />
+      <button class="save-button" on:click={exportJson}>Export JSON</button>
+  </row>
+  <input type="text" placeholder="area/slug" />
+  <textarea placeholder="description (shown when entering and looking)" />
   <content>
-    {#each Object.keys(room) as prop}
-      <div>
-        <label>{prop}</label>
-        {#each room[prop] as cmd}
-          <span>{cmd}</span>
-        {/each}
-        <div>
-          <button on:click={() => newCmd(room[prop])}>+</button>
-        </div>
-      </div>
+    <h3>Exits</h3>
+
+    <h3>Commands</h3>
+    {#each Object.keys(room.cmds) as prop, ix}
+      <Command
+        cmdList={room.cmds}
+        name={prop}
+        index={ix}
+        on:newCmd={({ detail }) => newCmd(detail)} />
     {/each}
     <div>
-      <button on:click={newProp}>+</button>
+      <button on:click={newProp}>+New Cmd</button>
     </div>
+    <h3>Features</h3>
   </content>
 </main>
 
 {#if cmdEditorVisible}
   <Modal>
-    <CommandEditor on:save={saveCmd} on:close={() => (cmdEditorVisible = false)} cmd={editCmd} />
+    <CommandEditor
+      on:save={saveCmd}
+      on:close={() => (cmdEditorVisible = false)}
+      cmd={editCmd} />
+  </Modal>
+{/if}
+
+{#if output}
+  <Modal>
+    <textarea>{output}</textarea>
+    <button on:click={() => output = ""}>Close</button>
   </Modal>
 {/if}

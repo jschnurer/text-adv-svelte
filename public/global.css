@@ -46,12 +46,13 @@ room {
   overflow: auto;
 }
 
-input {
+input, textarea {
   background-color: #444;
   border: 1px #555 solid;
   color: #eee;
   font-size: 1.25em;
   padding: .25em;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 button {
