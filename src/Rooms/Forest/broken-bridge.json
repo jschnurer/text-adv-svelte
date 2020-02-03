@@ -18,8 +18,19 @@
     {
       "slug": "shadows",
       "look": [
-        "In the shadows beneath the bridge you see a rusty metal rod sticking out of the river about 5 feet from shore.",
-        "setFlag:SEEROD"
+        {
+          "cmd":"ifFlag",
+          "args":[
+            "TOOKROD",
+            [
+              "The shadows beneath the bridge conceal no further secrets, as far as you can tell."
+            ],
+            [
+              "In the shadows beneath the bridge you see a rusty metal rod sticking out of the river about 5 feet from shore.",
+              "setFlag:SEEROD"
+            ]
+          ]
+        }
       ]
     },
     {
@@ -36,8 +47,7 @@
             [
               "addItem:rod",
               "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
-              "updateLook:shadows:The shadows beneath the bridge conceal no further secrets, as far as you can tell.",
-              "destroyFeature:rod"
+              "setFlag:TOOKROD"
             ],
             [
               "gameOver:You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
@@ -49,13 +59,35 @@
     {
       "slug": "water",
       "look": [
-        "The water is a little murky. You can see dark shapes moving around in it."
+        {
+          "cmd":"ifFlag",
+          "args":[
+            "FISH_DISTRACTED",
+            [
+              "The water is a little murky."
+            ],
+            [
+              "The water is a little murky. You can see dark shapes moving around in it."
+            ]
+          ]
+        }
       ]
     },
     {
       "slug": "river",
       "look": [
-        "The river is a little murky. You can see dark shapes moving around in it."
+        {
+          "cmd":"ifFlag",
+          "args":[
+            "FISH_DISTRACTED",
+            [
+              "The river is a little murky."
+            ],
+            [
+              "The river is a little murky. You can see dark shapes moving around in it."
+            ]
+          ]
+        }
       ],
       "cross": [
         {
@@ -76,8 +108,6 @@
   "throwStone": [
     "setFlag:FISH_DISTRACTED",
     "removeItem:stone",
-    "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed.",
-    "updateLook:water:The water is a little murky.",
-    "updateLook:river:The river is a little murky."
+    "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed."
   ]
 }

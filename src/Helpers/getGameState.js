@@ -18,8 +18,6 @@ import ifRoom from "../ScriptCommands/ifRoom.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
 import saveGame from "../ScriptCommands/saveGame.js";
 import setFlag from "../ScriptCommands/setFlag.js";
-import updateLook from "../ScriptCommands/updateLook.js";
-import updateRoomDesc from "../ScriptCommands/updateRoomDesc.js";
 import removeItem from "../ScriptCommands/removeItem.js";
 import write from "../ScriptCommands/write.js";
 
@@ -87,8 +85,6 @@ export default function getGameState() {
     removeItem,
     saveGame,
     setFlag,
-    updateLook,
-    updateRoomDesc,
     write,
 
     // Helpers
