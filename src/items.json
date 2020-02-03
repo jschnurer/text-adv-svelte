@@ -20,15 +20,9 @@
     ]
   },
   {
-    "slug": "coin",
+    "slug": "rod",
     "look": [
-      "It's a tarnished golden coin. Who knows how old it is?"
-    ]
-  },
-  {
-    "slug": "fork",
-    "look": [
-      "It's an old, wooden fork. It's a little stained."
+      "It's a cylindrical metal rod about an inch and a half in diameter. It's rusty but still sturdy."
     ]
   },
   {

@@ -36,10 +36,13 @@ import handleUserEntry from "./handleUserEntry.js";
 import handleChoiceInput from "./handleChoiceInput.js";
 import getLocalVars from "./getLocalVars.js";
 
-export default function getGameState() {
-  let savedGame = localStorage.getItem('game_state');
-  if(savedGame) {
-    savedGame = JSON.parse(savedGame);
+export default function getGameState(loadGame) {
+  let savedGame = null;
+  if (loadGame) {
+    savedGame = localStorage.getItem('game_state');
+    if (savedGame) {
+      savedGame = JSON.parse(savedGame);
+    }
   }
 
   let gameState = {
@@ -51,7 +54,7 @@ export default function getGameState() {
     // The player's current inventory of items.
     inventory: [],
     // Variables that are isolated by room.
-    roomVars: [],
+    roomVars: {},
     // Variables that are global to the entire game.
     globalVars: [],
     // The database of rooms.
@@ -109,6 +112,6 @@ export default function getGameState() {
     Object.assign(gameState, savedGame);
     gameState.room = gameState.rooms[currRoomSlug];
   }
-  
+
   return gameState;
 }

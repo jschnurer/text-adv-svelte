@@ -1,5 +1,4 @@
-export default async function loadRoom (slug) {
+export default function loadRoom (slug) {
   this.room = this.rooms[slug];
-  this.room.explored = true;
   this.look();
 };

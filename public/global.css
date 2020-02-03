@@ -58,6 +58,7 @@ input, textarea {
 button {
   font-size: 1em;
   padding: .25em;
+  cursor: pointer;
 }
 
 hint {

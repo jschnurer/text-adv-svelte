@@ -4,7 +4,9 @@
   import Help from "./Help.svelte";
   import getGameState from "./Helpers/getGameState.js";
 
-  let gs = getGameState();
+  export let loadGame = false;
+
+  let gs = getGameState(loadGame);
   gs.updateScroll = () =>
     window.setTimeout(
       () => (output.scrollTop = output.scrollHeight + output.offsetTop),
@@ -22,7 +24,7 @@
   let entry = "";
 
   onMount(async () => {
-    if (!localStorage.getItem("game_state")) {
+    if (!loadGame) {
       await gameState.loadRoom(config.initial_room);
     } else {
       gameState.look();
@@ -109,32 +111,29 @@
   }
 </style>
 
-<bg />
-<main>
-  {#if helpVisible}
-    <Help
-      showHints={gameState.options.showHints}
-      on:toggleHints={() => (gameState.options.showHints = !gameState.options.showHints)} />
-    <button on:click={() => (helpVisible = false)}>Ok, ok. Let me play!</button>
-  {:else}
-    <room bind:this={output}>
-      {#if gameState.isGameOver}
-        <h3>GAME OVER</h3>
-      {/if}
-
-      {#each gameState.text.split('\n') as line}
-        <p>
-          {@html convertSyntax(sanitize(line))}
-        </p>
-      {/each}
-    </room>
-    {#if !gameState.isGameOver}
-      <form on:submit|preventDefault={submit}>
-        <input use:focus bind:value={entry} />
-        <span on:click={help}>❔</span>
-      </form>
-    {:else}
-      <button on:click={() => location.reload()}>Try again</button>
+{#if helpVisible}
+  <Help
+    showHints={gameState.options.showHints}
+    on:toggleHints={() => (gameState.options.showHints = !gameState.options.showHints)} />
+  <button on:click={() => (helpVisible = false)}>Ok, ok. Let me play!</button>
+{:else}
+  <room bind:this={output}>
+    {#if gameState.isGameOver}
+      <h3>GAME OVER</h3>
     {/if}
+
+    {#each gameState.text.split('\n') as line}
+      <p>
+        {@html convertSyntax(sanitize(line))}
+      </p>
+    {/each}
+  </room>
+  {#if !gameState.isGameOver}
+    <form on:submit|preventDefault={submit}>
+      <input use:focus bind:value={entry} />
+      <span on:click={help}>❔</span>
+    </form>
+  {:else}
+    <button on:click={() => location.reload()}>Try again</button>
   {/if}
-</main>
+{/if}
