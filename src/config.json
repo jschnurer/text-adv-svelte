@@ -1,4 +1,3 @@
 {
-  "initial_area": "Forest",
-  "initial_room": "west-clearing"
+  "initial_room": "Forest/west-clearing"
 }

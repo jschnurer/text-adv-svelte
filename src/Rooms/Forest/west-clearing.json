@@ -1,7 +1,6 @@
 {
-  "area": "Forest",
   "name": "Clearing in a Forest",
-  "slug": "west-clearing",
+  "slug": "Forest/west-clearing",
   "description": "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache. You pick yourself up and manage to get on your feet.\nYou are in a small clearing in a dense forest. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "look": [
     {

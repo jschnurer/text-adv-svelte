@@ -10,6 +10,7 @@ export default function parseCmds(cmds, feature) {
       if (!this.parseStringCmd(cmd, feature)) {
         bail = true;
       }
+      this.update();
       return;
     }
     switch (cmd.cmd) {
@@ -47,5 +48,7 @@ export default function parseCmds(cmds, feature) {
         this.choice.apply(this, cmd.args);
         break;
     }
+    
+    this.update();
   });
 };

@@ -25,7 +25,7 @@ import removeItem from "../ScriptCommands/addItem.js";
 import write from "../ScriptCommands/write.js";
 
 // Import helper functions
-import loadRoom from "./loadRoom.js";
+import loadRoom from "../ScriptCommands/loadRoom.js";
 import getFeature from "./getFeature.js";
 import showFeatures from "./showFeatures.js";
 import parseCmds from "./parseCmds.js";
@@ -39,7 +39,12 @@ import handleChoiceInput from "./handleChoiceInput.js";
 import getLocalVars from "./getLocalVars.js";
 
 export default function getGameState() {
-  return {
+  let savedGame = localStorage.getItem('game_state');
+  if(savedGame) {
+    savedGame = JSON.parse(savedGame);
+  }
+
+  let gameState = {
     options: {
       showHints: false,
     },
@@ -89,4 +94,17 @@ export default function getGameState() {
     handleChoiceInput,
     handleUserEntry,
   };
+
+  if (savedGame) {
+    let exploredRooms = savedGame.exploredRooms;
+    delete savedGame.exploredRooms;
+    Object.assign(gameState, savedGame);
+    exploredRooms.forEach(x => {
+      gameState.rooms[gameState.room.slug] = x;
+    });
+
+    gameState.rooms[gameState.room.slug] = gameState.room;
+  }
+  
+  return gameState;
 }
