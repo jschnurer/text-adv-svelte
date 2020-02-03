@@ -3,15 +3,15 @@ export default function saveGame() {
     Object.assign(
       {},
       {
-        options: gameState.options,
-        inventory: gameState.inventory,
-        roomVars: gameState.roomVars,
-        globalVars: gameState.globalVars,
-        exploredRooms: Object.keys(gameState.rooms)
-          .filter(x => gameState.rooms[x].explored)
-          .map(x => gameState.rooms[x]),
-        isGameOver: gameState.isGameOver,
-        room: gameState.room
+        options: this.options,
+        inventory: this.inventory,
+        roomVars: this.roomVars,
+        globalVars: this.globalVars,
+        exploredRooms: Object.keys(this.rooms)
+          .filter(x => this.rooms[x].explored)
+          .map(x => this.rooms[x]),
+        isGameOver: this.isGameOver,
+        room: this.room
       }
     )
   );

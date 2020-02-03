@@ -1,5 +1,7 @@
 export default function look(target) {
   if (!target) {
+    this.text = '';
+    
     this.write(`^${this.room.name}^`);
 
     if (this.room.description) {

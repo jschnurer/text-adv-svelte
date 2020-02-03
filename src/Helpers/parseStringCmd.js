@@ -1,6 +1,7 @@
 const singleWordCmds = [
   "unknownTarget",
-  "destroy"
+  "destroy",
+  "saveGame"
 ]
 
 export default function parseStringCmd(cmd, feature) {

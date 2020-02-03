@@ -1,0 +1,19 @@
+{
+  "name": "Southern bank of a raging river",
+  "slug": "Forest/river-bank",
+  "description": "You're at the southern bank of a raging river. A dirt path leads south and east toward a hill.",
+  "south": [
+    "loadRoom:Forest/quiet-fork"
+  ],
+  "east": [
+    "loadRoom:Forest/hill"
+  ],
+  "features": [
+    {
+      "slug": "river",
+      "look": [
+        "It's a white-rapids river. It's really cranking along. There are loads of jagged looking rocks poking up out of the tubulent water."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "Forest hill",
+  "slug": "Forest/hill",
+  "description": "You're standing at the top of a rocky hill. The ground is covered in rocks and grass. The hill is tall enough to allow you to see over the treetops of the forest below.",
+  "west": [
+    "loadRoom:Forest/river-bank"
+  ],
+  "features": [
+    {
+      "slug": "ruins",
+      "roomDesc": "To the east you can see stone ruins of some kind poking through the forest.",
+      "look": [
+        "The ruins were once a building of some kind, but from here you can't even begin to guess what their purpose might have been."
+      ]
+    },
+    {
+      "slug": "river",
+      "roomDesc": "To the north you can see a snaking river that cuts the forest in half from east to west.",
+      "look": [
+        "The river looks like the current must be very fast."
+      ]
+    },
+    {
+      "slug": "mountain",
+      "roomDesc": "Far to the north, beyond the forest is a massive, black mountain that dominates the horizon.",
+      "look": [
+        "The mountain is massive and steep. It almost seems like its surface doesn't reflect any light at all. The stone that comprises it must be of the darkest black. At the very top of its peak you can see snow. Looking at the black mountain side gives you an uneasy feeling."
+      ]
+    },
+    {
+      "slug": "cairn",
+      "roomDesc": "There is a small cairn of piled stones here.",
+      "look": [
+        "The cairn stands only about 3 feet tall. The stones are covered in runic markings."
+      ],
+      "touch": [
+        "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK.",
+        "saveGame"
+      ]
+    }
+  ]
+}

@@ -28,8 +28,8 @@
       ]
     }
   ],
-  "north": ["loadRoom:Forest/brook-south"],
-  "east": ["loadRoom:Forest/east-fork"],
+  "north": ["loadRoom:Forest/broken-bridge"],
+  "east": ["loadRoom:Forest/quiet-fork"],
   "features": [
     {
       "slug": "hole",

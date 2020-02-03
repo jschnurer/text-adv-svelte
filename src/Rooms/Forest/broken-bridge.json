@@ -1,6 +1,6 @@
 {
-  "name": "River, South Bank",
-  "slug": "Forest/brook-south",
+  "name": "Broken Bridge, South Bank",
+  "slug": "Forest/broken-bridge",
   "description": "You're on the south bank of a raging river that bisects the forest. Its roaring shatters the eerie silence. The river must be at least 50 feet across. An old wooden bridge once spanned the river but has since mostly collapsed and washed away. Part of it still juts out from either side of the river, casting deep shadows beneath it.",
   "north": [
     "The bridge is out and the river looks far too dangerous to cross. Still, if you really wanted to you could try to cross the river."
