@@ -2,11 +2,12 @@ import verbs from "../verbs.json";
 import items from "../items.json";
 
 // Import user commands.
-import look from "../Commands/look.js";
-import take from "../Commands/take.js";
-import move from "../Commands/move.js";
-import listInventory from "../Commands/listInventory.js";
 import clear from "../Commands/clear.js";
+import combineWith from "../Commands/combineWith.js";
+import listInventory from "../Commands/listInventory.js";
+import look from "../Commands/look.js";
+import move from "../Commands/move.js";
+import take from "../Commands/take.js";
 
 // Import script commands.
 import addItem from "../ScriptCommands/addItem.js";
@@ -72,6 +73,7 @@ export default function getGameState(loadGame) {
 
     // User Commands
     clear,
+    combineWith,
     listInventory,
     look,
     move,

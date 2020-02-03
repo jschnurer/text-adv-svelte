@@ -5,7 +5,8 @@ const shortcuts = {
   "w": "west",
   "cl": "clear",
   "l": "look",
-  "t": "take"
+  "t": "take",
+  "i": "inventory"
 }
 
 export default function handleUserEntry(entry) {
@@ -24,6 +25,12 @@ export default function handleUserEntry(entry) {
 
   if (!this.allowedVerbs.find(x => x === cmd)) {
     this.unknownCmd(cmd);
+    return;
+  }
+
+  // Special case for Combine since it is a 4-word command.
+  if (cmd === "combine") {
+    this.combineWith(args.length > 0 ? args[0] : null);
     return;
   }
 

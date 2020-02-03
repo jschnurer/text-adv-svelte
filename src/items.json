@@ -43,5 +43,31 @@
     "look": [
       "It's rusty but should still do its job well enough."
     ]
+  },
+  {
+    "slug": "fishing line",
+    "look": [
+      "It's very thin fishing line. It's very sturdy though."
+    ]
+  },
+  {
+    "slug": "hook",
+    "look": [
+      "It's a small hook made of metal with a loop through the end."
+    ],
+    "combine": {
+      "fishing line": [
+        "You tie the hook onto the fishing line.",
+        "addItem:line and hook",
+        "removeItem:hook",
+        "removeItem:fishing line"
+      ]
+    }
+  },
+  {
+    "slug": "line and hook",
+    "look": [
+      "It's a very thing fishing line with a hook tied to the end."
+    ]
   }
 ]
