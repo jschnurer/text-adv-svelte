@@ -7,7 +7,6 @@ export default function saveGame() {
         inventory: this.inventory,
         roomVars: this.roomVars,
         globalVars: this.globalVars,
-        isGameOver: this.isGameOver,
         currRoomSlug: this.room.slug,
       }
     )
