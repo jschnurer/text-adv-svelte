@@ -6,7 +6,6 @@
   let loadGame = false;
 
   const newGame = () => {
-    localStorage.removeItem("game_state");
     loadGame = false;
     playing = true;
   };
