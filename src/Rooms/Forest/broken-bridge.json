@@ -27,7 +27,6 @@
       "look": [
         "It's a cylindrical, rusty metal rod sticking out of the water about 5 feet from shore."
       ],
-      "hidden": true,
       "targetFlag": "SEEROD",
       "take": [
         {

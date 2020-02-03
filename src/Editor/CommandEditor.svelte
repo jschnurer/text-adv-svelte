@@ -88,7 +88,9 @@
           <label>Cmd Text</label>
           <input type="text" bind:value={cmdText} use:focus />
         </row>
-      {:else}...{/if}
+      {:else}
+        Okay. This is gon' be complex.
+      {/if}
     </div>
   </form>
   <actions>

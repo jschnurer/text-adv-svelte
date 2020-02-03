@@ -1,6 +1,11 @@
 <script>
+  import { onMount } from "svelte";
+  import getGameState from "../Helpers/getGameState.js";
   import Modal from "../Modal.svelte";
   import Editor from "./Editor.svelte";
+
+  export let area = "";
+  export let slug = "";
 
   let output = "";
 
@@ -9,9 +14,7 @@
     name: "",
     slug: "",
     description: "",
-    cmds: {
-      look: []
-    },
+    cmds: {},
     features: []
   };
 
@@ -41,6 +44,44 @@
 
     output = JSON.stringify(outRoom, null, 2);
   };
+
+  onMount(() => {
+    if (slug) {
+      let gs = getGameState();
+      let loadRoom = gs.rooms[`${area}/${slug}`];
+
+      room.name = loadRoom.name;
+      room.slug = loadRoom.slug;
+      room.description = loadRoom.description;
+
+      let dontCopy = ["features", "name", "slug", "description"];
+      Object.keys(loadRoom)
+        .filter(x => dontCopy.indexOf(x) === -1)
+        .forEach(x => {
+          room.cmds[x] = loadRoom[x];
+        });
+
+      if (loadRoom.features) {
+        let notCmdsFeat = ["name", "slug", "description", "targetFlag"];
+
+        loadRoom.features.forEach(feat => {
+          let loadFeat = {type:"feature",cmds:[]};
+          Object.keys(feat).forEach(prop => {
+            if (notCmdsFeat.indexOf(prop) > -1) {
+              loadFeat[prop] = feat[prop];
+            } else {
+              loadFeat.cmds[prop] = feat[prop];
+            }
+          });
+          room.features.push(loadFeat);
+        });
+
+        room.features = room.features;
+      }
+
+      console.log(room.features);
+    }
+  });
 </script>
 
 <style>
@@ -51,7 +92,7 @@
     display: flex;
   }
   textarea {
-    font-size: .75em;
+    font-size: 0.75em;
     min-height: 15em;
   }
 </style>
