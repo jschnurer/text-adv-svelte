@@ -21,6 +21,7 @@
             ],
             [
               "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache and you can't seem to remember what you were doing before you woke up here. You pick yourself up and manage to get on your feet.\n",
+              "addItem:cellphone",
               "setFlag:INTRODONE"
             ]
           ]
@@ -30,8 +31,14 @@
     {
       "slug": "hole",
       "look": [
-        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. {stone}",
+        "It's just a small hole in the dirt. {stone}",
         "setFlag:SEESTONE"
+      ]
+    },
+    {
+      "slug": "dirt",
+      "look": [
+        "It's a little pile of soft soil. It must be from the hole next to it."
       ]
     },
     {

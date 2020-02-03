@@ -26,6 +26,19 @@
     ]
   },
   {
+    "slug": "cellphone",
+    "altSlugs": [
+      "phone",
+      "cell"
+    ],
+    "look": [
+      "It's your phone. You know it's yours because of the crack in the screen. The battery is nearly full."
+    ],
+    "use": [
+      "You wake up your phone. You have 0 bars. No sense in draining the battery."
+    ]
+  },
+  {
     "slug": "nail",
     "look": [
       "It's rusty but should still do its job well enough."
