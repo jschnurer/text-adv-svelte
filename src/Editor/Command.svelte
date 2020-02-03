@@ -57,6 +57,9 @@
     cursor: pointer;
     border-radius: 0.33em;
   }
+  .delete-button {
+    background-color: pink;
+  }
 </style>
 
 <div class="cmd cmd-{index}">
@@ -64,11 +67,15 @@
   <div class="cmd-list">
     {#each cmdList[name] as cmd, ix}
       {#if typeof cmd === 'string'}
-        <div>{cmd}</div>
+        <div>
+          <button class="delete-button">x</button>
+          {cmd}
+        </div>
       {:else}
         <div>
           {#if cmd.cmd === 'ifFlag'}
             <div>
+              <button class="delete-button">x</button>
               If Flag
               <button on:click={() => changeFlag(name, ix)}>
                 {cmd.args[0]}
@@ -80,7 +87,7 @@
                 cmdList={cmd.args}
                 name="1"
                 index={1}
-                on:newCmd={({detail}) => dispatch('newCmd', detail)} />
+                on:newCmd={({ detail }) => dispatch('newCmd', detail)} />
             {/if}
             <div>else:</div>
             {#if cmd.args[2]}
@@ -88,7 +95,7 @@
                 cmdList={cmd.args}
                 name="2"
                 index={2}
-                on:newCmd={({detail}) => dispatch('newCmd', detail)} />
+                on:newCmd={({ detail }) => dispatch('newCmd', detail)} />
             {/if}
           {/if}
         </div>

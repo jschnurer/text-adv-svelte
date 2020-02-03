@@ -1,14 +1,36 @@
 {
   "name": "Clearing in a Forest",
   "slug": "Forest/west-clearing",
-  "description": "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache. You pick yourself up and manage to get on your feet.\nYou are in a small clearing in a dense forest. There's a small hole in the ground nearby. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
-  "north": ["loadRoom:Forest/broken-bridge"],
-  "east": ["loadRoom:Forest/quiet-fork"],
+  "description": "{intro}You are in a small clearing in a dense forest. There's a small hole in the ground nearby with a little pile of dirt next to it. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
+  "north": [
+    "loadRoom:Forest/broken-bridge"
+  ],
+  "east": [
+    "loadRoom:Forest/quiet-fork"
+  ],
   "features": [
+    {
+      "slug": "intro",
+      "notice": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "INTRODONE",
+            [
+              ""
+            ],
+            [
+              "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache. You pick yourself up and manage to get on your feet.\n",
+              "setFlag:INTRODONE"
+            ]
+          ]
+        }
+      ]
+    },
     {
       "slug": "hole",
       "look": [
-        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. At the bottom of the hole is a small, smooth stone.",
+        "Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep. {stone}",
         "setFlag:SEESTONE"
       ]
     },
@@ -17,18 +39,13 @@
       "look": [
         "It's a small, smooth stone that could easily fit in your hand."
       ],
+      "notice": "At the bottom of the hole is a small, smooth stone.",
       "targetFlag": "SEESTONE",
+      "destroyedFlag": "STONETAKEN",
       "take": [
         "addItem:stone",
         "You take the stone.",
-        "updateLook:hole:Soft soil is piled next to a 1-foot-wide hole that is only 6 inches deep.",
-        "destroyFeature:stone"
-      ]
-    },
-    {
-      "slug": "grass",
-      "look": [
-        "There's a patch of grass that's crushed flat."
+        "setFlag:STONETAKEN"
       ]
     }
   ]

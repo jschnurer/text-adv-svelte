@@ -26,6 +26,7 @@ import write from "../ScriptCommands/write.js";
 // Import helper functions
 import loadRoom from "../ScriptCommands/loadRoom.js";
 import getFeature from "./getFeature.js";
+import getFlag from "./getFlag.js";
 import showFeatures from "./showFeatures.js";
 import parseCmds from "./parseCmds.js";
 import parseStringCmd from "./parseStringCmd.js";
@@ -91,12 +92,14 @@ export default function getGameState() {
     write,
 
     // Helpers
+    writeCapturing: false,
     loadRoom,
     showFeatures,
     parseCmds,
     parseStringCmd,
     getLocalVars,
     getFeature,
+    getFlag,
     unknownCmd,
     unknownTarget,
     findTarget,
