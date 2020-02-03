@@ -3,6 +3,7 @@
   let dispatch = createEventDispatcher();
   let type = "simple";
   let cmdText = "";
+  let complexType = "ifFlag";
 
   export let cmd = {};
   $: editCmd = cmd;
@@ -16,7 +17,12 @@
       type === "simple"
         ? cmdText
         : {
-            // TODO: fill obj
+            cmd: complexType,
+            args: [
+              "UNSET",
+              [],
+              []
+            ]
           }
     );
     dispatch("close");
@@ -89,7 +95,13 @@
           <input type="text" bind:value={cmdText} use:focus />
         </row>
       {:else}
-        Okay. This is gon' be complex.
+          <label>Command</label>
+        <row>
+          <label>
+            <input type="radio" value="ifFlag" bind:group={complexType} />
+            ifFlag (checks if a flag is true)
+          </label>
+        </row>
       {/if}
     </div>
   </form>

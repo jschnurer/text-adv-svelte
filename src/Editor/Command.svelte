@@ -6,15 +6,12 @@
   export let index = -1;
   export let name = "";
 
-  const changeFlag = (cmdName) => {
-    let cmd = cmdList[cmdName][0];
-    let argsList = cmd.args;
-
-    let newVal = prompt('Enter flag', argsList[0]);
-    if(newVal) {
-      argsList[0] = newVal;
+  const changeFlag = (cmdName, ix) => {
+    let newVal = prompt("Enter flag", cmdList[cmdName][ix].args[0]);
+    if (newVal) {
+      cmdList[cmdName][ix].args[0] = newVal;
     }
-  }
+  };
 </script>
 
 <style>
@@ -34,13 +31,13 @@
     flex-basis: 6em;
     flex-shrink: 0;
     font-weight: bold;
-    
-    white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
-    white-space: -webkit-pre-wrap; /*Chrome & Safari */ 
-    white-space: -pre-wrap;        /* Opera 4-6 */
-    white-space: -o-pre-wrap;      /* Opera 7 */
-    white-space: pre-wrap;         /* CSS3 */
-    word-wrap: break-word;         /* Internet Explorer 5.5+ */
+
+    white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+    white-space: -webkit-pre-wrap; /*Chrome & Safari */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    white-space: pre-wrap; /* CSS3 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
     word-break: break-all;
     white-space: normal;
   }
@@ -51,7 +48,7 @@
   }
   .cmd-list > div {
     border-top: 1px #666 solid;
-    padding: .2em 0;
+    padding: 0.2em 0;
   }
   button {
     font-size: 0.75em;
@@ -65,19 +62,33 @@
 <div class="cmd cmd-{index}">
   <label>{name}</label>
   <div class="cmd-list">
-    {#each cmdList[name] as cmd}
+    {#each cmdList[name] as cmd, ix}
       {#if typeof cmd === 'string'}
         <div>{cmd}</div>
       {:else}
         <div>
-          {#if cmd.cmd === "ifFlag"}
-            <div>If Flag <button on:click={() => changeFlag(name)}>{cmd.args[0]}</button> is true:</div>
+          {#if cmd.cmd === 'ifFlag'}
+            <div>
+              If Flag
+              <button on:click={() => changeFlag(name, ix)}>
+                {cmd.args[0]}
+              </button>
+              is true:
+            </div>
             {#if cmd.args[1]}
-              <svelte:self cmdList={cmd.args} name="1" index={1} />
+              <svelte:self
+                cmdList={cmd.args}
+                name="1"
+                index={1}
+                on:newCmd={({detail}) => dispatch('newCmd', detail)} />
             {/if}
             <div>else:</div>
             {#if cmd.args[2]}
-              <svelte:self cmdList={cmd.args} name="2" index={2} />
+              <svelte:self
+                cmdList={cmd.args}
+                name="2"
+                index={2}
+                on:newCmd={({detail}) => dispatch('newCmd', detail)} />
             {/if}
           {/if}
         </div>

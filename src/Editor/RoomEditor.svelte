@@ -35,6 +35,15 @@
       outRoom.features.forEach(feature => {
         Object.keys(feature.cmds).forEach(cmdName => {
           feature[cmdName] = feature.cmds[cmdName];
+          feature[cmdName].forEach((x, arrIx) => {
+            if (typeof x === "object") {
+              x.args.forEach((val, ix) => {
+                if(typeof val === 'object' && val.length === 0) {
+                  feature[cmdName][arrIx].args[ix] = null;
+                }
+              });
+            }
+          });
         });
 
         delete feature.cmds;
@@ -65,11 +74,25 @@
         let notCmdsFeat = ["name", "slug", "description", "targetFlag"];
 
         loadRoom.features.forEach(feat => {
-          let loadFeat = {type:"feature",cmds:[]};
+          let loadFeat = { type: "feature", cmds: [] };
           Object.keys(feat).forEach(prop => {
             if (notCmdsFeat.indexOf(prop) > -1) {
               loadFeat[prop] = feat[prop];
             } else {
+              feat[prop].forEach(x => {
+                if (typeof x === "object") {
+                  if (x.cmd === "ifFlag") {
+                    if (x.args[1] === null) {
+                      x.args[1] = [];
+                    }
+
+                    if (x.args[2] === null) {
+                      x.args[2] = [];
+                    }
+                  }
+                }
+              });
+
               loadFeat.cmds[prop] = feat[prop];
             }
           });
@@ -78,8 +101,6 @@
 
         room.features = room.features;
       }
-
-      console.log(room.features);
     }
   });
 </script>
