@@ -24,17 +24,17 @@ export default function combineWith(args) {
     this.unknownTarget(matches[2]);
     return;
   }
-
+  
   // Find the combine commands on one of them.
   let combineCmds = null;
 
   if (target1["combine"]) {
-    combineCmds = target1["combine"][target2];
+    combineCmds = target1["combine"][target2.slug];
   }
 
   if (!combineCmds) {
     if (target2["combine"]) {
-      combineCmds = target2["combine"][target1];
+      combineCmds = target2["combine"][target1.slug];
     }
   }
 

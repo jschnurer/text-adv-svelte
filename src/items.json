@@ -58,16 +58,16 @@
     "combine": {
       "fishing line": [
         "You tie the hook onto the fishing line.",
-        "addItem:line and hook",
+        "addItem:hooked line",
         "removeItem:hook",
         "removeItem:fishing line"
       ]
     }
   },
   {
-    "slug": "line and hook",
+    "slug": "hooked line",
     "look": [
-      "It's a very thing fishing line with a hook tied to the end."
+      "It's a very thin fishing line with a hook tied to the end."
     ]
   }
 ]
