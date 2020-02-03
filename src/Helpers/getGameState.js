@@ -1,17 +1,19 @@
 import verbs from "../verbs.json";
 import items from "../items.json";
 
-// Import commands (both user commands and script commands)
+// Import user commands.
 import look from "../Commands/look.js";
 import take from "../Commands/take.js";
 import move from "../Commands/move.js";
 import listInventory from "../Commands/listInventory.js";
+import clear from "../Commands/clear.js";
 
 // Import script commands.
 import addItem from "../ScriptCommands/addItem.js";
 import choice from "../ScriptCommands/choice.js";
 import destroyFeature from "../ScriptCommands/destroyFeature.js";
 import gameOver from "../ScriptCommands/gameOver.js";
+import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
 import ifVar from "../ScriptCommands/ifVar.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
@@ -39,7 +41,7 @@ import getLocalVars from "./getLocalVars.js";
 export default function getGameState() {
   return {
     options: {
-      showHints: true,
+      showHints: false,
     },
     inventory: [],
     roomVars: [],
@@ -52,6 +54,7 @@ export default function getGameState() {
     items,
 
     // User Commands
+    clear,
     listInventory,
     look,
     move,
@@ -62,6 +65,7 @@ export default function getGameState() {
     choice,
     destroyFeature,
     gameOver,
+    ifFlag,
     ifRoom,
     ifVar,
     invokeRoom,

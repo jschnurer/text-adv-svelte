@@ -7,7 +7,5 @@ export default function () {
     dict[`${r.area}/${r.slug}`] = r;
   });
 
-  console.log(dict);
-
   return dict;
 }

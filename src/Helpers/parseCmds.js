@@ -22,6 +22,9 @@ export default function parseCmds(cmds, feature) {
       case "setGVar":
         this.setVar.apply(this, [this.globalVars, ...cmd.args, feature]);
         break;
+      case "ifFlag":
+        this.ifFlag.apply(this, [...cmd.args, feature]);
+        break;
       case "ifLVar":
         this.ifVar.apply(this, [this.getLocalVars(), ...cmd.args, feature]);
         break;

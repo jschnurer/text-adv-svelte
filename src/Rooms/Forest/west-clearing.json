@@ -29,8 +29,8 @@
       ]
     }
   ],
-  "north": "Forest/brook-south",
-  "east": "Forest/east-fork",
+  "north": ["loadRoom:Forest/brook-south"],
+  "east": ["loadRoom:Forest/east-fork"],
   "features": [
     {
       "slug": "hole",

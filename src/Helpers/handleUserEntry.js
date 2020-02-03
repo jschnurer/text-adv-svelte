@@ -1,3 +1,13 @@
+const shortcuts = {
+  "n": "north",
+  "s": "south",
+  "e": "east",
+  "w": "west",
+  "cl": "clear",
+  "l": "look",
+  "t": "take"
+}
+
 export default function handleUserEntry(entry) {
   if (this.choiceObj) {
     this.handleChoiceInput(entry);
@@ -25,13 +35,12 @@ export default function handleUserEntry(entry) {
     }
   }
 
-  // Shorthand.
-  if (cmd === "t") {
-    cmd = "take";
-  } else if (cmd === "l") {
-    cmd = "look";
+  // Convert shortcuts to full words to match with properties.
+  if (shortcuts[cmd]) {
+    cmd = shortcuts[cmd];
   }
 
+  // If targeting something and that something has the command in it, run those commands.
   if (target && target[cmd]) {
     this.parseCmds(target[cmd], target);
     return;
@@ -39,27 +48,27 @@ export default function handleUserEntry(entry) {
 
   switch (cmd) {
     case "look":
+      // Look needs to be checked here because if there is no
+      // target, it should run the look command without one.
       this.look();
       break;
     case "inventory":
-    case "i":
       this.listInventory();
       break;
     case "north":
-    case "n":
       this.move("north");
       break;
     case "south":
-    case "s":
       this.move("south");
       break;
     case "east":
-    case "e":
       this.move("east");
       break;
     case "west":
-    case "w":
       this.move("west");
+      break;
+    case "clear":
+      this.clear();
       break;
     default:
       this.write("What do you want to " + cmd + "?");
