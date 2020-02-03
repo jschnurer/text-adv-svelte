@@ -31,18 +31,17 @@
       "targetFlag": "SEEROD",
       "take": [
         {
-          "cmd": "ifLVar",
+          "cmd": "ifFlag",
           "args": [
             "FISH_DISTRACTED",
-            false,
-            [
-              "gameOver:You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
-            ],
             [
               "addItem:rod",
               "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
               "updateLook:shadows:The shadows beneath the bridge conceal no further secrets, as far as you can tell.",
               "destroyFeature:rod"
+            ],
+            [
+              "gameOver:You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
             ]
           ]
         }

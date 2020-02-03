@@ -27,6 +27,13 @@
     display: flex;
     flex-direction: column;
   }
+  button {
+    font-size: 0.75em;
+    color: #222;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: .33em;
+  }
 </style>
 
 <div class="cmd cmd-{index}">

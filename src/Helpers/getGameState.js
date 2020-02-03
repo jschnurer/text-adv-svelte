@@ -15,14 +15,12 @@ import destroyFeature from "../ScriptCommands/destroyFeature.js";
 import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
-import ifVar from "../ScriptCommands/ifVar.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
 import saveGame from "../ScriptCommands/saveGame.js";
 import setFlag from "../ScriptCommands/setFlag.js";
-import setVar from "../ScriptCommands/setVar.js";
 import updateLook from "../ScriptCommands/updateLook.js";
 import updateRoomDesc from "../ScriptCommands/updateRoomDesc.js";
-import removeItem from "../ScriptCommands/addItem.js";
+import removeItem from "../ScriptCommands/removeItem.js";
 import write from "../ScriptCommands/write.js";
 
 // Import helper functions
@@ -73,12 +71,10 @@ export default function getGameState() {
     gameOver,
     ifFlag,
     ifRoom,
-    ifVar,
     invokeRoom,
     removeItem,
     saveGame,
     setFlag,
-    setVar,
     updateLook,
     updateRoomDesc,
     write,

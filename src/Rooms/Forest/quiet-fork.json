@@ -16,31 +16,6 @@
       ]
     },
     {
-      "slug": "fork",
-      "look": [
-        "Oddly enough, there IS a wooden fork laying where the path splits.",
-        "updateRoomDesc:fork:There is a wooden fork laying in the path.",
-        "setFlag:sawFork"
-      ],
-      "take": [
-        {
-          "cmd": "ifLVar",
-          "args": [
-            "sawFork",
-            true,
-            [
-              "addItem:fork",
-              "You take the fork in the path. I hope you're pleased with yourself.",
-              "destroyFeature:fork"
-            ],
-            [
-              "unknownTarget:fork"
-            ]
-          ]
-        }
-      ]
-    },
-    {
       "slug": "signpost",
       "look": [
         "It's been rotting away for a long, long time. The single nail that holds it together is rusty but still doing its job.",

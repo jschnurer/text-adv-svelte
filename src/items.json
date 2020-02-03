@@ -8,7 +8,7 @@
       {
         "cmd": "ifRoom",
         "args": [
-          "Forest/brook-south",
+          "Forest/broken-bridge",
           [
             "invokeRoom:throwStone"
           ],
