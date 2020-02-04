@@ -3,10 +3,10 @@
   "slug": "Forest/river-bank",
   "description": "Through the trees you can see that you're at the southern bank of a raging river. A dirt path leads south and also climbs gradually upward to the east.",
   "south": [
-    "loadRoom:Forest/quiet-fork"
+    "loadRoom|Forest/quiet-fork"
   ],
   "east": [
-    "loadRoom:Forest/hill"
+    "loadRoom|Forest/hill"
   ],
   "features": [
     {

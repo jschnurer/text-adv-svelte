@@ -3,10 +3,10 @@
   "slug": "Forest/west-clearing",
   "description": "{intro}You are in a small clearing in a dense forest. There's a small hole in the ground nearby with a little pile of dirt next to it. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "north": [
-    "loadRoom:Forest/broken-bridge"
+    "loadRoom|Forest/broken-bridge"
   ],
   "east": [
-    "loadRoom:Forest/quiet-fork"
+    "loadRoom|Forest/quiet-fork"
   ],
   "features": [
     {
@@ -21,8 +21,8 @@
             ],
             [
               "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache and you can't seem to remember what you were doing before you woke up here. You pick yourself up and manage to get on your feet.\n",
-              "addItem:cellphone",
-              "setFlag:INTRODONE"
+              "addItem|cellphone",
+              "setFlag|INTRODONE"
             ]
           ]
         }
@@ -32,7 +32,7 @@
       "slug": "hole",
       "look": [
         "It's just a small hole in the dirt. {stone}",
-        "setFlag:SEESTONE"
+        "setFlag|SEESTONE"
       ]
     },
     {
@@ -50,9 +50,9 @@
       "targetFlag": "SEESTONE",
       "destroyedFlag": "STONETAKEN",
       "take": [
-        "addItem:stone",
+        "addItem|stone",
         "You take the stone.",
-        "setFlag:STONETAKEN"
+        "setFlag|STONETAKEN"
       ]
     }
   ]

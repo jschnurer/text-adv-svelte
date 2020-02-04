@@ -6,7 +6,7 @@
     "The bridge is out and the river looks far too dangerous to cross. Still, if you really wanted to you could try to cross the river."
   ],
   "south": [
-    "loadRoom:Forest/west-clearing"
+    "loadRoom|Forest/west-clearing"
   ],
   "features": [
     {
@@ -27,7 +27,7 @@
             ],
             [
               "In the shadows beneath the bridge you see a rusty metal rod sticking out of the river about 5 feet from shore.",
-              "setFlag:SEEROD"
+              "setFlag|SEEROD"
             ]
           ]
         }
@@ -45,12 +45,12 @@
           "args": [
             "FISH_DISTRACTED",
             [
-              "addItem:rod",
+              "addItem|rod",
               "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
-              "setFlag:TOOKROD"
+              "setFlag|TOOKROD"
             ],
             [
-              "gameOver:You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
+              "gameOver|You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
             ]
           ]
         }
@@ -95,10 +95,10 @@
           "args": [
             "FISH_DISTRACTED",
             [
-              "gameOver:You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current. You smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under. You lose your bearings in the murky water and smash again and again into sharp rocks. You feel something in your leg snap. The last thing you experience is bashing your head against rock."
+              "gameOver|You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current. You smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under. You lose your bearings in the murky water and smash again and again into sharp rocks. You feel something in your leg snap. The last thing you experience is bashing your head against rock."
             ],
             [
-              "gameOver:You wade out into the murky water and begin to swim. The river begins to carry you downstream. You feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
+              "gameOver|You wade out into the murky water and begin to swim. The river begins to carry you downstream. You feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
             ]
           ]
         }
@@ -106,8 +106,8 @@
     }
   ],
   "throwStone": [
-    "setFlag:FISH_DISTRACTED",
-    "removeItem:stone",
+    "setFlag|FISH_DISTRACTED",
+    "removeItem|stone",
     "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed."
   ]
 }

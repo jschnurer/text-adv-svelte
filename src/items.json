@@ -10,7 +10,7 @@
         "args": [
           "Forest/broken-bridge",
           [
-            "invokeRoom:throwStone"
+            "invokeRoom|throwStone"
           ],
           [
             "You really don't see the point of throwing the stone right now."
@@ -58,9 +58,9 @@
     "combine": {
       "fishing line": [
         "You tie the hook onto the fishing line.",
-        "addItem:hooked line",
-        "removeItem:hook",
-        "removeItem:fishing line"
+        "addItem|hooked line",
+        "removeItem|hook",
+        "removeItem|fishing line"
       ]
     }
   },
