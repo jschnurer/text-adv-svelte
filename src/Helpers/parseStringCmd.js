@@ -5,7 +5,7 @@ const singleWordCmds = [
 ]
 
 export default function parseStringCmd(cmd, feature) {
-  let chunks = cmd.split(":");
+  let chunks = cmd.split("|");
 
   if (chunks.length > 1 || singleWordCmds.indexOf(cmd) > -1) {
     // First part is a command!

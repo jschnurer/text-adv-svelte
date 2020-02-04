@@ -69,5 +69,11 @@
     "look": [
       "It's a very thin fishing line with a hook tied to the end."
     ]
+  },
+  {
+    "slug": "tutorial key",
+    "look": [
+      "It's a brass key. You get the feeling that it's only useful in the tutorial. It definitely opens a locked door."
+    ]
   }
 ]

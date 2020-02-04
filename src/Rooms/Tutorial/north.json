@@ -1,0 +1,55 @@
+{
+  "name": "The Computer Room",
+  "slug": "Tutorial/north",
+  "description": "You're in a large, brightly lit room. A single, uncomfortable looking metal chair sits before a huge computer console that takes up nearly the entire north wall. There's a door to the south.",
+  "south": [
+    "loadRoom|Tutorial/center"
+  ],
+  "features": [
+    {
+      "slug": "computer",
+      "look": [
+        "It's covered in blinking lights, gauges, switches and buttons. One of the buttons is labeled \"Exit Door Clamp Control\".",
+        "Hint: You can perform all sorts of actions in the game. If you need more guidance you can look at this \"note\" that I left here that will tell you exactly what you need to do to progress."
+      ]
+    },
+    {
+      "slug": "note",
+      "look": [
+        "Theres a handwritten note taped to the computer console next to the button:",
+        "]The \"Exit Door Clamp Control\" button will seal or unseal the main exit from the tutorial facility.\nTo use the button, you would type \"push button\"."
+      ]
+    },
+    {
+      "slug": "chair",
+      "look": [
+        "It doesn't look very comfortable"
+      ],
+      "sit": [
+        "You sit in the chair. It isn't very comfortable so you stand back up."
+      ]
+    },
+    {
+      "slug": "button",
+      "look": [
+        "It's a round, red button. There's a label above it: \"Exit Door Clamp Control\"."
+      ],
+      "push": [
+        "You push the button.",
+        "You hear mechanical whirring and then a loud clank from the south.",
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.TUT_EAST_UNLOCKED",
+            [
+              "unsetFlag|G.TUT_EAST_UNLOCKED"
+            ],
+            [
+              "setFlag|G.TUT_EAST_UNLOCKED"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

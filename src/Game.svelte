@@ -76,9 +76,16 @@
   };
 
   const convertSyntax = text => {
-    return text
+    let nt = text
       .replace(/%(.+?)%/g, "<hint>$1</hint>")
-      .replace(/\^(.+?)\^/g, "<h3>$1</h3>");
+      .replace(/\^(.+?)\^/g, "<h3>$1</h3>")
+      .replace(/\\/g, "<br />");
+
+    if (nt.startsWith(']')) {
+      return nt.substring(1);
+    } else {
+      return nt;
+    }
   };
 </script>
 
@@ -109,6 +116,10 @@
   button {
     margin-top: 1.5em;
   }
+
+  .indent {
+    margin-left: 2em;
+  }
 </style>
 
 {#if helpVisible}
@@ -123,7 +134,7 @@
     {/if}
 
     {#each gameState.text.split('\n') as line}
-      <p>
+      <p class={line.startsWith(']') ? "indent" : ""}>
         {@html convertSyntax(sanitize(line))}
       </p>
     {/each}

@@ -50,7 +50,7 @@ function addNotices(haystack, gameState) {
         gameState.writeCapturing = true;
         gameState.parseCmds(feat.notice);
         gameState.writeCapturing = false;
-        return gameState.capturedText;
+        return gameState.capturedText.replace('\n', '');
       }
     }
     return '';

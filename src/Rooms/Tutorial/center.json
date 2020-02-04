@@ -1,0 +1,149 @@
+{
+  "name": "A White Room",
+  "slug": "Tutorial/center",
+  "description": "Welcome to Adventure. You're standing in an empty room with white walls, floor, and ceiling. There's a table here with a pile of stuff on it. There are doors to the north, east and west.\n\nHint: You can investigate things by using the \"look [target]\" command. If you want to just get the description of the area you're in, you can simply type \"look\". Try looking at the \"table\" or the \"stuff\". You can also go to other areas with the commands \"north\", \"south\", \"east\" and \"west\".",
+  "north": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "NORTHUNLOCKED",
+        [
+          "loadRoom|Tutorial/north"
+        ],
+        [
+          "The door to the north is locked.",
+          {
+            "cmd": "ifHasItem",
+            "args": [
+              "tutorial key",
+              [
+                "Hint: You can \"unlock\" things. Try \"unlock north door\"."
+              ],
+              [
+                "Hint: Maybe if you \"look\" around you can find a key somewhere."
+              ]
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "east": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.TUT_EAST_UNLOCKED",
+        [
+          "loadRoom|Tutorial/east"
+        ],
+        [
+          "You can't open the door. There are clamps holding it shut. They look electronically controlled."
+        ]
+      ]
+    }
+  ],
+  "west": [
+    "loadRoom|Tutorial/west"
+  ],
+  "features": [
+    {
+      "slug": "table",
+      "look": [
+        "It's a plain metal table with a white surface. There's a jumble of stuff on its surface.",
+        "Hint: Try \"look [stuff]\"!"
+      ]
+    },
+    {
+      "slug": "stuff",
+      "look": [
+        "There's a pile of odds and ends. Tools, greeting cards, thumbtacks and all other manner of useless kitsch. {key}",
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "TOOKKEY",
+            [
+              "Hint: When you investigate things you may notice other objects you can interact with. Some things might not be interactable, like the tools or thumbtacks (try \"look tools\" to see)."
+            ],
+            [
+              "Hint: When you investigate things you may notice other objects you can interact with. Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\"). Other things might not be interactable, like the tools or thumbtacks (try \"look tools\" to see)."
+            ]
+          ]
+        },
+        "setFlag|SAWKEY"
+      ]
+    },
+    {
+      "slug": "key",
+      "targetFlag": "SAWKEY",
+      "destroyFlag": "TOOKKEY",
+      "notice": [
+        "There's also a brass key!"
+      ],
+      "look": [
+        "It's a normal looking, brass key. It's probably for a door (Hint: it is!)."
+      ],
+      "take": [
+        "You take the key from the pile of junk.",
+        "Hint: Now that you took the key, it's not in the world anymore. Now it's in your inventory. You can check your inventory with the \"inventory\" command. You can interact with things in your inventory just like if they were in the world. The key's name is \"tutorial key\" in your inventory so you can look at it with \"look tutorial key\".",
+        "addItem|tutorial key",
+        "setFlag|TOOKKEY"
+      ]
+    },
+    {
+      "slug": "door",
+      "look": [
+        "Hint: Sometimes a word (like door) could describe multiple things. In this case, both the \"north door\" and \"east door\" are interactable."
+      ]
+    },
+    {
+      "slug": "east door",
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.EASTDOORUNLOCKED",
+            [
+              "There are clamps around the edges of the door. They're currently open though, so you should be able to use the door."
+            ],
+            [
+              "There are clamps around the edges of the door sealing it shut. They look electronically controlled."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "north door",
+      "look": [
+        "It's a white door. There's a keyhole in the knob."
+      ],
+      "unlock": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "NORTHUNLOCKED",
+            [
+              "It's not locked."
+            ],
+            [
+              {
+                "cmd": "ifHasItem",
+                "args": [
+                  "tutorial key",
+                  [
+                    "You use the tutorial key to unlock the door.",
+                    "removeItem|tutorial key",
+                    "setFlag|NORTHUNLOCKED"
+                  ],
+                  [
+                    "You don't have a key that fits."
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

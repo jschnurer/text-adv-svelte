@@ -1,0 +1,44 @@
+{
+  "name": "The Learning Room",
+  "slug": "Tutorial/west",
+  "description": "You're standing in a room with a single chair in the center facing the west wall. On that wall there's a large blackboard filled with information. A whiteboard is next to it on the wall too. There's a door leading to the east.",
+  "east": [
+    "loadRoom|Tutorial/center"
+  ],
+  "features": [
+    {
+      "slug": "chair",
+      "look": [
+        "It's one of those classroom type chairs with the little desk surface thingy on the front. There's a book on the desk open to a page about item combinations.",
+        "setFlag|SAWBOOK"
+      ],
+      "sit": [
+        "You sit in the chair. You feel ready to learn! Then you feel a little silly so you stand back up."
+      ]
+    },
+    {
+      "slug": "book",
+      "targetFlag": "SAWBOOK",
+      "look": [
+        "The book is open to a chapter about item combinations:",
+        "]Certain items can be combined with other items.\\Sometimes you can even combine things in your inventory with things in the world, vice versa, or any combination thereof.\\To combine items you type \"combine [item1] with [item2]\". You'll find out if they're combinable!"
+      ]
+    },
+    {
+      "slug": "blackboard",
+      "look": [
+        "The blackboard reads:",
+        "]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - s\\south - s\\east - e\\west - w\\clear - cl"
+      ]
+    },
+    {
+      "slug": "whiteboard",
+      "look": [
+        "The whiteboard reads:",
+        "]Sometimes the screen gets overwhelmed with text (like when you \"look\" at all kinds of stuff). If you're feeling overwhelmed, you can type \"clear\" which will clear the screen. Make sure to \"look\" again afterward or you're just staring at an empty screen!",
+        "There's a scrawled note at the bottom corner of the whiteboard:",
+        "]Yo dawg, you should \"look\" at the chair in here. I left my book on it."
+      ]
+    }
+  ]
+}

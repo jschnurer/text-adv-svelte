@@ -15,11 +15,13 @@ import choice from "../ScriptCommands/choice.js";
 import destroyFeature from "../ScriptCommands/destroyFeature.js";
 import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
+import ifHasItem from "../ScriptCommands/ifHasItem.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
+import removeItem from "../ScriptCommands/removeItem.js";
 import saveGame from "../ScriptCommands/saveGame.js";
 import setFlag from "../ScriptCommands/setFlag.js";
-import removeItem from "../ScriptCommands/removeItem.js";
+import unsetFlag from "../ScriptCommands/unsetFlag.js";
 import write from "../ScriptCommands/write.js";
 
 // Import helper functions
@@ -81,6 +83,7 @@ export default function getGameState(loadGame) {
 
     // Script Commands
     addItem,
+    ifHasItem,
     choice,
     destroyFeature,
     gameOver,
@@ -90,6 +93,7 @@ export default function getGameState(loadGame) {
     removeItem,
     saveGame,
     setFlag,
+    unsetFlag,
     write,
 
     // Helpers

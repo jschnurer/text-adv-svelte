@@ -13,13 +13,16 @@ export default function parseCmds(cmds, feature) {
       this.update();
       return;
     }
-    
+
     switch (cmd.cmd) {
       case "write":
         this.write.apply(this, cmd.args);
         break;
       case "ifFlag":
         this.ifFlag.apply(this, [...cmd.args, feature]);
+        break;
+      case "ifHasItem":
+        this.ifHasItem.apply(this, [...cmd.args, feature]);
         break;
       case "addItem":
         this.addItem.apply(this, cmd.args);
@@ -37,7 +40,7 @@ export default function parseCmds(cmds, feature) {
         this.choice.apply(this, cmd.args);
         break;
     }
-    
+
     this.update();
   });
 };
