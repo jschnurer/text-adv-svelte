@@ -61,7 +61,8 @@
             "args": [
               "ERROR. PLEASE RESPONSE. YES OR. NO. DO YOU... LIKE ME?",
               [
-                "yes", "no"
+                "yes",
+                "no"
               ],
               {
                 "yes": [
@@ -78,6 +79,12 @@
       "give": {
         "": [
           "ERROR. I DO. NOT REQUIRE. THAT OBJECT. I REQUIRE. ONLY BANANA."
+        ],
+        "TUTORIAL_BANANA": [
+          "The robot holds out a mechanical claw. You put the banana into its hand. The robot closes its grip, utterly annihilating the poor banana, sending yellow mulch down its arm and into clumps on the floor.",
+          "THANK YOU. HUMAN. AS PROMISED. HERE IS. COMPUTER PASSKEY.",
+          "addItem|TUTORIAL_PC_KEY",
+          "removeItem|TUTORIAL_BANANA"
         ]
       }
     },

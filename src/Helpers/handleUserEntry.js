@@ -10,6 +10,15 @@ const shortcuts = {
 }
 
 export default function handleUserEntry(entry) {
+  this.capturedText = '';
+  
+  if (this.waitCmds) {
+    this.parseCmds(this.waitCmds);
+    return;
+  } else if(!entry) {
+    return;
+  }
+
   this.write(`~${entry}~`);
 
   if (this.choiceObj) {
@@ -70,7 +79,7 @@ export default function handleUserEntry(entry) {
     case "look":
       // Look needs to be checked here because if there is no
       // target, it should run the look command without one.
-      this.look();
+      this.lookRoom();
       break;
     case "inventory":
       this.listInventory();

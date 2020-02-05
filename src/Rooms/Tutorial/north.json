@@ -9,9 +9,16 @@
     {
       "slug": "computer",
       "look": [
-        "It's covered in blinking lights, gauges, switches and buttons. One of the buttons is labeled \"Exit Door Clamp Control\".",
+        "It's covered in blinking lights, gauges, switches, keyboards, and inputs. {button}",
         "Hint: You can perform all sorts of actions in the game. If you need more guidance you can look at this \"note\" that I left here that will tell you exactly what you need to do to progress."
-      ]
+      ],
+      "use": {
+        "TUTORIAL_PC_KEY": [
+          "removeItem|TUTORIAL_PC_KEY",
+          "You pick a random keyboard and punch in the passkey. The glass case covering a red button flips open.",
+          "setFlag|CASEOPEN"
+        ]
+      }
     },
     {
       "slug": "note",
@@ -31,24 +38,79 @@
     },
     {
       "slug": "button",
-      "look": [
-        "It's a round, red button. There's a label above it: \"Exit Door Clamp Control\"."
+      "notice": [
+        "There is a button labeled \"Exit Door Clamp Control\" with a glass case."
       ],
-      "push": [
-        "You push the button.",
-        "You hear mechanical whirring and then a loud clank from the south.",
+      "look": [
+        "It's a round, red button. There's a label above it: \"Exit Door Clamp Control\".",
         {
           "cmd": "ifFlag",
           "args": [
-            "G.TUT_EAST_UNLOCKED",
+            "CASEOPEN",
             [
-              "unsetFlag|G.TUT_EAST_UNLOCKED"
+              "The glass case around it is flipped open. You can press the button now."
             ],
             [
-              "setFlag|G.TUT_EAST_UNLOCKED"
+              "There is a glass case around it sealing it in. You won't be able to press the button until it's open."
             ]
           ]
         }
+      ],
+      "push": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CASEOPEN",
+            [
+              "You push the button.",
+              "You hear mechanical whirring and then a loud clank from the south.",
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "G.TUT_EAST_UNLOCKED",
+                  [
+                    "unsetFlag|G.TUT_EAST_UNLOCKED"
+                  ],
+                  [
+                    "setFlag|G.TUT_EAST_UNLOCKED"
+                  ]
+                ]
+              }
+            ],
+            [
+              "You can't push the button. There's a glass case sealing it in!"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "case",
+      "altSlugs": [
+        "glass"
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CASEOPEN",
+            [
+              "The glass case is flipped up, allowing access to the button."
+            ],
+            [
+              "The glass case is sealing in the button. You'll have to use a passkey on the computer to open it."
+            ]
+          ]
+        }
+      ],
+      "open": [
+        "There's no way to physically open it. You'll have to use a passkey on the computer."
+      ],
+      "break": [
+        "You smack it a good one but it doesn't break."
+      ],
+      "smash": [
+        "You smack it a good one but it doesn't break."
       ]
     }
   ]

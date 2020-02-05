@@ -15,9 +15,9 @@
           {
             "cmd": "ifHasItem",
             "args": [
-              "tutorial key",
+              "TUTORIAL_KEY",
               [
-                "Hint: You can use objects on other objects. Try \"use tutorial key on north door\"."
+                "Hint: You can use objects on other objects. Try \"use key on north door\" or \"use tutorial key on north door\"."
               ],
               [
                 "Hint: Maybe if you \"look\" around you can find a key somewhere."
@@ -56,7 +56,7 @@
     {
       "slug": "stuff",
       "look": [
-        "There's a pile of odds and ends. Tools, greeting cards, thumbtacks and all other manner of useless kitsch. {key}",
+        "There's a pile of odds and ends. Tools, greeting cards, thumbtacks, {banana} and all other manner of useless kitsch. {key}",
         {
           "cmd": "ifFlag",
           "args": [
@@ -69,13 +69,26 @@
             ]
           ]
         },
-        "setFlag|SAWKEY"
+        "setFlag|SAWKEY",
+        "setFlag|SAWBANANA"
+      ]
+    },
+    {
+      "slug": "banana",
+      "targetFlag": "SAWBANANA",
+      "destroyedFlag": "TOOKBANANA",
+      "notice": "a banana,",
+      "look": ["It's a yellow banana."],
+      "take": [
+        "addItem|TUTORIAL_BANANA",
+        "setFlag|TOOKBANANA",
+        "You take the banana from the pile of stuff."
       ]
     },
     {
       "slug": "key",
       "targetFlag": "SAWKEY",
-      "destroyFlag": "TOOKKEY",
+      "destroyedFlag": "TOOKKEY",
       "notice": [
         "There's also a brass key!"
       ],
@@ -85,7 +98,7 @@
       "take": [
         "You take the key from the pile of junk.",
         "Hint: Now that you took the key, it's not in the world anymore. Now it's in your inventory. You can check your inventory with the \"inventory\" command. You can interact with things in your inventory just like if they were in the world. The key's name is \"tutorial key\" in your inventory so you can look at it with \"look tutorial key\".",
-        "addItem|tutorial key",
+        "addItem|TUTORIAL_KEY",
         "setFlag|TOOKKEY"
       ]
     },
@@ -101,9 +114,9 @@
         {
           "cmd": "ifFlag",
           "args": [
-            "G.EASTDOORUNLOCKED",
+            "G.TUT_EAST_UNLOCKED",
             [
-              "There are clamps around the edges of the door. They're currently open though, so you should be able to use the door."
+              "There are clamps around the edges of the door. They're currently open so you should be able to use the door."
             ],
             [
               "There are clamps around the edges of the door sealing it shut. They look electronically controlled."
@@ -118,9 +131,9 @@
         "It's a white door. There's a keyhole in the knob."
       ],
       "use": {
-        "tutorial key": [
+        "TUTORIAL_KEY": [
           "You use the tutorial key to unlock the door. You have no further use of the tutorial key so you discard it.",
-          "removeItem|tutorial key",
+          "removeItem|TUTORIAL_KEY",
           "setFlag|NORTHUNLOCKED"
         ]
       }
@@ -137,7 +150,9 @@
         "It's all around you, man..."
       ],
       "skip": [
-        "removeItem|tutorial key",
+        "removeItem|TUTORIAL_KEY",
+        "removeItem|TUTORIAL_PC_KEY",
+        "removeItem|TUTORIAL_BANANA",
         "loadRoom|Forest/west-clearing"
       ]
     }

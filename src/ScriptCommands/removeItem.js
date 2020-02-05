@@ -1,3 +1,3 @@
-export default function removeItem(slug) {
-  this.inventory = this.inventory.filter(x => x.slug !== slug);
+export default function removeItem(id) {
+  this.inventory = this.inventory.filter(x => x.id !== id);
 };

@@ -26,5 +26,8 @@
   "use",
   "ask",
   "greet",
-  "give"
+  "give",
+  "open",
+  "break",
+  "smash"
 ]

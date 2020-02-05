@@ -7,7 +7,7 @@ import clear from "../Commands/clear.js";
 import combine from "../Commands/combine.js";
 import give from "../Commands/give.js";
 import listInventory from "../Commands/listInventory.js";
-import look from "../Commands/look.js";
+import lookRoom from "../ScriptCommands/lookRoom.js";
 import move from "../Commands/move.js";
 import take from "../Commands/take.js";
 import use from "../Commands/use.js";
@@ -25,9 +25,11 @@ import removeItem from "../ScriptCommands/removeItem.js";
 import saveGame from "../ScriptCommands/saveGame.js";
 import setFlag from "../ScriptCommands/setFlag.js";
 import unsetFlag from "../ScriptCommands/unsetFlag.js";
+import waitForInput from "../ScriptCommands/waitForInput.js";
 import write from "../ScriptCommands/write.js";
 
 // Import helper functions
+import findItem from "./findItem.js";
 import findTarget from "./findTarget.js";
 import getFeature from "./getFeature.js";
 import getFlag from "./getFlag.js";
@@ -76,6 +78,10 @@ export default function getGameState(loadGame) {
     allowedVerbs: verbs,
     // The database of items.
     items,
+    // The current depth of write capturing (0 means output to screen).
+    writeCapturing: 0,
+    // If we 
+    waitCmds: null,
 
     // User Commands
     ask,
@@ -83,7 +89,6 @@ export default function getGameState(loadGame) {
     combine,
     give,
     listInventory,
-    look,
     move,
     take,
     use,
@@ -101,9 +106,11 @@ export default function getGameState(loadGame) {
     saveGame,
     setFlag,
     unsetFlag,
+    waitForInput,
     write,
 
     // Helpers
+    findItem,
     findTarget,
     getFeature,
     getFlag,
@@ -111,13 +118,13 @@ export default function getGameState(loadGame) {
     handleChoiceInput,
     handleUserEntry,
     loadRoom,
+    lookRoom,
     parseCmds,
     parseStringCmd,
     showFeatures,
     tryObjectInteraction,
     unknownCmd,
     unknownTarget,
-    writeCapturing: false,
   };
 
   if (savedGame) {

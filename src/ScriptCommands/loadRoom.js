@@ -3,5 +3,5 @@ export default function loadRoom (slug) {
   if (!this.room) {
     console.log(`Room '${slug}' not found!`);
   }
-  this.look();
+  this.lookRoom();
 };

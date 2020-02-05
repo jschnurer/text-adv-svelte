@@ -36,9 +36,6 @@
   };
 
   const submit = () => {
-    if (!entry) {
-      return;
-    }
     gameState.handleUserEntry(entry.trim());
     entry = "";
   };

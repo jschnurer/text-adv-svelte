@@ -21,7 +21,7 @@
             ],
             [
               "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache and you can't seem to remember what you were doing before you woke up here. You pick yourself up and manage to get on your feet.\n",
-              "addItem|cellphone",
+              "addItem|CELLPHONE",
               "setFlag|INTRODONE"
             ]
           ]
@@ -50,7 +50,7 @@
       "targetFlag": "SEESTONE",
       "destroyedFlag": "STONETAKEN",
       "take": [
-        "addItem|stone",
+        "addItem|FISH_STONE",
         "You take the stone.",
         "setFlag|STONETAKEN"
       ]

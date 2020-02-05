@@ -45,7 +45,7 @@
           "args": [
             "FISH_DISTRACTED",
             [
-              "addItem|rod",
+              "addItem|RUINS_ROD_1",
               "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
               "setFlag|TOOKROD"
             ],
@@ -107,7 +107,7 @@
   ],
   "throwStone": [
     "setFlag|FISH_DISTRACTED",
-    "removeItem|stone",
+    "removeItem|FISH_STONE",
     "You throw the stone into the river. Dark shapes beneath the murky water quickly dart downstream to where the stone splashed."
   ]
 }
