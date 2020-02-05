@@ -17,7 +17,7 @@
             "args": [
               "tutorial key",
               [
-                "Hint: You can \"unlock\" things. Try \"unlock north door\"."
+                "Hint: You can use objects on other objects. Try \"use tutorial key on north door\"."
               ],
               [
                 "Hint: Maybe if you \"look\" around you can find a key somewhere."
@@ -117,33 +117,13 @@
       "look": [
         "It's a white door. There's a keyhole in the knob."
       ],
-      "unlock": [
-        {
-          "cmd": "ifFlag",
-          "args": [
-            "NORTHUNLOCKED",
-            [
-              "It's not locked."
-            ],
-            [
-              {
-                "cmd": "ifHasItem",
-                "args": [
-                  "tutorial key",
-                  [
-                    "You use the tutorial key to unlock the door.",
-                    "removeItem|tutorial key",
-                    "setFlag|NORTHUNLOCKED"
-                  ],
-                  [
-                    "You don't have a key that fits."
-                  ]
-                ]
-              }
-            ]
-          ]
-        }
-      ]
+      "use": {
+        "tutorial key": [
+          "You use the tutorial key to unlock the door. You have no further use of the tutorial key so you discard it.",
+          "removeItem|tutorial key",
+          "setFlag|NORTHUNLOCKED"
+        ]
+      }
     },
     {
       "slug": "sign",
@@ -152,7 +132,7 @@
       ]
     },
     {
-      "slug":"tutorial",
+      "slug": "tutorial",
       "look": [
         "It's all around you, man..."
       ],

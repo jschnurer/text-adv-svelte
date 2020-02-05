@@ -10,6 +10,8 @@ const shortcuts = {
 }
 
 export default function handleUserEntry(entry) {
+  this.write(`~${entry}~`);
+
   if (this.choiceObj) {
     this.handleChoiceInput(entry);
     return;
@@ -29,9 +31,20 @@ export default function handleUserEntry(entry) {
   }
 
   // Special case for Combine since it is a 4-word command.
-  if (cmd === "combine") {
-    this.combineWith(args.length > 0 ? args[0] : null);
-    return;
+  // Special cases for 4-word commands.
+  switch (cmd) {
+    case "ask":
+      this.ask(args.length > 0 ? args[0] : null);
+      return;
+    case "combine":
+      this.combine(args.length > 0 ? args[0] : null);
+      return;
+    case "use":
+      this.use(args.length > 0 ? args[0] : null);
+      return;
+    case "give":
+      this.give(args.length > 0 ? args[0] : null);
+      return;
   }
 
   if (args.length > 0) {

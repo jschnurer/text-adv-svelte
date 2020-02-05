@@ -20,8 +20,11 @@
   "touch",
   "use",
   "combine",
-  "unlock",
   "push",
   "sit",
-  "skip"
+  "skip",
+  "use",
+  "ask",
+  "greet",
+  "give"
 ]

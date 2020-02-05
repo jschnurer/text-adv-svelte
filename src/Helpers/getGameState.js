@@ -2,12 +2,15 @@ import verbs from "../verbs.json";
 import items from "../items.json";
 
 // Import user commands.
+import ask from "../Commands/ask.js";
 import clear from "../Commands/clear.js";
-import combineWith from "../Commands/combineWith.js";
+import combine from "../Commands/combine.js";
+import give from "../Commands/give.js";
 import listInventory from "../Commands/listInventory.js";
 import look from "../Commands/look.js";
 import move from "../Commands/move.js";
 import take from "../Commands/take.js";
+import use from "../Commands/use.js";
 
 // Import script commands.
 import addItem from "../ScriptCommands/addItem.js";
@@ -25,19 +28,20 @@ import unsetFlag from "../ScriptCommands/unsetFlag.js";
 import write from "../ScriptCommands/write.js";
 
 // Import helper functions
-import loadRoom from "../ScriptCommands/loadRoom.js";
+import findTarget from "./findTarget.js";
 import getFeature from "./getFeature.js";
 import getFlag from "./getFlag.js";
-import showFeatures from "./showFeatures.js";
+import getLocalVars from "./getLocalVars.js";
+import getRoomDictionary from "./getRoomDictionary.js";
+import handleChoiceInput from "./handleChoiceInput.js";
+import handleUserEntry from "./handleUserEntry.js";
+import loadRoom from "../ScriptCommands/loadRoom.js";
 import parseCmds from "./parseCmds.js";
 import parseStringCmd from "./parseStringCmd.js";
+import showFeatures from "./showFeatures.js";
+import tryObjectInteraction from "./tryObjectInteraction.js";
 import unknownCmd from "../Helpers/unknownCmd.js";
 import unknownTarget from "./unknownTarget.js";
-import findTarget from "./findTarget.js";
-import getRoomDictionary from "./getRoomDictionary.js";
-import handleUserEntry from "./handleUserEntry.js";
-import handleChoiceInput from "./handleChoiceInput.js";
-import getLocalVars from "./getLocalVars.js";
 
 export default function getGameState(loadGame) {
   let savedGame = null;
@@ -74,12 +78,15 @@ export default function getGameState(loadGame) {
     items,
 
     // User Commands
+    ask,
     clear,
-    combineWith,
+    combine,
+    give,
     listInventory,
     look,
     move,
     take,
+    use,
 
     // Script Commands
     addItem,
@@ -97,19 +104,20 @@ export default function getGameState(loadGame) {
     write,
 
     // Helpers
-    writeCapturing: false,
-    loadRoom,
-    showFeatures,
-    parseCmds,
-    parseStringCmd,
-    getLocalVars,
+    findTarget,
     getFeature,
     getFlag,
-    unknownCmd,
-    unknownTarget,
-    findTarget,
+    getLocalVars,
     handleChoiceInput,
     handleUserEntry,
+    loadRoom,
+    parseCmds,
+    parseStringCmd,
+    showFeatures,
+    tryObjectInteraction,
+    unknownCmd,
+    unknownTarget,
+    writeCapturing: false,
   };
 
   if (savedGame) {

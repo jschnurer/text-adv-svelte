@@ -4,7 +4,7 @@ export default function handleChoiceInput(entry) {
       .map(x => x.toLowerCase())
       .indexOf(entry.toLowerCase()) === -1
   ) {
-    this.write(choiceObj.repeat);
+    this.write(this.choiceObj.repeat);
     return;
   }
   let resolutionPath = this.choiceObj.resolution[entry.toLowerCase()];

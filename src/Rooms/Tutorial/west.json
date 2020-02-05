@@ -1,11 +1,86 @@
 {
   "name": "The Learning Room",
   "slug": "Tutorial/west",
-  "description": "You're standing in a room with a single chair in the center facing the west wall. On that wall there's a large blackboard filled with information. A whiteboard is next to it on the wall too. There's a door leading to the east.",
+  "description": "You're standing in a room with a single chair in the center facing the west wall. On that wall there's a large blackboard filled with information. A whiteboard is next to it on the wall too.\\\\{robot}\\\\There's a door leading to the east.",
   "east": [
     "loadRoom|Tutorial/center"
   ],
   "features": [
+    {
+      "slug": "robot",
+      "notice": [
+        "There's a robot standing in the corner. It speaks in a mechanical voice: \"HELLO HUMAN. WHEN YOU. MEET PEOPLE. YOU CAN. 'GREET' THEM. TRY GREETING. ME.\" (\"greet robot\")."
+      ],
+      "look": [
+        "It's a shiny metal robot about 5' tall\". It's just standing there in the corner. It has a small sticker on its chest of a cartoon monkey eating a banana."
+      ],
+      "greet": [
+        "GOOD DAY. TO YOU, HUMAN.",
+        "YOU CAN. ASK QUESTIONS. (\"ask [person] about [topic]\") YOU CAN. GIVE ITEMS. (\"give [item] to [person]\") SOMETIMES YOU. HAVE A. CHOICE. ASK ME. ABOUT CHOICE.",
+        "I WILL. GIVE COMPUTER. PASSKEY FOR. BANANA. I WILL. ALSO ANSWER. QUESTIONS."
+      ],
+      "ask": {
+        "": [
+          "ERROR. I DO. NOT KNOW. ANYTHING ABOUT. THAT TOPIC."
+        ],
+        "banana": [
+          "YES, BANANA. I CANNOT. EAT. THE COLOR. IS PLEASING. I WILL. GIVE PASSKEY. FOR BANANA."
+        ],
+        "sticker": [
+          "YES, STICKER. I FOUND. IT IN. THE TRASH. IS THE. COLOR NOT. PLEASING TO. THE OPTICAL. SENSORS?"
+        ],
+        "blackboard": [
+          "YES, BLACKBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU."
+        ],
+        "whiteboard": [
+          "YES, WHITEBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU."
+        ],
+        "book": [
+          "YES, BOOK. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU."
+        ],
+        "chair": [
+          "YES, CHAIR. I DO. NOT REQUIRE. SITTING."
+        ],
+        "tutorial": [
+          "YES, TUTORIAL. IT WAS. MADE FOR. YOU TO. LEARN"
+        ],
+        "passkey": [
+          "YES, PASSKEY. I WILL. GIVE IT. FOR BANANA. IT GRANTS. ACCESS TO. COMPUTER SYSTEM."
+        ],
+        "computer": [
+          "YES, COMPUTER. IT REQUIRES. PASSKEY TO. USE IT. I REQUIRE. BANANA TO. GIVE PASSKEY."
+        ],
+        "life": [
+          "YES, LIFE. I DO. NOT HAVE. ONE. NEITHER DOES. MY CREATOR."
+        ],
+        "choice": [
+          "I WILL. NOW PRESENT. YOU WITH. A DIFFICULT. CHOICE:",
+          "DO YOU... LIKE ME?",
+          {
+            "cmd": "choice",
+            "args": [
+              "ERROR. PLEASE RESPONSE. YES OR. NO. DO YOU... LIKE ME?",
+              [
+                "yes", "no"
+              ],
+              {
+                "yes": [
+                  "YOUR RESPONSE. IS AGREEABLE. PLEASE GIVE. BANANA."
+                ],
+                "no": [
+                  "YOUR RESPONSE. IS UNPLEASANT."
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "give": {
+        "": [
+          "ERROR. I DO. NOT REQUIRE. THAT OBJECT. I REQUIRE. ONLY BANANA."
+        ]
+      }
+    },
     {
       "slug": "chair",
       "look": [
@@ -28,7 +103,7 @@
       "slug": "blackboard",
       "look": [
         "The blackboard reads:",
-        "]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - s\\south - s\\east - e\\west - w\\clear - cl"
+        "]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - s\\south - s\\east - e\\west - w\\up - u\\down - d\\clear - cl"
       ]
     },
     {
