@@ -36,6 +36,7 @@ import getFlag from "./getFlag.js";
 import getLocalVars from "./getLocalVars.js";
 import getRoomDictionary from "./getRoomDictionary.js";
 import handleChoiceInput from "./handleChoiceInput.js";
+import handleDevCmd from "./handleDevCmd.js";
 import handleUserEntry from "./handleUserEntry.js";
 import loadRoom from "../ScriptCommands/loadRoom.js";
 import parseCmds from "./parseCmds.js";
@@ -116,6 +117,7 @@ export default function getGameState(loadGame) {
     getFlag,
     getLocalVars,
     handleChoiceInput,
+    handleDevCmd,
     handleUserEntry,
     loadRoom,
     lookRoom,

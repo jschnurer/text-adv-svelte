@@ -10,6 +10,11 @@ const shortcuts = {
 }
 
 export default function handleUserEntry(entry) {
+  if (entry.startsWith('dev|')) {
+    this.handleDevCmd(entry.replace('dev|', ''));
+    return;
+  }
+
   this.capturedText = '';
   
   if (this.waitCmds) {

@@ -1,5 +1,6 @@
 {
   "name": "Teleporter Room",
+  "slug": "Tutorial/east",
   "description": "You're in a dimly lit round room with a 5' diameter glass chamber in the center. Inside the chamber is a button. There's a handwritten note taped to the side of the doorway into the chamber. A door leads to the west.",
   "west": ["loadRoom|Tutorial/center"],
   "features": [
@@ -12,7 +13,7 @@
     {
       "slug": "note",
       "look": [
-        "]That's it! You completed the tutorial. I'm very proud of you. Now it's time to enter the world and have an adventure! Remember to apply the things you learned here when you're out there and try lots of new stuff too! One last bit of advice, if you see any cairns our in the wide world, you should \"touch\" them. It'll really help you out if you lose your path somewhere along the way.",
+        "]That's it! You've completed the tutorial. I'm very proud of you. Now it's time to enter the world and have an adventure! Remember to apply the things you learned here and try lots of new stuff too! One last bit of advice, if you see any cairns out in the wide world, you should \"touch\" them. It'll really help you out if you lose your path somewhere along the way.",
         "]Just push the button and your adventure will begin!"
       ],
       "take": [
@@ -29,7 +30,7 @@
         {
           "cmd": "waitForInput",
           "args": [
-            "loadRoom:Forest/west-clearing"
+            ["loadRoom|Forest/west-clearing"]
           ]
         }
       ]

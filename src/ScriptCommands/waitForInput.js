@@ -3,8 +3,8 @@ export default function waitForInput(args) {
     console.log("Invalid args sent to waitForInput!");
     return;
   }
-
-  this.waitCmds = args[0];
+  
+  this.waitCmds = args;
 
   this.write("Press enter to continue...");
 }
