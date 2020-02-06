@@ -20,11 +20,7 @@ export default function handleDevCmd(str) {
     this.write('~Game Saved~');
   } else if (str.startsWith('getVar')) {
     let varName = str.split('|')[1];
-    if (varName.startsWith('G.')) {
-      this.write(`~${this.globalVars[varName]}~`);
-    } else {
-      this.write(`~${this.getLocalVars()[varName]}~`);
-    }
+    this.write(`~${this.getVarValue(varName)}~`);
   } else if(str.startsWith('incVar')) {
     let varName = str.split('|')[1];
     this.incVar(varName);
