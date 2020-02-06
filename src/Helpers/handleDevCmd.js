@@ -15,5 +15,8 @@ export default function handleDevCmd(str) {
     let itemId = str.split('|')[1];
     this.removeItem(itemId);
     console.log(`Removed ${itemId} from inventory.`);
+  } else if (str === 'saveGame') {
+    this.saveGame();
+    console.log('Game saved.');
   }
 }
