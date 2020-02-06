@@ -24,6 +24,9 @@ export default function parseCmds(cmds, feature) {
       case "ifHasItem":
         this.ifHasItem.apply(this, [...cmd.args, feature]);
         break;
+      case "ifVar":
+        this.ifVar.apply(this, [...cmd.args, feature]);
+        break;
       case "addItem":
         this.addItem.apply(this, cmd.args);
         break;
