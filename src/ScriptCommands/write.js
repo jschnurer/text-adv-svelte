@@ -59,6 +59,10 @@ function replaceNotices(haystack, gameState) {
 
 function replaceVariables(haystack, gameState) {
   return haystack.replace(/\$(.+?)\$/g, (_, varName) => {
-    return gameState.getVarValue(varName);
+    let val = gameState.getVarValue(varName);
+    if (val === undefined || val === null) {
+      return '';
+    }
+    return val;
   });
 }

@@ -3,7 +3,7 @@ export default function ifVar(name, operator, compareValue, trueCmds, falseCmds,
   let checkVal = compareValue;
   let checkVarName = getVarName(compareValue);
   if (checkVarName) {
-    this.getVarValue(checkVarName);
+    checkVal = this.getVarValue(checkVarName);
   }
 
   let checkResult = false;
@@ -27,7 +27,7 @@ export default function ifVar(name, operator, compareValue, trueCmds, falseCmds,
 function getVarName(compareValue) {
   // Check if it's "{example}". If so,
   // get the value of the "example" variable.
-  let varMatches = compareValue.match("^%(.+?)%$");
+  let varMatches = compareValue.match(/^\$(.+?)\$$/);
   if (varMatches && varMatches.length === 2) {
     return varMatches[1];
   }
