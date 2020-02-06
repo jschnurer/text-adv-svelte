@@ -104,6 +104,9 @@
       "look": [
         "The book is open to a chapter about item combinations:",
         "]Certain items can be combined with other items.\\Sometimes you can even combine things in your inventory with things in the world, vice versa, or any combination thereof.\\To combine items you type \"combine [item1] with [item2]\". You'll find out if they're combinable!"
+      ],
+      "take": [
+        "You should leave that for the next person who might need it."
       ]
     },
     {
