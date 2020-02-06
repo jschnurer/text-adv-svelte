@@ -1,7 +1,7 @@
 {
   "name": "A Hilltop above a Dense Forest",
   "slug": "Forest/hill",
-  "description": "You're standing at the top of a rocky hill. The ground is covered in rocks and grass. The hill is tall enough to allow you to see over the treetops of the forest below.",
+  "description": "You're standing at the top of a rocky hill. The ground is covered in rocks and grass. The hill is tall enough to allow you to see over the treetops of the forest below. The only way down is to the west.",
   "west": [
     "loadRoom|Forest/river-bank"
   ],
