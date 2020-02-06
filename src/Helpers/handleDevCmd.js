@@ -18,5 +18,12 @@ export default function handleDevCmd(str) {
   } else if (str === 'saveGame') {
     this.saveGame();
     this.write('~Game Saved~');
+  } else if (str.startsWith('getVar')) {
+    let varName = str.split('|')[1];
+    if (varName.startsWith('G.')) {
+      this.write(`~${this.globalVars[varName]}~`);
+    } else {
+      this.write(`~${this.getLocalVars()[varName]}~`);
+    }
   }
 }
