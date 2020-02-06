@@ -45,7 +45,7 @@
           "args": [
             "FISH_DISTRACTED",
             [
-              "addItem|RUINS_ROD_1",
+              "addItem|RUINS_ROD",
               "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
               "setFlag|TOOKROD"
             ],

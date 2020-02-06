@@ -1,9 +1,23 @@
 {
   "name": "Ruined Hall",
   "slug": "Ruins/forest-entrance",
-  "description": "You stand in a dimly lit ruined hall that is wide and very long. Light streams in through cracks in the walls and ceiling. The ceiling is very high above you and there is a solid stone altar at the far end, engraved with a runic symbol. There are doorways that lead to the north and south and another that leads outside to the west.",
+  "description": "You stand in a dimly lit ruined hall that is wide and very long. Light streams in through cracks in the walls and ceiling. The ceiling is very high above you and there is a solid stone altar at the far end, engraved with a runic symbol. There is a doorway that least outside to the west. {door} There is a metal device affixed to the wall next to the large stone door.",
   "west": [
     "loadRoom|Forest/ruins-entrance"
+  ],
+  "east": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "DOOROPEN",
+        [
+          "loadRoom|Ruins/behind-the-hall"
+        ],
+        [
+          "You can't go east. The large stone door is blocking your path. Maybe the device on the wall has something to do with it."
+        ]
+      ]
+    }
   ],
   "features": [
     {
@@ -20,9 +34,122 @@
     },
     {
       "slug": "runic symbol",
-      "altSlugs": ["rune","symbol"],
+      "altSlugs": [
+        "rune",
+        "symbol"
+      ],
       "look": [
         "ᛞ"
+      ]
+    },
+    {
+      "slug": "door",
+      "altSlugs": ["stone door","east door"],
+      "notice": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "DOOROPEN",
+            [
+              "There is an open passage leads to the east."
+            ],
+            [
+              "There is also a large stone door that leads to the east."
+            ]
+          ]
+        }
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "DOOROPEN",
+            [
+              "The door has slid out of the way, granting access eastward."
+            ],
+            [
+              "The door is large and solid. It looks like it's made out of the same material as the altar."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "device",
+      "altSlugs": [
+        "metal device"
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "DOOROPEN",
+            [
+              "It's a metal base affixed to the wall. It's rounded and looks like it pivots up and down. It's currently pointed upward."
+            ],
+            [
+              "It's a metal base affixed to the wall. It's rounded and looks like it pivots up and down. It's currently pointed downward."
+            ]
+          ]
+        },
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "RODINSERTED",
+            [
+              "There's a rusty metal rod sticking out of it. You could probably use the device now."
+            ],
+            [
+              "There's a round opening in the front of it that is about an inch and a half in diameter."
+            ]
+          ]
+        }
+      ],
+      "use": {
+        "": [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "RODINSERTED",
+              [
+                {
+                  "cmd": "ifFlag",
+                  "args": [
+                    "DOOROPEN",
+                    [
+                      "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides downward, sealing the passage.",
+                      "unsetFlag|DOOROPEN"
+                    ],
+                    [
+                      "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides upward, unsealing the passage.",
+                      "setFlag|DOOROPEN"
+                    ]
+                  ]
+                }
+              ],
+              [
+                "There's no way to use the device in its current state. It seems like there's something missing."
+              ]
+            ]
+          }
+        ],
+        "RUINS_ROD": [
+          "You slot the metal rod into the opening in the device. It fits perfectly!",
+          "removeItem|RUINS_ROD",
+          "setFlag|RODINSERTED"
+        ]
+      }
+    },
+    {
+      "slug": "rod",
+      "targetFlag": "RODINSERTED",
+      "look": [
+        "It's a rusty metal rod sticking out of the device."
+      ],
+      "take": [
+        "You pull the metal rod out of the device and take it.",
+        "addItem|RUINS_ROD",
+        "unsetFlag|RODINSERTED"
       ]
     }
   ]
