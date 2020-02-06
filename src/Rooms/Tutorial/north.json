@@ -13,6 +13,21 @@
         "Hint: You can perform all sorts of actions in the game. If you need more guidance you can look at this \"note\" that I left here that will tell you exactly what you need to do to progress."
       ],
       "use": {
+        "": [
+          {
+            "cmd": "ifHasItem",
+            "args": [
+              "TUTORIAL_PC_KEY",
+              [
+                "You pick a random keyboard and punch in the passkey. The glass case covering a red button flips open.",
+                "setFlag|CASEOPEN"
+              ],
+              [
+                "You pick a keyboard and start punching keys. It doesn't work. Looks like you'll need a passkey."
+              ]
+            ]
+          }
+        ],
         "TUTORIAL_PC_KEY": [
           "removeItem|TUTORIAL_PC_KEY",
           "You pick a random keyboard and punch in the passkey. The glass case covering a red button flips open.",
@@ -48,10 +63,10 @@
           "args": [
             "CASEOPEN",
             [
-              "The glass case around it is flipped open. You can press the button now."
+              "The glass case around it is flipped open. You can push the button now."
             ],
             [
-              "There is a glass case around it sealing it in. You won't be able to press the button until it's open."
+              "There is a glass case around it sealing it in. You won't be able to push the button until it's open."
             ]
           ]
         }
