@@ -1,0 +1,29 @@
+{
+  "name": "Ruined Hall",
+  "slug": "Ruins/forest-entrance",
+  "description": "You stand in a dimly lit ruined hall that is wide and very long. Light streams in through cracks in the walls and ceiling. The ceiling is very high above you and there is a solid stone altar at the far end, engraved with a runic symbol. There are doorways that lead to the north and south and another that leads outside to the west.",
+  "west": [
+    "loadRoom|Forest/ruins-entrance"
+  ],
+  "features": [
+    {
+      "slug": "columns",
+      "look": [
+        "The columns are cracked and crumbling in places but still sturdily hold up the hall."
+      ]
+    },
+    {
+      "slug": "altar",
+      "look": [
+        "The altar is a large piece of white stone. Engraved on its surface is a large, runic symbol."
+      ]
+    },
+    {
+      "slug": "runic symbol",
+      "altSlugs": ["rune","symbol"],
+      "look": [
+        "ᛞ"
+      ]
+    }
+  ]
+}

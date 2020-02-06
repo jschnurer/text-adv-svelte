@@ -54,6 +54,12 @@
         "You take the stone.",
         "setFlag|STONETAKEN"
       ]
+    },
+    {
+      "slug": "path",
+      "look": [
+        "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
+      ]
     }
   ]
 }

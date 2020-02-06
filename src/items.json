@@ -70,5 +70,12 @@
     "look": [
       "It's a regular old banana."
     ]
+  },
+  {
+    "slug": "trowel",
+    "id": "TROWEL",
+    "look": [
+      "It's a gardening trowel--a little rusty but should still be fine."
+    ]
   }
 ]
