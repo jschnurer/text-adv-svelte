@@ -47,14 +47,6 @@ import unknownCmd from "../Helpers/unknownCmd.js";
 import unknownTarget from "./unknownTarget.js";
 
 export default function getGameState(loadGame) {
-  let savedGame = null;
-  if (loadGame) {
-    savedGame = localStorage.getItem('game_state');
-    if (savedGame) {
-      savedGame = JSON.parse(savedGame);
-    }
-  }
-
   let gameState = {
     // Options for the game.
     options: {
@@ -129,11 +121,18 @@ export default function getGameState(loadGame) {
     unknownTarget,
   };
 
-  if (savedGame) {
-    let currRoomSlug = savedGame.currRoomSlug;
-    delete savedGame.currRoomSlug;
-    Object.assign(gameState, savedGame);
-    gameState.room = gameState.rooms[currRoomSlug];
+  let savedGame = null;
+  if (loadGame) {
+    savedGame = localStorage.getItem('game_state');
+    if (savedGame) {
+      savedGame = JSON.parse(savedGame);
+      if (savedGame) {
+        let currRoomSlug = savedGame.currRoomSlug;
+        delete savedGame.currRoomSlug;
+        Object.assign(gameState, savedGame);
+        gameState.room = gameState.rooms[currRoomSlug];
+      }
+    }
   }
 
   return gameState;
