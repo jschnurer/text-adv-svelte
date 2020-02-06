@@ -1,7 +1,7 @@
-function getVarValue(name) {
+export default function getVarValue(name) {
   if (name.startsWith('G.')) {
-    return this.globalVars[varName];
+    return this.globalVars[name];
   } else {
-    return this.getLocalVars()[varName];
+    return this.getLocalVars()[name];
   }
 }

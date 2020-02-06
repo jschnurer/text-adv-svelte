@@ -1,7 +1,7 @@
-function setVarValue(varName, value) {
+export default function setVarValue(name, value) {
   if (name.startsWith('G.')) {
-    this.globalVars[varName] = value;
+    this.globalVars[name] = value;
   } else {
-    this.getLocalVars()[varName] = value;
+    this.getLocalVars()[name] = value;
   }
 }
