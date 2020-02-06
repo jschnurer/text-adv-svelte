@@ -1,9 +1,9 @@
 export default function ifFlag(name, trueCmds, falseCmds, feature) {
-  if (this.getFlag(name) == true) {
+  let value = this.getFlag(name);
+
+  if (value === true && trueCmds) {
     this.parseCmds(trueCmds, feature);
-  } else {
-    if (falseCmds) {
-      this.parseCmds(falseCmds, feature);
-    }
+  } else if (value !== true && falseCmds) {
+    this.parseCmds(falseCmds, feature);
   }
 };
