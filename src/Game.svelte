@@ -27,7 +27,7 @@
     if (!loadGame) {
       await gameState.loadRoom(config.initial_room);
     } else {
-      gameState.look();
+      gameState.lookRoom();
     }
   });
 
