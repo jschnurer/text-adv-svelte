@@ -20,7 +20,7 @@
                 "Hint: You can use objects on other objects. Try \"use key on north door\" or \"use tutorial key on north door\"."
               ],
               [
-                "Hint: Maybe if you \"look\" around you can find a key somewhere."
+                "Hint: Maybe if you \"look\" around you can find a key somewhere. If you had a key, you could \"use key on north door\"..."
               ]
             ]
           }
