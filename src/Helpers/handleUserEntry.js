@@ -75,8 +75,12 @@ export default function handleUserEntry(entry) {
   }
 
   // If targeting something and that something has the command in it, run those commands.
-  if (target && target[cmd]) {
+  if (target) {
+    if (target[cmd]) {
     this.parseCmds(target[cmd], target);
+    } else {
+      this.write(`You can't ${cmd} that.`);
+    }
     return;
   }
 
