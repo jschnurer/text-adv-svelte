@@ -6,6 +6,21 @@ export default function use(args) {
 
   let matches = args.trim().match("(.+) on (.+)");
 
+  if (!matches) {
+    matches = [args.trim()];
+  }
+
+  if (matches.length === 1) {
+    let obj = this.findTarget(matches[0]);
+    if(!obj) {
+      this.unknownTarget(matches[0]);
+      return;
+    } else if (obj && obj.use && obj.use[""]) {
+      this.parseCmds(obj.use[""]);
+      return;
+    }
+  }
+
   if (matches.length !== 3) {
     this.write("Huh? Try \"use x on y\" instead.");
     return;
