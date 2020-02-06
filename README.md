@@ -119,23 +119,21 @@ The args must contain only a single **cmdList**, which is executed after any inp
 args: [
   "invalid_choice_text",
   ["choice1", "choice2", "choice3"],
-  {}
+  {
+    "choice1": [],
+    "choice2": [],
+    "choice3": []
+  }
 ]
 ```
-The user must enter text that matches one of the items in the second arg (an array of strings). If they do not, the invalid_choice_text will be written to the screen. The last argument must be a choice object.
+The user must enter text that matches one of the items in the second arg (an array of strings). If they do not, the invalid_choice_text will be written to the screen.
 
-A choice object is an object whose property names match the strings in the list_of_choices and whose values are **cmdLists**. For example:
-```json
-{
-  "choice1": [],
-  "choice2": [],
-  "choice3": []
-}
-```
+The last argument must be a choice object. A choice object is an object whose property names match the strings in the list_of_choices and whose values are **cmdLists**.
+
 The user must enter text that matches one of the items in list_of_choices. If they do not, the invalid_choice_text will be written to the screen.
 
 ## Special Commands
-Special commands behave a little differently than complex commands. Each special command must be a property on the target whose value is an object. The property name is italicised in the headers below. The command entered by the user must exactly match the format shown in the headers below (unless otherwise noted).
+Special commands behave a little differently than complex commands. Each special command must be a property on the target  whose name matches the command and whose value is an object. The property name is italicised in the headers below. The command entered by the user must exactly match the format shown in the headers below (unless otherwise noted).
 
 A special command should be a property of a feature or item whose value is an object. The object must have properties whose names are checked for by the command (see below). When a match is found, it will execute the value of that property as a **cmdList**. Additionally, the object should have a property whose name is "" (empty string) which is also a **cmdList**. If the player enters an option that does not appear on the object as a property, the "" **cmdList** will be executed. 
 
@@ -151,7 +149,8 @@ For example, to be able to "ask" a feature in a room something, the feature must
 ### _ask_ [target] about [topic]
 The ask object should have properties whose names are the topics the player can ask about.
 
-### combine
+### combine [target] with [target]
+Either target should have a combine object with a property matching the other's slug (or item_id). If a match is found, that property will be executed as a **cmdList**.
 
 ### give [item] to [target]
 The give object should have properties whose names are the item_ids the player can give to the target. Note: The **cmdList** matching the item_id will only be executed if the player has the item in their inventory.
