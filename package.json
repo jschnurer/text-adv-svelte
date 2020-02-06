@@ -4,11 +4,13 @@
   "scripts": {
     "host:server": "replace-in-file /__hostdir__/g /adventure ./public/index.html --isRegex",
     "host:local": "replace-in-file /__hostdir__/g \"\" ./public/index.html --isRegex",
-    "build": "run-s copy:templates host:server build:rollup",
+    "host:server:css": "replace-in-file /__hostdir__/g /adventure ./public/global.css --isRegex",
+    "host:local:css": "replace-in-file /__hostdir__/g \"\" ./public/global.css --isRegex",
+    "build": "run-s copy:templates host:server host:local:css build:rollup",
     "build:rollup": "rollup -c",
     "autobuild": "rollup -c -w",
     "copy:templates": "copy-files-from-to",
-    "dev": "run-s copy:templates host:local autobuild start:dev",
+    "dev": "run-s copy:templates host:local host:local:css autobuild start:dev",
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev"
   },
@@ -33,6 +35,10 @@
     {
       "from": "/templates/index.html",
       "to": "/public/index.html"
+    },
+    {
+      "from": "/templates/global.css",
+      "to": "/public/global.css"
     }
   ],
   "copyFilesSettings": {

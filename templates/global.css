@@ -14,7 +14,7 @@ body {
 }
 
 bg {
-  background-image: url(/bg.jpeg);
+  background-image: url(__hostdir__/bg.jpeg);
   background-size: cover;
   opacity: 0.12;
   top: 0;
