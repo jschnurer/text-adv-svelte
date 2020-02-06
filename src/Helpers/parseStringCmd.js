@@ -1,6 +1,4 @@
 const singleWordCmds = [
-  "unknownTarget",
-  "destroy",
   "saveGame"
 ]
 
