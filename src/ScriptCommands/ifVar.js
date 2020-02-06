@@ -15,6 +15,7 @@ export default function ifVar(name, operator, compareValue, trueCmds, falseCmds,
     case ">=": checkResult = value >= checkVal; break;
     case "<": checkResult = value < checkVal; break;
     case "<=": checkResult = value <= checkVal; break;
+    default: this.write("Invalid operator!"); break;
   }
 
   if (checkResult && trueCmds) {
