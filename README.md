@@ -12,9 +12,10 @@ All features must have the following properties:
 * slug - what the player must type to target it
 
 Special feature properties:
+* roomDesc - if this property is a string, it will be outputted automatically when the a targetless _look_ is executed
 * altSlugs - array of strings, alternate slugs that can reference this feature
 * targetFlag - set this property to the name of a **flag** in order to prevent the user from targeting it if the flag is falsey
-* destroyedFlag - set this property to the name of a **flag** in order to make it no longer targetable. (It is "destroyed").
+* destroyedFlag - set this property to the name of a **flag** in order to make it no longer targetable. (It is "destroyed")
 * notice - set this to a **cmdList** or string. You can then reference it in the any other text by using "{the-feature's-slug}". When outputting that text, "{the-feature's-slug}" will be replaced by the text output of whatever string or commands are in the notice property of that slug.
 
 Generally, all features should also handle the "look" command.
