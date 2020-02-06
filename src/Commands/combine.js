@@ -28,12 +28,14 @@ export default function combine(args) {
   let cmds = null;
 
   if (target1["combine"]) {
-    cmds = target1["combine"][slug2];
+    cmds = target1["combine"][target2.slug]
+      || target1["combine"][target2.id];
   }
 
   if (!cmds) {
     if (target2["combine"]) {
-      cmds = target2["combine"][slug1];
+      cmds = target2["combine"][target1.slug]
+        || target2["combine"][target1.id];
     }
   }
 
