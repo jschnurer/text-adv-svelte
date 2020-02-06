@@ -22,9 +22,9 @@ export default function write(msg) {
   }
 
   if (wc) {
-    this.capturedText = addNotices(this.capturedText, this);
+    this.capturedText = replaceVariables(replaceNotices(this.capturedText, this), this);
   } else {
-    this.text = addNotices(this.text, this);
+    this.text = replaceVariables(replaceNotices(this.text, this), this);
   }
 
   if (!wc) {
@@ -39,7 +39,7 @@ export default function write(msg) {
   this.update();
 };
 
-function addNotices(haystack, gameState) {
+function replaceNotices(haystack, gameState) {
   return haystack.replace(/{(.+?)}/g, (_, p1) => {
     let feat = gameState.getFeature(p1);
 
@@ -54,5 +54,11 @@ function addNotices(haystack, gameState) {
       }
     }
     return '';
+  });
+}
+
+function replaceVariables(haystack, gameState) {
+  return haystack.replace(/\$(.+?)\$/g, (_, varName) => {
+    return gameState.getVarValue(varName);
   });
 }
