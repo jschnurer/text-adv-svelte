@@ -77,6 +77,7 @@
       .replace(/%(.+?)%/g, "<hint>$1</hint>")
       .replace(/\^(.+?)\^/g, "<h3>$1</h3>")
       .replace(/~(.+?)~/g, "<entry>$1</entry>")
+      .replace(/#(.+?)#/g, "<pre>$1</pre>")
       .replace(/\\/g, "<br />");
 
     if (nt.startsWith(']')) {
