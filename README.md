@@ -31,6 +31,15 @@ All items must have the following properties:
 
 Items can also have a property called `altSlugs` which is an array of strings. The player can target this item by typing any of the altSlugs. This is useful because the slug "key" might target multiple keys in a player's inventory. The alt slugs (like "rusty key", "steel key", "brass key", etc.) lets the player target specific keys.
 
+## Text Replacement
+When the engine writes text output, it will automatically replace certain special syntaxes.
+
+### Notice replacement
+The string "{slug}" in any text output will result in a notice replacement. The engine will search the current room for a feature whose slug matches the string between the curly braces. If found and the feature has a `notice` property, the notice property will be executed as a **cmdList** and any text outputted will be captured. The resulting text will then replace the "{slug}" in the original text. Features marked "destroyed" will not be found. If the feature is not found or has no `notice` property, the "{slug}" will be replaced with an empty string. Note: This only works for a single command! 
+
+### Variable replacement
+The string "$varname$" in any text output will result in a variable replacement. The engine will get the value of that variable and replace the "$varname$" with it. If the variable is null or undefined, an empty string will be used instead.
+
 ## Handling user commands
 To handle a user command on a room, feature, or item, simply add a property to the object that matches the command. The most general of these commands is "look". Almost all user command properties should be **cmdLists**. Some are **special commands**, though.
 
@@ -115,6 +124,21 @@ args: [
 ```
 If the specified item is in the player's inventory, the first **cmdList** will be executed. Otherwise, the second will. Either **cmdList** can be null.
 
+### ifVar
+```json
+args: [
+  "var_name",
+  "compare_operator",
+  "compare_value",
+  [],
+  []
+]
+```
+The first argument is the variable name that will be compared against. The second argument is the operator to use. It can be either `==`, `===`, `>`, `>=`, `<`, or `<=`. The third argument is the value to compare to. If the compare_value is a string in the format "$var_name$", the command will use the value of the variable with the name `var_name` instead of using the compare_value as a string.
+
+The command will then compare the two values against each other using the specified compare_operator.
+
+The fourth argument is a **cmdList** for if the comparison is true. The fifth argument is a **cmdList** for if the comparison is false.
 
 ### waitForInput
 ```json
