@@ -21,6 +21,7 @@ import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifHasItem from "../ScriptCommands/ifHasItem.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
+import ifVar from "../ScriptCommands/ifVar.js";
 import incVar from "../ScriptCommands/incVar.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
 import removeItem from "../ScriptCommands/removeItem.js";
@@ -37,12 +38,14 @@ import getFeature from "./getFeature.js";
 import getFlag from "./getFlag.js";
 import getLocalVars from "./getLocalVars.js";
 import getRoomDictionary from "./getRoomDictionary.js";
+import getVarValue from "./getVarValue.js";
 import handleChoiceInput from "./handleChoiceInput.js";
 import handleDevCmd from "./handleDevCmd.js";
 import handleUserEntry from "./handleUserEntry.js";
 import loadRoom from "../ScriptCommands/loadRoom.js";
 import parseCmds from "./parseCmds.js";
 import parseStringCmd from "./parseStringCmd.js";
+import setVarValue from "./setVarValue.js";
 import showFeatures from "./showFeatures.js";
 import unknownCmd from "../Helpers/unknownCmd.js";
 import unknownTarget from "./unknownTarget.js";
@@ -96,6 +99,7 @@ export default function getGameState(loadGame) {
     ifFlag,
     ifHasItem,
     ifRoom,
+    ifVar,
     incVar,
     invokeRoom,
     removeItem,
@@ -111,6 +115,7 @@ export default function getGameState(loadGame) {
     getFeature,
     getFlag,
     getLocalVars,
+    getVarValue,
     handleChoiceInput,
     handleDevCmd,
     handleUserEntry,
@@ -118,6 +123,7 @@ export default function getGameState(loadGame) {
     lookRoom,
     parseCmds,
     parseStringCmd,
+    setVarValue,
     showFeatures,
     unknownCmd,
     unknownTarget,
