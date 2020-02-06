@@ -42,7 +42,6 @@ import loadRoom from "../ScriptCommands/loadRoom.js";
 import parseCmds from "./parseCmds.js";
 import parseStringCmd from "./parseStringCmd.js";
 import showFeatures from "./showFeatures.js";
-import tryObjectInteraction from "./tryObjectInteraction.js";
 import unknownCmd from "../Helpers/unknownCmd.js";
 import unknownTarget from "./unknownTarget.js";
 
@@ -116,7 +115,6 @@ export default function getGameState(loadGame) {
     parseCmds,
     parseStringCmd,
     showFeatures,
-    tryObjectInteraction,
     unknownCmd,
     unknownTarget,
   };

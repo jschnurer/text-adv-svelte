@@ -11,5 +11,19 @@ export default function ask(args) {
     return;
   }
 
-  this.tryObjectInteraction(matches[1], matches[2], "ask", true, "");
+  let target = this.findTarget(matches[1]);
+
+  if (!target) {
+    this.unknownTarget();
+    return;
+  }
+
+  let topic = matches[2];
+
+  if (!target.ask || !target.ask[topic]) {
+    this.parseCmds(target.ask[""]);
+    return;
+  }
+
+  this.parseCmds(target.ask[topic]);
 }
