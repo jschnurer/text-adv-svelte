@@ -15,11 +15,13 @@ import use from "../Commands/use.js";
 // Import script commands.
 import addItem from "../ScriptCommands/addItem.js";
 import choice from "../ScriptCommands/choice.js";
+import decVar from "../ScriptCommands/decVar.js";
 import destroyFeature from "../ScriptCommands/destroyFeature.js";
 import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifHasItem from "../ScriptCommands/ifHasItem.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
+import incVar from "../ScriptCommands/incVar.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
 import removeItem from "../ScriptCommands/removeItem.js";
 import saveGame from "../ScriptCommands/saveGame.js";
@@ -87,12 +89,14 @@ export default function getGameState(loadGame) {
 
     // Script Commands
     addItem,
-    ifHasItem,
     choice,
+    decVar,
     destroyFeature,
     gameOver,
     ifFlag,
+    ifHasItem,
     ifRoom,
+    incVar,
     invokeRoom,
     removeItem,
     saveGame,

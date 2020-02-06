@@ -25,5 +25,13 @@ export default function handleDevCmd(str) {
     } else {
       this.write(`~${this.getLocalVars()[varName]}~`);
     }
+  } else if(str.startsWith('incVar')) {
+    let varName = str.split('|')[1];
+    this.incVar(varName);
+    this.write(`Incremented ${varName}.`)
+  } else if(str.startsWith('decVar')) {
+    let varName = str.split('|')[1];
+    this.decVar(varName);
+    this.write(`Decremented ${varName}.`)
   }
 }
