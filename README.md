@@ -70,6 +70,12 @@ This will set a variable with the specified name to true. If the name of the var
 ### unsetFlag|flag_name
 This will set a variable with the specified name to false. If the name of the variable starts with "G.", it will be saved into the globalVars list of the game state. Otherwise, the variable will be scoped and accessible only to the current room. This means you don't have to worry about ensuring globally unique flag names (unless they start with "G."").
 
+### incVar|var_name(|amount)?
+This will increment a variable by 1 or by the amount specified (if provided). If the name of the variable starts with "G.", it will be saved into the globalVars list of the game state. Otherwise, the variable will be scoped and accessible only to the current room. This means you don't have to worry about ensuring globally unique flag names (unless they start with "G.""). Note: If the variable is not truthy, it will be considered 0.
+
+### decVar|var_name(|amount)?
+This will decrement a variable by 1 or by the amount specified (if provided). If the name of the variable starts with "G.", it will be saved into the globalVars list of the game state. Otherwise, the variable will be scoped and accessible only to the current room. This means you don't have to worry about ensuring globally unique flag names (unless they start with "G.""). Note: If the variable is not truthy, it will be considered 0.
+
 ### gameOver|message
 This will put the game into a game over state and show the specified message to the user. A "Try Again" button will be visible which will reload the page.
 

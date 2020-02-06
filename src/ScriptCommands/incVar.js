@@ -1,3 +1,3 @@
-export default function incVar(name) {
-  this.setVarValue((this.getVarValue(name) || 0) + 1);
+export default function incVar(name, amount) {
+  this.setVarValue((this.getVarValue(name) || 0) + (amount || 1));
 }
