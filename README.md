@@ -1,3 +1,6 @@
+# Adding new rooms
+After adding a new room (json file), the `room-index.js` file must be updated to import it. The `room-index.js` file is imported by the engine to load all rooms initially.
+
 # Scripting
 ## Rooms
 All rooms must have the following properties:
