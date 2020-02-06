@@ -78,51 +78,58 @@ Complex commands must be objects with a "cmd" property matching one of the below
 ### ifRoom
 ```json
 args: [
-  roomSlug (string),
-  cmdList if currentRoomSlug = roomSlug (array or null),
-  cmdList if currentRoomSlug != roomSlug (array or null)
+  "roomSlug",
+  [],
+  []
 ]
 ```
+The current room's slug will be compared against "roomSlug". If it is the same, the first **cmdList** will be executed. Otherwise, the second will. Either **cmdList** can be null.
 
 ### ifFlag
 ```json
 args: [
-  flagName (string),
-  cmdList if flag is truthy (array or null),
-  cmdList if flag is falsey (array or null)
+  "flagName",
+  [],
+  []
 ]
 ```
+If the specified flag is truthy, the first **cmdList** will be executed. Otherwise, the second will. Either **cmdList** can be null.
 
 ### ifHasItem
 ```json
 args: [
-  item_id (string),
-  cmdList if item with id=item_id is in inventory (array or null),
-  cmdList if item with id=item_id is not in inventory (array or null)
+  "item_id",
+  [],
+  []
 ]
 ```
+If the specified item is in the player's inventory, the first **cmdList** will be executed. Otherwise, the second will. Either **cmdList** can be null.
+
 
 ### waitForInput
 ```json
 args: [
-  cmdList to execute after any input from user (array or null)
+  []
 ]
 ```
+The args must contain only a single **cmdList**, which is executed after any input from user. Note: The user's input will be ignored.
 
 ### choice
 ```json
 args: [
-  invalid_choice_text (string),
-  list_of_choices (array of strings),
-  choice_object (object, see below)
+  "invalid_choice_text",
+  ["choice1", "choice2", "choice3"],
+  {}
 ]
 ```
+The user must enter text that matches one of the items in the second arg (an array of strings). If they do not, the invalid_choice_text will be written to the screen. The last argument must be a choice object.
 
-A choice object is an object whose property names match the strings in the list_of_choices and whose values are **cmdLists**. For example, if the list_of_choices is ["yes","no"], then the choice_object would look like this:
+A choice object is an object whose property names match the strings in the list_of_choices and whose values are **cmdLists**. For example:
 ```json
 {
-  "yes": [ ... ],
-  "no": [ ... ]
+  "choice1": [],
+  "choice2": [],
+  "choice3": []
 }
 ```
 The user must enter text that matches one of the items in list_of_choices. If they do not, the invalid_choice_text will be written to the screen.
@@ -135,9 +142,9 @@ A special command should be a property of a feature or item whose value is an ob
 For example, to be able to "ask" a feature in a room something, the feature must have the "ask" property whose value is an object. That object would look like this:
 ```json
 {
-  "": [ ... ],
-  "topic1": [ ... ],
-  "topic2": [ ... ]
+  "": [],
+  "topic1": [],
+  "topic2": []
 }
 ```
 
