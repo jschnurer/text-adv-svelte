@@ -1,0 +1,19 @@
+{
+  "name": "A Quiet Path Through the Forest",
+  "slug": "Forest/quiet-path",
+  "description": "You're on quiet path surrounded by dense forest. The path is mostly overgrown. The path leads north and south.",
+  "north": [
+    "loadRoom|Forest/quiet-fork"
+  ],
+  "south": [
+    "loadRoom|Forest/well-worn-trail"
+  ],
+  "features": [
+    {
+      "slug": "path",
+      "look": [
+        "It's a dirt path, mostly overtaken by encroaching weeds. It hasn't seen traffic in a long time."
+      ]
+    }
+  ]
+}

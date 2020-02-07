@@ -11,6 +11,9 @@
   "west": [
     "loadRoom|Forest/west-clearing"
   ],
+  "south": [
+    "loadRoom|Forest/quiet-path"
+  ],
   "features": [
     {
       "slug": "bird",

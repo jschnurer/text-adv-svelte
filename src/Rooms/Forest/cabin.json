@@ -1,0 +1,69 @@
+{
+  "name": "Outside a Log Cabin in the Forest",
+  "slug": "Forest/cabin",
+  "description": "You're standing outside a fenced-in yard surrounding a sturdily-built log cabin in a clearing in the dense forest. There's a gate in the wooden fence which is currently open. Inside the fence is a small garden with two wet wooden buckets sitting next to it. A well-worn trail leads to the east. To the west is the cabin.",
+  "east": [
+    "loadRoom|Forest/well-worn-trail"
+  ],
+  "west": [
+    "TODO: add cabin interior!"
+  ],
+  "features": [
+    {
+      "slug": "trail",
+      "look": [
+        "It's a well-worn dirt trail. It must see frequent traffic since there's hardly any weeds or grass growing."
+      ]
+    },
+    {
+      "slug": "man",
+      "altSlugs": [
+        "arden",
+        "older man",
+        "old man"
+      ],
+      "roomDesc": "There's an older man standing at the fence. It looks like he's trying to repair it.",
+      "look": [
+        "He's an older man with white hair and a neatly trimmed white beard. With one hand he's holding a new board up to the fence and in the other he's holding a hammer. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\""
+      ],
+      "greet": [
+        "The man turns toward you. \"Oh, hello there! The name's Arden. Sorry, I can't talk now, I have to finish this fence. You wouldn't happen to have any nails on you, would you?\"",
+        {
+          "cmd": "choice",
+          "args": [
+            "\"What's that? I asked if you have any nails on you. Do you?\"",
+            [
+              "yes",
+              "no"
+            ],
+            {
+              "yes": [
+                {
+                  "cmd": "ifHasItem",
+                  "args": [
+                    "NAIL",
+                    [
+                      "\"Oh, what an amazing coincidence that you happen to have exactly one nail on you. If you don't mind, please give it to me.\""
+                    ],
+                    [
+                      "\"Now listen here, young'un! I've seen a few nails in my day and I can tell quite plainly that you don't have any on you.\""
+                    ]
+                  ]
+                }
+              ],
+              "no": [
+                "\"Well that's a shame. If you find any, I'd really appreciate one.\""
+              ]
+            }
+          ]
+        }
+      ],
+      "give": {
+        "NAIL": [
+          "removeItem|NAIL",
+          "\"I really appreciate this!\" Arden takes the nail, turns back to the fence and in just a few quick strikes finishes the repairs on the fence."
+        ]
+      }
+    }
+  ]
+}

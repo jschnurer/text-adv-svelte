@@ -14,6 +14,9 @@ export {default as f_lonelyPath} from "./Forest/lonely-path.json";
 export {default as f_bendInThePath} from "./Forest/bend-in-the-path.json";
 export {default as f_abruptTurn} from "./Forest/abrupt-turn.json";
 export {default as f_ruinsEntrance} from "./Forest/ruins-entrance.json";
+export {default as f_quietPath} from "./Forest/quiet-path.json";
+export {default as f_wellWornTrail} from "./Forest/well-worn-trail.json";
+export {default as f_cabin} from "./Forest/cabin.json";
 
 // Ruins
 export {default as r_forestEntrance} from "./Ruins/forest-entrance.json";
