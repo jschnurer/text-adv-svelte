@@ -142,11 +142,9 @@ The fourth argument is a **cmdList** for if the comparison is true. The fifth ar
 
 ### waitForInput
 ```json
-args: [
-  []
-]
+args: []
 ```
-The args must contain only a single **cmdList**, which is executed after any input from user. Note: The user's input will be ignored.
+The args must be a **cmdList**, which is executed after any input from user. Note: The user's input will be ignored.
 
 ### choice
 ```json
