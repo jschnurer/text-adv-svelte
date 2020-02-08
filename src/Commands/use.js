@@ -18,6 +18,9 @@ export default function use(args) {
     } else if (obj && obj.use && obj.use[""]) {
       this.parseCmds(obj.use[""]);
       return;
+    } else {
+      this.write("It seems like you can't use that. Maybe try something else.");
+      return;
     }
   }
 

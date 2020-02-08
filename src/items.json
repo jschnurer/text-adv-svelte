@@ -43,25 +43,22 @@
   },
   {
     "slug": "nail",
-    "altSlugs": ["rusty nail"],
+    "altSlugs": [
+      "rusty nail"
+    ],
     "id": "NAIL",
     "look": [
       "It's rusty but should still do its job well enough."
     ]
   },
   {
-    "slug": "key",
-    "altSlugs": ["tutorial key"],
+    "slug": "tutorial key",
+    "altSlugs": [
+      "key"
+    ],
     "id": "TUTORIAL_KEY",
     "look": [
       "It's a brass key. You get the feeling that it's only useful in the tutorial. It definitely opens a locked door."
-    ]
-  },
-  {
-    "slug": "passkey",
-    "id": "TUTORIAL_PC_KEY",
-    "look": [
-      "It's a passkey for a computer. It reads \"up up down down left right left right b a\"."
     ]
   },
   {
@@ -69,6 +66,13 @@
     "id": "TUTORIAL_BANANA",
     "look": [
       "It's a regular old banana."
+    ]
+  },
+  {
+    "slug": "belt",
+    "id": "TUTORIAL_BELT",
+    "look": [
+      "It's a belt. Like, not the kind you wear, the kind that connect pulleys together. You know, the mechanical kind of belt."
     ]
   },
   {

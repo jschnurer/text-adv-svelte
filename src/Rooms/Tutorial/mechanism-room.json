@@ -1,0 +1,44 @@
+{
+  "name": "Mechanical Room",
+  "slug": "Tutorial/mechanism-room",
+  "description": "You're standing in a machine room. There's a large mechanism on the south wall that's all cogs and gears, pulleys, belts and whatnot. There's a table against the west wall with a note on it. There's an exit to the north.",
+  "north": ["loadRoom|Tutorial/learning"],
+  "features": [
+    {
+      "slug": "note",
+      "look": [
+        "You read over the note:",
+        "]Hey, remember how to use stuff? \"use [item] on [target]\". If you had a belt for the mechanism, you could \"use belt on mechanism\".",
+        "]P.S. You can't take this note and I didn't bother putting a special message when you try to so you just get the default message for when you try to take something that you can't."
+      ]
+    },
+    {
+      "slug": "table",
+      "look": ["It's just a table. There's a note on it."]
+    },
+    {
+      "slug": "mechanism",
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.TUT_FIXED_MECHANISM",
+            [
+              "A brand new belt is installed in the mechanism."
+            ],
+            [
+              "It looks like there's a belt missing from the mechanism."
+            ]
+          ]
+        }
+      ],
+      "use": {
+        "TUTORIAL_BELT": [
+          "You insert the belt into the mechanism, connecting two of the pulleys.",
+          "setFlag|G.TUT_FIXED_MECHANISM",
+          "removeItem|TUTORIAL_BELT"
+        ]
+      }
+    }
+  ]
+}

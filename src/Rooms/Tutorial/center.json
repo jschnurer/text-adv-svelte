@@ -1,14 +1,14 @@
 {
   "name": "A White Room",
   "slug": "Tutorial/center",
-  "description": "Welcome to Adventure. You're standing in an empty room with white walls, floor, and ceiling. There's a table here with a pile of stuff on it. There are doors to the north, east and west.\n\nHint: You can investigate things by using the \"look [target]\" command. If you want to just get the description of the area you're in, you can simply type \"look\". Try looking at the \"table\" or the \"stuff\". On the wall is a sign. You can also go to other areas with the commands \"north\", \"south\", \"east\" and \"west\".",
+  "description": "Welcome to Adventure. You're standing in an empty room with white walls, floor, and ceiling. There's a table here with a pile of stuff on it. There are doors to the north, east and west.\n\nHint: You can investigate things by using the \"look [target]\" command. If you want to just get the description of the area you're in, you can simply type \"look\". Try looking at the \"table\" or the \"stuff\". On the wall is a sign. You could look at that too!\\\\You can also go to other areas with the commands \"north\", \"south\", \"east\" and \"west\".",
   "north": [
     {
       "cmd": "ifFlag",
       "args": [
         "NORTHUNLOCKED",
         [
-          "loadRoom|Tutorial/north"
+          "loadRoom|Tutorial/north-access"
         ],
         [
           "The door to the north is locked.",
@@ -34,7 +34,7 @@
       "args": [
         "G.TUT_EAST_UNLOCKED",
         [
-          "loadRoom|Tutorial/east"
+          "loadRoom|Tutorial/teleporter"
         ],
         [
           "You can't open the door. There are clamps holding it shut. They look electronically controlled."
@@ -43,7 +43,30 @@
     }
   ],
   "west": [
-    "loadRoom|Tutorial/west"
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "WESTUNLOCKED",
+        [
+          "loadRoom|Tutorial/learning"
+        ],
+        [
+          "The door to the west is locked.",
+          {
+            "cmd": "ifHasItem",
+            "args": [
+              "TUTORIAL_KEY",
+              [
+                "Hint: You can use objects on other objects. Try \"use key on west door\"."
+              ],
+              [
+                "Hint: Maybe if you \"look\" around you can find a key somewhere. If you had a key, you could \"use key on west door\"..."
+              ]
+            ]
+          }
+        ]
+      ]
+    }
   ],
   "features": [
     {
@@ -56,33 +79,19 @@
     {
       "slug": "stuff",
       "look": [
-        "There's a pile of odds and ends. Tools, greeting cards, thumbtacks, {banana} and all other manner of useless kitsch. {key}",
+        "There's a pile of odds and ends. Tools, greeting cards, thumbtacks and all other manner of useless kitsch. {key}",
+        "Hint: When you investigate things you may notice other objects you can interact with. Some things might not be interactable, like the tools, greeting cards, or thumbtacks (try \"look tools\" to see).",
         {
           "cmd": "ifFlag",
           "args": [
             "TOOKKEY",
+            null,
             [
-              "Hint: When you investigate things you may notice other objects you can interact with. Some things might not be interactable, like the tools or thumbtacks (try \"look tools\" to see)."
-            ],
-            [
-              "Hint: When you investigate things you may notice other objects you can interact with. Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\"). Other things might not be interactable, like the tools or thumbtacks (try \"look tools\" to see)."
+              "Hint: Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\")."
             ]
           ]
         },
-        "setFlag|SAWKEY",
-        "setFlag|SAWBANANA"
-      ]
-    },
-    {
-      "slug": "banana",
-      "targetFlag": "SAWBANANA",
-      "destroyedFlag": "TOOKBANANA",
-      "notice": "a banana,",
-      "look": ["It's a yellow banana."],
-      "take": [
-        "addItem|TUTORIAL_BANANA",
-        "setFlag|TOOKBANANA",
-        "You take the banana from the pile of stuff."
+        "setFlag|SAWKEY"
       ]
     },
     {
@@ -97,7 +106,7 @@
       ],
       "take": [
         "You take the key from the pile of junk.",
-        "Hint: Now that you took the key, it's not in the world anymore. Now it's in your inventory. You can check your inventory with the \"inventory\" command. You can interact with things in your inventory just like if they were in the world. The key's name is \"tutorial key\" in your inventory so you can look at it with \"look tutorial key\".",
+        "Hint: Now that you took the key, it's not in the world anymore. Now it's in your inventory. You can check your inventory with the \"inventory\" command. You can interact with things in your inventory just like if they were in the world. The key's name is \"tutorial key\" in your inventory so you can look at it with \"look tutorial key\". You can also use the shorthand target \"key\".",
         "addItem|TUTORIAL_KEY",
         "setFlag|TOOKKEY"
       ]
@@ -105,12 +114,13 @@
     {
       "slug": "door",
       "look": [
-        "Hint: Sometimes a word (like door) could describe multiple things. In this case, both the \"north door\" and \"east door\" are interactable."
+        "Hint: Sometimes a word (like door) could describe multiple things. In this case, the \"north door\", \"west door\" and \"east door\" are all interactable. Normally, if the game doesn't understand what you're trying to interact with you'll get a message like \"You don't see [target] anywhere\". That lets you know that what you're trying to interact with is either unimportant or you need to use a more specific phrase to target it."
       ]
     },
     {
       "slug": "east door",
       "look": [
+        "There is a sign above the door. It reads \"Exit\".",
         {
           "cmd": "ifFlag",
           "args": [
@@ -132,9 +142,42 @@
       ],
       "use": {
         "TUTORIAL_KEY": [
-          "You use the tutorial key to unlock the door. You have no further use of the tutorial key so you discard it.",
-          "removeItem|TUTORIAL_KEY",
+          "You use the tutorial key to unlock the door.",
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "WESTUNLOCKED",
+              [
+                "You have no further use of the tutorial key so you discard it.",
+                "removeItem|TUTORIAL_KEY"
+              ],
+              null
+            ]
+          },
           "setFlag|NORTHUNLOCKED"
+        ]
+      }
+    },
+    {
+      "slug": "west door",
+      "look": [
+        "It's a white door. There's a keyhole in the knob."
+      ],
+      "use": {
+        "TUTORIAL_KEY": [
+          "You use the tutorial key to unlock the door.",
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "NORTHUNLOCKED",
+              [
+                "You have no further use of the tutorial key so you discard it.",
+                "removeItem|TUTORIAL_KEY"
+              ],
+              null
+            ]
+          },
+          "setFlag|WESTUNLOCKED"
         ]
       }
     },
@@ -153,6 +196,7 @@
         "removeItem|TUTORIAL_KEY",
         "removeItem|TUTORIAL_PC_KEY",
         "removeItem|TUTORIAL_BANANA",
+        "removeItem|TUTORIAL_BELT",
         "loadRoom|Forest/west-clearing"
       ]
     }

@@ -1,0 +1,66 @@
+{
+  "name": "Security Access",
+  "description": "You're standing in a security room. There is a vault door in the north wall. To the south is a white door. There's a table here{belt}.",
+  "slug": "Tutorial/north-access",
+  "north": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "NORTHOPEN",
+        [
+          "loadRoom|Tutorial/computer-room"
+        ],
+        [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "G.TUT_FIXED_MECHANISM",
+              [
+                "When you approach the vault door, you can hear mechanics hidden in the walls start to operate. A moment later, the vault door swings open. Then you hear a clang in the mechanics somewhere and a mechanical voice says \"ERROR. INTERNAL MECHANISM FAULT. VAULT DOOR CANNOT BE CLOSED.\" At least you won't get trapped inside!",
+                "setFlag|NORTHOPEN",
+                {
+                  "cmd": "waitForInput",
+                  "args": ["loadRoom|Tutorial/computer-room"]
+                }
+              ],
+              [
+                "When you approach the vault door, you can hear mechanics hidden in the walls start to operate. A moment later, they stop and you hear a mechanical voice: \"ERROR. ISSUE WITH MECHANICAL ROOM. VAULT DOOR INOPERABLE.\"."
+              ]
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "south": [
+    "loadRoom|Tutorial/center"
+  ],
+  "features": [
+    {
+      "slug": "table",
+      "look": [
+        "It's just a table{belt}."
+      ]
+    },
+    {
+      "slug": "vault",
+      "altSlugs": [
+        "vault door"
+      ],
+      "look": [
+        "It's a huge metal vault door. Hint: Just try going north. You don't have to interact specifically with the vault door."
+      ]
+    },
+    {
+      "slug": "belt",
+      "destroyedFlag": "TOOKBELT",
+      "notice": " with a belt on it",
+      "look": "It's a belt. Like, not the kind you wear, the kind that connect pulleys together. You know, the mechanical kind of belt.",
+      "take": [
+        "You take the belt from the table.",
+        "addItem|TUTORIAL_BELT",
+        "setFlag|TOOKBELT"
+      ]
+    }
+  ]
+}

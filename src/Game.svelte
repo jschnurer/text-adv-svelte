@@ -6,6 +6,9 @@
 
   export let loadGame = false;
 
+  let previousInputs = [];
+  let cmdIx = -1;
+
   let gs = getGameState(loadGame);
   gs.updateScroll = () =>
     window.setTimeout(
@@ -35,9 +38,53 @@
     el.focus();
   };
 
+  const keydown = ({ keyCode }) => {
+    if (keyCode === 38) {
+      loadPrevInput(-1);
+    } else if (keyCode === 40) {
+      loadPrevInput(1);
+    }
+  };
+
+  const loadPrevInput = dir => {
+    if (!previousInputs.length) {
+      return;
+    }
+
+    if (dir === -1) {
+      if (cmdIx === -1) {
+        cmdIx = previousInputs.length - 1;
+      } else if(cmdIx > 0) {
+        cmdIx--;
+      } else {
+        return;
+      }
+    } else {
+      if (cmdIx === -1) {
+        entry = "";
+        return;
+      } else {
+        cmdIx++;
+      }
+    }
+
+    if (cmdIx > previousInputs.length - 1) {
+      cmdIx = -1;
+      entry = "";
+      return;
+    }
+
+    entry = previousInputs[cmdIx];
+  };
+
   const submit = () => {
     gameState.handleUserEntry(entry.trim());
+    previousInputs = [...previousInputs, entry];
+    if (previousInputs.length > 10) {
+      previousInputs = previousInputs.slice(1);
+    }
     entry = "";
+    cmdIx = -1;
   };
 
   const help = () => {
@@ -80,7 +127,7 @@
       .replace(/#(.+?)#/g, "<pre>$1</pre>")
       .replace(/\\/g, "<br />");
 
-    if (nt.startsWith(']')) {
+    if (nt.startsWith("]")) {
       return nt.substring(1);
     } else {
       return nt;
@@ -125,7 +172,7 @@
   }
 
   :global(entry)::before {
-    content: '> ';
+    content: "> ";
   }
 </style>
 
@@ -141,14 +188,14 @@
     {/if}
 
     {#each gameState.text.split('\n') as line}
-      <p class={line.startsWith(']') ? "indent" : ""}>
+      <p class={line.startsWith(']') ? 'indent' : ''}>
         {@html convertSyntax(sanitize(line))}
       </p>
     {/each}
   </room>
   {#if !gameState.isGameOver}
     <form on:submit|preventDefault={submit}>
-      <input use:focus bind:value={entry} />
+      <input use:focus bind:value={entry} on:keydown={keydown} />
       <span on:click={help}>❔</span>
     </form>
   {:else}

@@ -1,8 +1,10 @@
 // Tutorial
 export {default as t_Center} from "./Tutorial/center.json";
-export {default as t_West} from "./Tutorial/west.json";
-export {default as t_North} from "./Tutorial/north.json";
-export {default as t_East} from "./Tutorial/east.json";
+export {default as t_learning} from "./Tutorial/learning.json";
+export {default as t_computer} from "./Tutorial/computer-room.json";
+export {default as t_teleporter} from "./Tutorial/teleporter.json";
+export {default as t_mechanical} from "./Tutorial/mechanism-room.json";
+export {default as t_northAccess} from "./Tutorial/north-access.json";
 
 // Forest
 export {default as f_brokenBridge} from "./Forest/broken-bridge.json";

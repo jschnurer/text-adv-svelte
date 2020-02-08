@@ -1,9 +1,9 @@
 {
   "name": "The Computer Room",
-  "slug": "Tutorial/north",
+  "slug": "Tutorial/computer-room",
   "description": "You're in a large, brightly lit room. A single, uncomfortable looking metal chair sits before a huge computer console that takes up nearly the entire north wall. There's a door to the south.",
   "south": [
-    "loadRoom|Tutorial/center"
+    "loadRoom|Tutorial/north-access"
   ],
   "features": [
     {
@@ -14,18 +14,22 @@
       ],
       "use": {
         "": [
+          "Please enter the system password or type \"cancel\"",
           {
-            "cmd": "ifHasItem",
+            "cmd": "choice",
             "args": [
-              "TUTORIAL_PC_KEY",
-              [
-                "You pick a random keyboard and punch in the passkey. The glass case covering a red button flips open.",
-                "removeItem|TUTORIAL_PC_KEY",
-                "setFlag|CASEOPEN"
-              ],
-              [
-                "You pick a keyboard and start punching keys. It doesn't work. Looks like you'll need a passkey."
-              ]
+              "Invalid password. Please try again or type \"cancel\"",
+              ["password123","cancel"],
+              {
+                "password123": [
+                  "\"Access granted\". The glass case covering a red button flips open.",
+                  "removeItem|TUTORIAL_PC_KEY",
+                  "setFlag|CASEOPEN"
+                ],
+                "cancel": [
+                  "You decide to call it quits for now."
+                ]
+              }
             ]
           }
         ]
@@ -36,6 +40,20 @@
       "look": [
         "Theres a handwritten note taped to the computer console next to the button:",
         "]The \"Exit Door Clamp Control\" button will seal or unseal the main exit from the tutorial facility.\nTo use the button, you would type \"push button\".\n]The button is enclosed in a glass case that can only be opened by using the computer (\"use computer\")."
+      ]
+    },
+    {
+      "slug": "banana",
+      "targetFlag": "SAWBANANA",
+      "destroyedFlag": "TOOKBANANA",
+      "notice": "There's a solitary banana sitting on the table.",
+      "look": [
+        "It's a yellow banana."
+      ],
+      "take": [
+        "addItem|TUTORIAL_BANANA",
+        "setFlag|TOOKBANANA",
+        "You take the banana from the table."
       ]
     },
     {
@@ -50,7 +68,14 @@
     {
       "slug": "button",
       "notice": [
-        "There is a button labeled \"Exit Door Clamp Control\" with a glass case."
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CASEOPEN",
+            ["There is a button labeled \"Exit Door Clamp Control\"."],
+            ["There is a button labeled \"Exit Door Clamp Control\" sealed inside glass case."]
+          ]
+        }
       ],
       "look": [
         "It's a round, red button. There's a label above it: \"Exit Door Clamp Control\".",
@@ -80,9 +105,11 @@
                 "args": [
                   "G.TUT_EAST_UNLOCKED",
                   [
+                    "Hint: You just re-sealed the east door in the starting room.",
                     "unsetFlag|G.TUT_EAST_UNLOCKED"
                   ],
                   [
+                    "Hint: The east door in the starting room is now open! You're almost out!",
                     "setFlag|G.TUT_EAST_UNLOCKED"
                   ]
                 ]
@@ -98,7 +125,8 @@
     {
       "slug": "case",
       "altSlugs": [
-        "glass"
+        "glass",
+        "glass case"
       ],
       "look": [
         {
@@ -109,16 +137,16 @@
               "The glass case is flipped up, allowing access to the button."
             ],
             [
-              "The glass case is sealing in the button. You'll have to use a passkey on the computer to open it."
+              "The glass case is sealing in the button. You'll have to get it open first. Hint: Try \"open case\"."
             ]
           ]
         }
       ],
       "open": [
-        "There's no way to physically open it. You'll have to use a passkey on the computer."
+        "There's no way to physically open it. You'll have to use the computer to open it. Hint: \"use computer\"!"
       ],
-      "break|smash": [
-        "You smack it a good one but it doesn't break."
+      "break|smash|shatter|destroy": [
+        "You smack it a good one but it doesn't break. This is some space-aged stuff!"
       ]
     }
   ]
