@@ -6,7 +6,7 @@ export default function ask(args) {
 
   let matches = args.trim().match("(.+) about (.+)");
 
-  if (matches.length !== 3) {
+  if (!matches || matches.length !== 3) {
     this.write("Huh? Try \"ask x about y\" instead.");
     return;
   }
