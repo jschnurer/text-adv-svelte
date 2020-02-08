@@ -48,7 +48,7 @@ To handle a user command on a room, feature, or item, simply add a property to t
 If the user enters a command and a target, the following steps are executed:
 1. Find the specified target by slug (or by searching the altSlugs array if specified)
 2. If target is not found, is not targetable, or is "destroyed", return invalid target message. Else, continue.
-3. If the target has a property whose name matches the entered command, execute the command
+3. If the target has a property whose name matches the entered command, execute the **cmdList** in that property. Alternatively, if the target has a property whose name is pipe delimited that contains the entered command, execute the  **cmdList** in that property.
 
 If the user enters a command without a target, it must be either "look", "inventory", "north", "south", "east", "west", "clear", "up", or "down".
 * "look" - clears the screen and writes out the room description

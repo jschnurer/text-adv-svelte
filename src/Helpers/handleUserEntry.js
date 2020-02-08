@@ -16,11 +16,11 @@ export default function handleUserEntry(entry) {
   }
 
   this.capturedText = '';
-  
+
   if (this.waitCmds) {
     this.parseCmds(this.waitCmds);
     return;
-  } else if(!entry) {
+  } else if (!entry) {
     return;
   }
 
@@ -77,9 +77,14 @@ export default function handleUserEntry(entry) {
   // If targeting something and that something has the command in it, run those commands.
   if (target) {
     if (target[cmd]) {
-    this.parseCmds(target[cmd], target);
+      this.parseCmds(target[cmd], target);
     } else {
-      this.write(`You can't ${cmd} that.`);
+      let propKey = Object.keys(target).find(x => x.split('|').indexOf(cmd) > -1);
+      if (propKey) {
+        this.parseCmds(target[propKey], target);
+      } else {
+        this.write(`You can't ${cmd} that.`);
+      }
     }
     return;
   }

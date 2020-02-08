@@ -20,6 +20,7 @@
               "TUTORIAL_PC_KEY",
               [
                 "You pick a random keyboard and punch in the passkey. The glass case covering a red button flips open.",
+                "removeItem|TUTORIAL_PC_KEY",
                 "setFlag|CASEOPEN"
               ],
               [
@@ -27,11 +28,6 @@
               ]
             ]
           }
-        ],
-        "TUTORIAL_PC_KEY": [
-          "removeItem|TUTORIAL_PC_KEY",
-          "You pick a random keyboard and punch in the passkey. The glass case covering a red button flips open.",
-          "setFlag|CASEOPEN"
         ]
       }
     },
@@ -39,7 +35,7 @@
       "slug": "note",
       "look": [
         "Theres a handwritten note taped to the computer console next to the button:",
-        "]The \"Exit Door Clamp Control\" button will seal or unseal the main exit from the tutorial facility.\nTo use the button, you would type \"push button\"."
+        "]The \"Exit Door Clamp Control\" button will seal or unseal the main exit from the tutorial facility.\nTo use the button, you would type \"push button\".\n]The button is enclosed in a glass case that can only be opened by using the computer (\"use computer\")."
       ]
     },
     {
@@ -71,7 +67,7 @@
           ]
         }
       ],
-      "push": [
+      "push|press": [
         {
           "cmd": "ifFlag",
           "args": [
@@ -121,10 +117,7 @@
       "open": [
         "There's no way to physically open it. You'll have to use a passkey on the computer."
       ],
-      "break": [
-        "You smack it a good one but it doesn't break."
-      ],
-      "smash": [
+      "break|smash": [
         "You smack it a good one but it doesn't break."
       ]
     }
