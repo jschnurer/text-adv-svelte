@@ -19,6 +19,7 @@ export default function handleUserEntry(entry) {
 
   if (this.waitCmds) {
     this.parseCmds(this.waitCmds);
+    this.waitCmds = null;
     return;
   } else if (!entry) {
     return;
