@@ -43,7 +43,7 @@ export default function parseCmds(cmds, feature) {
         this.choice.apply(this, cmd.args);
         break;
       case "waitForInput":
-        this.waitForInput.apply(this, cmd.args);
+        this.waitForInput(cmd.args);
         break;
     }
 

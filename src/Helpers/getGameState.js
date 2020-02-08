@@ -62,7 +62,7 @@ export default function getGameState(loadGame) {
     // Variables that are isolated by room.
     roomVars: {},
     // Variables that are global to the entire game.
-    globalVars: [],
+    globalVars: {},
     // The database of rooms.
     rooms: getRoomDictionary(),
     // Whether or not the game is in a game over state.
