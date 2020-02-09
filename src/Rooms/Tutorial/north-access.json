@@ -7,9 +7,7 @@
       "cmd": "ifFlag",
       "args": [
         "NORTHOPEN",
-        [
-          "loadRoom|Tutorial/computer-room"
-        ],
+        "loadRoom|Tutorial/computer-room",
         [
           {
             "cmd": "ifFlag",
@@ -20,36 +18,28 @@
                 "setFlag|NORTHOPEN",
                 {
                   "cmd": "waitForInput",
-                  "args": ["loadRoom|Tutorial/computer-room"]
+                  "args": "loadRoom|Tutorial/computer-room"
                 }
               ],
-              [
-                "When you approach the vault door, you can hear mechanics hidden in the walls start to operate. A moment later, they stop and you hear a mechanical voice: \"ERROR. ISSUE WITH MECHANICAL ROOM. VAULT DOOR INOPERABLE.\"."
-              ]
+              "When you approach the vault door, you can hear mechanics hidden in the walls start to operate. A moment later, they stop and you hear a mechanical voice: \"ERROR. ISSUE WITH MECHANICAL ROOM. VAULT DOOR INOPERABLE.\"."
             ]
           }
         ]
       ]
     }
   ],
-  "south": [
-    "loadRoom|Tutorial/center"
-  ],
+  "south": "loadRoom|Tutorial/center",
   "features": [
     {
       "slug": "table",
-      "look": [
-        "It's just a table{belt}."
-      ]
+      "look": "It's just a table{belt}."
     },
     {
       "slug": "vault",
       "altSlugs": [
         "vault door"
       ],
-      "look": [
-        "It's a huge metal vault door. Hint: Just try going north. You don't have to interact specifically with the vault door."
-      ]
+      "look": "It's a huge metal vault door. Hint: Just try going north. You don't have to interact specifically with the vault door."
     },
     {
       "slug": "belt",

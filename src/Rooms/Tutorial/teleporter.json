@@ -2,13 +2,11 @@
   "name": "Teleporter Room",
   "slug": "Tutorial/teleporter",
   "description": "You're in a dimly lit round room with a 5' diameter glass chamber in the center. Inside the chamber is a button. There's a handwritten note taped to the side of the doorway into the chamber. A door leads to the west.",
-  "west": ["loadRoom|Tutorial/center"],
+  "west": "loadRoom|Tutorial/center",
   "features": [
     {
       "slug": "chamber",
-      "look": [
-        "It's a 5' diameter glass chamber. There's a doorway that would permit entry and a large red button on a pedestal inside. There's also a handwritten note taped to the side of the entrance."
-      ]
+      "look": "It's a 5' diameter glass chamber. There's a doorway that would permit entry and a large red button on a pedestal inside. There's also a handwritten note taped to the side of the entrance."
     },
     {
       "slug": "note",
@@ -17,20 +15,16 @@
         "]One last bit of advice, if you see any cairns out in the wide world, you should \"touch\" them. It'll really help you out if you lose your path somewhere along the way. (They save your game!)",
         "]Just \"push button\" and your adventure will begin! Good luck and have fun!"
       ],
-      "take": [
-        "You think about taking the note but then decide not to. What would the next person to come along think if they got here and the note that they've been told so much about wasn't here?"
-      ]
+      "take": "You think about taking the note but then decide not to. What would the next person to come along think if they got here and the note that they've been told so much about wasn't here?"
     },
     {
       "slug": "button",
-      "look": [
-        "It's an enticing red button."
-      ],
+      "look": "It's an enticing red button.",
       "push": [
         "You step into the chamber, take a deep breath, and push the button.",
         {
           "cmd": "waitForInput",
-          "args": ["loadRoom|Forest/west-clearing"]
+          "args": "loadRoom|Forest/west-clearing"
         }
       ]
     }

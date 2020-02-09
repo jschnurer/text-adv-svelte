@@ -2,98 +2,53 @@
   "name": "The Learning Room",
   "slug": "Tutorial/learning",
   "description": "You're standing in a room with a single chair in the center facing the west wall. On that wall there's a large blackboard filled with information. A whiteboard is next to it on the wall too. There's a door leading to the east and another one labeled \"Mechanical Room\" is to the south. There's a terminal next to the door to the mechanical room.\\\\{robot}",
-  "east": [
-    "loadRoom|Tutorial/center"
-  ],
+  "east": "loadRoom|Tutorial/center",
   "south": [
     {
       "cmd": "ifFlag",
       "args": [
         "SOUTHOPEN",
-        [
-          "loadRoom|Tutorial/mechanism-room"
-        ],
-        [
-          "The door to the south is sealed. There's a terminal to the side of it."
-        ]
+        "loadRoom|Tutorial/mechanism-room",
+        "The door to the south is sealed. There's a terminal to the side of it."
       ]
     }
   ],
   "features": [
     {
       "slug": "robot",
-      "notice": [
-        "There's a robot standing in the corner. It speaks in a mechanical voice: \"HELLO HUMAN. WHEN YOU. MEET PEOPLE. YOU CAN. 'GREET' THEM. TRY GREETING. ME.\" (\"greet robot\")."
-      ],
-      "look": [
-        "It's a shiny metal robot about 5' tall\". It's just standing there in the corner. It has a small sticker on its chest of a cartoon monkey eating a banana."
-      ],
+      "notice": "There's a robot standing in the corner. It speaks in a mechanical voice: \"HELLO HUMAN. WHEN YOU. MEET PEOPLE. YOU CAN. 'GREET' THEM. TRY GREETING. ME.\" (\"greet robot\").",
+      "look": "It's a shiny metal robot about 5' tall\". It's just standing there in the corner. It has a small sticker on its chest of a cartoon monkey eating a banana.",
       "greet": [
         "GOOD DAY. TO YOU, HUMAN.",
         "YOU CAN. ASK QUESTIONS. (\"ask [person] about [topic]\") YOU CAN. GIVE ITEMS. (\"give [item] to [person]\") SOMETIMES YOU. HAVE A. CHOICE. ASK ME. ABOUT CHOICE.",
         "I WILL. GIVE COMPUTER. PASSWORD FOR. BANANA. I WILL. ALSO ANSWER. QUESTIONS."
       ],
       "ask": {
-        "": [
-          "ERROR. I DO. NOT KNOW. ANYTHING ABOUT. THAT TOPIC."
-        ],
-        "banana": [
-          "YES, BANANA. I CANNOT. EAT BUT. THE COLOR. IS PLEASING. I WILL. GIVE PASSWORD. FOR BANANA."
-        ],
-        "sticker": [
-          "YES, STICKER. I FOUND. IT IN. THE TRASH. IS THE. COLOR NOT. PLEASING TO. THE OPTICAL. SENSORS?"
-        ],
-        "blackboard": [
-          "YES, BLACKBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU."
-        ],
-        "whiteboard": [
-          "YES, WHITEBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU."
-        ],
-        "book": [
-          "YES, BOOK. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU."
-        ],
-        "chair": [
-          "YES, CHAIR. I DO. NOT REQUIRE. SITTING."
-        ],
-        "tutorial": [
-          "YES, TUTORIAL. IT WAS. MADE FOR. YOU TO. LEARN"
-        ],
+        "": "ERROR. I DO. NOT KNOW. ANYTHING ABOUT. THAT TOPIC.",
+        "banana": "YES, BANANA. I CANNOT. EAT BUT. THE COLOR. IS PLEASING. I WILL. GIVE PASSWORD. FOR BANANA.",
+        "sticker": "YES, STICKER. I FOUND. IT IN. THE TRASH. IS THE. COLOR NOT. PLEASING TO. THE OPTICAL. SENSORS?",
+        "blackboard": "YES, BLACKBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
+        "whiteboard": "YES, WHITEBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
+        "book": "YES, BOOK. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
+        "chair": "YES, CHAIR. I DO. NOT REQUIRE. SITTING.",
+        "tutorial": "YES, TUTORIAL. IT WAS. MADE FOR. YOU TO. LEARN",
         "password": [
           {
             "cmd": "ifFlag",
             "args": [
               "LEARNED_TUT_PASS",
-              [
-                "YES, PASSWORD. HUMANS HAVE. A SHORT. MEMORY. THE PASSWORD. IS \"PASSWORD123\"."
-              ],
-              [
-                "YES, PASSWORD. I WILL. GIVE IT. FOR BANANA. IT GRANTS. ACCESS TO. COMPUTER SYSTEM."
-              ]
+              "YES, PASSWORD. HUMANS HAVE. A SHORT. MEMORY. THE PASSWORD. IS \"PASSWORD123\".",
+              "YES, PASSWORD. I WILL. GIVE IT. FOR BANANA. IT GRANTS. ACCESS TO. COMPUTER SYSTEM."
             ]
           }
         ],
-        "computer": [
-          "YES, COMPUTER. IT REQUIRES. PASSWORD TO. USE IT. I REQUIRE. BANANA TO. GIVE PASSWORD."
-        ],
-        "life": [
-          "YES, LIFE. I DO. NOT HAVE. ONE. NEITHER DOES. MY CREATOR."
-        ],
-        "creator": [
-          "YES, CREATOR. MY CREATOR. WAS A. VERY CLEVER. MAN. HE MADE. ALL OF. THIS FOR. YOU TO. ENJOY."
-        ],
-        "mechanism": [
-          "YES, MECHANISM. THE MECHANISM. OPERATES THE. SECURITY DOORS. LEADING TO. THE COMPUTER. ROOM."
-        ],
-        "belt": [
-          "YES, BELT. THE MECHANISM. USES BELTS. TO TURN. GEARS. THERE WAS. A SPARE. BELT SOMEWHERE. AROUND HERE."
-        ],
-        "terminal": [
-          "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.",
-          "Hint: Try \"ask robot about keycode\"!."
-        ],
-        "keycode": [
-          "YES, KEYCODE. THE TERMINAL. NEEDS A. KEYCODE TO. OPEN THE. DOOR TO. THE MECHANICAL. ROOM. THE KEYCODE. REQUIRED IS. 62883."
-        ],
+        "computer": "YES, COMPUTER. IT REQUIRES. PASSWORD TO. USE IT. I REQUIRE. BANANA TO. GIVE PASSWORD.",
+        "life": "YES, LIFE. I DO. NOT HAVE. ONE. NEITHER DOES. MY CREATOR.",
+        "creator": "YES, CREATOR. MY CREATOR. WAS A. VERY CLEVER. MAN. HE MADE. ALL OF. THIS FOR. YOU TO. ENJOY.",
+        "mechanism": "YES, MECHANISM. THE MECHANISM. OPERATES THE. SECURITY DOORS. LEADING TO. THE COMPUTER. ROOM.",
+        "belt": "YES, BELT. THE MECHANISM. USES BELTS. TO TURN. GEARS. THERE WAS. A SPARE. BELT SOMEWHERE. AROUND HERE.",
+        "terminal": "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.\nHint: Try \"ask robot about keycode\"!.",
+        "keycode": "YES, KEYCODE. THE TERMINAL. NEEDS A. KEYCODE TO. OPEN THE. DOOR TO. THE MECHANICAL. ROOM. THE KEYCODE. REQUIRED IS. 62883.",
         "choice": [
           "I WILL. NOW PRESENT. YOU WITH. A DIFFICULT. CHOICE:",
           "DO YOU. THINK I. AM COOL?",
@@ -106,21 +61,15 @@
                 "no"
               ],
               {
-                "yes": [
-                  "YOUR RESPONSE. IS AGREEABLE. PLEASE GIVE. BANANA."
-                ],
-                "no": [
-                  "YOUR RESPONSE. IS UNPLEASANT."
-                ]
+                "yes": "YOUR RESPONSE. IS AGREEABLE. PLEASE GIVE. BANANA.",
+                "no": "YOUR RESPONSE. IS UNPLEASANT. PLEASE GIVE. BANANA."
               }
             ]
           }
         ]
       },
       "give": {
-        "": [
-          "ERROR. I DO. NOT REQUIRE. THAT OBJECT. I REQUIRE. ONLY BANANA."
-        ],
+        "": "ERROR. I DO. NOT REQUIRE. THAT OBJECT. I REQUIRE. ONLY BANANA.",
         "TUTORIAL_BANANA": [
           "The robot holds out a mechanical claw. You put the banana into its hand. The robot abruptly snaps its grip shut, utterly destroying the poor banana, sending yellow mulch down its arm and into clumps on the floor.",
           "THANK YOU. HUMAN. AS PROMISED. HERE IS. THE PASSWORD: \"PASSWORD123\". IF YOU. FORGET IT. YOU CAN. ASK ME. ABOUT IT. AND I. WILL REMIND. YOU.",
@@ -136,27 +85,17 @@
         "Hint: Try \"look book\" to read it.",
         "setFlag|SAWBOOK"
       ],
-      "sit": [
-        "You sit in the chair. You feel ready to learn! Then you feel a little silly so you stand back up."
-      ]
+      "sit": "You sit in the chair. You feel ready to learn! Then you feel a little silly so you stand back up."
     },
     {
       "slug": "book",
       "targetFlag": "SAWBOOK",
-      "look": [
-        "The book is open to a chapter about using items:",
-        "]Certain items can be used. Some have to be used on other items. You previously learned how to \"use key on door\" so you're almost an expert! Sometimes items can be used as-is. For example, there's a terminal in this room. You can use it by typing \"use terminal\". Some items can even have other items used on them AND be used on their own! You'll just have to experiment to find out!"
-      ],
-      "take": [
-        "You should leave that for the next person who might need it."
-      ]
+      "look": "The book is open to a chapter about using items:\nCertain items can be used. Some have to be used on other items. You previously learned how to \"use key on door\" so you're almost an expert! Sometimes items can be used as-is. For example, there's a terminal in this room. You can use it by typing \"use terminal\". Some items can even have other items used on them AND be used on their own! You'll just have to experiment to find out!",
+      "take": "You should leave that for the next person who might need it."
     },
     {
       "slug": "blackboard",
-      "look": [
-        "The blackboard reads:",
-        "]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - s\\south - s\\east - e\\west - w\\up - u\\down - d\\clear - cl"
-      ]
+      "look": "The blackboard reads:\n]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - s\\south - s\\east - e\\west - w\\up - u\\down - d\\clear - cl"
     },
     {
       "slug": "whiteboard",
@@ -170,9 +109,7 @@
     },
     {
       "slug": "terminal",
-      "look": [
-        "It's a screen with a digital keypad. It says \"Enter keycode to access mechanical room\"."
-      ],
+      "look": "It's a screen with a digital keypad. It says \"Enter keycode to access mechanical room\".",
       "use": {
         "": [
           "You step up to the terminal. It says \"Enter keycode to access mechanical room\". Please type the keycode now.",
@@ -186,9 +123,7 @@
                   "setFlag|SOUTHOPEN",
                   "You punch in the keycode and the south door to the mechanical room slides open."
                 ],
-                "cancel": [
-                  "You step away from the terminal. Hint: If you can't find the keycode anywhere in the tutorial, maybe there's someone you could ask about it."
-                ]
+                "cancel": "You step away from the terminal. Hint: If you can't find the keycode anywhere in the tutorial, maybe there's someone you could ask about it."
               }
             ]
           }

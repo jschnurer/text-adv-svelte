@@ -1,6 +1,11 @@
 export default function parseCmds(cmds, feature) {
   let bail = false;
 
+  if (typeof cmds === "string") {
+    this.parseStringCmd(cmds, feature);
+    return;
+  }
+
   cmds.forEach(cmd => {
     if (bail) {
       return;

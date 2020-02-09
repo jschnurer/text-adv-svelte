@@ -41,7 +41,7 @@ The string "{slug}" in any text output will result in a notice replacement. The 
 The string "$varname$" in any text output will result in a variable replacement. The engine will get the value of that variable and replace the "$varname$" with it. If the variable is null or undefined, an empty string will be used instead.
 
 ## Handling user commands
-To handle a user command on a room, feature, or item, simply add a property to the object that matches the command. The most general of these commands is "look". Almost all user command properties should be **cmdLists**. Some are **special commands**, though.
+To handle a user command on a room, feature, or item, simply add a property to the object that matches the command. The most general of these commands is "look". Almost all user command properties should be **cmdLists**. Some are **special commands**, though. It is also possible to set a command property to a simple string, in which case it will be parsed as a **string command**.
 
 ! The user may only enter commands that appear in verbs.json.
 

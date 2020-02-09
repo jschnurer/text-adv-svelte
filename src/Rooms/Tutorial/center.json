@@ -7,21 +7,15 @@
       "cmd": "ifFlag",
       "args": [
         "NORTHUNLOCKED",
-        [
-          "loadRoom|Tutorial/north-access"
-        ],
+        "loadRoom|Tutorial/north-access",
         [
           "The door to the north is locked.",
           {
             "cmd": "ifHasItem",
             "args": [
               "TUTORIAL_KEY",
-              [
-                "Hint: You can use objects on other objects. Try \"use key on north door\" or \"use tutorial key on north door\"."
-              ],
-              [
-                "Hint: Maybe if you \"look\" around you can find a key somewhere. If you had a key, you could \"use key on north door\"..."
-              ]
+              "Hint: You can use objects on other objects. Try \"use key on north door\" or \"use tutorial key on north door\".",
+              "Hint: Maybe if you \"look\" around you can find a key somewhere. If you had a key, you could \"use key on north door\"..."
             ]
           }
         ]
@@ -33,12 +27,8 @@
       "cmd": "ifFlag",
       "args": [
         "G.TUT_EAST_UNLOCKED",
-        [
-          "loadRoom|Tutorial/teleporter"
-        ],
-        [
-          "You can't open the door. There are clamps holding it shut. They look electronically controlled."
-        ]
+        "loadRoom|Tutorial/teleporter",
+        "You can't open the door. There are clamps holding it shut. They look electronically controlled."
       ]
     }
   ],
@@ -47,21 +37,15 @@
       "cmd": "ifFlag",
       "args": [
         "WESTUNLOCKED",
-        [
-          "loadRoom|Tutorial/learning"
-        ],
+        "loadRoom|Tutorial/learning",
         [
           "The door to the west is locked.",
           {
             "cmd": "ifHasItem",
             "args": [
               "TUTORIAL_KEY",
-              [
-                "Hint: You can use objects on other objects. Try \"use key on west door\"."
-              ],
-              [
-                "Hint: Maybe if you \"look\" around you can find a key somewhere. If you had a key, you could \"use key on west door\"..."
-              ]
+              "Hint: You can use objects on other objects. Try \"use key on west door\".",
+              "Hint: Maybe if you \"look\" around you can find a key somewhere. If you had a key, you could \"use key on west door\"..."
             ]
           }
         ]
@@ -71,26 +55,14 @@
   "features": [
     {
       "slug": "table",
-      "look": [
-        "It's a plain metal table with a white surface. There's a jumble of stuff on its surface.",
-        "Hint: Try \"look [stuff]\"!"
-      ]
+      "look": "It's a plain metal table with a white surface. There's a jumble of stuff on its surface.\nHint: Try \"look [stuff]\"!"
     },
     {
       "slug": "stuff",
       "look": [
         "There's a pile of odds and ends. Tools, greeting cards, thumbtacks and all other manner of useless kitsch. {key}",
         "Hint: When you investigate things you may notice other objects you can interact with. Some things might not be interactable, like the tools, greeting cards, or thumbtacks (try \"look tools\" to see).",
-        {
-          "cmd": "ifFlag",
-          "args": [
-            "TOOKKEY",
-            null,
-            [
-              "Hint: Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\")."
-            ]
-          ]
-        },
+        "ifNotFlagWrite|TOOKKEY|Hint: Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\").",
         "setFlag|SAWKEY"
       ]
     },
@@ -98,12 +70,8 @@
       "slug": "key",
       "targetFlag": "SAWKEY",
       "destroyedFlag": "TOOKKEY",
-      "notice": [
-        "There's also a brass key!"
-      ],
-      "look": [
-        "It's a normal looking, brass key. It's probably for a door (Hint: it is!)."
-      ],
+      "notice": "There's also a brass key!",
+      "look": "It's a normal looking, brass key. It's probably for a door (Hint: it is!).",
       "take": [
         "You take the key from the pile of junk.",
         "Hint: Now that you took the key, it's not in the world anymore. Now it's in your inventory. You can check your inventory with the \"inventory\" command. You can interact with things in your inventory just like if they were in the world. The key's name is \"tutorial key\" in your inventory so you can look at it with \"look tutorial key\". You can also use the shorthand target \"key\".",
@@ -113,9 +81,7 @@
     },
     {
       "slug": "door",
-      "look": [
-        "Hint: Sometimes a word (like door) could describe multiple things. In this case, the \"north door\", \"west door\" and \"east door\" are all interactable. Normally, if the game doesn't understand what you're trying to interact with you'll get a message like \"You don't see [target] anywhere\". That lets you know that what you're trying to interact with is either unimportant or you need to use a more specific phrase to target it."
-      ]
+      "look": "Hint: Sometimes a word (like door) could describe multiple things. In this case, the \"north door\", \"west door\" and \"east door\" are all interactable. Normally, if the game doesn't understand what you're trying to interact with you'll get a message like \"You don't see [target] anywhere\". That lets you know that what you're trying to interact with is either unimportant or you need to use a more specific phrase to target it."
     },
     {
       "slug": "east door",
@@ -137,9 +103,7 @@
     },
     {
       "slug": "north door",
-      "look": [
-        "It's a white door. There's a keyhole in the knob."
-      ],
+      "look": "It's a white door. There's a keyhole in the knob.",
       "use": {
         "TUTORIAL_KEY": [
           "You use the tutorial key to unlock the door.",
@@ -183,18 +147,13 @@
     },
     {
       "slug": "sign",
-      "look": [
-        "The sign reads: You can skip the tutorial by typing \"skip tutorial\""
-      ]
+      "look": "The sign reads: You can skip the tutorial by typing \"skip tutorial\""
     },
     {
       "slug": "tutorial",
-      "look": [
-        "It's all around you, man..."
-      ],
+      "look": "It's all around you, man...",
       "skip": [
         "removeItem|TUTORIAL_KEY",
-        "removeItem|TUTORIAL_PC_KEY",
         "removeItem|TUTORIAL_BANANA",
         "removeItem|TUTORIAL_BELT",
         "loadRoom|Forest/west-clearing"
