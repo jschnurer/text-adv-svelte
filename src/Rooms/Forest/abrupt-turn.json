@@ -2,31 +2,24 @@
   "name": "An Abrupt Turn in the Forest Path",
   "slug": "Forest/abrupt-turn",
   "description": "The forest path turns abruptly here, heading north and east. A large, 4' tall stone stands higher than the long grass at the edges of the path. It is engraved with a runic symbol.",
-  "north": [
-    "loadRoom|Forest/bend-in-the-path"
-  ],
-  "east": [
-    "loadRoom|Forest/ruins-entrance"
-  ],
+  "north": "loadRoom|Forest/bend-in-the-path",
+  "east": "loadRoom|Forest/ruins-entrance",
   "features": [
     {
       "slug": "path",
-      "look": [
-        "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
-      ]
+      "look": "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
     },
     {
       "slug": "stone",
-      "look": [
-        "The stone is standing alongside the path. The way it's oriented is almost like a signpost. The runic symbol seems to indicate what lies to the east."
-      ]
+      "look": "The stone is standing alongside the path. The way it's oriented is almost like a signpost. The runic symbol seems to indicate what lies to the east."
     },
     {
       "slug": "runic symbol",
-      "altSlugs": ["rune","symbol"],
-      "look": [
-        "ᛞ"
-      ]
+      "altSlugs": [
+        "rune",
+        "symbol"
+      ],
+      "look": "ᛞ"
     }
   ]
 }

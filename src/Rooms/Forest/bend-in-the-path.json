@@ -2,18 +2,12 @@
   "name": "A Bend in the Forest Path",
   "slug": "Forest/bend-in-the-path",
   "description": "The path through the dense forest slowly bends here, leading west and south. Long grass grows on either side of the path, before the trees take over. {sack}",
-  "south": [
-    "loadRoom|Forest/abrupt-turn"
-  ],
-  "west": [
-    "loadRoom|Forest/lonely-path"
-  ],
+  "south": "loadRoom|Forest/abrupt-turn",
+  "west": "loadRoom|Forest/lonely-path",
   "features": [
     {
       "slug": "path",
-      "look": [
-        "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
-      ]
+      "look": "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
     },
     {
       "slug": "sack",
@@ -37,9 +31,7 @@
         "addItem|TROWEL",
         "setFlag|TOOKTROWEL"
       ],
-      "look": [
-        "It's a gardening trowel--a little rusty but should still be fine."
-      ]
+      "look": "It's a gardening trowel--a little rusty but should still be fine."
     }
   ]
 }

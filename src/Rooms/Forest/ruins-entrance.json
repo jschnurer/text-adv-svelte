@@ -2,19 +2,13 @@
   "name": "Entrance to Ancient Ruins",
   "slug": "Forest/ruins-entrance",
   "description": "You are standing in the center of an overgrown stone plaza. The forest to the west hasn't yet overtaken the area. To the east is a ruined building which seems to be the harbinger of a small, ruined settlement. A footpath leads to the west. To the east is an entrance into the ruined building.",
-  "east": [
-    "loadRoom|Ruins/forest-entrance"
-  ],
-  "west": [
-    "loadRoom|Forest/abrupt-turn"
-  ],
+  "east": "loadRoom|Ruins/forest-entrance",
+  "west": "loadRoom|Forest/abrupt-turn",
   "features": [
     {
       "slug": "building",
-      "altSlugs": ["ruins", "ruined building", "settlement"],
-      "look": [
-        "The ruins are made of a grayish stone. Some of the buildings are collapsed. Those that are still standing have sections that have fallen away. Piles of overgrown rubble are everywhere. There's an entranceway to the east that would lead inside."
-      ]
+      "altSlugs": ["ruins", "ruined building", "settlement", "building", "east"],
+      "look": "The ruins are made of a grayish stone. Some of the buildings are collapsed. Those that are still standing have sections that have fallen away. Piles of overgrown rubble are everywhere. There's an entranceway to the east that would lead inside."
     }
   ]
 }

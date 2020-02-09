@@ -2,12 +2,8 @@
   "name": "Clearing in a Forest",
   "slug": "Forest/west-clearing",
   "description": "{intro}You are in a small clearing in a dense forest. There's a small hole in the ground nearby with a little pile of dirt next to it. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
-  "north": [
-    "loadRoom|Forest/broken-bridge"
-  ],
-  "east": [
-    "loadRoom|Forest/quiet-fork"
-  ],
+  "north": "loadRoom|Forest/broken-bridge",
+  "east": "loadRoom|Forest/quiet-fork",
   "features": [
     {
       "slug": "intro",
@@ -16,11 +12,9 @@
           "cmd": "ifFlag",
           "args": [
             "INTRODONE",
+            null,
             [
-              ""
-            ],
-            [
-              "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache and you can't seem to remember what you were doing before you woke up here. You pick yourself up and manage to get on your feet.\n",
+              "You wake up and groggily open your eyes. You're laying on your back looking at a green forest canopy overhead and can see patches of pale blue sky above. You have a pounding headache and you can't seem to remember what you were doing before you woke up here. You pick yourself up and manage to get on your feet.",
               "addItem|CELLPHONE",
               "setFlag|INTRODONE"
             ]
@@ -37,15 +31,11 @@
     },
     {
       "slug": "dirt",
-      "look": [
-        "It's a little pile of soft soil. It must be from the hole next to it."
-      ]
+      "look": "It's a little pile of soft soil. It must be from the hole next to it."
     },
     {
       "slug": "stone",
-      "look": [
-        "It's a small, smooth stone that could easily fit in your hand."
-      ],
+      "look": "It's a small, smooth stone that could easily fit in your hand.",
       "notice": "At the bottom of the hole is a small, smooth stone.",
       "targetFlag": "SEESTONE",
       "destroyedFlag": "STONETAKEN",
@@ -57,9 +47,7 @@
     },
     {
       "slug": "path",
-      "look": [
-        "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
-      ]
+      "look": "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
     }
   ]
 }

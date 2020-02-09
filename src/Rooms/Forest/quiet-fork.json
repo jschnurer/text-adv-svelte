@@ -2,24 +2,14 @@
   "name": "A Quiet Fork in the Forest",
   "slug": "Forest/quiet-fork",
   "description": "You are at a fork in a dirt path in a dense forest. A lone bird tweets from the treetops somewhere nearby. A rotting chunk of wood that must have once been a signpost decays in the long grass. The dirt path leads to the north, south, east, and west.",
-  "north": [
-    "loadRoom|Forest/river-bank"
-  ],
-  "east": [
-    "loadRoom|Forest/lonely-path"
-  ],
-  "west": [
-    "loadRoom|Forest/west-clearing"
-  ],
-  "south": [
-    "loadRoom|Forest/quiet-path"
-  ],
+  "north": "loadRoom|Forest/river-bank",
+  "east": "loadRoom|Forest/lonely-path",
+  "west": "loadRoom|Forest/west-clearing",
+  "south": "loadRoom|Forest/quiet-path",
   "features": [
     {
       "slug": "bird",
-      "look": [
-        "You can hear it but can't see it."
-      ]
+      "look": "You can hear it but can't see it."
     },
     {
       "slug": "signpost",
@@ -33,9 +23,7 @@
           "cmd": "ifFlag",
           "args": [
             "TOOKNAIL",
-            [
-              "It's been rotting away for a long, long time. It's falling apart."
-            ],
+            "It's been rotting away for a long, long time. It's falling apart.",
             [
               "It's been rotting away for a long, long time. The single nail that holds it together is rusty but still doing its job.",
               "setFlag|sawNail"
@@ -48,9 +36,7 @@
       "slug": "nail",
       "targetFlag": "sawNail",
       "destroyedFlag": "TOOKNAIL",
-      "look": [
-        "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose."
-      ],
+      "look": "It's a rusty old nail. The hole it's in is rotting away and it looks quite loose.",
       "take": [
         "addItem|NAIL",
         "setFlag|TOOKNAIL",
@@ -59,9 +45,7 @@
     },
     {
       "slug": "path",
-      "look": [
-        "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
-      ]
+      "look": "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
     }
   ]
 }

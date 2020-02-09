@@ -2,18 +2,12 @@
   "name": "Bank of a Raging River in a Forest",
   "slug": "Forest/river-bank",
   "description": "Through the trees you can see that you're at the southern bank of a raging river. A dirt path leads south and also climbs gradually upward to the east.",
-  "south": [
-    "loadRoom|Forest/quiet-fork"
-  ],
-  "east": [
-    "loadRoom|Forest/hill"
-  ],
+  "south": "loadRoom|Forest/quiet-fork",
+  "east": "loadRoom|Forest/hill",
   "features": [
     {
       "slug": "river",
-      "look": [
-        "It's a white-rapids river. It's really cranking along. There are loads of jagged looking rocks poking up out of the tubulent water."
-      ]
+      "look": "It's a white-rapids river. It's really cranking along. There are loads of jagged looking rocks poking up out of the tubulent water."
     }
   ]
 }

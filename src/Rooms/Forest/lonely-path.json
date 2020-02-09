@@ -2,37 +2,25 @@
   "name": "A Lonely Path Through the Forest",
   "slug": "Forest/lonely-path",
   "description": "You're on a lonely dirt path through the dense forest. The path is slowly being overgrown due to disuse. You can hear birds and other forest critters somewhere in the trees. A cloud of insects buzzes around, searching for prey. The path heads east and west.",
-  "east": [
-    "loadRoom|Forest/bend-in-the-path"
-  ],
-  "west": [
-    "loadRoom|Forest/quiet-fork"
-  ],
+  "east": "loadRoom|Forest/bend-in-the-path",
+  "west": "loadRoom|Forest/quiet-fork",
   "features": [
     {
       "slug": "insects",
-      "look": [
-        "Annoying, but not dangerous."
-      ]
+      "look": "Annoying, but not dangerous."
     },
     {
       "slug": "critters",
-      "look": [
-        "You can see a couple birds sitting in branches but the rest are too stealthy."
-      ]
+      "look": "You can see a couple birds sitting in branches but the rest are too stealthy."
     },
     {
       "slug": "birds",
       "altSlugs": ["bird"],
-      "look": [
-        "They're sparrows... or are they starlings? You never were a bird lover so you're not sure."
-      ]
+      "look": "They're sparrows... or are they starlings? You never were a bird lover so you're not sure."
     },
     {
       "slug": "path",
-      "look": [
-        "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
-      ]
+      "look": "It's a dirt path, slowly being overtaken by encroaching weeds. It hasn't seen traffic in a long time."
     }
   ]
 }

@@ -1,30 +1,19 @@
 {
   "name": "Broken Bridge in a Forest",
   "slug": "Forest/broken-bridge",
-  "description": "Through the dense trees you can see that you're on the south bank of a raging river that bisects the forest. Its roaring shatters the eerie silence. The river must be at least 50 feet across. An old wooden bridge once spanned the river but has since mostly collapsed and washed away. Part of it still juts out from either side of the river, casting deep shadows beneath it. An overgrown trail leads through the trees to the south.",
-  "north": [
-    "The bridge is out and the river looks far too dangerous to cross. Still, if you really wanted to you could try to cross the river."
-  ],
-  "south": [
-    "loadRoom|Forest/west-clearing"
-  ],
+  "description": "Through the dense trees you can see that you're on the south bank of a raging river that bisects the forest. Its roaring shatters the eerie silence. The river must be at least 50 feet across.\nAn old wooden bridge once spanned the river but has since mostly collapsed and washed away. Part of it still juts out from either side of the river, casting deep shadows beneath it.\nAn overgrown trail leads through the trees to the south.",
+  "north": "The bridge is out and the river looks far too dangerous to cross. Still, if you really wanted to you could try to cross the river.",
+  "south": "loadRoom|Forest/west-clearing",
   "features": [
     {
       "slug": "bridge",
       "look": [
-        "The bridge is ancient and rotting. It sticks out over the river maybe 10 feet. The water underneath the bridge is in shadows."
-      ]
-    },
-    {
-      "slug": "shadows",
-      "look": [
+        "The bridge is ancient and rotting. It sticks out over the river maybe 10 feet.",
         {
-          "cmd":"ifFlag",
-          "args":[
+          "cmd": "ifFlag",
+          "args": [
             "TOOKROD",
-            [
-              "The shadows beneath the bridge conceal no further secrets, as far as you can tell."
-            ],
+            "The shadows beneath the bridge conceal no further secrets, as far as you can tell.",
             [
               "In the shadows beneath the bridge you see a rusty metal rod sticking out of the river about 5 feet from shore.",
               "setFlag|SEEROD"
@@ -35,9 +24,7 @@
     },
     {
       "slug": "rod",
-      "look": [
-        "It's a cylindrical, rusty metal rod sticking out of the water about 5 feet from shore."
-      ],
+      "look": "It's a cylindrical, rusty metal rod sticking out of the water about 5 feet from shore.",
       "targetFlag": "SEEROD",
       "take": [
         {
@@ -49,9 +36,7 @@
               "You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You work it back and forth until it's free and then make your way back to the bank.",
               "setFlag|TOOKROD"
             ],
-            [
-              "gameOver|You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks. You start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late. Your head spins and you lose consciousness."
-            ]
+            "gameOver|You wade out into the river and grab the metal rod. You give it a tug but it's caught in the rocks.\nYou start working it back and forth to free it when you feel a stabbing pain in your leg. It's quickly followed by another and another and another. The murky water begins to roil as the river reddens with your blood.\nGray, toothy fish begin leaping from the water in a feeding frenzy, taking chunks of your flesh before returning to the murky river. You flee back to the bank of the river but it's too late.\nYour head begins spinning. As everything fades to black, you have one, final thought... If only you had done something to distract the fish..."
           ]
         }
       ]
@@ -60,15 +45,11 @@
       "slug": "water",
       "look": [
         {
-          "cmd":"ifFlag",
-          "args":[
+          "cmd": "ifFlag",
+          "args": [
             "FISH_DISTRACTED",
-            [
-              "The water is a little murky."
-            ],
-            [
-              "The water is a little murky. You can see dark shapes moving around in it."
-            ]
+            "The water is a little murky.",
+            "The water is a little murky. You can see dark shapes moving around in it."
           ]
         }
       ]
@@ -77,15 +58,11 @@
       "slug": "river",
       "look": [
         {
-          "cmd":"ifFlag",
-          "args":[
+          "cmd": "ifFlag",
+          "args": [
             "FISH_DISTRACTED",
-            [
-              "The river is a little murky."
-            ],
-            [
-              "The river is a little murky. You can see dark shapes moving around in it."
-            ]
+            "The river is a little murky.",
+            "The river is a little murky. You can see dark shapes moving around in it."
           ]
         }
       ],
@@ -94,12 +71,8 @@
           "cmd": "ifFlag",
           "args": [
             "FISH_DISTRACTED",
-            [
-              "gameOver|You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current. You smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under. You lose your bearings in the murky water and smash again and again into sharp rocks. You feel something in your leg snap. The last thing you experience is bashing your head against rock."
-            ],
-            [
-              "gameOver|You wade out into the murky water and begin to swim. The river begins to carry you downstream. You feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood. Gray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
-            ]
+            "gameOver|You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current.\nYou smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under.\nYour bearings lost in the murky water, you smash into the sharp rocks again and again. You feel something in your leg snap, something in your arm twists the wrong way.\nThe last thing you experience is bashing your head against rock.",
+            "gameOver|You wade out into the murky water and begin to swim. The river begins carrying you downstream.\nYou feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood.\nGray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
           ]
         }
       ]
