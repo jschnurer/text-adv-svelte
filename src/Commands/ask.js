@@ -37,10 +37,22 @@ export default function ask(args) {
     }
   }
 
-  if (!target.ask[topic]) {
+  let topicCmds = target.ask[topic];
+
+  if (!topicCmds) {
+    let topicName = Object.keys(target.ask)
+      .find(x => x.split('|')
+        .find(z => z.toLowerCase() === topic));
+    
+    if (topicName) {
+      topicCmds = target.ask[topicName];
+    }
+  }
+
+  if (!topicCmds) {
     this.parseCmds(target.ask[""]);
     return;
   }
 
-  this.parseCmds(target.ask[topic]);
+  this.parseCmds(topicCmds);
 }
