@@ -117,6 +117,11 @@ export default function handleUserEntry(entry) {
     case "clear":
       this.clear();
       break;
+    case "stand":
+      if (this.room.stand) {
+        this.parseCmds(this.room.stand);
+      }
+      break;
     default:
       this.write("What do you want to " + cmd + "?");
       break;
