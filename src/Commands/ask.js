@@ -14,13 +14,30 @@ export default function ask(args) {
   let target = this.findTarget(matches[1]);
 
   if (!target) {
-    this.unknownTarget();
+    this.unknownTarget(matches[1]);
     return;
   }
 
   let topic = matches[2];
 
-  if (!target.ask || !target.ask[topic]) {
+  if (!target.ask) {
+    this.write("You can't ask " + target + " anything.");
+    return;
+  }
+
+  if (target.ask.requiredFlag) {
+    if (!this.getFlag(target.ask.requiredFlag)) {
+      this.parseCmds(target.ask.cantAsk);
+      return;
+    }
+  } else if (target.ask.requiredNotFlag) {
+    if (this.getFlag(target.ask.requiredNotFlag)) {
+      this.parseCmds(target.ask.cantAsk);
+      return;
+    }
+  }
+
+  if (!target.ask[topic]) {
     this.parseCmds(target.ask[""]);
     return;
   }
