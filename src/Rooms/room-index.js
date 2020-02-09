@@ -18,7 +18,8 @@ export {default as f_abruptTurn} from "./Forest/abrupt-turn.json";
 export {default as f_ruinsEntrance} from "./Forest/ruins-entrance.json";
 export {default as f_quietPath} from "./Forest/quiet-path.json";
 export {default as f_wellWornTrail} from "./Forest/well-worn-trail.json";
-export {default as f_cabin} from "./Forest/cabin.json";
+export {default as f_cabinEntrance} from "./Forest/cabin-entrance.json";
+export {default as f_cabinInterior} from "./Forest/cabin-interior.json";
 export {default as f_oldWell} from "./Forest/old-well.json";
 export {default as f_hornetNest} from "./Forest/hornet-nest.json";
 

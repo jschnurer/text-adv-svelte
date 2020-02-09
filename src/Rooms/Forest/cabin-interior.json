@@ -1,0 +1,115 @@
+{
+  "name": "Cabin Interior",
+  "slug": "Forest/cabin-interior",
+  "description": "You're in a cozy, one-room cabin. There are two beds, a small woodstove, a kitchen and a dining table with two chairs. A small array of pots and pans hangs on nails on the wall above the kitchen. The door to the cabin leads east, back out to the forest.",
+  "east": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "SITTING",
+        "You're currently sitting at the table across from Arden. You'll have to stand before you can leave.",
+        "loadRoom|Forest/cabin-entrance"
+      ]
+    }
+  ],
+  "stand": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "SITTING",
+        [
+          "You stand up.",
+          "unsetFlag|SITTING"
+        ],
+        "You're already standing!"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "slug": "arden",
+      "altSlugs": [
+        "man",
+        "old man",
+        "older man"
+      ],
+      "roomDesc": [
+        "ifNotFlagWrite|SITTING|Arden sits in a chair at the table with two tin cups and a kettle. \"Please, take a seat. Have some tea and let's talk.\"",
+        "ifFlagWrite|SITTING|Arden sits in a chair across the table from you at the table with two tin cups and a kettle."
+      ],
+      "ask": {
+        "": "\"I don't know anything about that.\"",
+        "requiredFlag": "SITTING",
+        "cantAsk": "Arden looks up at you from his seat. \"Please have a seat first. I don't like having to crane my neck.\"",
+        "what's going on": "\"To put it plainly, I don't know. But here's what I do know.\" He takes a sip of his tea. \"We,\" he motions toward Edra, \"like you, don't remember anything before we woke up here on the island. Yes, we're on an island if you didn't know already. Except we didn't wake up here in the forest. And we didn't wake up together. No, I woke up on the beach south of here past the swamp. Edra, the poor bastard, woke up in the swamp covered in giant mosquito bites.\"\n\"We've met a few others like yourself but not in a long, long time. We're not sure how people are getting to the island at all, let alone why hardly anyone new comes along anymore.\"",
+        "others": [
+          "\"It's been a long time since we've met anyone new. You're the first person in... well... wow. I'm not really sure. A really long time. Everyone that we'd met before all went off on their own trying to find a way off the island but I was never able to. I've got to stay here and look after Edra.\"\n\"How about you? If you'd like to, you could stay here and help out. There's no need to run off and meet whatever fate befell the others. So what do you say, do you want to settle down and live here instead?\"",
+          {
+            "cmd": "choice",
+            "args": [
+              "Arden takes another sip of his tea and says \"I'm a simple man, young'un. Speak plainly. Do you want to give up exploring the island to settle down and live here instead? A simple yes or no will do.\"",
+              [
+                "yes",
+                "no"
+              ],
+              {
+                "yes": "gameOver|You decide that exploring the island would be too dangerous so you agree to Arden's offer. Over the coming months you and Arden build a small addition to the cabin which becomes your new room. You help tend the garden and fetch water from the well to the east but never venture any further. After a while, Arden passes away from old age. You dig him a grave in the backyard and visit it every day. You carry on, taking care of Edra for years. He never does wake up. Eventually, he passes away too. You live alone in the cabin for many years but no new arrivals ever show up.\nYou live a long, quiet life alone in your cabin in the woods. One night after you've grown to be quite elderly, you have a dream about exploring the island. It's equal parts adventurous, exciting, and scary. The dream is tinged with a feeling of what might have been.\nYou pass away peacefully in your sleep.",
+                "no": "\"I thought not. Nobody's ever taken the offer. I can only imagine what's happened to them.\""
+              }
+            ]
+          }
+        ],
+        "edra": "\"He's my younger brother. Poor guy woke up in the swamp south of here covered in giant mosquito bites. By the time we found each other he was woozy and not feeling well. We managed to escape the swamp and find this clearing in the forest. It was... real tough at first. Edra couldn't help much and mostly rested. Eventually I finished the cabin and we moved inside. It's been... a long, long time since he's been awake. I've been taking care of him for years.\"\n\"If only there was a cure for whatever he's afflicted with. But,\" he sighs, \"I can't go far. Plus, at least we're safe here.\"",
+        "bucket": [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "G.BUCKET_PERMISSION",
+              [
+                {
+                  "cmd": "ifFlag",
+                  "args": [
+                    "G.TOOK_BUCKET",
+                    "\"How's it been working out for you? Hope it's been useful somehow. Don't worry about returning it. It's yours. As thanks for the company.\"",
+                    "\"You don't have to keep asking. I already said you could borrow it.\""
+                  ]
+                }
+              ],
+              [
+                "\"I'm not sure what you'd want a bucket for, but go ahead. you can borrow one.\"",
+                "setFlag|G.BUCKET_PERMISSION"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "slug": "Edra",
+      "altSlugs": [
+        "man in bed",
+        "man on bed",
+        "other man"
+      ],
+      "roomDesc": "There's another man in one of the beds, asleep under a green, wool blanket."
+    },
+    {
+      "slug": "chair",
+      "sit": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "SITTING",
+            "You're already sitting across from Arden at the table.",
+            [
+              "You take a seat across from Arden.",
+              "setFlag|SITTING",
+              "\"Please, have some tea. That there,\" Arden motions across the room at the man asleep in bed, \"is my brother Edra. We're pleased to meet you.\"",
+              "\"Now I'm sure you've got lots of things you want to ask me about or maybe you just want to ask about %what's going on%. So shoot. I'll try to answer any questions you've got.\" He takes a sip from his tea."
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

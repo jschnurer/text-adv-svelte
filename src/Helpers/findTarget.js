@@ -5,7 +5,7 @@ export default function findTarget(slug) {
       return false;
     }
 
-    if (x.slug === slug || (x.altSlugs && x.altSlugs.indexOf(slug) > -1)) {
+    if (x.slug.toLowerCase() === slug || (x.altSlugs && x.altSlugs.map(z => z.toLowerCase()).indexOf(slug) > -1)) {
       if (x.targetFlag) {
         if (this.getLocalVars()[x.targetFlag] || this.globalVars[x.targetFlag]) {
           return true;
@@ -23,7 +23,7 @@ export default function findTarget(slug) {
     return roomFeature;
   }
 
-  let invItem = this.inventory.find(x => x.slug === slug || (x.altSlugs && x.altSlugs.indexOf(slug) > -1));
+  let invItem = this.inventory.find(x => x.slug.toLowerCase() === slug || (x.altSlugs && x.altSlugs.map(z => z.toLowerCase()).indexOf(slug) > -1));
 
   return invItem;
 };

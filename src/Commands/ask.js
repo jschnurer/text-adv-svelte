@@ -21,7 +21,7 @@ export default function ask(args) {
   let topic = matches[2];
 
   if (!target.ask) {
-    this.write("You can't ask " + target + " anything.");
+    this.write("You can't ask " + target.slug + " anything.");
     return;
   }
 

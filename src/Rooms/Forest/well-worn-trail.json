@@ -4,7 +4,7 @@
   "description": "You're on a well-worn trail through the dense forest. A mostly overgrown, disused path heads into the forest to the north. The well-worn trail heads east and west.",
   "north": "loadRoom|Forest/quiet-path",
   "east": "loadRoom|Forest/old-well",
-  "west": "loadRoom|Forest/cabin",
+  "west": "loadRoom|Forest/cabin-entrance",
   "features": [
     {
       "slug": "path",
