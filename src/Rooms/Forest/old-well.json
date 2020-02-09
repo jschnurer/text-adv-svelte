@@ -1,9 +1,9 @@
 {
   "name": "An Old Well in the Forest",
   "slug": "Forest/old-well",
-  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank{bucket}.\nA well-worn trail leads to the west whereas an overgrown path leads to the south. To the north you can see many broken branches that almost form a path. You hear a cacophonous buzzing coming from the north.",
+  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank{bucket}.\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
   "west": "loadRoom|Forest/well-worn-trail",
-  "north": "TODO!",
+  "north": "loadRoom|Forest/hornet-nest",
   "south": "TODO!",
   "features": [
     {
@@ -80,6 +80,14 @@
           }
         ]
       }
+    },
+    {
+      "slug": "path",
+      "look": "It's a dirt path, mostly overtaken by encroaching weeds. It hasn't seen traffic in a long time."
+    },
+    {
+      "slug": "trail",
+      "look": "It's a well-worn dirt trail. It must see frequent traffic since there's hardly any weeds or grass growing."
     }
   ]
 }

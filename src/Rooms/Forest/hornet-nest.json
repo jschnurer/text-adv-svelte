@@ -1,0 +1,20 @@
+{
+  "name": "The Hive Entrance",
+  "slug": "Forest/hornet-nest",
+  "description": "You're standing in a dense forest, hiding in the foliage. A cacophonous buzzing fills the area. Dozens of two-foot-long hornets fly about. Even more cling to nearby trees, crawling along the trunks and branches. There's a huge hole in the ground that countless hornets are crawling into and out of.\nTo the south, branches have been shorn clean off the trees, forming a path through the forest. The hole leads downward.",
+  "south": "loadRoom|Forest/well-worn-trail",
+  "down": [
+    "gameOver|You step out from your hiding place and sneak over to the hole. The hornets see you and catch your very not-hornet-like scent. The entire nest immediately launch themselves from the trees and ground and take flight. A cyclone of hornets erupts from the hole in the ground! Before you even have time to respond you've been run through by the rapier-like stingers of a dozen hornets.\nEven after you've collapsed to the ground, unable to move or protect yourself, they continue to sting, over and over and over. If only you had found a way to disguise your scent..."
+  ],
+  "features": [
+    {
+      "slug": "hole",
+      "look": "It's a hole, about 5' in diameter leading downward into the earth. Countless hornets crawl into and out of it all the time."
+    },
+    {
+      "slug": "hornet",
+      "altSlugs": ["hornets"],
+      "look": "They're everywhere. Their bodies are striped black and yellow and they've got long, sharp stingers. Their antennae twitch constantly, searching the area for possible threats."
+    }
+  ]
+}
