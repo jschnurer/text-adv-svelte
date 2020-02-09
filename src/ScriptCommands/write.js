@@ -44,13 +44,13 @@ function replaceNotices(haystack, gameState) {
     let feat = gameState.getFeature(p1);
 
     if (feat) {
-      if (typeof feat.notice === 'string') {
-        return feat.notice;
-      } else {
-        gameState.writeCapturing = true;
-        gameState.parseCmds(feat.notice);
-        gameState.writeCapturing = false;
+      gameState.writeCapturing = true;
+      gameState.parseCmds(feat.notice);
+      gameState.writeCapturing = false;
+      if (gameState.capturedText) {
         return gameState.capturedText.replace('\n', '');
+      } else {
+        return '';
       }
     }
     return '';
