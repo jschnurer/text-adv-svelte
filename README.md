@@ -179,7 +179,7 @@ For example, to be able to "ask" a feature in a room something, the feature must
 ```
 
 ### _ask_ [target] about [topic]
-The ask object should have properties whose names are the topics the player can ask about.
+The ask object should have properties whose names are the topics the player can ask about. Additionally, the ask command can be prevented unless a flag is true. To do so, add a property to the object named `requiredFlag` and set its value to a string which is the name of the flag to require. Another property named `cantAsk` must also be defined, whose value can be a **cmdList**. If the player tries to ask the target anything and the required flag is falsey, the `cantAsk` **cmdList** will be executed. Alternately, a if a property named `requiredNotFlag` can be defined which functions the same as `requiredFlag` except the opposite will be true.
 
 ### combine [target] with [target]
 Either target should have a combine object with a property matching the other's slug (or item_id). If a match is found, that property will be executed as a **cmdList**.
