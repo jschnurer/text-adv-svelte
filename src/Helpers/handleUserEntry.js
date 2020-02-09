@@ -3,6 +3,8 @@ const shortcuts = {
   "s": "south",
   "e": "east",
   "w": "west",
+  "u": "up",
+  "d": "down",
   "cl": "clear",
   "l": "look",
   "t": "take",
@@ -105,16 +107,12 @@ export default function handleUserEntry(entry) {
       this.listInventory();
       break;
     case "north":
-      this.move("north");
-      break;
     case "south":
-      this.move("south");
-      break;
     case "east":
-      this.move("east");
-      break;
     case "west":
-      this.move("west");
+    case "up":
+    case "down":
+      this.move(cmd);
       break;
     case "clear":
       this.clear();
