@@ -63,7 +63,6 @@ button {
 
 hint {
   text-decoration: underline;
-  text-decoration-color: #6a6a6a;
   text-decoration-style: dashed;
   cursor: help;
 }
