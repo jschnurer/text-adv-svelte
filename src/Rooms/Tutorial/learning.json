@@ -17,7 +17,7 @@
     {
       "slug": "robot",
       "notice": "There's a robot standing in the corner. It speaks in a mechanical voice: \"HELLO HUMAN. WHEN YOU. MEET PEOPLE. YOU CAN. 'GREET' THEM. TRY GREETING. ME.\" (\"greet robot\").",
-      "look": "It's a shiny metal robot about 5' tall\". It's just standing there in the corner. It has a small sticker on its chest of a cartoon monkey eating a banana.",
+      "look": "It's a shiny metal robot about 5' tall. It's just standing there in the corner. It has a small sticker on its chest of a cartoon monkey eating a banana.",
       "greet": [
         "GOOD DAY. TO YOU, HUMAN.",
         "YOU CAN. ASK QUESTIONS. (\"ask [person] about [topic]\") YOU CAN. GIVE ITEMS. (\"give [item] to [person]\") SOMETIMES YOU. HAVE A. CHOICE. ASK ME. ABOUT CHOICE.",
@@ -47,7 +47,7 @@
         "creator": "YES, CREATOR. MY CREATOR. WAS A. VERY CLEVER. MAN. HE MADE. ALL OF. THIS FOR. YOU TO. ENJOY.",
         "mechanism": "YES, MECHANISM. THE MECHANISM. OPERATES THE. SECURITY DOORS. LEADING TO. THE COMPUTER. ROOM.",
         "belt": "YES, BELT. THE MECHANISM. USES BELTS. TO TURN. GEARS. THERE WAS. A SPARE. BELT SOMEWHERE. AROUND HERE.",
-        "terminal": "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.\nHint: Try \"ask robot about keycode\"!.",
+        "terminal": "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.",
         "keycode": "YES, KEYCODE. THE TERMINAL. NEEDS A. KEYCODE TO. OPEN THE. DOOR TO. THE MECHANICAL. ROOM. THE KEYCODE. REQUIRED IS. 62883.",
         "choice": [
           "I WILL. NOW PRESENT. YOU WITH. A DIFFICULT. CHOICE:",
@@ -123,7 +123,7 @@
                   "setFlag|SOUTHOPEN",
                   "You punch in the keycode and the south door to the mechanical room slides open."
                 ],
-                "cancel": "You step away from the terminal. Hint: If you can't find the keycode anywhere in the tutorial, maybe there's someone you could ask about it."
+                "cancel": "You step away from the terminal. Hint: If you can't find the keycode anywhere in the tutorial, maybe there's someone you could ask about it. (\"ask robot about keycode\")"
               }
             ]
           }
