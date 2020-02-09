@@ -28,11 +28,6 @@
   "features": [
     {
       "slug": "arden",
-      "altSlugs": [
-        "man",
-        "old man",
-        "older man"
-      ],
       "roomDesc": [
         "ifNotFlagWrite|SITTING|Arden sits in a chair at the table with two tin cups and a kettle. \"Please, take a seat. Have some tea and let's talk.\"",
         "ifFlagWrite|SITTING|Arden sits in a chair across the table from you at the table with two tin cups and a kettle."
@@ -105,11 +100,7 @@
     },
     {
       "slug": "Edra",
-      "altSlugs": [
-        "man in bed",
-        "man on bed",
-        "other man"
-      ],
+      "altSlugs": ["man"],
       "roomDesc": "There's another man in one of the beds, asleep under a green, wool blanket.",
       "look": [
         "He's a younger man, maybe in his mid-30s, with a crudely trimmed brown beard and hair. He's fast asleep in bed.",

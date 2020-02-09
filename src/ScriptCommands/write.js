@@ -5,7 +5,17 @@ export default function write(msg) {
     let hintMsg = msg;
 
     this.room.features.forEach(x => {
-      hintMsg = hintMsg.replace(new RegExp(x.slug, 'g'), '%' + x.slug + '%');
+      let slugs = [];
+      x.slug.split('|').forEach(z => slugs.push(z));
+      if(x.altSlugs) {
+        slugs = slugs.concat(x.altSlugs);
+      }
+      
+      slugs.forEach(slug => {
+        hintMsg = hintMsg.replace(new RegExp(slug, 'gi'), (match) => {
+          return '%' + match + '%';
+        });
+      });
     });
 
     if (wc) {
