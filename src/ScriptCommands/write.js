@@ -12,7 +12,7 @@ export default function write(msg) {
       }
       
       slugs.forEach(slug => {
-        hintMsg = hintMsg.replace(new RegExp(slug, 'gi'), (match) => {
+        hintMsg = hintMsg.replace(new RegExp("\\b" + slug + "\\b", 'gi'), (match) => {
           return '%' + match + '%';
         });
       });
