@@ -125,7 +125,8 @@
       .replace(/\^(.+?)\^/g, "<h3>$1</h3>")
       .replace(/~(.+?)~/g, "<entry>$1</entry>")
       .replace(/#(.+?)#/g, "<pre>$1</pre>")
-      .replace(/\\/g, "<br />");
+      .replace(/\\/g, "<br />")
+      .replace(/"(.+?)"/g, "<speech>\"$1\"</speech>");
 
     if (nt.startsWith("]")) {
       return nt.substring(1);
