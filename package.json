@@ -6,7 +6,7 @@
     "host:local": "replace-in-file /__hostdir__/g \"\" ./public/index.html --isRegex",
     "host:server:css": "replace-in-file /__hostdir__/g /adventure ./public/global.css --isRegex",
     "host:local:css": "replace-in-file /__hostdir__/g \"\" ./public/global.css --isRegex",
-    "build": "run-s copy:templates host:server host:local:css build:rollup",
+    "build": "run-s copy:templates host:server host:server:css build:rollup",
     "build:rollup": "rollup -c",
     "autobuild": "rollup -c -w",
     "copy:templates": "copy-files-from-to",
