@@ -19,7 +19,9 @@ import decVar from "../ScriptCommands/decVar.js";
 import destroyFeature from "../ScriptCommands/destroyFeature.js";
 import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
+import ifFlagWrite from "../ScriptCommands/ifFlagWrite.js";
 import ifHasItem from "../ScriptCommands/ifHasItem.js";
+import ifNotFlagWrite from "../ScriptCommands/ifNotFlagWrite.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
 import ifVar from "../ScriptCommands/ifVar.js";
 import incVar from "../ScriptCommands/incVar.js";
@@ -97,7 +99,9 @@ export default function getGameState(loadGame) {
     destroyFeature,
     gameOver,
     ifFlag,
+    ifFlagWrite,
     ifHasItem,
+    ifNotFlagWrite,
     ifRoom,
     ifVar,
     incVar,
