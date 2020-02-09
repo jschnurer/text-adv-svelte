@@ -40,6 +40,11 @@ export default function handleUserEntry(entry) {
   let args = chunks.filter((_, ix) => ix > 0);
   let target = null;
 
+  // Replace common verbs with their engine equivalent
+  if (cmd === "talk") {
+    cmd = "greet";
+  }
+
   if (!this.allowedVerbs.find(x => x === cmd)) {
     this.unknownCmd(cmd);
     return;
