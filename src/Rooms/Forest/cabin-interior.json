@@ -144,9 +144,66 @@
       ]
     },
     {
+      "slug": "tea",
+      "look": "\"Have some. I can't promise that it's particularly good but at least it's warm.\" He smiles and takes a sip of his tea.",
+      "drink": [
+        {
+          "cmd": "ifVar",
+          "args": [
+            "SIPSTAKEN",
+            "<",
+            5,
+            [
+              "You take a sip of your tea.",
+              "incVar|SIPSTAKEN",
+              "incVar|TOTALSIPSTAKEN"
+            ],
+            [
+              "You've run out of tea. Arden asks \"Would you like some more?\"",
+              {
+                "cmd": "choice",
+                "args": [
+                  "\"Did you want some more tea or not?\"",
+                  [
+                    "yes",
+                    "no"
+                  ],
+                  {
+                    "yes": [
+                      {
+                        "cmd": "ifVar",
+                        "args": [
+                          "TOTALSIPSTAKEN",
+                          "<",
+                          15,
+                          [
+                            "Arden takes the kettle and refills your cup.",
+                            "decVar|SIPSTAKEN|5"
+                          ],
+                          [
+                            "Arden takes the kettle and goes to refill your cup only to find it's empty. \"Sorry, seems we've run out.\""
+                          ]
+                        ]
+                      }
+                    ],
+                    "no": [
+                      "Arden just smiles at you."
+                    ]
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ]
+    },
+    {
       "slug": "pots",
       "altSlugs": [
-        "pans"
+        "pans",
+        "pots and pans",
+        "pot",
+        "pan"
       ],
       "look": "They're metal pots and pans. There aren't many of them, just the essentials. Arden says \"You like my fine dining establishment? I found those...\" He trails off for a moment then laughs. \"Well, it's been so long I actually don't remember.\""
     },
