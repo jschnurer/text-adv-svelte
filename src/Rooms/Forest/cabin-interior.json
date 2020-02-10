@@ -1,7 +1,7 @@
 {
   "name": "Cabin Interior",
   "slug": "Forest/cabin-interior",
-  "description": "You're in a cozy, one-room cabin. There are two beds, a small stone fireplace, a kitchen and a dining table with two chairs. A small array of pots and pans hangs on nails on the wall above the kitchen. The door to the cabin leads east, back out to the forest.",
+  "description": "You're in a cozy, one-room cabin. There are two beds, a small stone fireplace, a kitchen and a dining table with two chairs. A small array of pots and pans hangs on nails on the wall above the kitchen. The cabin's only door leads east, back out to the forest.",
   "east": [
     {
       "cmd": "ifFlag",
@@ -33,6 +33,7 @@
         "ifFlagWrite|SITTING|Arden sits in a chair across the table from you at the table with two tin cups and a kettle."
       ],
       "look": "Arden's an older man with graying hair and a crudely trimmed gray beard. He's sitting in a chair at the table holding a cup of tea, watching you, waiting patiently to answer any of your questions.",
+      "greet": "\"Hi again. Have a seat and we can chat.\"",
       "ask": [
         {
           "cmd": "ifFlag",
@@ -45,7 +46,7 @@
                   "": "\"I don't know anything about that.\"",
                   "what's going on": "\"To put it plainly, I don't know. But here's what I do know.\" He takes a sip of his tea. \"We,\" he motions toward Edra, \"like you, don't remember anything before we woke up here on the island. Yes, we're on an island if you didn't know already. Except we didn't wake up here in the forest. And we didn't wake up together. No, I woke up on the beach south of here past the swamp. Edra, the poor bastard, woke up in the swamp covered in giant mosquito bites.\"\n\"We've met a few others like yourself but not in a long, long time. We're not sure how people are getting to the island at all, let alone why hardly anyone new comes along anymore.\"",
                   "others": [
-                    "\"It's been a long time since we've met anyone new. You're the first person in... well... wow. I'm not really sure. A really long time. None of the others knew what was going on or had any memory before they woke up on the island. They all went off on their own trying to find a way off the island but I was never able to. I've got to stay here and look after Edra.\"\n\"How about you? If you'd like to, you could stay here and help out. There's no need to run off and meet whatever fate befell the others. So what do you say, do you want to settle down and live here instead?\"",
+                    "\"It's been a long time since we've met anyone new. You're the first person in... well... wow. I'm not really sure. A really long time. None of the others knew what was going on or had any memories from before waking up on the island. They all went off on their own trying to find a way off the island but I was never able to. I've got to stay here and look after Edra.\"\n\"How about you? If you'd like to, you could stay here and help out. There's no need to run off and meet whatever fate befell the others. So what do you say, do you want to settle down and live here instead?\"",
                     {
                       "cmd": "choice",
                       "args": [
@@ -85,7 +86,7 @@
                     }
                   ],
                   "island": "\"Yeah, we're definitely on an island. I woke up on a sandy beach beyond the swamp to the south. Couldn't see anything but ocean on the horizon. I heard from others a long time ago that they'd climbed part way up a mountain to the north and were able to see the whole island.\"\n\"Le'see, what'd they say? There's a black mountain to the north, ruins to the east, the swamp, of course, to the south with the beach beyond that. Apparently there's some way to reach the mountain through the ruins. Oh, and there was a lighthouse on a peninsula off the beach. I couldn't get in though, it was locked up tight. Plus I had to find Edra.\"",
-                  "lighthouse": "\"Yup. Damndest thing too. The light was still working. It was locked up tight but I banged on the door and nobody answered. It's south of here, past the marsh and on a peninsula off the beach.\"",
+                  "lighthouse": "\"Yup. Damndest thing too. The light was still working. It was locked up tight but I banged on the door and nobody answered. It's south of here, past the swamp and on a peninsula off the beach.\"",
                   "swamp": "\"That's where Edra and I found each other after we woke up on the island. There are loads of blood-sucking giant mosquitoes all over the place down there. They're easy enough to keep off of you but poor Edra was asleep and nearly got sucked dry. I remember seeing some kind of creepy hut in the swamp but it gave us a bad feeling so we avoided it.\"",
                   "hut": "\"The hut in the swamp, yeah. It was real creepy and gave Edra and I a bad feeling. We avoided it. What's that? Why? Because there were all these weird totems sticking up out of the muck with wicker and vine dreamcatcher-things hanging off them and weird lights coming from inside. Oh, and animal skulls, loads of animal skulls.\"",
                   "mosquito|giant mosquito": "\"Those suckers are all over the swamp south of here. They're easy enough to keep off of you... as long as you're paying attention.\"",
@@ -95,9 +96,10 @@
                   "well": "\"It's to the east. Have you been over there? Be real careful. I saw a giant hornet one time nearby. I think they've got a nest to the north.\"",
                   "hornet|giant hornet": "\"If you see one, run. Those things have stingers the size of swords!\"",
                   "escape": "\"Who knows if there's a way off the island. I've met others a long time ago that looked for one but I've never seen any of them again. Whether that means they found an escape or if they met an untimely end somewhere on the island, who knows?\"",
-                  "mountain|black mountain": "\"I heard from the others there's a huge, black mountain far to the north. I've actually seen it myself. Years ago after we had finally got the cabin built, I decided to climb the tallest tree I could find to try to get the lay of the land. Couldn't see much except for the black mountain to the north. Gave me a real uneasy feeling looking at it though.\"",
+                  "mountain|black mountain": "\"There's a huge, black mountain far to the north. The others that I met a long time ago said that there was something up there. They didn't elaborate. I've actually seen the mountain myself. Years ago after we had finally got the cabin built, I decided to climb the tallest tree I could find to try to get the lay of the land. Couldn't see much except for the black mountain to the north. Gave me a real uneasy feeling looking at it though.\"",
+                  "something|something up there": "\"Not sure. The others didn't say anything specific.\"",
                   "uneasy feeling|feeling|real uneasy feeling": "\"Yeah. It was a feeling of dread that was slowly building up while looking at the mountain. Almost like the mountain was looking back at me. I've never looked at it again.\"",
-                  "ruins": "\"I heard they're somewhere northeast of here. I don't know must about them. I've never explored them.\"",
+                  "ruins": "\"I heard they're somewhere northeast of here. I don't know much about them. I've never explored them.\"",
                   "beach": "\"It's to the south past the swamp. It was really nice, actually. It would be a nice place to vacation at if, you know, I wasn't worried for my life the last time I was there. It's where I first woke up on the island.\"",
                   "hotrod": "\"I think Edra had one. Maybe. Before...\" he motions all around, \"all of this.\"",
                   "nail": "\"Thanks again for that. I don't even remember how long I was standing there needing a single nail.\"",
@@ -119,7 +121,8 @@
       "look": [
         "He's a younger man, maybe in his mid-30s, with a crudely trimmed brown beard and hair. He's fast asleep in bed.",
         "Arden sees you looking at him. \"That's my younger brother Edra. He's been asleep a long time.\""
-      ]
+      ],
+      "greet": "Edra doesn't respond. \"He's not much for talking nowadays,\" Arden says then chuckles to himself."
     },
     {
       "slug": "chair",

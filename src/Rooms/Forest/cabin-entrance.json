@@ -1,7 +1,7 @@
 {
   "name": "Outside a Log Cabin in the Forest",
   "slug": "Forest/cabin-entrance",
-  "description": "You're standing outside a fenced-in yard surrounding a sturdily-built log cabin in a clearing in the dense forest. Whispy smoke rises from the cabin's chimney. There's a gate in the wooden fence which is currently open. Inside the fence is a small garden with {bucket} sitting next to it.\n{man}\nA well-worn trail leads to the east. To the west is the cabin.",
+  "description": "You're standing outside a fenced-in yard surrounding a crudely-built log cabin in a clearing in the dense forest. Whispy smoke rises from the cabin's chimney. There's a gate in the wooden fence which is currently open. Inside the fence is a small garden with {bucket} sitting next to it.\n{man}\nA well-worn trail leads to the east. To the west is the cabin.",
   "east": "loadRoom|Forest/well-worn-trail",
   "west": [
     {
@@ -28,12 +28,23 @@
       "look": "It's a well-worn dirt trail. It must see frequent traffic since there's hardly any weeds or grass growing."
     },
     {
+      "slug": "cabin",
+      "look": "It's a crudely built log cabin. There's a door and some shuttered windows. It's got a chimney with whispy smoke rising from it."
+    },
+    {
+      "slug": "gate",
+      "look": "It's open."
+    },
+    {
       "slug": "man",
       "altSlugs": [
         "arden"
       ],
       "destroyedFlag": "ARDENINSIDE",
-      "notice": "There's an older man standing at the fence. It looks like he's trying to repair it.",
+      "notice": [
+        "ifFlagWrite|METARDEN|Arden's standing at the fence. It looks like he's trying to repair it.",
+        "ifNotFlagWrite|METARDEN|There's an older man standing at the fence. It looks like he's trying to repair it."
+      ],
       "look": "He's an older man with graying hair and a crudely trimmed gray beard. With one hand he's holding a new board up to the fence and in the other he's holding a hammer. The new board is only attached to the fence on one end. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\"",
       "ask": [
         {

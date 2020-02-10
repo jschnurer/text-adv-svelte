@@ -1,7 +1,7 @@
 {
   "name": "An Old Well in the Forest",
   "slug": "Forest/old-well",
-  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank{bucket}.\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
+  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank{pail}.\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
   "west": "loadRoom|Forest/well-worn-trail",
   "north": "loadRoom|Forest/hornet-nest",
   "south": "loadRoom|Forest/swamp-entrance",
@@ -11,14 +11,14 @@
       "look": "It's a brick well. It stands six-ish feet high."
     },
     {
-      "slug": "bucket",
+      "slug": "pail",
       "notice": [
         {
           "cmd": "ifFlag",
           "args": [
-            "BUCKETDOWN",
+            "PAILDOWN",
             null,
-            " with a rope attached to a bucket sitting on its edge"
+            " with a rope attached to a pail sitting on its edge"
           ]
         }
       ],
@@ -26,14 +26,14 @@
         {
           "cmd": "ifFlag",
           "args": [
-            "BUCKETDOWN",
+            "PAILDOWN",
             "You can't see it. It's all the way down at the bottom of the well.",
             [
-              "The bucket's sitting on the edge of the well and is attached to the well via a rope.",
+              "The pail's sitting on the edge of the well and is attached to the well via a rope.",
               {
                 "cmd": "ifFlag",
                 "args": [
-                  "BUCKETHASWATER",
+                  "PAILHASWATER",
                   "It's full of crystal-clear water.",
                   "It's empty."
                 ]
@@ -42,17 +42,17 @@
           ]
         }
       ],
-      "take": "You shouldn't take the bucket. How would anyone else draw water?",
+      "take": "You shouldn't take the pail. How would anyone else draw water?",
       "drop": [
         {
           "cmd": "ifFlag",
           "args": [
-            "BUCKETDOWN",
+            "PAILDOWN",
             "You can't reach it. It's all the way down at the bottom of the well.",
             [
-              "You grab the bucket and drop it down into the well. It falls all the way to the bottom and you can hear a splash from down in the darkness.",
-              "setFlag|BUCKETDOWN",
-              "setFlag|BUCKETHASWATER"
+              "You grab the pail and drop it down into the well. It falls all the way to the bottom and you can hear a splash from down in the darkness.",
+              "setFlag|PAILDOWN",
+              "setFlag|PAILHASWATER"
             ]
           ]
         }
@@ -64,18 +64,18 @@
     },
     {
       "slug": "crank",
-      "look": "It's built into the wide of the well's structure. When the bucket's down in the well, the crank draws it back up to the surface.",
+      "look": "It's built into the side of the well's structure. When the pail's down in the well, the crank draws it back up to the surface.",
       "use": {
         "": [
           {
             "cmd": "ifFlag",
             "args": [
-              "BUCKETDOWN",
+              "PAILDOWN",
               [
-                "You turn the crank on the side of the well over and over. Eventually the bucket returns to the surface. You grab it and set it on the edge of the well.",
-                "unsetFlag|BUCKETDOWN"
+                "You turn the crank on the side of the well over and over. Eventually the pail returns to the surface. You grab it and set it on the edge of the well.",
+                "unsetFlag|PAILDOWN"
               ],
-              "There's no need. The bucket's already on the edge of the well. You'd have to drop the bucket first."
+              "There's no need. The pail's already on the edge of the well. You'd have to drop the pail first."
             ]
           }
         ]
