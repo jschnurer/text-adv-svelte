@@ -1,0 +1,7 @@
+{
+  "name": "A Lone, Dead Tree",
+  "slug": "Swamp/dead-tree",
+  "description": "",
+  "west": "loadRoom|Swamp/toppled-log",
+  "east": "loadRoom|Swamp/standing-water"
+}

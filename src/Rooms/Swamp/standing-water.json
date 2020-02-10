@@ -1,0 +1,7 @@
+{
+  "name": "A Pool of Standing Water",
+  "slug": "Swamp/standing-water",
+  "description": "",
+  "west": "loadRoom|Swamp/dead-tree",
+  "south": "loadRoom|Swamp/bubbling-muck"
+}

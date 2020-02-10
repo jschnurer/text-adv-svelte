@@ -1,0 +1,8 @@
+{
+  "name": "Toppled Log, Growing Mushrooms",
+  "slug": "Swamp/toppled-log",
+  "description": "",
+  "north": "loadRoom|Swamp/forest-entrance",
+  "south": "loadRoom|Swamp/mosquito-spawn",
+  "east": "loadRoom|Swamp/dead-tree"
+}

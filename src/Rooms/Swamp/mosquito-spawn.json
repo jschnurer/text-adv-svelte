@@ -1,0 +1,8 @@
+{
+  "name": "Mosquito Spawning Pool",
+  "slug": "Swamp/mosquito-spawn",
+  "description": "",
+  "north": "loadRoom|Swamp/toppled-log",
+  "south": "loadRoom|Swamp/statue",
+  "west": "loadRoom|Swamp/vertical-shaft"
+}

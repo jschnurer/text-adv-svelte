@@ -1,0 +1,6 @@
+{
+  "name": "Creepy Hut in the Center of the Swamp",
+  "slug": "Swamp/hut",
+  "description": "",
+  "east": "loadRoom|Swamp/bubbling-muck"
+}

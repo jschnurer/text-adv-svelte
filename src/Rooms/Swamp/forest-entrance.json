@@ -3,7 +3,7 @@
   "slug": "Swamp/forest-entrance",
   "description": "You're standing on solid ground in a thin copse of trees. An overgrown path leads to the north into the deep forest. To the south the ground slowly gives way to mud and standing water. The putrid stench of the swamp is thick here.",
   "north": "loadRoom|Forest/swamp-entrance",
-  "south": "TODO: add more swamp",
+  "south": "loadRoom|Swamp/toppled-log",
   "features": [
     {
       "slug": "path",

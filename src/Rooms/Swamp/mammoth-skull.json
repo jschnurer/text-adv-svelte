@@ -1,0 +1,8 @@
+{
+  "name": "Muck-Buried Mammoth Skull",
+  "slug": "Swamp/mammoth-skull",
+  "description": "",
+  "north": "loadRoom|Swamp/bubbling-muck",
+  "east": "loadRoom|Swamp/dry-trail",
+  "west": "loadRoom|Swamp/campsite"
+}

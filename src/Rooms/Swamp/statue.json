@@ -1,0 +1,7 @@
+{
+  "name": "Ancient, Filth-Coated Statue",
+  "slug": "Swamp/statue",
+  "description": "",
+  "north": "loadRoom|Swamp/mosquito-spawn",
+  "east": "loadRoom|Swamp/campsite"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "A Dry Trail",
+  "slug": "Swamp/dry-trail",
+  "description": "",
+  "south": "loadRoom|Swamp/ridge",
+  "west": "loadRoom|Swamp/mammoth-skull"
+}

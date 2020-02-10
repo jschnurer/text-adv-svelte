@@ -1,0 +1,7 @@
+{
+  "name": "Long Abandoned Campsite",
+  "slug": "Swamp/campsite",
+  "description": "",
+  "east": "loadRoom|Swamp/mammoth-skull",
+  "west": "loadRoom|Swamp/statue"
+}

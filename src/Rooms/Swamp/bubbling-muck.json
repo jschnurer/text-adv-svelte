@@ -1,0 +1,8 @@
+{
+  "name": "Stinking, Bubbling Muck",
+  "slug": "Swamp/bubbling-muck",
+  "description": "",
+  "north": "loadRoom|Swamp/standing-water",
+  "south": "loadRoom|Swamp/mammoth-skull",
+  "west": "loadRoom|Swamp/hut"
+}
