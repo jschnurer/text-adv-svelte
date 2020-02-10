@@ -4,13 +4,13 @@ export default function write(msg) {
   if (this.options.showHints) {
     let hintMsg = msg;
 
-    this.room.features.forEach(x => {
+    (this.room.features || []).forEach(x => {
       let slugs = [];
       x.slug.split('|').forEach(z => slugs.push(z));
-      if(x.altSlugs) {
+      if (x.altSlugs) {
         slugs = slugs.concat(x.altSlugs);
       }
-      
+
       slugs.forEach(slug => {
         hintMsg = hintMsg.replace(new RegExp("\\b" + slug + "\\b", 'gi'), (match) => {
           return '%' + match + '%';
