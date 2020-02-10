@@ -1,7 +1,7 @@
 {
   "name": "Outside a Log Cabin in the Forest",
   "slug": "Forest/cabin-entrance",
-  "description": "You're standing outside a fenced-in yard surrounding a sturdily-built log cabin in a clearing in the dense forest. There's a gate in the wooden fence which is currently open. Inside the fence is a small garden with {bucket} sitting next to it.\n{man}\nA well-worn trail leads to the east. To the west is the cabin.",
+  "description": "You're standing outside a fenced-in yard surrounding a sturdily-built log cabin in a clearing in the dense forest. Whispy smoke rises from the cabin's chimney. There's a gate in the wooden fence which is currently open. Inside the fence is a small garden with {bucket} sitting next to it.\n{man}\nA well-worn trail leads to the east. To the west is the cabin.",
   "east": "loadRoom|Forest/well-worn-trail",
   "west": [
     {

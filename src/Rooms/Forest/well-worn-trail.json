@@ -1,7 +1,7 @@
 {
   "name": "A Well-Worn Trail Through the Forest",
   "slug": "Forest/well-worn-trail",
-  "description": "You're on a well-worn trail through the dense forest. A mostly overgrown, disused path heads into the forest to the north. The well-worn trail heads east and west.",
+  "description": "You're on a well-worn trail through the dense forest. A mostly overgrown, disused path heads into the forest to the north. The well-worn trail heads east and west.\nYou can see smoke in the sky through the trees to the west.",
   "north": "loadRoom|Forest/quiet-path",
   "east": "loadRoom|Forest/old-well",
   "west": "loadRoom|Forest/cabin-entrance",
@@ -13,6 +13,10 @@
     {
       "slug": "trail",
       "look": "It's a well-worn dirt trail. It must see frequent traffic since there's hardly any weeds or grass growing."
+    },
+    {
+      "slug": "smoke",
+      "look": "It's not thick and black like the forest is on fire. It looks like campfire smoke or something similar."
     }
   ]
 }
