@@ -23,51 +23,56 @@
         "YOU CAN. ASK QUESTIONS. (\"ask [person] about [topic]\") YOU CAN. GIVE ITEMS. (\"give [item] to [person]\") SOMETIMES YOU. HAVE A. CHOICE. ASK ME. ABOUT CHOICE.",
         "I WILL. GIVE COMPUTER. PASSWORD FOR. BANANA. I WILL. ALSO ANSWER. QUESTIONS."
       ],
-      "ask": {
-        "": "ERROR. I DO. NOT KNOW. ANYTHING ABOUT. THAT TOPIC.",
-        "banana": "YES, BANANA. I CANNOT. EAT BUT. THE COLOR. IS PLEASING. I WILL. GIVE PASSWORD. FOR BANANA.",
-        "sticker": "YES, STICKER. I FOUND. IT IN. THE TRASH. IS THE. COLOR NOT. PLEASING TO. THE OPTICAL. SENSORS?",
-        "blackboard": "YES, BLACKBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
-        "whiteboard": "YES, WHITEBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
-        "book": "YES, BOOK. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
-        "chair": "YES, CHAIR. I DO. NOT REQUIRE. SITTING.",
-        "tutorial": "YES, TUTORIAL. IT WAS. MADE FOR. YOU TO. LEARN",
-        "password": [
-          {
-            "cmd": "ifFlag",
-            "args": [
-              "LEARNED_TUT_PASS",
-              "YES, PASSWORD. HUMANS HAVE. A SHORT. MEMORY. THE PASSWORD. IS \"PASSWORD123\".",
-              "YES, PASSWORD. I WILL. GIVE IT. FOR BANANA. IT GRANTS. ACCESS TO. COMPUTER SYSTEM."
-            ]
-          }
-        ],
-        "computer": "YES, COMPUTER. IT REQUIRES. PASSWORD TO. USE IT. I REQUIRE. BANANA TO. GIVE PASSWORD.",
-        "life": "YES, LIFE. I DO. NOT HAVE. ONE. NEITHER DOES. MY CREATOR.",
-        "creator": "YES, CREATOR. MY CREATOR. WAS A. VERY CLEVER. MAN. HE MADE. ALL OF. THIS FOR. YOU TO. ENJOY.",
-        "mechanism": "YES, MECHANISM. THE MECHANISM. OPERATES THE. SECURITY DOORS. LEADING TO. THE COMPUTER. ROOM.",
-        "belt": "YES, BELT. THE MECHANISM. USES BELTS. TO TURN. GEARS. THERE WAS. A SPARE. BELT SOMEWHERE. AROUND HERE.",
-        "terminal": "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.",
-        "keycode": "YES, KEYCODE. THE TERMINAL. NEEDS A. KEYCODE TO. OPEN THE. DOOR TO. THE MECHANICAL. ROOM. THE KEYCODE. REQUIRED IS. 62883.",
-        "choice": [
-          "I WILL. NOW PRESENT. YOU WITH. A DIFFICULT. CHOICE:",
-          "DO YOU. THINK I. AM COOL?",
-          {
-            "cmd": "choice",
-            "args": [
-              "ERROR. PLEASE RESPOND. WITH ONLY. \"YES\" OR. \"NO\". DO YOU. THINK I. AM COOL?",
-              [
-                "yes",
-                "no"
-              ],
+      "ask": [
+        {
+          "cmd": "dialog",
+          "args": {
+            "": "ERROR. I DO. NOT KNOW. ANYTHING ABOUT. THAT TOPIC.",
+            "banana": "YES, BANANA. I CANNOT. EAT BUT. THE COLOR. IS PLEASING. I WILL. GIVE PASSWORD. FOR BANANA.",
+            "sticker": "YES, STICKER. I FOUND. IT IN. THE TRASH. IS THE. COLOR NOT. PLEASING TO. THE OPTICAL. SENSORS?",
+            "blackboard": "YES, BLACKBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
+            "whiteboard": "YES, WHITEBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
+            "book": "YES, BOOK. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
+            "chair": "YES, CHAIR. I DO. NOT REQUIRE. SITTING.",
+            "tutorial": "YES, TUTORIAL. IT WAS. MADE FOR. YOU TO. LEARN",
+            "password": [
               {
-                "yes": "YOUR RESPONSE. IS AGREEABLE. PLEASE GIVE. BANANA.",
-                "no": "YOUR RESPONSE. IS UNPLEASANT. PLEASE GIVE. BANANA."
+                "cmd": "ifFlag",
+                "args": [
+                  "LEARNED_TUT_PASS",
+                  "YES, PASSWORD. HUMANS HAVE. A SHORT. MEMORY. THE PASSWORD. IS \"PASSWORD123\".",
+                  "YES, PASSWORD. I WILL. GIVE IT. FOR BANANA. IT GRANTS. ACCESS TO. COMPUTER SYSTEM."
+                ]
+              }
+            ],
+            "computer": "YES, COMPUTER. IT REQUIRES. PASSWORD TO. USE IT. I REQUIRE. BANANA TO. GIVE PASSWORD.",
+            "life": "YES, LIFE. I DO. NOT HAVE. ONE. NEITHER DOES. MY CREATOR.",
+            "creator": "YES, CREATOR. MY CREATOR. WAS A. VERY CLEVER. MAN. HE MADE. ALL OF. THIS FOR. YOU TO. ENJOY.",
+            "mechanism": "YES, MECHANISM. THE MECHANISM. OPERATES THE. SECURITY DOORS. LEADING TO. THE COMPUTER. ROOM.",
+            "belt": "YES, BELT. THE MECHANISM. USES BELTS. TO TURN. GEARS. THERE WAS. A SPARE. BELT SOMEWHERE. AROUND HERE.",
+            "terminal": "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.",
+            "keycode": "YES, KEYCODE. THE TERMINAL. NEEDS A. KEYCODE TO. OPEN THE. DOOR TO. THE MECHANICAL. ROOM. THE KEYCODE. REQUIRED IS. 62883.",
+            "choice": [
+              "I WILL. NOW PRESENT. YOU WITH. A DIFFICULT. CHOICE:",
+              "DO YOU. THINK I. AM COOL?",
+              {
+                "cmd": "choice",
+                "args": [
+                  "ERROR. PLEASE RESPOND. WITH ONLY. \"YES\" OR. \"NO\". DO YOU. THINK I. AM COOL?",
+                  [
+                    "yes",
+                    "no"
+                  ],
+                  {
+                    "yes": "YOUR RESPONSE. IS AGREEABLE. PLEASE GIVE. BANANA.",
+                    "no": "YOUR RESPONSE. IS UNPLEASANT. PLEASE GIVE. BANANA."
+                  }
+                ]
               }
             ]
           }
-        ]
-      },
+        }
+      ],
       "give": {
         "": "ERROR. I DO. NOT REQUIRE. THAT OBJECT. I REQUIRE. ONLY BANANA.",
         "TUTORIAL_BANANA": [
@@ -117,7 +122,10 @@
             "cmd": "choice",
             "args": [
               "Incorrect keycode entered. Please enter keycode to access mechanical room or type \"cancel\".",
-              ["62883","cancel"],
+              [
+                "62883",
+                "cancel"
+              ],
               {
                 "62883": [
                   "setFlag|SOUTHOPEN",

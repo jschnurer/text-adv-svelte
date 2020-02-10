@@ -164,12 +164,15 @@ The last argument must be a choice object. A choice object is an object whose pr
 
 The user must enter text that matches one of the items in list_of_choices. If they do not, the invalid_choice_text will be written to the screen.
 
+### dialog
+The command "dialog" must have args set to a single object (*not a **cmdList***). The dialog object should have properties whose names are the topics the player can ask about and whose values are **cmdLists**. It must also have a property named `""` (empty string). If the player asks about a topic that doesn't appear on the dialog object as a property, the `""` command list will be executed.
+
 ## Special Commands
 Special commands behave a little differently than complex commands. Each special command must be a property on the target  whose name matches the command and whose value is an object. The property name is italicised in the headers below. The command entered by the user must exactly match the format shown in the headers below (unless otherwise noted).
 
 A special command should be a property of a feature or item whose value is an object. The object must have properties whose names are checked for by the command (see below). When a match is found, it will execute the value of that property as a **cmdList**. Additionally, the object should have a property whose name is "" (empty string) which is also a **cmdList**. If the player enters an option that does not appear on the object as a property, the "" **cmdList** will be executed. 
 
-For example, to be able to "ask" a feature in a room something, the feature must have the "ask" property whose value is an object. That object would look like this:
+For example, to be able to "give" a feature in a room something, the feature must have the "give" property whose value is an object. That object would look like this:
 ```json
 {
   "": [],
@@ -179,7 +182,7 @@ For example, to be able to "ask" a feature in a room something, the feature must
 ```
 
 ### _ask_ [target] about [topic]
-The ask object should have properties whose names are the topics the player can ask about. Additionally, the ask command can be prevented unless a flag is true. To do so, add a property to the object named `requiredFlag` and set its value to a string which is the name of the flag to require. Another property named `cantAsk` must also be defined, whose value can be a **cmdList**. If the player tries to ask the target anything and the required flag is falsey, the `cantAsk` **cmdList** will be executed. Alternately, a if a property named `requiredNotFlag` can be defined which functions the same as `requiredFlag` except the opposite will be true.
+Ask is special. The user must type the command in the format shown. The target must have an "ask" property. Its value must be a **cmdList**. In order to actually trigger dialog, somewhere in the **cmdList** should be the "dialog" command. (see Complex Commands).
 
 ### combine [target] with [target]
 Either target should have a combine object with a property matching the other's slug (or item_id). If a match is found, that property will be executed as a **cmdList**.

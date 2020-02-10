@@ -17,6 +17,8 @@ export default function handleUserEntry(entry) {
     return;
   }
 
+  this.userEntry = entry;
+
   this.capturedText = '';
 
   if (this.waitCmds) {
@@ -121,6 +123,9 @@ export default function handleUserEntry(entry) {
       if (this.room.stand) {
         this.parseCmds(this.room.stand);
       }
+      break;
+    case "sit":
+      this.write("What do you want to sit on?");
       break;
     default:
       this.write("What do you want to " + cmd + "?");

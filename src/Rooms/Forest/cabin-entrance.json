@@ -29,22 +29,29 @@
     },
     {
       "slug": "man",
-      "altSlugs": [ "arden" ],
+      "altSlugs": [
+        "arden"
+      ],
       "destroyedFlag": "ARDENINSIDE",
       "notice": "There's an older man standing at the fence. It looks like he's trying to repair it.",
       "look": "He's an older man with graying hair and a crudely trimmed gray beard. With one hand he's holding a new board up to the fence and in the other he's holding a hammer. The new board is only attached to the fence on one end. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\"",
-      "ask": {
-        "": [
-          {
-            "cmd": "ifFlag",
-            "args": [
-              "METARDEN",
-              "\"Sorry, newcomer. I don't have time for questions. I have to get this fence mended before nightfall. If I don't...\" He trails off, an apprehensive look on his face. He returns to what he was doing.",
-              "\"What's this? Don't they teach manners wherever it is you're from? It ain't proper to go on interrogating people without even greeting them first!\" He shakes his head while continuing his work."
+      "ask": [
+        {
+          "cmd": "dialog",
+          "args": {
+            "": [
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "METARDEN",
+                  "\"Sorry, newcomer. I don't have time for questions. I have to get this fence mended before nightfall. If I don't...\" He trails off, an apprehensive look on his face. He returns to what he was doing.",
+                  "\"What's this? Don't they teach manners wherever it is you're from? It ain't proper to go on interrogating people without even greeting them first!\" He shakes his head while continuing his work."
+                ]
+              }
             ]
           }
-        ]
-      },
+        }
+      ],
       "greet": [
         "The man turns toward you. \"Oh, hello there! The name's Arden. We haven't seen any new arrivals in a long, long time. Sorry, but I can't talk now, I have to finish mending this fence. You wouldn't happen to have any nails on you, would you?\"",
         "setFlag|METARDEN",

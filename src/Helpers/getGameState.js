@@ -16,7 +16,7 @@ import use from "../Commands/use.js";
 import addItem from "../ScriptCommands/addItem.js";
 import choice from "../ScriptCommands/choice.js";
 import decVar from "../ScriptCommands/decVar.js";
-import destroyFeature from "../ScriptCommands/destroyFeature.js";
+import dialog from "../ScriptCommands/dialog.js";
 import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifFlagWrite from "../ScriptCommands/ifFlagWrite.js";
@@ -79,8 +79,10 @@ export default function getGameState(loadGame) {
     items,
     // The current depth of write capturing (0 means output to screen).
     writeCapturing: 0,
-    // If we 
+    // The cmds to process after user input.
     waitCmds: null,
+    // The current user entry.
+    userEntry: null,
 
     // User Commands
     ask,
@@ -96,7 +98,7 @@ export default function getGameState(loadGame) {
     addItem,
     choice,
     decVar,
-    destroyFeature,
+    dialog,
     gameOver,
     ifFlag,
     ifFlagWrite,
