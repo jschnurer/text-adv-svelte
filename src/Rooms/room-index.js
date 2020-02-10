@@ -22,6 +22,10 @@ export {default as f_cabinEntrance} from "./Forest/cabin-entrance.json";
 export {default as f_cabinInterior} from "./Forest/cabin-interior.json";
 export {default as f_oldWell} from "./Forest/old-well.json";
 export {default as f_hornetNest} from "./Forest/hornet-nest.json";
+export {default as f_swampEntrance} from "./Forest/swamp-entrance.json";
+
+// Swamp
+export {default as f_forestEntrance} from "./Swamp/forest-entrance.json";
 
 // Ruins
 export {default as r_forestEntrance} from "./Ruins/forest-entrance.json";

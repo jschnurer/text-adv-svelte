@@ -1,14 +1,14 @@
 {
   "name": "Ruined Hall",
   "slug": "Ruins/forest-entrance",
-  "description": "You stand in a dimly lit ruined hall that is wide and very long. Light streams in through cracks in the walls and ceiling. The ceiling is very high above you and there is a solid stone altar at the far end, engraved with a runic symbol. There is a doorway that least outside to the west. {door} There is a metal device affixed to the wall next to the large stone door.",
+  "description": "You stand in a dimly lit, very wide and long ruined hall. Light streams in through cracks in the walls and ceiling, which is very high above you. There is a solid stone altar at the far end, engraved with a runic symbol.\nThere is a doorway that leads outside to the west. {door} There is a metal device affixed to the wall next to the large stone door.",
   "west": "loadRoom|Forest/ruins-entrance",
   "east": [
     {
       "cmd": "ifFlag",
       "args": [
         "DOOROPEN",
-        "loadRoom|Ruins/behind-the-hall",
+        "TODO:Add more to the ruins!",
         "You can't go east. The large stone door is blocking your path. Maybe the device on the wall has something to do with it."
       ]
     }

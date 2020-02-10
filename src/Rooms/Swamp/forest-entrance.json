@@ -1,0 +1,18 @@
+{
+  "name": "Swamp Near the Forest",
+  "slug": "Swamp/forest-entrance",
+  "description": "You're standing on solid ground in a thin copse of trees. An overgrown path leads to the north into the deep forest. To the south the ground slowly gives way to mud and standing water. The putrid stench of the swamp is thick here.",
+  "north": "loadRoom|Forest/swamp-entrance",
+  "south": "TODO: add more swamp",
+  "features": [
+    {
+      "slug": "path",
+      "look": "It's a path through the long grass and underbrush. It's completely overgrown. It hasn't seen traffic in a long time, except for maybe animals."
+    },
+    {
+      "slug": "mud",
+      "altSlugs": ["water", "standing water", "swamp"],
+      "look": "That doesn't look fun."
+    }
+  ]
+}

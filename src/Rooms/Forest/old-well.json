@@ -4,7 +4,7 @@
   "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank{bucket}.\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
   "west": "loadRoom|Forest/well-worn-trail",
   "north": "loadRoom|Forest/hornet-nest",
-  "south": "TODO!",
+  "south": "loadRoom|Forest/swamp-entrance",
   "features": [
     {
       "slug": "well",
