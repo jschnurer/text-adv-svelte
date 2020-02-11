@@ -98,7 +98,8 @@
               {
                 "cmd": "dialog",
                 "args": {
-                  "": "\"Wherefore dost thou ask such silly questions? I know naught of this.\""
+                  "": "\"Wherefore dost thou ask such silly questions? I know naught of this.\"",
+                  "favorite color": "\"What a strange question thou asketh. I have always considered purple to be my favorite,\" she says, a sparkle in her purple eyes."
                 }
               }
             ],
