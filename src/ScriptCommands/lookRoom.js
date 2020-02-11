@@ -8,12 +8,12 @@ export default function look(target) {
       this.write(this.room.description);
     }
 
-    if (this.room.features) {
-      this.showFeatures(this.room.features);
-    }
-
     if (this.room.look) {
       this.parseCmds(this.room.look);
+    }
+
+    if (this.room.features) {
+      this.showFeatures(this.room.features);
     }
 
     this.write("...");

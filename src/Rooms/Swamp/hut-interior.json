@@ -1,7 +1,12 @@
 {
   "name": "Inside the Creepy Hut",
   "slug": "Swamp/hut-interior",
-  "description": "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, a strange metal badge, a pair of glass scissors, and a crude map scrawled on a bit of parchment.\nOscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room. A disheveled woman with twigs in her voluminous black hair sits in a chair studying the crystal ball. She doesn't seem to have noticed your intrustion.\nThere is a trapdoor in the floor leading downward and the door to the swamp is to the east.",
+  "look": [
+    "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, a strange metal badge, a pair of glass scissors, and a crude map scrawled on a bit of parchment.\nOscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room.",
+    "ifFlagWrite|MET|Rhode, with twigs intertwined throughout her her disheveled, voluminous black hair, sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrustion.",
+    "ifNotFlagWrite|MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrustion.",
+    "There is a trapdoor in the floor leading downward and the door to the swamp is to the east."
+  ],
   "east": "loadRoom|Swamp/hut",
   "down": [
     {
@@ -31,11 +36,11 @@
         "args": [
           "MET",
           [
-            "\"Oh, it's you again. What is it?\""
+            "\"Oh, thou hast returned. What dost thou want? Hast thou come with more inquiries?\""
           ],
           [
             "setFlag|MET",
-            "\"What is this?\" she asks angrily, rising quickly from her chair and backing away from. She reaches inside her cloak. \"Wherefore hast thou invaded my home?\" she shouts, now clearly holding onto something concealed inside her dark cloak. \"Hast thou come to inflict harm upon me? Speak plainly, interloper, thy life depends upon it.\"",
+            "\"What is this?\" she asks angrily, rising quickly and backing away from. She reaches inside her cloak. \"Wherefore hast thou invaded my home?\" she shouts, now clearly holding onto something concealed inside her dark cloak. \"Hast thou come to inflict harm upon me? Speak plainly, interloper, thy life depends upon it.\"",
             {
               "cmd": "choice",
               "args": [
@@ -93,7 +98,7 @@
               {
                 "cmd": "dialog",
                 "args": {
-                  "": "\"That's a silly question. I don't know anything about that.\""
+                  "": "\"Wherefore dost thou ask such silly questions? I know naught of this.\""
                 }
               }
             ],
@@ -103,6 +108,10 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "stump",
+      "look": "It looks like it's for sitting."
     },
     {
       "slug": "crystal ball",
