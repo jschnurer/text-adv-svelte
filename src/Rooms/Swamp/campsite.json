@@ -96,12 +96,12 @@
         "The cover says \"R_ODE'S JOUR__L\". The notebook is badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
         "]____e_ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear.",
         "You find another passage, though it seems the author had lost their mind:",
-        "]To travers_ t_e mist_ of t_me a_d tr__el th_oug_ t__ li__t, touc_ o_r fav___te colo_s:\\Ar_en\\Oph_l_a\\Merek\\Rhod_\\Edra\\M__edit_\\Sta_le_"
+        "]To travers_ t_e mist_ of t_me a_d tr__el th_oug_ t__ li__t, touc_ o_r fav___te colo_s th_n per_or_ __e rite: Edr_\\Oph_l_a\\Merek\\Mine!\\Ar_en\\M__edit_\\Sta_le_"
       ],
       "take": [
         "You take the notebook.",
         "setFlag|TOOKNOTEBOOK",
-        "addItem|NOTEBOOK_1"
+        "addItem|RHODES_JOURNAL"
       ]
     }
   ]

@@ -15,6 +15,7 @@ import use from "../Commands/use.js";
 // Import script commands.
 import addItem from "../ScriptCommands/addItem.js";
 import choice from "../ScriptCommands/choice.js";
+import callCommon from "../ScriptCommands/callCommon.js";
 import decVar from "../ScriptCommands/decVar.js";
 import dialog from "../ScriptCommands/dialog.js";
 import gameOver from "../ScriptCommands/gameOver.js";
@@ -97,6 +98,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     // Script Commands
     addItem,
     choice,
+    callCommon,
     decVar,
     dialog,
     gameOver,
