@@ -1,8 +1,53 @@
 {
-  "name": "Toppled Log, Growing Mushrooms",
+  "name": "Toppled Tree, Growing Mushrooms",
   "slug": "Swamp/toppled-log",
-  "description": "",
+  "description": "You're standing in about 6 inches of stinking, putrid muck. It sucks at your shoes, making movement difficult. Stagnant, brackish water forms pools all over. An ancient toppled tree lays here, covered in mushrooms. You can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away. The terrain allows you to head north, south, and east.",
   "north": "loadRoom|Swamp/forest-entrance",
   "south": "loadRoom|Swamp/mosquito-spawn",
-  "east": "loadRoom|Swamp/dead-tree"
+  "east": "loadRoom|Swamp/dead-tree",
+  "features": [
+    {
+      "slug": "mosquito",
+      "altSlugs": ["mosquitoes"],
+      "look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thing, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat."
+    },
+    {
+      "slug": "mushroom",
+      "altSlugs": ["mushrooms"],
+      "look": "The mushrooms covering the log are of all shapes and sizes. Some you've seen pictures of before, maybe, somewhere. Others are completely alien to you.\nThere is a peculiar array of seven colorful mushrooms in a neat row. Each is 6 inches tall with a thick stalk and a rounded cap a foot in diameter. They all oddly appear to be the exact same size with only the color of their caps to differentiate them. From left to right they are green, yellow, indigo, red, purple, blue, and orange. They're like nothing you've ever seen."
+    },
+    {
+      "slug": "tree",
+      "altSlugs": ["log"],
+      "look": "The branches have long since rotted away, leaving only a massive, rot-infested log. Moss, lichen and innumerable small mushrooms call this tree their home. An array of seven colorful mushrooms grow in a neat row."
+    },
+    {
+      "slug": "green mushroom",
+      "look": "It's a bright green color."
+    },
+    {
+      "slug": "yellow mushroom",
+      "look": "It's a bright yellow color."
+    },
+    {
+      "slug": "indigo mushroom",
+      "look": "It's a bright indigo color."
+    },
+    {
+      "slug": "red mushroom",
+      "look": "It's a bright red color."
+    },
+    {
+      "slug": "purple mushroom",
+      "look": "It's a bright purple color."
+    },
+    {
+      "slug": "blue mushroom",
+      "look": "It's a bright blue color."
+    },
+    {
+      "slug": "orange mushroom",
+      "look": "It's a bright orange color."
+    }
+  ]
 }

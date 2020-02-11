@@ -1,7 +1,63 @@
 {
   "name": "Long Abandoned Campsite",
   "slug": "Swamp/campsite",
-  "description": "",
+  "description": "You're standing on a small hill that barely rises out of the surrounding putrid waters of the swamp. It's barren and rocky. Pools of standing water and an eternity of stinking muck stretch out in every direction.\nAt the center of the hill is a campsite that looks like it's been abandoned for a long time. You see the remains of a campfire and a tattered rag that was once a tent. {stick}\nThe swampy terrain prevents you from heading any direction except east and west.",
   "east": "loadRoom|Swamp/mammoth-skull",
-  "west": "loadRoom|Swamp/statue"
+  "west": "loadRoom|Swamp/statue",
+  "features": [
+    {
+      "slug": "hill",
+      "look": "It's barren and rocky. It only rises a couple feet from the reeking waters of the swamp."
+    },
+    {
+      "slug": "water",
+      "look": "There's definitely no way that's safe to drink."
+    },
+    {
+      "slug": "muck",
+      "altSlugs": [
+        "mud"
+      ],
+      "look": "You're not looking forward to trudging through that again."
+    },
+    {
+      "slug": "campfire",
+      "look": "There's a circle of stones and the ground is slightly the color of ash. There are a couple of burnt sticks too. It's been a long time since this campsite's been used."
+    },
+    {
+      "slug": "tent",
+      "look": [
+        "The tent is tattered and fill of holes. The edges are fraying. It collapsed a long time ago and the swamp has slowly been rotting it away.",
+        "Inside the tent you notice there's an old, waterlogged pack."
+      ]
+    },
+    {
+      "slug": "stick",
+      "altSlugs": [
+        "flagpole"
+      ],
+      "notice": "There's also a stick that's been driven into the ground like a flagpole.",
+      "look": [
+        "It's been driven into the rocky terrain like a flagpole. It's a little crooked but you're impressed that it's survived for so long.",
+        "ifNotFlagWrite|TOOKFABRIC|Tied to the top of the stick is a tattered and faded strip of red cloth."
+      ]
+    },
+    {
+      "slug": "fabric",
+      "notice": "There's a strip of faded red cloth tied to it like a flag.",
+      "destroyedFlag": "TOOKFABRIC",
+      "look": "It's a tattered and faded strip of red cloth.",
+      "take": [
+        "You grab hold of the stick and yank it back and forth until it's loose enough to uproot. You pull it down and untie the fabric from its end. You take the fabric.",
+        "setFlag|TOOKFABRIC"
+      ]
+    },
+    {
+      "slug": "pack",
+      "look": [
+        "The pack is mostly rotted away. You manage to get it open and you find an old notebook inside. It's badly water damaged."
+      ],
+      "take": "The pack is too far gone to be useful anymore. You decide to leave it behind."
+    }
+  ]
 }
