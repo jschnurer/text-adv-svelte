@@ -35,7 +35,6 @@ export { default as s_mammothSkull } from "./Swamp/mammoth-skull.json";
 export { default as s_campsite } from "./Swamp/campsite.json";
 export { default as s_statue } from "./Swamp/statue.json";
 export { default as s_mosquitoSpawn } from "./Swamp/mosquito-spawn.json";
-export { default as s_verticalShaft } from "./Swamp/vertical-shaft.json";
 export { default as s_dryTrail } from "./Swamp/dry-trail.json";
 export { default as s_ridge } from "./Swamp/ridge.json";
 
