@@ -38,5 +38,6 @@
   "destroy",
   "kill",
   "drop",
-  "drink"
+  "drink",
+  "climb"
 ]

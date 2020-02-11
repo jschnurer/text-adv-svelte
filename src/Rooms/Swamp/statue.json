@@ -1,7 +1,22 @@
 {
   "name": "Ancient, Filth-Coated Statue",
   "slug": "Swamp/statue",
-  "description": "",
+  "description": "Most of the ground here is about a foot of muck beneath another foot of algae-covered water. You're soaked through and miserable. The only thing around is a huge, monolithic statue of a grimacing face. It's made of black stone and has mold growing up from the waters around its base. It lists forward, slowly sinking into the mud. Someday it might be swallowed by the land completely. \nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe muddy terrain allows you to head north or east.",
   "north": "loadRoom|Swamp/mosquito-spawn",
-  "east": "loadRoom|Swamp/campsite"
+  "east": "loadRoom|Swamp/campsite",
+  "features": [
+    {
+      "slug": "mosquito",
+      "altSlugs": [
+        "mosquitoes"
+      ],
+      "look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thing, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat."
+    },
+    {
+      "slug": "statue",
+      "altSlugs": "face",
+      "look": "It's a huge statue made of black stone, probably at least 13 feet tall. It depicts a grimacing face. Looking at it makes you uncomfortable, almost like it's looking back at you. The back of the status has handholds cut into it, almost like a ladder.",
+      "climb": "You make your way around the back of the statue and climb up the slick handholds. You almost lose your grip a few times but manage to make it to the top. On the top of the statue's head someone has painted a faded message in some sort of red paint. It's amazing it hasn't been completely washed away. \"M_rek _as h_re\"\nFrom up here you can see what's in the distance. To the north you can see black clouds of mosquitoes and to the east you can see a hill. To the northeast there's a stagnant lake with a peninsula reaching out in to the center where there's a hut. In every other direction you see endless muck."
+    }
+  ]
 }
