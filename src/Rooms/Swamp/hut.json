@@ -10,9 +10,9 @@
     },
     {
       "slug": "hut",
-      "look": "It's probably one of the creepiest things you've ever seen. It's a ramshackle wood hut that's barely standing. Large cracks between the wood planks allow eerie green light to spill out from its interior. The light is constantly moving inside but you hear absolutely nothing.",
+      "look": "It's probably one of the creepiest things you've ever seen. It's a ramshackle wood hut that's barely standing. Large cracks between the wood planks allow eerie purplish light to spill out from its interior. The light is constantly moving inside but you hear absolutely nothing. You could enter it if you were brave enough.",
       "enter": [
-        "You carefully approach the front door of the run-down hut. You gingerly place your hand on it and push it inward and enter the hut.",
+        "You carefully approach the front door of the run-down hut. You take a moment to muster your courage before gingerly placing your hand on the rickety front door and pushing it inward to enter the hut.",
         {
           "cmd": "waitForInput",
           "args": "loadRoom|Swamp/hut-interior"

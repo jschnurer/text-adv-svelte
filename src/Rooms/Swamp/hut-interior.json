@@ -1,6 +1,158 @@
 {
   "name": "Inside the Creepy Hut",
   "slug": "Swamp/hut-interior",
-  "description": "The door to the swamp is to the east.",
-  "east": "loadRoom|Swamp/hut"
+  "description": "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, a strange metal badge, a pair of glass scissors, and a crude map scrawled on a bit of parchment.\nOscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room. A disheveled woman with twigs in her voluminous black hair sits in a chair studying the crystal ball. She doesn't seem to have noticed your intrustion.\nThere is a trapdoor in the floor leading downward and the door to the swamp is to the east.",
+  "east": "loadRoom|Swamp/hut",
+  "down": [
+    {
+      "cmd": "ifVar",
+      "args": [
+        "RHODE_CELLAR_ATTEMPTS",
+        ">",
+        0,
+        [
+          "With lightning speed, {rhode} jumps up from the table and reaches under her cloak. \"Thou were warned and still thou persists! Now Akavak's blade shalt find thee!\"",
+          {
+            "cmd": "waitForInput",
+            "args": "callCommon|rhode_kill"
+          }
+        ],
+        [
+          "\"No!\" With lightning speed, {rhode} jumps from the table and shrieks. \"Thou mustn't! I shan't warn thee again.\" She sits back down at the table.",
+          "incVar|RHODE_CELLAR_ATTEMPTS"
+        ]
+      ]
+    }
+  ],
+  "_common": {
+    "get_attention": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "MET",
+          [
+            "\"Oh, it's you again. What is it?\""
+          ],
+          [
+            "setFlag|MET",
+            "\"What is this?\" she asks angrily, rising quickly from her chair and backing away from. She reaches inside her cloak. \"Wherefore hast thou invaded my home?\" she shouts, now clearly holding onto something concealed inside her dark cloak. \"Hast thou come to inflict harm upon me? Speak plainly, interloper, thy life depends upon it.\"",
+            {
+              "cmd": "choice",
+              "args": [
+                "callCommon|rhode_kill",
+                [
+                  "yes",
+                  "no",
+                  "nay"
+                ],
+                {
+                  "yes": "callCommon|rhode_kill",
+                  "no": "callCommon|no_harm",
+                  "nay": "callCommon|no_harm"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ],
+    "rhode_kill": [
+      "\"Wrong answer, interloper.\"",
+      {
+        "cmd": "waitForInput",
+        "args": [
+          "gameOver|The woman with purple eyes throws back her cloak revealing a wooden knife in her hand. The knife is covered in all manner of runic symbols burned into the wood. She tosses it into the air and shouts \"KAVAKA!\" The knife takes on a life of its own and zips through the air toward you. You leap to the side to avoid its trajectory but it turns in midair, tracking your fall to the ground. It pierces you in the chest and digs deep, reaching your heart. You gasp for air but cannot draw breath.\nThe woman kneels down before you and wrenches the knife free from your rapidly-dying body."
+        ]
+      }
+    ],
+    "no_harm": [
+      "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou verily mean no harm, then I wouldst answer thy questions. My name is Rhode and thou art my first visitor in quite a spell.\""
+    ]
+  },
+  "features": [
+    {
+      "slug": "rhode",
+      "altSlugs": [
+        "woman"
+      ],
+      "notice": [
+        "ifFlagWrite|MET|Rhode",
+        "ifNotFlagWrite|MET|the woman"
+      ],
+      "look": "She's disheveled and covered in filth, muck, and grime. She looks like she's in her mid twenties. Even under all the filth she's stunningly beautiful. She's wearing medieval clothing and a dark cloak--something that you'd expect to see in a fantasy movie. Her unblinking gaze is transfixed on the cracked crystal ball emitting oscillating purple light. Her eyes are a vibrant purple color.",
+      "greet": [
+        "You greet {rhode} but she doesn't respond. She doesn't even look up at you. You try again a little louder and she jolts in surprise.",
+        "callCommon|get_attention"
+      ],
+      "ask": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "MET",
+            [
+              {
+                "cmd": "dialog",
+                "args": {
+                  "": "\"That's a silly question. I don't know anything about that.\""
+                }
+              }
+            ],
+            [
+              "She doesn't respond in any way. Maybe you have to greet her to get her attention."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "crystal ball",
+      "look": "There's a crack that nearly bisects it and it's emitting scintillating purple light. You can only look at it for a moment before having to look away or shield your eyes. You have no idea how {rhode} can stand to stare at it."
+    },
+    {
+      "slug": "sword",
+      "altSlugs": [
+        "steel sword"
+      ],
+      "look": "It's a steel sword with a blade about 2 and a half feet long. Rust has built up in spots and there are nicks and dings all over it."
+    },
+    {
+      "slug": "shield",
+      "altSlugs": [
+        "steel shield"
+      ],
+      "look": "It's a wooden shield reinforced with steel banding. The front is painted, albeit very badly faded, with the image of a yellow griffin holding a dozen roses in its talons. It's banged up pretty badly and the metal is showing signs of rust. Parts of the wood are also starting to rot."
+    },
+    {
+      "slug": "cellphone",
+      "altSlugs": "phone",
+      "look": "It's a smartphone. It's got a crack across the screen and it looks like it was dropped in the swamp muck a few times. You think you might've owned one once, maybe."
+    },
+    {
+      "slug": "shelves",
+      "altSlugs": [
+        "shelf"
+      ],
+      "look": "The shelves are crudely made. They're a little crooked and the wood is roughly hewn. You can see axe-marks scored into the wood. They hold countless, random small objects."
+    },
+    {
+      "slug": "tables",
+      "altSlugs": [
+        "table"
+      ],
+      "look": "The tables were clearly made by an amateur with a severe lack of proper tools or materials. Not a single one of them is even. Each has a bit of swamp mud packed underneath one or more of the legs to try to level them out. They're covered with all manner of objects including plants, roots, and mosquito guts. There's also a mortar and pestle."
+    },
+    {
+      "slug": "plants",
+      "altSlugs": [
+        "mosquito guts",
+        "guts",
+        "roots"
+      ],
+      "look": "They're things from around the swamp. You have no idea why someone would want them."
+    },
+    {
+      "slug": "mortar and pestle",
+      "look": "It's a stone tool consisting of a mortar, which is a small stone bowl, and a pestle which is a blunt piece of rock. It's used to crush or grind things. It's seen plenty of use and is quite stained."
+    }
+  ]
 }

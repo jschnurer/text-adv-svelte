@@ -1,11 +1,11 @@
 ## Game Notes (TODO) ##
 
-Edra (blue)
-Ophelia (indigo)
-Merek (red)
-Rhode (purple)
-Arden (orange)
-Meredith (green)
-Stanley (yellow)
+Edra (blue) -- 2010s free-spirit
+Ophelia (indigo) -- 3150s ambassador
+Merek (red) -- medieval knight
+Rhode (purple) -- medieval witch
+Arden (orange) -- 2010s accountant
+Meredith (green) -- 2010s office worker
+Stanley (yellow) -- 2110s security personnel
 
 * Add rite
