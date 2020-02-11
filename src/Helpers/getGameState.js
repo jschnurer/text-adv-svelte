@@ -52,7 +52,7 @@ import showFeatures from "./showFeatures.js";
 import unknownCmd from "../Helpers/unknownCmd.js";
 import unknownTarget from "./unknownTarget.js";
 
-export default function getGameState(loadGame) {
+export default function getGameState(loadGame, updateScroll, update) {
   let gameState = {
     // Options for the game.
     options: {
@@ -133,6 +133,8 @@ export default function getGameState(loadGame) {
     showFeatures,
     unknownCmd,
     unknownTarget,
+    update,
+    updateScroll,
   };
 
   let savedGame = null;
@@ -144,7 +146,8 @@ export default function getGameState(loadGame) {
         let currRoomSlug = savedGame.currRoomSlug;
         delete savedGame.currRoomSlug;
         Object.assign(gameState, savedGame);
-        gameState.room = gameState.rooms[currRoomSlug];
+        //gameState.room = gameState.rooms[currRoomSlug];
+        gameState.loadRoom(currRoomSlug);
       }
     }
   }

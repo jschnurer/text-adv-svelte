@@ -6,31 +6,43 @@
 
   export let loadGame = false;
 
+  let gs;
   let previousInputs = [];
   let cmdIx = -1;
-
-  let gs = getGameState(loadGame);
-  gs.updateScroll = () =>
-    window.setTimeout(
-      () => (output.scrollTop = output.scrollHeight + output.offsetTop),
-      1
-    );
+  let output = null;
   $: gameState = gs;
 
-  gs.update = function() {
-    gameState = gameState;
-  };
+  //gs.updateScroll =() =>
+  // window.setTimeout(
+  //   () => (output.scrollTop = output.scrollHeight + output.offsetTop),
+  //   1
+  // )
 
-  let output = null;
+  // gs.update = function() {
+  //   gameState = gameState;
+  // };
+
   let helpVisible = false;
 
   let entry = "";
 
   onMount(async () => {
+    gs = getGameState(
+      loadGame,
+      () =>
+        window.setTimeout(
+          () => (output.scrollTop = output.scrollHeight + output.offsetTop),
+          1
+        ),
+      function() {
+        gameState = gameState;
+      }
+    );
+
     if (!loadGame) {
-      await gameState.loadRoom(config.initial_room);
+      await gs.loadRoom(config.initial_room);
     } else {
-      gameState.lookRoom();
+      gs.lookRoom();
     }
   });
 
@@ -54,7 +66,7 @@
     if (dir === -1) {
       if (cmdIx === -1) {
         cmdIx = previousInputs.length - 1;
-      } else if(cmdIx > 0) {
+      } else if (cmdIx > 0) {
         cmdIx--;
       } else {
         return;
@@ -126,7 +138,7 @@
       .replace(/~(.+?)~/g, "<entry>$1</entry>")
       .replace(/#(.+?)#/g, "<pre>$1</pre>")
       .replace(/\\/g, "<br />")
-      .replace(/"(.+?)"/g, "<speech>\"$1\"</speech>");
+      .replace(/"(.+?)"/g, '<speech>"$1"</speech>');
 
     if (nt.startsWith("]")) {
       return nt.substring(1);
@@ -183,23 +195,25 @@
     on:toggleHints={() => (gameState.options.showHints = !gameState.options.showHints)} />
   <button on:click={() => (helpVisible = false)}>Ok, ok. Let me play!</button>
 {:else}
-  <room bind:this={output}>
-    {#if gameState.isGameOver}
-      <h3>GAME OVER</h3>
-    {/if}
+  {#if gameState}
+    <room bind:this={output}>
+      {#if gameState.isGameOver}
+        <h3>GAME OVER</h3>
+      {/if}
 
-    {#each gameState.text.split('\n') as line}
-      <p class={line.startsWith(']') ? 'indent' : ''}>
-        {@html convertSyntax(sanitize(line))}
-      </p>
-    {/each}
-  </room>
-  {#if !gameState.isGameOver}
-    <form on:submit|preventDefault={submit}>
-      <input use:focus bind:value={entry} on:keydown={keydown} />
-      <span on:click={help}>❔</span>
-    </form>
-  {:else}
-    <button on:click={() => location.reload()}>Try again</button>
+      {#each gameState.text.split('\n') as line}
+        <p class={line.startsWith(']') ? 'indent' : ''}>
+          {@html convertSyntax(sanitize(line))}
+        </p>
+      {/each}
+    </room>
+    {#if !gameState.isGameOver}
+      <form on:submit|preventDefault={submit}>
+        <input use:focus bind:value={entry} on:keydown={keydown} />
+        <span on:click={help}>❔</span>
+      </form>
+    {:else}
+      <button on:click={() => location.reload()}>Try again</button>
+    {/if}
   {/if}
 {/if}

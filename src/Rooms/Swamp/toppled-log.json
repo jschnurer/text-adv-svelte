@@ -5,6 +5,9 @@
   "north": "loadRoom|Swamp/forest-entrance",
   "south": "loadRoom|Swamp/mosquito-spawn",
   "east": "loadRoom|Swamp/dead-tree",
+  "load": [
+    "setVar|SEQ|0"
+  ],
   "features": [
     {
       "slug": "mosquito",

@@ -1,7 +1,7 @@
 {
   "name": "Long Abandoned Campsite",
   "slug": "Swamp/campsite",
-  "description": "You're standing on a small hill that barely rises out of the surrounding putrid waters of the swamp. It's barren and rocky. Pools of standing water and an eternity of stinking muck stretch out in every direction.\nAt the center of the hill is a campsite that looks like it's been abandoned for a long time. You see the remains of a campfire and a tattered rag that was once a tent. {stick}\nThe swampy terrain prevents you from heading any direction except east and west.",
+  "description": "You're standing on a small hill that barely rises out of the surrounding putrid waters of the swamp. It's barren and rocky. Pools of standing water and an eternity of stinking muck stretch out in every direction.\nAt the center of the hill is a campsite that looks like it's been abandoned for a long time. You see the remains of a campfire and a tattered rag that was once a tent. {stick}\nThe swampy terrain makes travel difficult; You can only head east or west.",
   "east": "loadRoom|Swamp/mammoth-skull",
   "west": "loadRoom|Swamp/statue",
   "features": [
@@ -28,7 +28,8 @@
       "slug": "tent",
       "look": [
         "The tent is tattered and fill of holes. The edges are fraying. It collapsed a long time ago and the swamp has slowly been rotting it away.",
-        "Inside the tent you notice there's an old, waterlogged pack."
+        "Inside the tent you notice there's an old, waterlogged pack.",
+        "setFlag|SAWPACK"
       ]
     },
     {
@@ -36,11 +37,35 @@
       "altSlugs": [
         "flagpole"
       ],
-      "notice": "There's also a stick that's been driven into the ground like a flagpole.",
+      "notice": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "TOOKFABRIC",
+            [
+              "There's also a stick laying on the ground."
+            ],
+            [
+              "There's also a stick that's been driven into the ground like a flagpole with a tattered and faded bit of red fabric tied near its top like a flag."
+            ]
+          ]
+        }
+      ],
       "look": [
-        "It's been driven into the rocky terrain like a flagpole. It's a little crooked but you're impressed that it's survived for so long.",
-        "ifNotFlagWrite|TOOKFABRIC|Tied to the top of the stick is a tattered and faded strip of red cloth."
-      ]
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "TOOKFABRIC",
+            [
+              "It's laying there on the ground where you left it."
+            ],
+            [
+              "It's been driven into the rocky terrain like a flagpole. It's a little crooked but you're impressed that it's survived for so long. Tied to the top of the stick is a tattered and faded strip of red cloth."
+            ]
+          ]
+        }
+      ],
+      "take": "It's way too long to try to carry around."
     },
     {
       "slug": "fabric",
@@ -49,15 +74,35 @@
       "look": "It's a tattered and faded strip of red cloth.",
       "take": [
         "You grab hold of the stick and yank it back and forth until it's loose enough to uproot. You pull it down and untie the fabric from its end. You take the fabric.",
-        "setFlag|TOOKFABRIC"
+        "setFlag|TOOKFABRIC",
+        "addItem|RED_FABRIC"
       ]
     },
     {
       "slug": "pack",
+      "targetFlag": "SAWPACK",
       "look": [
-        "The pack is mostly rotted away. You manage to get it open and you find an old notebook inside. It's badly water damaged."
+        "The pack is mostly rotted away. You manage to get it open and you find that there's an old notebook inside. It's badly water damaged.",
+        "setFlag|SAWNOTEBOOK"
       ],
       "take": "The pack is too far gone to be useful anymore. You decide to leave it behind."
+    },
+    {
+      "slug": "notebook",
+      "altSlugs": ["rhode's journal"],
+      "targetFlag": "SAWNOTEBOOK",
+      "destroyedFlag": "TOOKNOTEBOOK",
+      "look": [
+        "The cover says \"R_ODE'S JOUR__L\". The notebook is badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
+        "]____e_ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear.",
+        "You find another passage, though it seems the author had lost their mind:",
+        "]To travers_ t_e mist_ of t_me a_d tr__el th_oug_ t__ li__t, touc_ o_r fav___te colo_s:\\Ar_en\\Oph_l_a\\Merek\\Rhod_\\Edra\\M__edit_\\Sta_le_"
+      ],
+      "take": [
+        "You take the notebook.",
+        "setFlag|TOOKNOTEBOOK",
+        "addItem|NOTEBOOK_1"
+      ]
     }
   ]
 }

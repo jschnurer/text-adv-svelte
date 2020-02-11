@@ -28,20 +28,6 @@
     ]
   },
   {
-    "slug": "cellphone",
-    "id": "CELLPHONE",
-    "altSlugs": [
-      "phone",
-      "cell"
-    ],
-    "look": [
-      "It's your phone. You know it's yours because of the crack in the screen. The battery is nearly full."
-    ],
-    "use": [
-      "You wake up your phone. You have 0 bars. No sense in draining the battery."
-    ]
-  },
-  {
     "slug": "nail",
     "altSlugs": [
       "rusty nail"
@@ -84,10 +70,32 @@
   },
   {
     "slug": "bucket",
-    "altSlugs": ["wood bucket","wooden bucket"],
+    "altSlugs": [
+      "wood bucket",
+      "wooden bucket"
+    ],
     "id": "WOOD_BUCKET",
     "look": [
       "It's a plain, wooden bucket with a handle."
+    ]
+  },
+  {
+    "slug": "red fabric",
+    "altSlugs": ["fabric"],
+    "id": "RED_FABRIC",
+    "look": [
+      "The strip of red fabric is faded and tattered."
+    ]
+  },
+  {
+    "slug": "rhode's journal",
+    "altSlugs": ["journal","notebook"],
+    "id": "NOTEBOOK_1",
+    "look": [
+      "The notebook is badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
+      "]____e_ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear.",
+      "You find another passage, though it seems the author had lost their mind:",
+      "]To travers_ t_e mist_ of t_me a_d tr__el th_oug_ t__ li__t, touc_ o_r fav___te colo_s:\\Ar_en\\Oph_l_a\\Merek\\Rhod_\\Edra\\M__edit_\\Sta_le_"
     ]
   }
 ]
