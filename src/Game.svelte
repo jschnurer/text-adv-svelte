@@ -12,16 +12,6 @@
   let output = null;
   $: gameState = gs;
 
-  //gs.updateScroll =() =>
-  // window.setTimeout(
-  //   () => (output.scrollTop = output.scrollHeight + output.offsetTop),
-  //   1
-  // )
-
-  // gs.update = function() {
-  //   gameState = gameState;
-  // };
-
   let helpVisible = false;
 
   let entry = "";
