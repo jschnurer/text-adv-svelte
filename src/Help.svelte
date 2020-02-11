@@ -123,19 +123,4 @@
     you attune your soul to the cairn. If your adventure is cut short by
     tragedy, you can restart from the last cairn you touched.
   </p>
-  <h4>Hint System</h4>
-  <p>
-    If you're having a really hard time, you can turn on hints. This will cause
-    <hint>interactable objects</hint>
-    in the game world to be visually identifiable with an underline. I
-    <b>strongly recommend</b>
-    trying to play the game without hints first because part of the fun of
-    playing a text adventure is investigating the environment yourself.
-  </p>
-  <p>
-    Hints are currently {onOrOff}.
-    <button on:click={() => dispatch('toggleHints')}>
-      Turn hints {opposite}
-    </button>
-  </p>
 </room>
