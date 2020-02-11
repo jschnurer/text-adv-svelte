@@ -35,6 +35,8 @@
   "open",
   "break",
   "smash",
+  "destroy",
+  "kill",
   "drop",
   "drink"
 ]

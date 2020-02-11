@@ -1,21 +1,13 @@
 {
   "name": "Forest Path North of the Swamp",
   "slug": "Forest/swamp-entrance",
-  "description": "You're on an overgrown path in the dense forest. It continues to the north and south. To the south, the land looks wetter and more swampy. You can smell a putrid stench coming from the south.\nNearly completely concealed in the overgrowth is a small cairn of stones.",
+  "description": "You're on an overgrown path in the dense forest. It continues to the north and south. To the south, the land looks wetter and more swampy. You can smell a putrid stench coming from the south.",
   "north": "loadRoom|Forest/old-well",
   "south": "loadRoom|Swamp/forest-entrance",
   "features": [
     {
       "slug": "path",
       "look": "It's a path through the long grass and underbrush. It's completely overgrown. It hasn't seen traffic in a long time, except for maybe animals."
-    },
-    {
-      "slug": "cairn",
-      "look": "The cairn stands only about 3 feet tall. The stones are covered in runic markings.",
-      "touch": [
-        "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones.",
-        "saveGame"
-      ]
     }
   ]
 }

@@ -1,8 +1,27 @@
 {
   "name": "Stinking, Bubbling Muck",
   "slug": "Swamp/bubbling-muck",
-  "description": "",
+  "description": "This place is putrid! Foul-smelling gas bubbles up through the endless expanse of black muck. The area is a cacophony of *blorps* and *glups*. Occasionally, there's a whoosh sound and a jet of yellow-green gas vents out of the ground nearby. The air here reeks and burns the lungs. You shouldn't stay here long.\nThere are no giant mosquitoes here. Even they can't stand it.\nThe hellish terrain only allows travel north and south. There are a bunch of old rotting logs mostly buried in the muck laid end to end. It's like a rotting road heading west.",
   "north": "loadRoom|Swamp/standing-water",
   "south": "loadRoom|Swamp/mammoth-skull",
-  "west": "loadRoom|Swamp/hut"
+  "west": "loadRoom|Swamp/hut",
+  "features": [
+    {
+      "slug": "muck",
+      "look": "It's black, bubbling muck. The sickening gas erupting from the earth causes it to make sickening sounds and spatter your clothes."
+    },
+    {
+      "slug": "gas",
+      "look": "The gas is a yellowish-green color and burns the eyes and lungs. You shouldn't be breathing this."
+    },
+    {
+      "slug": "cairn",
+      "roomDesc": "Stacked on one of the logs is a small cairn of stones only a foot tall. The stones are covered in runic markings.",
+      "look": "The cairn stands only about a foot tall. The stones are covered in runic markings. They're oddly completely clean of any of the muck, grime, mildew or rot of the swamp.",
+      "touch": [
+        "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones.",
+        "saveGame"
+      ]
+    }
+  ]
 }

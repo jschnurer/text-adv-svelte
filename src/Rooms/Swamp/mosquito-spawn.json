@@ -1,8 +1,59 @@
 {
   "name": "Mosquito Spawning Pool",
   "slug": "Swamp/mosquito-spawn",
-  "description": "",
+  "description": "This area is made up of narrow channels of wet, sucking muck weaving around and between pools of stagnant, black water. The pools are choked by endless clusters of round, gelatinous eggs. The eggs shake and quiver of their own volition. Occasionally, one rips open and a newborn giant mosquito crawls out and starts skittering around.\nThe air is likewise choked with clouds of mosquitoes. You are constantly fighting them off. A few even manage to land on you before you're able to brush them away.\nThe channels of muck lead north, south, and west.",
   "north": "loadRoom|Swamp/toppled-log",
   "south": "loadRoom|Swamp/statue",
-  "west": "loadRoom|Swamp/vertical-shaft"
+  "west": "loadRoom|Swamp/vertical-shaft",
+  "load": [
+    "setVarValue|EGGS|0"
+  ],
+  "features": [
+    {
+      "slug": "mosquito",
+      "altSlugs": [
+        "mosquitoes"
+      ],
+      "look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thing, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat."
+    },
+    {
+      "slug": "egg",
+      "altSlugs": [
+        "eggs"
+      ],
+      "look": "There are so many. So, so many. They're a whitish color and throb and shake. They hold life within. Horrible, horrible life.",
+      "take": "You have absolutely no reason why you'd ever want to.",
+      "smash|break|destroy|kill": [
+        {
+          "cmd": "ifVar",
+          "args": [
+            "EGGS",
+            ">=",
+            1,
+            [
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "EGGS",
+                  ">=",
+                  2,
+                  [
+                    "gameOver|You approach another cluster of quivering eggs to destroy them. Somehow, the cloud of mosquitoes know what you're about to do. They descend upon you en-mass!\nYou flail your arms, trying to protect yourself from the cloud of swords. They're so sick that you can see nothing but wings and eyes and proboscises. You try to blindly run away but only manage to run through more eggs, destroying them and causing an even greater response.\nIn your panic you slip on the eggy remains and land face down in the muck. The army of mosquitoes land on you and run you through. Before you can even get yourself back on your feet you're faint and woozy. The world quickly fades away..."
+                  ],
+                  [
+                    "You smash another of the nearby eggs. It erupts into a gelatinous oozing pile. The unborn mosquito within writhes and twitches as it dies. More mosquitoes begin swarming around in a fury.",
+                    "incVar|EGGS"
+                  ]
+                ]
+              }
+            ],
+            [
+              "You smash one of the eggs nearby. It erupts into a gelatinous oozing pile. The unborn mosquito within writhes and twitches as it dies. Some of the nearby mosquitoes seem to take interest.",
+              "incVar|EGGS"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
 }
