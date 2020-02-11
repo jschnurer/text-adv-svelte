@@ -31,6 +31,7 @@ export { default as s_deadTree } from "./Swamp/dead-tree.json";
 export { default as s_standingWater } from "./Swamp/standing-water.json";
 export { default as s_bubblingMuck } from "./Swamp/bubbling-muck.json";
 export { default as s_hut } from "./Swamp/hut.json";
+export { default as s_hutInterior } from "./Swamp/hut-interior.json";
 export { default as s_mammothSkull } from "./Swamp/mammoth-skull.json";
 export { default as s_campsite } from "./Swamp/campsite.json";
 export { default as s_statue } from "./Swamp/statue.json";

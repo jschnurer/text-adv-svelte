@@ -1,6 +1,59 @@
 {
   "name": "Creepy Hut in the Center of the Swamp",
   "slug": "Swamp/hut",
-  "description": "",
-  "east": "loadRoom|Swamp/bubbling-muck"
+  "description": "You're on a muddy peninsula in the middle of the swampy lake. There's a creepy, ramshackle hut that you could enter if you were brave enough. Totems are stuck into the earth all around the hut, encircling it. Hanging from them are dreamcatchers and runic symbols made of wicker and vine. Some have animal (and possibly) human skulls atop them. The area is utterly quiet. There aren't even any mosquitoes here.\nOut of the corner of your eye you see movement.",
+  "east": "loadRoom|Swamp/bubbling-muck",
+  "features": [
+    {
+      "slug": "movement",
+      "look": "There's nothing there. It must have been your imagination."
+    },
+    {
+      "slug": "hut",
+      "look": "It's probably one of the creepiest things you've ever seen. It's a ramshackle wood hut that's barely standing. Large cracks between the wood planks allow eerie green light to spill out from its interior. The light is constantly moving inside but you hear absolutely nothing.",
+      "enter": [
+        "You carefully approach the front door of the run-down hut. You gingerly place your hand on it and push it inward and enter the hut.",
+        {
+          "cmd": "waitForInput",
+          "args": "loadRoom|Swamp/hut-interior"
+        }
+      ]
+    },
+    {
+      "slug": "totems",
+      "altSlugs": [
+        "totem"
+      ],
+      "look": "The totems are sticks between two and three feet long driven into the mushy ground. They all have dreamcatchers or runic symbols hanging from them. Some even have skulls on them.",
+      "take": "That might be a really, REALLY bad idea. You decide to leave it for now."
+    },
+    {
+      "slug": "skulls",
+      "altSlugs": [
+        "skull"
+      ],
+      "look": "Those are definitely skulls. Something used them once but now they're here. Are they a warning?",
+      "take": "That might be a really, REALLY bad idea. You decide to leave it for now."
+    },
+    {
+      "slug": "dreamcatcher",
+      "altSlugs": [
+        "dreamcatchers"
+      ],
+      "look": "They're dreamcatchers. You've seen them before but you can't recall where. Each one is unique.",
+      "take": "That might be a really, REALLY bad idea. You decide to leave it for now."
+    },
+    {
+      "slug": "runic symbol",
+      "altSlugs": [
+        "rune",
+        "runes",
+        "runic symbols",
+        "symbol",
+        "symbols"
+      ],
+      "look": "The runic symbols are made of twisted wicker or vine like the dreamcatchers. Some of them you recognize but from where? Oh, you remember! Some of these runes you've seen on the cairns throughout the island.",
+      "take": "That might be a really, REALLY bad idea. You decide to leave it for now."
+    }
+  ]
 }

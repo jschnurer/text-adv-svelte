@@ -1,0 +1,6 @@
+{
+  "name": "Inside the Creepy Hut",
+  "slug": "Swamp/hut-interior",
+  "description": "The door to the swamp is to the east.",
+  "east": "loadRoom|Swamp/hut"
+}
