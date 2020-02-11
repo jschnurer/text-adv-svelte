@@ -133,7 +133,7 @@
     },
     {
       "slug": "cellphone",
-      "altSlugs": "phone",
+      "altSlugs": ["phone"],
       "look": "It's a smartphone. It's got a crack across the screen and it looks like it was dropped in the swamp muck a few times. You think you might've owned one once, maybe."
     },
     {
@@ -162,6 +162,10 @@
     {
       "slug": "mortar and pestle",
       "look": "It's a stone tool consisting of a mortar, which is a small stone bowl, and a pestle which is a blunt piece of rock. It's used to crush or grind things. It's seen plenty of use and is quite stained."
+    },
+    {
+      "slug": "trapdoor",
+      "look": "It's a wooden trap door with a handle in the floor. You wouldn't have thought that there was any way a cellar could survive the swampy terrain."
     }
   ]
 }
