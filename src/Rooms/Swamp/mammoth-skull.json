@@ -1,7 +1,7 @@
 {
   "name": "Muck-Buried Skull",
   "slug": "Swamp/mammoth-skull",
-  "description": "This field of muck has claimed many victims. You see mildew-covered bones sticking out of the black mud as far as the eye can see. There is a massive, half-buried skull here with long tusks. Oh! It's the skull of a... a... You can't quite remember.\nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe swampy terrain heads north and west. To the east, you can see the faint traces of a trail that heads toward solid ground. To the northwest is a fetid lake.",
+  "description": "This field of muck has claimed many victims. You see mildew-covered bones sticking out of the black mud as far as the eye can see. There is a massive, half-buried skull here with long tusks. Oh! It's the skull of a... a... You can't quite remember.\nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe swampy terrain heads north and west. To the east, you can see the faint traces of a trail that heads toward solid ground. To the northwest, a fetid lake blocks the way.",
   "north": "loadRoom|Swamp/bubbling-muck",
   "east": "loadRoom|Swamp/dry-trail",
   "west": "loadRoom|Swamp/campsite",
@@ -21,6 +21,10 @@
     {
       "slug": "skull",
       "look": "It's a massive animal skull with long tusks. You're pretty sure you know the name of the animal but you can't quite remember. It's half-buried in the black, reeking muck and there's mildew covering most of it."
+    },
+    {
+      "slug": "lake",
+      "look": "It's algae-coated with a black film over its surface. You can see a peninsula reaching out into it from the east shore. There's some sort of building on the peninsula."
     }
   ]
 }

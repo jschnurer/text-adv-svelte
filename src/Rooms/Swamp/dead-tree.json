@@ -1,7 +1,7 @@
 {
   "name": "A Lone, Dead Tree",
   "slug": "Swamp/dead-tree",
-  "description": "You're standing near a dead, twisted tree. It's black and slick with mold and rot. Somehow it's still standing tall, its contorted fingers reaching toward the sky. The ground is little more than a field of thick, black mud that squelches underfoot and is exhausting to move through. Pools of stagnant water are everywhere.\nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe horrible terrain only allows you to head east and west. To the south is a stagnant lake.",
+  "description": "You're standing near a dead, twisted tree. It's black and slick with mold and rot. Somehow it's still standing tall, its contorted fingers reaching toward the sky. The ground is little more than a field of thick, black mud that squelches underfoot and is exhausting to move through. Pools of stagnant water are everywhere.\nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe horrible terrain only allows you to head east and west. To the south, a stagnant lake blocks the way.",
   "west": "loadRoom|Swamp/toppled-log",
   "east": "loadRoom|Swamp/standing-water",
   "features": [
@@ -21,6 +21,10 @@
       "slug": "mold",
       "altSlugs": ["rot"],
       "look": "It's slick with wetness. It's a black stain that has made the tree its home."
+    },
+    {
+      "slug": "lake",
+      "look": "It's algae-coated with a black film over its surface. You can see a peninsula reaching out into it from the east shore. There's some sort of building on the peninsula."
     }
   ]
 }

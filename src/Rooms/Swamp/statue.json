@@ -1,7 +1,7 @@
 {
   "name": "Ancient, Filth-Coated Statue",
   "slug": "Swamp/statue",
-  "description": "Most of the ground here is about a foot of muck beneath another foot of algae-covered water. You're soaked through and miserable. The only thing around is a huge, monolithic statue of a grimacing face. It's made of black stone and has mold growing up from the waters around its base. It lists forward, slowly sinking into the mud. Someday it might be swallowed by the land completely. \nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe muddy terrain allows you to head north or east. To the northeast is a algae-covered lake.",
+  "description": "Most of the ground here is about a foot of muck beneath another foot of algae-covered water. You're soaked through and miserable. The only thing around is a huge, monolithic statue of a grimacing face. It's made of black stone and has mold growing up from the waters around its base. It lists forward, slowly sinking into the mud. Someday it might be swallowed by the land completely. \nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe muddy terrain allows you to head north or east. To the northeast, a algae-covered lake blocks the way.",
   "north": "loadRoom|Swamp/mosquito-spawn",
   "east": "loadRoom|Swamp/campsite",
   "_common": {
@@ -26,6 +26,10 @@
       "altSlugs": ["face"],
       "look": "It's a huge statue made of black stone, probably at least 13 feet tall. It depicts a grimacing face. Looking at it makes you uncomfortable, almost like it's looking back at you. The back of the status has handholds cut into it, almost like a ladder.",
       "climb": "callCommon|climb_statue"
+    },
+    {
+      "slug": "lake",
+      "look": "It's algae-coated with a black film over its surface. You can see a peninsula reaching out into it from the east shore. There's some sort of building on the peninsula."
     }
   ]
 }
