@@ -3,8 +3,8 @@
   "slug": "Swamp/hut-interior",
   "look": [
     "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, a strange metal badge, a pair of glass scissors, and a crude map scrawled on a bit of parchment.\nOscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room.",
-    "ifFlagWrite|MET|Rhode, with twigs intertwined throughout her her disheveled, voluminous black hair, sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrustion.",
-    "ifNotFlagWrite|MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrustion.",
+    "ifFlagWrite|MET|Rhode, with twigs intertwined throughout her her disheveled, voluminous black hair, sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
+    "ifNotFlagWrite|MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
     "There is a trapdoor in the floor leading downward and the door to the swamp is to the east."
   ],
   "east": "loadRoom|Swamp/hut",
@@ -40,18 +40,32 @@
           ],
           [
             "setFlag|MET",
-            "\"What is this?\" she asks angrily, rising quickly and backing away from. She reaches inside her cloak. \"Wherefore hast thou invaded my home?\" she shouts, now clearly holding onto something concealed inside her dark cloak. \"Hast thou come to inflict harm upon me? Speak plainly, interloper, thy life depends upon it.\"",
+            "\"What is this?\" she asks angrily, rising quickly and backing away from you. She reaches inside her cloak. \"Wherefore hast thou invaded my home?\" she shouts, now clearly holding onto something concealed inside her dark cloak. \"Hast thou come to inflict harm upon me? Speak plainly, interloper, thy life depends upon it.\"",
             {
               "cmd": "choice",
               "args": [
-                "callCommon|rhode_kill",
+                [
+                  "\"Wrong answer, interloper.\"",
+                  {
+                    "cmd": "waitForInput",
+                    "args": "callCommon|rhode_kill"
+                  }
+                ],
                 [
                   "yes",
                   "no",
                   "nay"
                 ],
                 {
-                  "yes": "callCommon|rhode_kill",
+                  "yes": [
+                    "\"Wrong answer, interloper.\"",
+                    [
+                      {
+                        "cmd": "waitForInput",
+                        "args": "callCommon|rhode_kill"
+                      }
+                    ]
+                  ],
                   "no": "callCommon|no_harm",
                   "nay": "callCommon|no_harm"
                 }
@@ -61,15 +75,7 @@
         ]
       }
     ],
-    "rhode_kill": [
-      "\"Wrong answer, interloper.\"",
-      {
-        "cmd": "waitForInput",
-        "args": [
-          "gameOver|The woman with purple eyes throws back her cloak revealing a wooden knife in her hand. The knife is covered in all manner of runic symbols burned into the wood. She tosses it into the air and shouts \"KAVAKA!\" The knife takes on a life of its own and zips through the air toward you. You leap to the side to avoid its trajectory but it turns in midair, tracking your fall to the ground. It pierces you in the chest and digs deep, reaching your heart. You gasp for air but cannot draw breath.\nThe woman kneels down before you and wrenches the knife free from your rapidly-dying body."
-        ]
-      }
-    ],
+    "rhode_kill": "gameOver|The woman with purple eyes throws back her cloak revealing a wooden knife in her hand. The knife is covered in all manner of runic symbols burned into the wood. She tosses it into the air and shouts \"KAVAKA!\" The knife takes on a life of its own and zips through the air toward you. You leap to the side to avoid its trajectory but it turns in midair, tracking your fall to the ground. It pierces you in the chest and digs deep, reaching your heart. You gasp for air but cannot draw breath.\nThe woman kneels down before you and wrenches the knife free from your rapidly-dying body.",
     "no_harm": [
       "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou verily mean no harm, then I wouldst answer thy questions. My name is Rhode and thou art my first visitor in quite a spell.\""
     ]
@@ -134,7 +140,9 @@
     },
     {
       "slug": "cellphone",
-      "altSlugs": ["phone"],
+      "altSlugs": [
+        "phone"
+      ],
       "look": "It's a smartphone. It's got a crack across the screen and it looks like it was dropped in the swamp muck a few times. You think you might've owned one once, maybe."
     },
     {

@@ -2,7 +2,7 @@
   "name": "An Bramble-Covered Ridge",
   "slug": "Swamp/ridge",
   "description": "You're standing on a long, grassy ridge. To the north of the ridge you see a trail that leads down toward the swamp. To the south you see sand dunes which lead to the ocean. From up here you can even see a lighthouse far to the southeast on a peninsula.",
-  "north": "loadRoom:Swamp/dry-trail",
+  "north": "loadRoom|Swamp/dry-trail",
   "south": "TODO: Add Beach/dunes",
   "features": [
     {

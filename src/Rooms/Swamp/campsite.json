@@ -27,7 +27,7 @@
     {
       "slug": "tent",
       "look": [
-        "The tent is tattered and fill of holes. The edges are fraying. It collapsed a long time ago and the swamp has slowly been rotting it away.",
+        "The tent is tattered and full of holes. The edges are frayed. It collapsed a long time ago and the swamp has slowly been rotting it away.",
         "Inside the tent you notice there's an old, waterlogged pack.",
         "setFlag|SAWPACK"
       ]
@@ -82,7 +82,7 @@
       "slug": "pack",
       "targetFlag": "SAWPACK",
       "look": [
-        "The pack is mostly rotted away. You manage to get it open there's nothing in it but mildew{notebook}. It's badly water damaged.",
+        "The pack is mostly rotted away. You manage to get it open but there's nothing in it but mildew{notebook}. It's badly water damaged.",
         "setFlag|SAWNOTEBOOK"
       ],
       "take": "The pack is too far gone to be useful anymore. You decide to leave it behind."
@@ -99,7 +99,7 @@
       "take": [
         "You take the notebook.",
         "setFlag|TOOKNOTEBOOK",
-        "addItem|RHODES_JOURNAL"
+        "addItem|OPHELIAS_JOURNAL"
       ]
     }
   ]
