@@ -1,11 +1,69 @@
 ## Game Notes (TODO) ##
 
+color sequence:
+blue, indigo, red, purple, orange, green, yellow
+
 Edra (blue) -- 2010s free-spirit
-Ophelia (indigo) -- 3150s ambassador
+Ophelia (indigo) -- 2120s ambassador
 Merek (red) -- medieval knight
 Rhode (purple) -- medieval witch
 Arden (orange) -- 2010s accountant
 Meredith (green) -- 2010s office worker
-Stanley (yellow) -- 2110s security personnel
+Stanley (yellow) -- 2120s security personnel
+
+Groups:
+
+2110s:      Ophelia, Stanley
+2010s:      Edra, Arden, Meredith
+MiddleAges: Merek, Rhode
+
+Lore:
+
+Magic Users:
+  Ophelia, Edra, Rhode
+Mage Hunters:
+  Stanley, Meredith, Merek
+Bystanders:
+  Arden
+
+Throughout history magic users have been hunted. Each of the
+groups of people died suddenly due to these conflicts. In
+the middle ages, Merek confronted Rhode and she slew him but
+not before he inflicted a fatal wound. As she lay dying, she
+cursed mage hunters and beseeched the Dark God of sorcery,
+Xeltat, for revenge.
+
+Xeltat was listening. He made The Island--an extradimensional
+space where the souls of mage hunters would go. There, he
+would siphon off their soul energy to feed himself. However,
+the Dark God of Sorcerery exacted a price. He would include
+as payment for this service the souls of those slain by the
+mage hunters as well.
+
+In the middle ages, Merek, a holy warrior of the Order of the
+Griffin, finally tracked down Rhode, the witch, to her lair.
+There they did battle. They were both killed and Rhode started
+the curse.
+
+In the 2010s, Edra, the sorcerer, finally convinced his
+uptight brother to go for a road trip in his hotrod.
+Unbeknownst to Edra, he was being tracked by an agent of the
+Order of the Griffin named Meredith. She followed them on 
+their trip and attacked while on a stretch of lonely highway.
+Their magical battle destroyed both vehicles, trapping them
+all, including the innocent bystander Arden, on The Island.
+
+In the 2120s, Stanley, an agent of the Order of the Griffin,
+worked as a security guard. He knew that one of the
+ambassadors was a mage. Eventually, he discovered it was
+Ophelia. He ambushed her in her office but in the battle he
+was cursed. He succeeded in killing her but he lived only
+another 6 months as the curse slowly killed him. Eventually,
+they were both transported to The Island.
+
+Many more throughout history have been transported here. And
+indeed, the player is one of them. The player is a wizard, 
+slain by an agent of the Order of the Griffin in their own
+time. Both died in the battle and were sent to The Island.
 
 * Add rite

@@ -36,7 +36,7 @@
         "args": [
           "MET",
           [
-            "\"Oh, thou hast returned. What dost thou want? Hast thou come with more inquiries?\""
+            "\"Oh, thou hast returned. What dost thou want? Hast thou come with more inquiries? Or doest thou wish to hear my %story%?\""
           ],
           [
             "setFlag|MET",
@@ -77,7 +77,7 @@
     ],
     "rhode_kill": "gameOver|The woman with purple eyes throws back her cloak revealing a wooden knife in her hand. The knife is covered in all manner of runic symbols burned into the wood. She tosses it into the air and shouts \"KAVAKA!\" The knife takes on a life of its own and zips through the air toward you. You leap to the side to avoid its trajectory but it turns in midair, tracking your fall to the ground. It pierces you in the chest and digs deep, reaching your heart. You gasp for air but cannot draw breath.\nThe woman kneels down before you and wrenches the knife free from your rapidly-dying body.",
     "no_harm": [
-      "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou verily mean no harm, then I wouldst answer thy questions. My name is Rhode and thou art my first visitor in quite a spell.\""
+      "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou verily mean no harm, then I wouldst answer thy questions. Rhode is mine name and thou art the first person that I have laid eyes upon in a long time.\""
     ]
   },
   "features": [
@@ -105,7 +105,26 @@
                 "cmd": "dialog",
                 "args": {
                   "": "\"Wherefore dost thou ask such silly questions? I know naught of this.\"",
-                  "favorite color": "\"What a strange question thou asketh. I have always considered purple to be my favorite,\" she says, a sparkle in her purple eyes."
+                  "favorite color": "\"What a strange question thou asketh. I have always considered purple to be my favorite,\" she says, a sparkle in her purple eyes.",
+                  "rhode": "\"'Tis my name.\"",
+                  "ophelia": "\"This name thou speakest, it is familiar to me, though only a shadow doth remains. The totems that I have erected in the environs about my home have allowed me that at least. If thou hast something that couldst spark the flame of memory, perhaps I couldst remember more.\"",
+                  "merek": "\"Merek...\" She trails off before she even begins her sentence. \"I can recall... some things,\" she says as a smirk slowly spreads across her face. \"If only I had something more of his... Oh!\" She returns from her reverie. \"We were... acquainted before we came here. He was a witch hunter. Clearly not a good one, as thou canst tell.\"",
+                  "arden|edra|stanley|meredith": "\"This name thou speakest, it means nothing to me.\"",
+                  "sword": "\"A holy sword blessed by someone or other. I did not ask whom as it plunged toward my heart. It once belonged to a dear...\" She looks away and clears her throat. \"Acquaintance.\"",
+                  "shield": "\"It doth not look like much, but the holy enchantments upon it were enough to stop Akavak's blade.\"",
+                  "mosquito|mosquitoes|giant mosquito|giant mosquitoes": "\"Lovely, aren't they?\" She asks, without a single trace of mirth in her voice. \"They doth carry a disease of some sort. Other, less enlightened minds wouldst call it a curse. It afflicted me... sometime ages ago. I had to cure it myself. At first, my acquaintance bade me pray to cure it. Silly. Eventually I convinced him to help me search for ingredients with which I fashioned a cure.\"",
+                  "cure": "",
+                  "ingredients": "",
+                  "cellphone|phone": "",
+                  "badge|metal badge|strange metal badge": "",
+                  "scissors|glass scissors": "",
+                  "crude map|map": "She stands and retrieves the parchment from a shelf. \"This map. I know not from whence it came nor what it depicts. If thou doest want it, I would trade it to thee for an ivory chalice. One exists somewhere in this strange land, thou canst be sure.\"",
+                  "crystal ball": "\"Tis an esotery from an ancient time. Only an arcane mind couldst gaze into its depths. Pay it no heed.\"",
+                  "trapdoor|cellar": "\"Thou shouldst not inquire about this. Pay it no mind. It is of no import.\"",
+                  "swamp": "\"Tis not a nice place, I admit. \"",
+                  "totem|totems|dreamcatcher|dreamcatchers": "",
+                  "cairn|cairns": "\"No, I did not make them. Nor do I know who did or how. I have, however, divined their purpose. They are powerfully enchanted. When thou doest touch a cairn, a new rune is scribed and it remembers thy deeds, creating a divergent destiny. If thy journey doest end prematurely, thou canst return to the divergence.\"",
+                  "past|her past|story|her story|story": ""
                 }
               }
             ],
@@ -146,6 +165,19 @@
       "look": "It's a smartphone. It's got a crack across the screen and it looks like it was dropped in the swamp muck a few times. You think you might've owned one once, maybe."
     },
     {
+      "slug": "map",
+      "look": "It's a piece of parchment, yellowed with age, partially rolled up at the edges. It depicts some kind of layout, showing areas connected together.",
+      "take": "As you go to take the map, {rhode} interrupts you without looking away from the crystal ball. \"If thou wouldst take that map, thou shouldst ask me of it first.\" She then grows quiet."
+    },
+    {
+      "slug": "scissors",
+      "altSlugs": [
+        "glass scissors"
+      ],
+      "look": "They're a pair of scissors. They're the size you would expect except they're made of clear glass.",
+      "take": "As you reach to take the scissors, {rhode} interrupts you without looking away from the crystal ball. \"If thou wouldst have those glasses shears, thou shouldst ask me of them first.\" She then grows quiet."
+    },
+    {
       "slug": "shelves",
       "altSlugs": [
         "shelf"
@@ -175,6 +207,11 @@
     {
       "slug": "trapdoor",
       "look": "It's a wooden trap door with a handle in the floor. You wouldn't have thought that there was any way a cellar could survive the swampy terrain."
+    },
+    {
+      "slug": "badge",
+      "altSlugs": ["badge|metal badge|strange metal badge"],
+      "look": ""
     }
   ]
 }
