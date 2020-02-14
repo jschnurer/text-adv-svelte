@@ -2,7 +2,8 @@
   "name": "Inside the Creepy Hut",
   "slug": "Swamp/hut-interior",
   "look": [
-    "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, a strange metal badge, a pair of glass scissors, and a crude map scrawled on a bit of parchment.\nOscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room.",
+    "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, {scissors}and a crude map scrawled on a bit of parchment.",
+    "Oscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room.",
     "ifFlagWrite|MET|Rhode, with twigs intertwined throughout her her disheveled, voluminous black hair, sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
     "ifNotFlagWrite|MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
     "There is a trapdoor in the floor leading downward and the door to the swamp is to the east."
@@ -78,6 +79,32 @@
     "rhode_kill": "gameOver|The woman with purple eyes throws back her cloak revealing a wooden knife in her hand. The knife is covered in all manner of runic symbols burned into the wood. She tosses it into the air and shouts \"KAVAKA!\" The knife takes on a life of its own and zips through the air toward you. You leap to the side to avoid its trajectory but it turns in midair, tracking your fall to the ground. It pierces you in the chest and digs deep, reaching your heart. You gasp for air but cannot draw breath.\nThe woman kneels down before you and wrenches the knife free from your rapidly-dying body.",
     "no_harm": [
       "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou verily mean no harm, then I wouldst answer thy questions. Rhode is mine name and thou art the first person that I have laid eyes upon in a long time.\""
+    ],
+    "ophelia_info": [
+      "\"I remember. 'Twas Ophelia that I first met on the island, after Merek of course. 'Twas strange. Ophelia told me that I came to the island long before them but that they hadst been here longer. Time doth flows in strange ways on the island.\"",
+      "She thinks for a moment. \"I canst recall much. They were a diplomat of some kind, and very pensive. Their theory was that all of us here doth share a link with another. They said that those on the island were either hunters... or prey.\"",
+      "\"They were adamant about finding a way to escape the island. I traveled with them for a long while. Merek, Ophelia and I climbed the black mountain. We doth found something there. Something that shook my resolve, though I canst recall what. Afterward, we traveled the island for a spell. Eventually, we went our separate ways.\"",
+      "She closes her eyes and sighs. \"I've not dreamt of escape in a long, long time.\""
+    ],
+    "returned_ingredient": [
+      {
+        "cmd": "ifVar",
+        "args": [
+          "INGREDIENTCOUNT",
+          "==",
+          4,
+          [
+            "With all the ingredients for the cure now gathered, Rhode sets about her work.",
+            "With her mortar and pestle she grinds the rainbow egg into shimmering dust. While doing so, she chews on the tarnroot, occasionally spitting its juices into a small bowl. She incants something in some magical language and taps the puffball. With a hissing sound it deflates into a small white pouch. She cuts it open and pours it into the bowl with the tarnroot juice. To this mixture she adds the rainbow dust. She mixes these ingredients together for some time, all the while enchanting them with her magical words.",
+            "She hands you a small vial of shimmering liquid. \"Quaff this and the effects should be instant.\" You take the small, glass vial.",
+            "addItem|BLIGHT_CURE",
+            "\"Oh, the mosquito egg? No, 'tis not needed for the cure. But I require compensation for my work and the look on thy face when thou hadst that egg in their hands was payment enough!\" She laughs."
+          ],
+          [
+            "You're one step closer to the cure for the mosquito blight."
+          ]
+        ]
+      }
     ]
   },
   "features": [
@@ -107,23 +134,81 @@
                   "": "\"Wherefore dost thou ask such silly questions? I know naught of this.\"",
                   "favorite color": "\"What a strange question thou asketh. I have always considered purple to be my favorite,\" she says, a sparkle in her purple eyes.",
                   "rhode": "\"'Tis my name.\"",
-                  "ophelia": "\"This name thou speakest, it is familiar to me, though only a shadow doth remains. The totems that I have erected in the environs about my home have allowed me that at least. If thou hast something that couldst spark the flame of memory, perhaps I couldst remember more.\"",
-                  "merek": "\"Merek...\" She trails off before she even begins her sentence. \"I can recall... some things,\" she says as a smirk slowly spreads across her face. \"If only I had something more of his... Oh!\" She returns from her reverie. \"We were... acquainted before we came here. He was a witch hunter. Clearly not a good one, as thou canst tell.\"",
+                  "ophelia": [
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "REMEMBERSOPHELIA",
+                        "callCommon|ophelia_info",
+                        "\"This name thou speakest, it is familiar to me, though only a shadow doth remains. The totems that I have erected in the environs about my home have allowed me that at least. If thou hast something that couldst spark the flame of memory, perhaps I couldst remember more.\""
+                      ]
+                    }
+                  ],
+                  "merek": "\"Merek...\" She trails off before she even begins her sentence. \"I can recall... some things,\" she says as a smirk slowly spreads across her face. She dismisses it quickly. She returns from her reverie. \"We were... acquainted before we came here. He was a witch hunter. Clearly not a good one, as thou canst tell.\"",
                   "arden|edra|stanley|meredith": "\"This name thou speakest, it means nothing to me.\"",
                   "sword": "\"A holy sword blessed by someone or other. I did not ask whom as it plunged toward my heart. It once belonged to a dear...\" She looks away and clears her throat. \"Acquaintance.\"",
                   "shield": "\"It doth not look like much, but the holy enchantments upon it were enough to stop Akavak's blade.\"",
-                  "mosquito|mosquitoes|giant mosquito|giant mosquitoes": "\"Lovely, aren't they?\" She asks, without a single trace of mirth in her voice. \"They doth carry a disease of some sort. Other, less enlightened minds wouldst call it a curse. It afflicted me... sometime ages ago. I had to cure it myself. At first, my acquaintance bade me pray to cure it. Silly. Eventually I convinced him to help me search for ingredients with which I fashioned a cure.\"",
-                  "cure": "",
-                  "ingredients": "",
-                  "cellphone|phone": "",
-                  "badge|metal badge|strange metal badge": "",
-                  "scissors|glass scissors": "",
-                  "crude map|map": "She stands and retrieves the parchment from a shelf. \"This map. I know not from whence it came nor what it depicts. If thou doest want it, I would trade it to thee for an ivory chalice. One exists somewhere in this strange land, thou canst be sure.\"",
+                  "mosquito|mosquitoes|giant mosquito|giant mosquitoes": "\"Lovely, aren't they?\" She asks, without a single trace of mirth in her voice. \"They doth carry a disease of some sort. Other, less enlightened minds wouldst call it a curse. It afflicted me... ages ago. I had to cure it myself. At first, my acquaintance bade me pray for a cure. Silly. Eventually I convinced him to help me search for ingredients with which I fashioned a cure.\"",
+                  "cure": "\"A cure for the blight carried by the mosquitoes? Verily, thou doest ask the right person. 'Tis a remedy of mine own creation. If thou wouldst bring to me the required ingredients, I couldst fashion for thee the cure.\" Suddenly, she furrows her brow and looks annoyed. She reaches into her hair and plucks an errant twig, tossing it on the floor.",
+                  "ingredients": [
+                    "\"The cure for the mosquito blight doth require many ingredients. Some are dangerous to acquire. If thou doest wish to gather these, I would beseech thee to be careful. Thou shouldst gather the following: a puffball, a giant mosquito egg, tarnroot, and a rainbow shell.\"",
+                    "setFlag|G.WANTMOSQUITOEGG"
+                  ],
+                  "puffball": [
+                    "\"I call them puffballs, for I know not their true name. Thou shouldst not handle them directly. They doth grow tiny spikes which causes them to explode when touched.\"",
+                    "She furrows her brow and thinks. \"There was some trick... Ah yes! Thou shouldst cut the strange stalk from whence it sprouts, but NOT with metal. My acquaintance hadst learned that the hard way.\"",
+                    "setFlag|REMEMBERPUFFBALL"
+                  ],
+                  "egg|mosquito egg|giant mosquito egg": "\"They shan't be hard to find, I would guess.\"",
+                  "tarnroot": "\"Tarnroot is a root with white leaves. Thou canst find it growing near lakes at high elevation.\"",
+                  "rainbow shell": "\"There is no mystery here. Thou shouldst find one somewhere along the beach. They are quite beautiful.\"",
+                  "cellphone|phone": "\"'Tis an odd bit of metal and glass doest thou not agree? I was once told that it doth contain a most powerful enchantment. One that grants its wielder the power to speak with another many leagues distant.\"",
+                  "scissors|glass scissors": [
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "TOOKSCISSORS",
+                        "\"I hope that thou hast used them well.\"",
+                        [
+                          {
+                            "cmd": "ifFlag",
+                            "args": [
+                              "REMEMBERPUFFBALL",
+                              [
+                                "\"They are glass shears. Thou mustn't pierce a puffball with metal, hence I conjured these scissors. I have no further use of them. Wouldst thou like them?\"",
+                                {
+                                  "cmd": "choice",
+                                  "args": [
+                                    "\"Didst thou want them or not?\"",
+                                    [
+                                      "yes",
+                                      "no",
+                                      "nay"
+                                    ],
+                                    {
+                                      "yes": [
+                                        "\"Then thou may take them. I hope they serve thee well.\"",
+                                        "setFlag|CANTAKESCISSORS"
+                                      ],
+                                      "no": "\"Fine then. If thou shouldst need them, simply return and ask.\"",
+                                      "nay": "\"Fine then. If thou shouldst need them, simply return and ask.\""
+                                    }
+                                  ]
+                                }
+                              ],
+                              "\"They are simple shears, really. I canst recall why they are made of glass. Perhaps I conjured them from the beach sands.\""
+                            ]
+                          }
+                        ]
+                      ]
+                    }
+                  ],
+                  "crude map|map": "She stands and retrieves the parchment from a shelf. \"This map. I canst recall from whence it came nor what it depicts. If thou doest desire it, I would trade it to thee for an ivory chalice. One exists somewhere in this strange land, thou canst be sure.\"",
                   "crystal ball": "\"Tis an esotery from an ancient time. Only an arcane mind couldst gaze into its depths. Pay it no heed.\"",
-                  "trapdoor|cellar": "\"Thou shouldst not inquire about this. Pay it no mind. It is of no import.\"",
-                  "swamp": "\"Tis not a nice place, I admit. \"",
-                  "totem|totems|dreamcatcher|dreamcatchers": "",
-                  "cairn|cairns": "\"No, I did not make them. Nor do I know who did or how. I have, however, divined their purpose. They are powerfully enchanted. When thou doest touch a cairn, a new rune is scribed and it remembers thy deeds, creating a divergent destiny. If thy journey doest end prematurely, thou canst return to the divergence.\"",
+                  "trapdoor|cellar": "\"Thou shouldst not inquire of this. Pay it no mind. 'Tis' of no import.\"",
+                  "swamp": "\"Tis not a nice place, I admit. Thou art brave to come here.\"",
+                  "totem|totems|dreamcatcher|dreamcatchers": "\"These are creations of mine. They take the required shape to house various enchantments and charms. Mostly they doth protect and enhance my memories. Mostly.\" She narrows her eyes at you briefly.",
+                  "cairn|cairns": "\"No, I did not make them. Nor do I know who did or how. I have, however, divined their purpose. They are powerfully enchanted. When thou doest touch a cairn, a new rune is scribed and it remembers thy deeds, creating a divergent destiny. If thy journey doest end prematurely, thou canst return to the point of divergence.\"",
                   "past|her past|story|her story|story": ""
                 }
               }
@@ -133,7 +218,38 @@
             ]
           ]
         }
-      ]
+      ],
+      "give": {
+        "_requiredFlag": "MET",
+        "OPHELIAS_JOURNAL1": [
+          "You produce the journal and hand it to Rhode. \"What, praytell, is this?\"\nShe considers the text on the cover for a few minutes before opening it and flipping through the pages.",
+          "\"'Tis quite damaged. I shall attempt to repair it.\" She sets the journal down on the table next to the cracked crystal ball. She places one hand onto the surface of the journal, palm down. With her other hand she plucks a long, black hair from her disheveled head and holds it dangling over the hand she has on the journal.",
+          "She begins reciting words, or at least you think they're words. They're sounds you didn't think a human throat could make. As she incants, she lowers the long black hair until it touches her hand. Before your very eyes the bottom of the hair penetrates through her hand as though it wasn't there, the only evidence is its passing a faint light. She lowers it until the entire strand is gone, absorbed by her other hand. With a final syllable there is a flash of light and she removes her hands.",
+          "The journal is still badly damaged. \"This place doth dampen my magic. 'Tis all I can do simply to repair the passages that were still mostly intact.\" She opens the notebook again and reads the legible passages.",
+          "removeItem|OPHELIAS_JOURNAL1",
+          "addItem|OPHELIAS_JOURNAL2",
+          "She finishes reading and hands the journal back to you.",
+          "setFlag|REMEMBERSOPHELIA",
+          {
+            "cmd": "waitForInput",
+            "args": "callCommon|ophelia_info"
+          }
+        ],
+        "RED_FABRIC": [
+          "You hand Rhode the piece of faded, red fabric. She takes it and gazes wistfully at it for a long while before speaking.",
+          "\"'Twas a scrap of Merek's cloak. He tried to kill me once, a lifetime ago. He hadst been a holy knight of the Order of the Griffin.\" She scoffs. \"Their 'holy quest'? Hunting down and slaying any manner of sorcerer, regardless of their disposition.\"",
+          "\"I canst recall how, but we both ended up here, together. He, of course, blamed me; Accusing me of using mine incantations to bring us here. We hated each other. But after ages of being here with none save ourselves, we became... attached.\" She smirks before quickly hiding it. \"I used my conjury where possible, and he his strong sword arm. Eventually, he renounced his holy quest and abandoned the Order. Though I forgave him for his attempt on my life, I know he always carried his remorse inside him. 'Twas a shadow upon his soul.\"",
+          "\"We met and traveled with Ophelia for a while. But one night, Merek simply left in the night, leaving his equipment behind. I've not seen him since.\"",
+          "She holds the tattered scrap fabric in silence for a while before returning it to you.",
+          "setFlag|REMEMBERSMEREK"
+        ],
+        "MOSQUITO_EGG": [
+          "You produce the quivering white, gelatinous egg. You grimace as it shakes in your hands. Rhode takes it without hesitation and sets it on a table where it continues to throb. She just smiles at you.",
+          "removeItem|MOSQUITO_EGG",
+          "incVar|INGREDIENTCOUNT",
+          "callCommon|returned_ingredient"
+        ]
+      }
     },
     {
       "slug": "stump",
@@ -141,41 +257,60 @@
     },
     {
       "slug": "crystal ball",
-      "look": "There's a crack that nearly bisects it and it's emitting scintillating purple light. You can only look at it for a moment before having to look away or shield your eyes. You have no idea how {rhode} can stand to stare at it."
+      "look": "There's a crack that nearly bisects it and it's emitting scintillating purple light. You can only look at it for a moment before having to look away or shield your eyes. You have no idea how {rhode} can stand to stare at it.",
+      "take": "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
     },
     {
       "slug": "sword",
       "altSlugs": [
         "steel sword"
       ],
-      "look": "It's a steel sword with a blade about 2 and a half feet long. Rust has built up in spots and there are nicks and dings all over it."
+      "look": "It's a steel sword with a blade about 2 and a half feet long. Rust has built up in spots and there are nicks and dings all over it.",
+      "take": "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
     },
     {
       "slug": "shield",
       "altSlugs": [
         "steel shield"
       ],
-      "look": "It's a wooden shield reinforced with steel banding. The front is painted, albeit very badly faded, with the image of a yellow griffin holding a dozen roses in its talons. It's banged up pretty badly and the metal is showing signs of rust. Parts of the wood are also starting to rot."
+      "look": "It's a wooden shield reinforced with steel banding. The front is painted, albeit very badly faded, with the image of a yellow griffin holding a dozen roses in its talons. It's banged up pretty badly and the metal is showing signs of rust. Parts of the wood are also starting to rot.",
+      "take": "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
     },
     {
       "slug": "cellphone",
       "altSlugs": [
         "phone"
       ],
-      "look": "It's a smartphone. It's got a crack across the screen and it looks like it was dropped in the swamp muck a few times. You think you might've owned one once, maybe."
+      "look": "It's a smartphone. It's got a crack across the screen and it looks like it was dropped in the swamp muck a few times. You think you might've owned one once, maybe.",
+      "take": "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
     },
     {
       "slug": "map",
       "look": "It's a piece of parchment, yellowed with age, partially rolled up at the edges. It depicts some kind of layout, showing areas connected together.",
-      "take": "As you go to take the map, {rhode} interrupts you without looking away from the crystal ball. \"If thou wouldst take that map, thou shouldst ask me of it first.\" She then grows quiet."
+      "take": "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
     },
     {
       "slug": "scissors",
       "altSlugs": [
         "glass scissors"
       ],
+      "destroyedFlag": "TOOKSCISSORS",
+      "notice": "a pair of glass scissors, ",
       "look": "They're a pair of scissors. They're the size you would expect except they're made of clear glass.",
-      "take": "As you reach to take the scissors, {rhode} interrupts you without looking away from the crystal ball. \"If thou wouldst have those glasses shears, thou shouldst ask me of them first.\" She then grows quiet."
+      "take": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CANTAKESCISSORS",
+            [
+              "You gently take the glass scissors.",
+              "addItem|GLASS_SCISSORS",
+              "setFlag|TOOKSCISSORS"
+            ],
+            "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
+          ]
+        }
+      ]
     },
     {
       "slug": "shelves",
@@ -207,11 +342,6 @@
     {
       "slug": "trapdoor",
       "look": "It's a wooden trap door with a handle in the floor. You wouldn't have thought that there was any way a cellar could survive the swampy terrain."
-    },
-    {
-      "slug": "badge",
-      "altSlugs": ["badge|metal badge|strange metal badge"],
-      "look": ""
     }
   ]
 }

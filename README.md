@@ -188,7 +188,9 @@ Ask is special. The user must type the command in the format shown. The target m
 Either target should have a combine object with a property matching the other's slug (or item_id). If a match is found, that property will be executed as a **cmdList**.
 
 ### give [item] to [target]
-The give object should have properties whose names are the item_ids the player can give to the target. Note: The **cmdList** matching the item_id will only be executed if the player has the item in their inventory.
+The give object should have properties whose names are the item_ids the player can give to the target. The **cmdList** matching the item_id will only be executed if the player has the item in their inventory.
+
+You can optionally disable all giving to a target. If the give object has a property named `_requiredFlag` set to the name of a flag, the player can only give items to the target if the flag is truthy. Otherwise, they will get a message "You can't give things to ___ yet."
 
 ### use [something]
 The use object should have a property named "" (empty string) which is a **cmdList**. This command will execute the "" (empty string) property of the use object.

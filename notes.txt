@@ -3,18 +3,18 @@
 color sequence:
 blue, indigo, red, purple, orange, green, yellow
 
-Edra (blue) -- 2010s free-spirit
-Ophelia (indigo) -- 2120s ambassador
+Edra (blue) -- 1990s free-spirit
+Ophelia (indigo) -- 2040s ambassador
 Merek (red) -- medieval knight
 Rhode (purple) -- medieval witch
-Arden (orange) -- 2010s accountant
-Meredith (green) -- 2010s office worker
-Stanley (yellow) -- 2120s security personnel
+Arden (orange) -- 1990s accountant
+Meredith (green) -- 1990s office worker
+Stanley (yellow) -- 2040s security personnel
 
 Groups:
 
-2110s:      Ophelia, Stanley
-2010s:      Edra, Arden, Meredith
+2040s:      Ophelia, Stanley
+1990s:      Edra, Arden, Meredith
 MiddleAges: Merek, Rhode
 
 Lore:
@@ -27,25 +27,27 @@ Bystanders:
   Arden
 
 Throughout history magic users have been hunted. Each of the
-groups of people died suddenly due to these conflicts. In
-the middle ages, Merek confronted Rhode and she slew him but
-not before he inflicted a fatal wound. As she lay dying, she
-cursed mage hunters and beseeched the Dark God of sorcery,
-Xeltat, for revenge.
+groups of people died suddenly due to these conflicts. The
+mage hunters are of a secret order that has existed throughout
+history called the Order of the Griffin. They have a single
+spell that they can cast which binds the soul of the mage
+that they are hunting so that they can't escape. However,
+the spell requires that the hunter binds their own soul as
+well. Souls bound by the spell are sent to The Island.
 
-Xeltat was listening. He made The Island--an extradimensional
-space where the souls of mage hunters would go. There, he
-would siphon off their soul energy to feed himself. However,
-the Dark God of Sorcerery exacted a price. He would include
-as payment for this service the souls of those slain by the
-mage hunters as well.
+The Island is an extradimensional space where the souls of
+those bound by the hunters would go. There, the souls slowly
+go mad and lose their memories. Once they've lost the last of
+their memories, they dissipate into nothingness. Those powerful
+enough or willful enough cling to shadowy memories of their past
+and can remain on The Island for a long, long time.
 
-In the middle ages, Merek, a holy warrior of the Order of the
-Griffin, finally tracked down Rhode, the witch, to her lair.
-There they did battle. They were both killed and Rhode started
-the curse.
+In the middle ages, Merek confronted Rhode and both
+were bound by Merek's spell. Their battle saw them both
+fatally wounded and their souls were transported to The
+Island.
 
-In the 2010s, Edra, the sorcerer, finally convinced his
+In the 1990s, Edra, the sorcerer, finally convinced his
 uptight brother to go for a road trip in his hotrod.
 Unbeknownst to Edra, he was being tracked by an agent of the
 Order of the Griffin named Meredith. She followed them on 
@@ -53,11 +55,11 @@ their trip and attacked while on a stretch of lonely highway.
 Their magical battle destroyed both vehicles, trapping them
 all, including the innocent bystander Arden, on The Island.
 
-In the 2120s, Stanley, an agent of the Order of the Griffin,
-worked as a security guard. He knew that one of the
+In the 2040s, Stanley, an agent of the Order of the Griffin,
+worked undercover as a security guard. He knew that one of the
 ambassadors was a mage. Eventually, he discovered it was
-Ophelia. He ambushed her in her office but in the battle he
-was cursed. He succeeded in killing her but he lived only
+Ophelia. He ambushed her in her office but in the battle they
+were both slain. He succeeded in killing her but he lived only
 another 6 months as the curse slowly killed him. Eventually,
 they were both transported to The Island.
 

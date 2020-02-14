@@ -6,7 +6,7 @@ export default function give(args) {
 
   let matches = args.trim().match("(.+) to (.+)");
 
-  if (matches.length !== 3) {
+  if (!matches || matches.length !== 3) {
     this.write("Huh? Try \"give [item] to [person]\" instead.");
     return;
   }
@@ -20,8 +20,13 @@ export default function give(args) {
 
   let target = this.findTarget(matches[2]);
 
-  if(!target) {
+  if (!target) {
     this.unknownTarget(matches[2]);
+    return;
+  }
+
+  if (target.give._requiredFlag && !this.getFlag(target.give._requiredFlag)) {
+    this.write(`You can't give things to ${matches[2]} yet.`);
     return;
   }
 

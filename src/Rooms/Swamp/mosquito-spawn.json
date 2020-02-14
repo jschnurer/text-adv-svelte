@@ -21,7 +21,29 @@
         "eggs"
       ],
       "look": "There are so many. So, so many. They're a whitish color and throb and shake. They hold life within. Horrible, horrible life.",
-      "take": "You have absolutely no reason why you'd ever want to.",
+      "take": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.WANTMOSQUITOEGG",
+            [
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "TOOKEGG",
+                  "You have absolutely no reason why you'd ever want to again.",
+                  [
+                    "You kneel down into the brackish water and dig the egg out of the muck. It jiggles and throbs as the unborn life within writhes. You shudder.",
+                    "addItem|MOSQUITO_EGG",
+                    "setFlag|TOOKEGG"
+                  ]
+                ]
+              }
+            ],
+            "You have absolutely no reason why you'd ever want to."
+          ]
+        }
+      ],
       "smash|break|destroy|kill": [
         {
           "cmd": "ifVar",

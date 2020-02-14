@@ -69,6 +69,10 @@
     },
     {
       "slug": "fabric",
+      "altSlugs": [
+        "cloth",
+        "flag"
+      ],
       "notice": "There's a strip of faded red cloth tied to it like a flag.",
       "destroyedFlag": "TOOKFABRIC",
       "look": "It's a tattered and faded strip of red cloth.",
@@ -89,7 +93,9 @@
     },
     {
       "slug": "notebook",
-      "altSlugs": ["rhode's journal"],
+      "altSlugs": [
+        "rhode's journal"
+      ],
       "notice": " and a waterlogged notebook",
       "targetFlag": "SAWNOTEBOOK",
       "destroyedFlag": "TOOKNOTEBOOK",
@@ -99,7 +105,7 @@
       "take": [
         "You take the notebook.",
         "setFlag|TOOKNOTEBOOK",
-        "addItem|OPHELIAS_JOURNAL"
+        "addItem|OPHELIAS_JOURNAL1"
       ]
     },
     {
