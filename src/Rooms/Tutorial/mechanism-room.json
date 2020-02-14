@@ -32,7 +32,8 @@
         "TUTORIAL_BELT": [
           "You insert the belt into the mechanism, connecting two of the pulleys.",
           "setFlag|G.TUT_FIXED_MECHANISM",
-          "removeItem|TUTORIAL_BELT"
+          "removeItem|TUTORIAL_BELT",
+          "Hint: The vault door in the security room should be working now."
         ]
       }
     }
