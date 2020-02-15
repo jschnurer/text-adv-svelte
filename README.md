@@ -64,6 +64,9 @@ It is possible to nest cmdLists inside cmdLists.
 ## String Commands
 String commands are simple commands that can be entered into a **cmdList** as a single string, generally with a pipe (|) delimiting the command from its arguments. The simplest, however, is *write*. The *write* command is executed for any string command that doesn't match a known syntax.
 
+### callCommon|func_name(|room_slug)?
+This will check to see if the current room has a `_common` property. If so, and it is an object, it will find a property of that object whose name matches the specified `func_name` and execute it as a **cmdList**. If the `room_slug` is provided as part of the command call, the engine will check the specified room for the `_common` property rather than the current room.
+
 ### loadRoom|room_slug
 This will tell the engine to load a different room from the room dictionary. After loading, the engine will issue the targetless _look_ command.
 
