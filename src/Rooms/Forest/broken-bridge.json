@@ -1,14 +1,60 @@
 {
-  "name": "Broken Bridge in a Forest",
+  "name": "Forest Bridge, South Bank",
   "slug": "Forest/broken-bridge",
-  "description": "Through the dense trees you can see that you're on the south bank of a raging river that bisects the forest. Its roaring shatters the eerie silence. The river must be at least 50 feet across.\nAn old wooden bridge once spanned the river but has since mostly collapsed and washed away. Part of it still juts out from either side of the river, casting deep shadows beneath it.\nAn overgrown trail leads through the trees to the south.",
-  "north": "The bridge is out and the river looks far too dangerous to cross. Still, if you really wanted to you could try to cross the river.",
+  "description": "Through the dense trees you can see that you're on the south bank of a raging river that bisects the forest. Its roaring shatters the eerie silence. The river must be at least 50 feet across.\nAn overgrown trail leads through the trees to the south.",
+  "north": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.FORESTBRIDGEREPAIRED",
+        "loadRoom|Forest/broken-bridge-north",
+        "The bridge is out and the river looks far too dangerous to cross. Still, if you really wanted to you could try to cross the river."
+      ]
+    }
+  ],
   "south": "loadRoom|Forest/west-clearing",
+  "_common": {
+    "swim_death": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "FISH_DISTRACTED",
+          "gameOver|You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current.\nYou smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under.\nYour bearings lost in the murky water, you smash into the sharp rocks again and again. You feel something in your leg snap, something in your arm twists the wrong way.\nThe last thing you experience is bashing your head against rock.",
+          "gameOver|You wade out into the murky water and begin to swim. The river begins carrying you downstream.\nYou feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood.\nGray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
+        ]
+      }
+    ]
+  },
   "features": [
     {
       "slug": "bridge",
+      "roomDesc": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.FORESTBRIDGEREPAIRED",
+            [
+              "A wooden bridge spans the length of the river to the other bank. It looks like it was just built."
+            ],
+            [
+              "An old wooden bridge once spanned the river but has since mostly collapsed and washed away. Part of it still juts out from either side of the river, casting deep shadows beneath it."
+            ]
+          ]
+        }
+      ],
       "look": [
-        "The bridge is ancient and rotting. It sticks out over the river maybe 10 feet.",
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.FORESTBRIDGEREPAIRED",
+            [
+              "A wooden bridge spans the length of the river to the other bank. It looks like it was just built."
+            ],
+            [
+              "The bridge is ancient and rotting. It sticks out over the river maybe 10 feet."
+            ]
+          ]
+        },
         {
           "cmd": "ifFlag",
           "args": [
@@ -66,16 +112,7 @@
           ]
         }
       ],
-      "cross": [
-        {
-          "cmd": "ifFlag",
-          "args": [
-            "FISH_DISTRACTED",
-            "gameOver|You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current.\nYou smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under.\nYour bearings lost in the murky water, you smash into the sharp rocks again and again. You feel something in your leg snap, something in your arm twists the wrong way.\nThe last thing you experience is bashing your head against rock.",
-            "gameOver|You wade out into the murky water and begin to swim. The river begins carrying you downstream.\nYou feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood.\nGray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
-          ]
-        }
-      ]
+      "cross": "callCommon|swim_death"
     }
   ],
   "throwStone": [
