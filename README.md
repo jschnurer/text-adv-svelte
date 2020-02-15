@@ -50,9 +50,13 @@ If the user enters a command and a target, the following steps are executed:
 2. If target is not found, is not targetable, or is "destroyed", return invalid target message. Else, continue.
 3. If the target has a property whose name matches the entered command, execute the **cmdList** in that property. Alternatively, if the target has a property whose name is pipe delimited that contains the entered command, execute the  **cmdList** in that property.
 
-If the user enters a command without a target, it must be either "look", "inventory", "north", "south", "east", "west", "clear", "up", or "down".
+Alternatively, there are some commands that are two-word commands that do not target:
+* "incant [incantation]" - incants the specified incantation, if known.
+
+If the user enters a command without a target, it must be either "look", "incantations", "inventory", "north", "south", "east", "west", "clear", "up", or "down".
 * "look" - clears the screen and writes out the room description
-* "inventory" - clears the screen and writes out the inventory list
+* "incantations" - writes out the known incantations
+* "inventory" - writes out the inventory list
 * "clear" - clears the screen of text
 * "north", "south", "east", "west", "up", "down" - finds the matching property of the room, if any, and executes it as a **cmdList**
 
