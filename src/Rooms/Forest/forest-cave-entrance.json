@@ -1,0 +1,20 @@
+{
+  "name": "Forest Cave Entrance",
+  "slug": "Forest/forest-cave-entrance",
+  "description": "You're standing in the middle of the wilderness, surrounded by dense trees and underbrush. A game trail leads through the trees to the south. Just ahead of you to the north is the side of a rocky cliff face. A crack in the stone forms a cave entrance.",
+  "north": "loadRoom|Caves/forest-exit",
+  "south": "loadRoom|Forest/broken-bridge-north",
+  "features": [
+    {
+      "slug": "cave",
+      "altSlugs": ["opening"],
+      "look": "The cave is merely a vertical crack in the stone, about 4 feet wide and 10 feet tall. It leads into darkness.",
+      "enter": "loadRoom|Caves/forest-exit"
+    },
+    {
+      "slug": "cliff",
+      "altSlugs": ["cliff face"],
+      "look": "It's a sheer stony cliff face. The cliff is only about 30' tall. To the north, there's a cave opening that leads inside."
+    }
+  ]
+}

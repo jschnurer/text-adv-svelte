@@ -12,6 +12,7 @@ export { default as t_northAccess } from "./Tutorial/north-access.json";
 // Forest
 export { default as f_brokenBridgeNorth } from "./Forest/broken-bridge-north.json";
 export { default as f_brokenBridge } from "./Forest/broken-bridge.json";
+export { default as f_caveEntrance } from "./Forest/forest-cave-entrance.json";
 export { default as f_quietFork } from "./Forest/quiet-fork.json";
 export { default as f_westClearing } from "./Forest/west-clearing.json";
 export { default as f_riverBank } from "./Forest/river-bank.json";
