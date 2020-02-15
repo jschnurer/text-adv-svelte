@@ -1,7 +1,7 @@
 {
   "name": "Ancient, Filth-Coated Statue",
   "slug": "Swamp/statue",
-  "description": "Most of the ground here is about a foot of muck beneath another foot of algae-covered water. You're soaked through and miserable. The only thing around is a huge, monolithic statue of a grimacing face. It's made of black stone and has mold growing up from the waters around its base. It lists forward, slowly sinking into the mud. Someday it might be swallowed by the land completely. \nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe muddy terrain allows you to head north or east. To the northeast, a algae-covered lake blocks the way.",
+  "description": "Most of the ground here is about a foot of muck beneath another foot of algae-covered water. You're soaked through and miserable. The only thing around is a huge, monolithic statue of a grimacing face. It's made of black stone and has mold growing up from the waters around its base. It lists forward, slowly sinking into the mud. Someday it might be swallowed by the land completely.\nThe muddy terrain allows you to head north or east. To the northeast, a algae-covered lake blocks the way.",
   "north": "loadRoom|Swamp/mosquito-spawn",
   "east": "loadRoom|Swamp/campsite",
   "_common": {
@@ -13,7 +13,8 @@
       "altSlugs": [
         "mosquitoes"
       ],
-      "look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thin, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat."
+      "roomDesc": "callCommon|mosquito_blurb|global-common",
+      "look": "callCommon|mosquito_look|global-common"
     },
     {
         "slug": "ladder",

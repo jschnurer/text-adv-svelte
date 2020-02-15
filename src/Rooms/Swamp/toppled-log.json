@@ -1,7 +1,7 @@
 {
   "name": "Toppled Tree, Growing Mushrooms",
   "slug": "Swamp/toppled-log",
-  "description": "You're standing in about 6 inches of stinking, putrid muck. It sucks at your shoes, making movement difficult. Stagnant, brackish water forms pools all over. An ancient toppled tree lays here, covered in mushrooms. \nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe terrain allows you to head north, south, and east. To the southeast is a large, rot-infested lake blocking the way.",
+  "description": "You're standing in about 6 inches of stinking, putrid muck. It sucks at your shoes, making movement difficult. Stagnant, brackish water forms pools all over. An ancient toppled tree lays here, covered in mushrooms. \nThe terrain allows you to head north, south, and east. To the southeast is a large, rot-infested lake blocking the way.",
   "north": "loadRoom|Swamp/forest-entrance",
   "south": "loadRoom|Swamp/mosquito-spawn",
   "east": "loadRoom|Swamp/dead-tree",
@@ -19,7 +19,8 @@
       "altSlugs": [
         "mosquitoes"
       ],
-      "look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thin, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat."
+      "roomDesc": "callCommon|mosquito_blurb|global-common",
+      "look": "callCommon|mosquito_look|global-common"
     },
     {
       "slug": "mushroom",

@@ -1,8 +1,11 @@
 {
   "slug": "global-common",
   "_common": {
-    "after_learn_incant": [
-      "You can recall the list of all incantations you have learned by typing \"incantations\"."
-    ]
+    "mosquito_blurb": "You can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.",
+    "mosquito_look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thin, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat.",
+    "after_learn_incant": "You can recall the list of all incantations you have learned by typing \"incantations\".",
+    "see_lighthouse_distant": "It's too far away to make out any details. You can tell that the light is on, though.",
+    "see_beach": "It's beautiful, with white sand and with ocean waves crashing into it.",
+    "see_ocean": "It's a sparkling blue ocean. It stretches off to the horizon."
   }
 }

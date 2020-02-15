@@ -1,7 +1,7 @@
 {
   "name": "A Pool of Standing Water",
   "slug": "Swamp/standing-water",
-  "description": "You've found a large pool of standing water. It would almost be more of a lake--that is, if it was any deeper than a couple feet. The water has a film of algae across its surface. Strange, white plants that look like large puffballs grow sparsely on the pool.\nYou can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.\nThe terrain allows you to head west and south. To the southwest, a fetid lake blocks the way.",
+  "description": "You've found a large pool of standing water. It would almost be more of a lake--that is, if it was any deeper than a couple feet. The water has a film of algae across its surface. Strange, white plants that look like large puffballs grow sparsely on the pool.\nThe terrain allows you to head west and south. To the southwest, a fetid lake blocks the way.",
   "west": "loadRoom|Swamp/dead-tree",
   "south": "loadRoom|Swamp/bubbling-muck",
   "_common": {
@@ -13,7 +13,8 @@
       "altSlugs": [
         "mosquitoes"
       ],
-      "look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thin, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat."
+      "roomDesc": "callCommon|mosquito_blurb|global-common",
+      "look": "callCommon|mosquito_look|global-common"
     },
     {
       "slug": "puffball",

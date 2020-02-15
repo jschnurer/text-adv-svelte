@@ -3,7 +3,7 @@
   "slug": "Swamp/ridge",
   "description": "You're standing on a long, grassy ridge. To the north of the ridge you see a trail that leads down toward the swamp. To the south you see sand dunes which lead to the ocean. From up here you can even see a lighthouse far to the southeast on a peninsula.",
   "north": "loadRoom|Swamp/dry-trail",
-  "south": "TODO: Add Beach/dunes",
+  "south": "loadRoom|Coast/dunes",
   "features": [
     {
       "slug": "ridge",
@@ -23,17 +23,17 @@
       "look": "They look like picky weeds except they're entire bushes. They don't look like they'd be particularly fun to walk through."
     },
     {
-      "slug": "lighthouse",
-      "look": "It's too far away to make out any details. You can tell that the light is on, though."
-    },
-    {
       "slug": "dunes",
       "altSlug": ["sand","sand dunes"],
       "look": "The dunes make rolling hills of sand. It might actually be fun to play around here if, you know, you weren't in constant danger and in fear for your life all the time."
     },
     {
       "slug": "ocean",
-      "look": "It's a sparkling blue ocean. It stretches off to the horizon."
+      "look": "callCommon|see_ocean|global-common"
+    },
+    {
+      "slug": "lighthouse",
+      "look": "callCommon|see_lighthouse_distant|global-common"
     }
   ]
 }

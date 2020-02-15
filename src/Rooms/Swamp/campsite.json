@@ -6,6 +6,14 @@
   "west": "loadRoom|Swamp/statue",
   "features": [
     {
+      "slug": "mosquito",
+      "altSlugs": [
+        "mosquitoes"
+      ],
+      "roomDesc": "callCommon|mosquito_blurb|global-common",
+      "look": "callCommon|mosquito_look|global-common"
+    },
+    {
       "slug": "hill",
       "look": "It's barren and rocky. It only rises a couple feet from the reeking waters of the swamp."
     },
