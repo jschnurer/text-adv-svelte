@@ -47,7 +47,9 @@ export { default as s_ridge } from "./Swamp/ridge.json";
 // Ruins
 export { default as r_forestEntrance } from "./Ruins/forest-entrance.json";
 
-// Beach
+// Coast
+export { default as coast_dunes } from "./Coast/dunes.json";
+export { default as coast_beachCentral } from "./Coast/beach-central.json";
 
 // Lighthouse
 

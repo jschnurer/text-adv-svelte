@@ -25,7 +25,7 @@
     {
       "slug": "dunes",
       "altSlug": ["sand","sand dunes"],
-      "look": "The dunes make rolling hills of sand. It might actually be fun to play around here if, you know, you weren't in constant danger and in fear for your life all the time."
+      "look": "look": "callCommon|dunes_look|global-common"
     },
     {
       "slug": "ocean",

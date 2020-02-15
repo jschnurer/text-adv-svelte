@@ -1,0 +1,38 @@
+{
+  "name": "Sand Dunes",
+  "slug": "Coast/dunes",
+  "description": "You're standing atop a sand dune. More dunes stretch out in every direction. Long, stiff grass grows in patches in places where it could take root. Various bugs skitter to and fro, leaving tiny little paths in the sand. It's pretty windy here. Far to the east on the beach, you can see a lighthouse.\nA trail through the dunes leads to the north toward a high ridge. To the south the dunes continue to a beach and beyond that, the ocean.",
+  "north": "loadRoom|Swamp/ridge",
+  "south": "loadRoom|Coast/beach-central",
+  "features": [
+    {
+      "slug": "ridge",
+      "look": "It's grassy."
+    },
+    {
+      "slug": "bugs",
+      "look": "They're really sparse. You see a beetle and some ants. You'd guess there wouldn't be much to eat in the sand for the little critters."
+    },
+    {
+      "slug": "grass",
+      "look": "The trail leads downhill to the north before curving west and disappearing into the swamp. You're not looking forward to going back down there."
+    },
+    {
+      "slug": "dunes",
+      "altSlug": ["sand","sand dunes"],
+      "look": "The dunes make rolling hills of sand. It might actually be fun to play around here if, you know, you weren't in constant danger and in fear for your life all the time."
+    },
+    {
+      "slug": "beach",
+      "look": "callCommon|see_beach|global-common"
+    },
+    {
+      "slug": "ocean",
+      "look": "callCommon|see_ocean|global-common"
+    },
+    {
+      "slug": "lighthouse",
+      "look": "callCommon|see_lighthouse_distant|global-common"
+    }
+  ]
+}
