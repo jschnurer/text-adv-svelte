@@ -24,10 +24,13 @@ export default function handleDevCmd(str) {
   } else if(str.startsWith('incVar')) {
     let varName = str.split('|')[1];
     this.incVar(varName);
-    this.write(`~Incremented ${varName}~`)
+    this.write(`~Incremented ${varName}~`);
   } else if(str.startsWith('decVar')) {
     let varName = str.split('|')[1];
     this.decVar(varName);
-    this.write(`~Decremented ${varName}~`)
+    this.write(`~Decremented ${varName}~`);
+  } else if(str.startsWith('loadRoom')) {
+    let varName = str.split('|')[1];
+    this.loadRoom(varName);
   }
 }
