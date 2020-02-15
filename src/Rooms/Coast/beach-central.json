@@ -3,6 +3,8 @@
   "slug": "Coast/beach-central",
   "description": "You're standing on a white sand beach. Shells cover the sand near the water. Waves from the sparkling blue ocean crash over the beach before receding. Far to the east you can see a lighthouse. The beach continues to the east and west. You could also travel north into the sand dunes.",
   "north": "loadRoom|Coast/dunes",
+  "east": "loadRoom|Coast/beach-east",
+  "west": "loadRoom|Coast/beach-west",
   "features": [
     {
       "slug": "dunes",
@@ -20,6 +22,10 @@
     {
       "slug": "lighthouse",
       "look": "callCommon|see_lighthouse_distant|global-common"
+    },
+    {
+      "slug": "shells",
+      "look": "There are shells of all different shapes and sizes. They've been washed white by the sun and smoothed by the ocean waves. None of them are particularly impressive, though."
     }
   ]
 }

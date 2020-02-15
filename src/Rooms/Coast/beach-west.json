@@ -1,0 +1,21 @@
+{
+  "name": "White Sand Beaches, West",
+  "slug": "Coast/beach-west",
+  "description": "You're standing on a white sand beach. Shells cover the sand near the water. Waves from the sparkling blue ocean crash over the beach before receding. The beach continues to the east and west.",
+  "east": "loadRoom|Coast/beach-central",
+  "west": "loadRoom|Coast/shallow-bay",
+  "features": [
+    {
+      "slug": "beach",
+      "look": "callCommon|see_beach|global-common"
+    },
+    {
+      "slug": "ocean",
+      "look": "callCommon|see_ocean|global-common"
+    },
+    {
+      "slug": "shells",
+      "look": "There are shells of all different shapes and sizes. They've been washed white by the sun and smoothed by the ocean waves. None of them are particularly impressive, though."
+    }
+  ]
+}

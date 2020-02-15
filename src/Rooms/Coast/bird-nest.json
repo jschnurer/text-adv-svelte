@@ -1,0 +1,41 @@
+{
+  "name": "Gull Nesting Grounds",
+  "slug": "Coast/bird-nest",
+  "description": "You're standing on large, gray stone at the south end of the beach. The gray stone stretches out before you and is absolutely covered by seagulls and their nests. Just about everywhere you look is stained white by years of seagull poop.\nTo the north, you could head back to the beach.",
+  "north": "loadRoom|Coast/shallow-bay",
+  "features": [
+    {
+      "slug": "beach",
+      "look": "callCommon|see_beach|global-common"
+    },
+    {
+      "slug": "ocean",
+      "look": "callCommon|see_ocean|global-common"
+    },
+    {
+      "slug": "seagulls",
+      "altSlugs": ["birds"],
+      "look": "They're everywhere. Clouds of them are flying around in the air squawking, some are floating around in the ocean doing whatever it is seagulls do in the ocean, and still more sit in nests or look after their babies."
+    },
+    {
+      "slug": "giant seagull",
+      "roomDesc": "One, incredibly unnatural thing stands out immediately. In the midst of all the other seagulls, about a hundred feet away from you, is a giant nest with an absolutely, terrifyingly, massive seagull sitting in it. Something shiny is reflecting the light from the nest.",
+      "look": "That is one big seagull. It's at least 12 feet tall! It could probably swallow you whole!"
+    },
+    {
+      "slug": "giant nest",
+      "altSlugs": [
+        "nest"
+      ],
+      "look": "It's huge! It's made up of all kinds of stuff. You can see branches, WHOLE TREES, bits of lumber, and even BONES! There's a large rainbow-colored shell, probably six inches in diameter, reflecting the sunlight and sending all the colors of the rainbow around it."
+    },
+    {
+      "slug": "shell",
+      "altSlug": [
+        "rainbow shell"
+      ],
+      "look": "It's large and round and rainbow-colored. It's about a half-foot in diameter and reflects the sunlight. It's beautiful!",
+      "take": "gameOver|As you head toward the giant nest, all the normal-sized seagulls squawk their complaints and take to the air to avoid you. Through the storm of seagulls, you approach the giant nest. The giant seagull tilts its head and considers you with a giant, dull-witted eye.\nYou reach out and touch the rainbow shell. It's one of the most beautiful things you've ever seen. You start to tug it free when you hear an earth-shatteringly-loud squawk whose force blows you from your feet. Ears still ringing, you scramble back to your feet and look up just in time to see the open maw of the giant seagull engulf you.\nYou kick and scream and lash outward but to no avail. The monster tilts its head back and thrusts its head up and down, swallowing you whole.\nIf only you were a friend to the birds..."
+    }
+  ]
+}

@@ -50,6 +50,10 @@ export { default as r_forestEntrance } from "./Ruins/forest-entrance.json";
 // Coast
 export { default as coast_dunes } from "./Coast/dunes.json";
 export { default as coast_beachCentral } from "./Coast/beach-central.json";
+export { default as coast_beachWest } from "./Coast/beach-west.json";
+export { default as coast_shallowBay } from "./Coast/shallow-bay.json";
+export { default as coast_birdNest } from "./Coast/bird-nest.json";
+export { default as coast_beachEast } from "./Coast/beach-east.json";
 
 // Lighthouse
 
