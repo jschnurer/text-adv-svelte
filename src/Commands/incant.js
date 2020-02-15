@@ -1,13 +1,7 @@
-const incantations = [
-  "deisigh", // repair
-  "scrios", // destroy
-  "nocht", // reveal
-];
+import incantations from "../incantations.json";
 
 export default function incant(incantation) {
-  let knowsAnyIncantations = incantations.some(x => this.getFlag('G.' + x.toUpperCase()));
-
-  if (!knowsAnyIncantations) {
+  if (!this.knowsAnyIncantations()) {
     this.unknownCmd('incant');
     return false;
   }
@@ -17,7 +11,7 @@ export default function incant(incantation) {
     return false;
   }
 
-  if (incantations.indexOf(incantation.toLowerCase()) === -1) {
+  if (!incantations.find(x => x.name === incantation.toLowerCase())) {
     this.write("You murmur useless syllables. It wasn't an incantation. You must've gotten it wrong...");
     return false;
   }

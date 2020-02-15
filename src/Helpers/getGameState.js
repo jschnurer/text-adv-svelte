@@ -7,6 +7,7 @@ import clear from "../Commands/clear.js";
 import combine from "../Commands/combine.js";
 import give from "../Commands/give.js";
 import incant from "../Commands/incant.js";
+import incantations from "../Commands/incantations.js";
 import listInventory from "../Commands/listInventory.js";
 import lookRoom from "../ScriptCommands/lookRoom.js";
 import move from "../Commands/move.js";
@@ -46,6 +47,7 @@ import getVarValue from "./getVarValue.js";
 import handleChoiceInput from "./handleChoiceInput.js";
 import handleDevCmd from "./handleDevCmd.js";
 import handleUserEntry from "./handleUserEntry.js";
+import knowsAnyIncantations from "./knowsAnyIncantations.js";
 import loadRoom from "../ScriptCommands/loadRoom.js";
 import parseCmds from "./parseCmds.js";
 import parseStringCmd from "./parseStringCmd.js";
@@ -92,6 +94,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     combine,
     give,
     incant,
+    incantations,
     listInventory,
     move,
     take,
@@ -129,6 +132,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     handleChoiceInput,
     handleDevCmd,
     handleUserEntry,
+    knowsAnyIncantations,
     loadRoom,
     lookRoom,
     parseCmds,

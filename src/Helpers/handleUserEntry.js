@@ -109,6 +109,9 @@ export default function handleUserEntry(entry) {
       break;
     case "inventory":
       this.listInventory();
+      break
+    case "incantations":
+      this.incantations();
       break;
     case "north":
     case "south":
