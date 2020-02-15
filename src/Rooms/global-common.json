@@ -1,0 +1,8 @@
+{
+  "slug": "global-common",
+  "_common": {
+    "after_learn_incant": [
+      "You can recall the list of all incantations you have learned by typing \"incantations\"."
+    ]
+  }
+}
