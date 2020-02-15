@@ -54,6 +54,9 @@ export { default as coast_beachWest } from "./Coast/beach-west.json";
 export { default as coast_shallowBay } from "./Coast/shallow-bay.json";
 export { default as coast_birdNest } from "./Coast/bird-nest.json";
 export { default as coast_beachEast } from "./Coast/beach-east.json";
+export { default as coast_rockyIncline } from "./Coast/rocky-incline.json";
+export { default as coast_rockyTrail } from "./Coast/rocky-trail.json";
+export { default as coast_peninsula } from "./Coast/peninsula.json";
 
 // Lighthouse
 

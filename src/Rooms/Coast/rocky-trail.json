@@ -1,0 +1,18 @@
+{
+  "name": "Rocky Trail Atop the Cliffs",
+  "slug": "Coast/rocky-trail",
+  "description": "You're standing on a rocky trail, high above the ocean. Cliffs fall away downward to the ocean at least seventy five feet below you. To the south you can see a lighthouse built atop a tall column of rock a little ways out into the ocean. The cliff extends to the south here, forming a peninsula\nThe rocky trail forks here. To the west, it heads downward. It continues to the east toward higher, rocky cliffs. It also heads south, out onto the peninsula formed by the cliffs, heading toward the lighthouse.",
+  "south": "loadRoom|Coast/peninsula",
+  "east": "loadRoom|Coast/rocky-cliffside",
+  "west": "loadRoom|Coast/rocky-incline",
+  "features": [
+    {
+      "slug": "ocean",
+      "look": "callCommon|see_ocean|global-common"
+    },
+    {
+      "slug": "lighthouse",
+      "look": "callCommon|see_lighthouse_distant|global-common"
+    }
+  ]
+}

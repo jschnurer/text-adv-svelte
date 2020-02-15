@@ -1,0 +1,54 @@
+{
+  "name": "A Rocky Cliff Peninsula, High Above the Ocean",
+  "slug": "Coast/peninsula",
+  "description": "You're standing at the end of a peninsula on a rocky trail, at least eighty feet above the ocean below and a couple hundred feet from the coastline.\nJust ahead of you the trail ends at the edge of the cliff. A hundred feet beyond that, across open air you see the lighthouse, built atop a column of rock that's as tall as the cliff you're on.",
+  "load": [
+    {
+      "cmd":"ifFlag",
+      "args": [
+        "BRIDGEREPAIRED",
+        null,
+        "setFlag|CANTSEEBRIDGE"
+      ]
+    }
+  ],
+  "north": "loadRoom|Coast/rocky-trail",
+  "south": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "BRIDGEREPAIRED",
+        "loadRoom|Coast/lighthouse-exterior",
+        "There's nothing but open air in that direction! It would be suicide!"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "slug": "ocean",
+      "look": "callCommon|see_ocean|global-common"
+    },
+    {
+      "slug": "lighthouse",
+      "look": "It's a tall, white lighthouse. The light is still working."
+    },
+    {
+      "slug": "posts",
+      "destroyedFlag": "BRIDGEREPAIRED",
+      "roomDesc": "Two large, wooden posts are driven into the rocky surface here and there are frayed remains of thick rope tied to them. You can see the same across the chasm near the lighthouse.",
+      "look": "They're driven into the ground with ropes tied to them. They must have anchored a rope bridge at one point."
+    },
+    {
+      "slug": "glimmer",
+      "destroyedFlag": "BRIDGEREPAIRED",
+      "roomDesc": "There is a glimmer in the air causing the light to bend and shift. It stretches all the way across the chasm.",
+      "look": "As the glimmer bends the light, you can see part of a ghostly image, mostly transparent, of a rope bridge extending partially across the chasm ahead of you."
+    },
+    {
+      "slug": "bridge",
+      "altSlugs": ["rope bridge"],
+      "destroyedFlag": "CANTSEEBRIDGE",
+      "roomDesc": "Two large posts are driven into the rocky surface near the edge of the cliff. A long rope bridge that looks basically brand new is anchored to it. The bridge is anchored in the same way across the chasm near the lighthouse."
+    }
+  ]
+}
