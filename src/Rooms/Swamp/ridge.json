@@ -25,7 +25,7 @@
     {
       "slug": "dunes",
       "altSlug": ["sand","sand dunes"],
-      "look": "look": "callCommon|dunes_look|global-common"
+      "look": "callCommon|dunes_look|global-common"
     },
     {
       "slug": "ocean",
