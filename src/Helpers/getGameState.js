@@ -6,6 +6,7 @@ import ask from "../Commands/ask.js";
 import clear from "../Commands/clear.js";
 import combine from "../Commands/combine.js";
 import give from "../Commands/give.js";
+import incant from "../Commands/incant.js";
 import listInventory from "../Commands/listInventory.js";
 import lookRoom from "../ScriptCommands/lookRoom.js";
 import move from "../Commands/move.js";
@@ -90,6 +91,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     clear,
     combine,
     give,
+    incant,
     listInventory,
     move,
     take,

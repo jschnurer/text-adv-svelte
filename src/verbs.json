@@ -40,5 +40,6 @@
   "kill",
   "drop",
   "drink",
-  "climb"
+  "climb",
+  "incant"
 ]

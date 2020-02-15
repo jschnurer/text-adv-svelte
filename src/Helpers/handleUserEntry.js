@@ -54,8 +54,7 @@ export default function handleUserEntry(entry) {
     return;
   }
 
-  // Special case for Combine since it is a 4-word command.
-  // Special cases for 4-word commands.
+  // Special cases for 4-word commands and others.
   switch (cmd) {
     case "ask":
       this.ask(args.length > 0 ? args[0] : null);
@@ -68,6 +67,9 @@ export default function handleUserEntry(entry) {
       return;
     case "give":
       this.give(args.length > 0 ? args[0] : null);
+      return;
+    case "incant":
+      this.incant(args.length > 0 ? args[0] : null);
       return;
   }
 
