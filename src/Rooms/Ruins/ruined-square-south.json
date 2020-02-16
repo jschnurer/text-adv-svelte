@@ -1,7 +1,7 @@
 {
   "name": "Ruined Square, South",
   "slug": "Ruins/ruined-square-south",
-  "description": "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble. To the west is a ruined hall. To the south is a ruined home. To the east is __________. A path leads through the rubble to the north.",
+  "description": "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble. To the west is a ruined hall. To the south is a ruined home. To the east, a doorway leads inside to another ruined building. A path leads through the rubble to the north.",
   "north": "loadRoom|Ruins/ruined-square-north",
   "south": [
     {
@@ -13,6 +13,7 @@
       ]
     }
   ],
+  "east": "loadRoom|Ruins/lab",
   "west": [
     {
       "cmd": "ifFlag",

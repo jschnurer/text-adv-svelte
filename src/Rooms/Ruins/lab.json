@@ -1,0 +1,67 @@
+{
+  "name": "Ruined Lab",
+  "slug": "Ruins/lab",
+  "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass vials, instruments, and other scientific equipment.\nAn open doorway leads outside to the west and there are steps that lead down into darkness.",
+  "south": "loadRoom|Ruins/ruined-square-north",
+  "down": "TODO: caves",
+  "features": [
+    {
+      "slug": "poster",
+      "altSlugs": [
+        "anatomical poster"
+      ],
+      "roomDesc": "There's an anatomical poster of a bug hanging on the wall.",
+      "look": "The poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\"."
+    },
+    {
+      "slug": "table",
+      "altSlugs": [
+        "tables"
+      ],
+      "look": "The tables are made of rusty metal. They've got all kinds of scientific equipment on them."
+    },
+    {
+      "slug": "shelves",
+      "altSlugs": [
+        "shelf"
+      ],
+      "look": "The shelves are made of rusty metal. They've got all kinds of scientific equipment on them."
+    },
+    {
+      "slug": "equipment",
+      "altSlugs": [
+        "scientific equipment",
+        "instruments"
+      ],
+      "look": "You don't really know what any of this stuff is. It just looks rather sciencey."
+    },
+    {
+      "slug": "vials",
+      "altSlugs": [
+        "vial"
+      ],
+      "look": [
+        "The vials are of every shape and size. Some are broken but most remain intact. One of the bottles is stoppered with a cork and has a red liquid inside. It's got a label that reads \"potion of healing\".",
+        "setFlag|SAWPOTION"
+      ]
+    },
+    {
+      "slug": "potion",
+      "altSlugs": [
+        "potion of healing",
+        "healing potion"
+      ],
+      "targetFlag": "SAWPOTION",
+      "destroyedFlag": "TOOKPOTION",
+      "look": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\".",
+      "take": [
+        "You take the bottle labeled \"potion of healing\".",
+        "addItem|POTION",
+        "setFlag|TOOKPOTION"
+      ],
+      "use": {
+        "": "Now's not the time. You might need it later."
+      }
+    }
+  ]
+}
