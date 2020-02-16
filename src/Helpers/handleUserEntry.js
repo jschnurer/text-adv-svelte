@@ -47,6 +47,12 @@ export default function handleUserEntry(entry) {
   // Replace common verbs with their engine equivalent
   if (cmd === "talk") {
     cmd = "greet";
+  } else if (cmd === "put") {
+    let putMatches = entry.match(/put (.+?) (in|on) (.+)/);
+    if(putMatches) {
+      cmd = "use";
+      args[0] = putMatches[1] + " on " + putMatches[3];
+    }
   }
 
   if (!this.allowedVerbs.find(x => x === cmd)) {
