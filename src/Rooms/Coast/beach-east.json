@@ -38,6 +38,11 @@
         "You drag the sledgehammer off the boat and take it with you.",
         "addItem|SLEDGE"
       ]
+    },
+    {
+      "slug": "oar",
+      "altSlugs": ["oars"],
+      "look": "They've been broken into pieces and left on the boat. They're useless."
     }
   ]
 }
