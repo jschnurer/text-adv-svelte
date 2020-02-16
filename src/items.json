@@ -122,7 +122,7 @@
     "altSlugs": [
       "scissors"
     ],
-    "id": "GLASS_SCISSORS",
+    "id": "SCISSORS",
     "look": "They're a pair of scissors. They're the size you would expect except they're made of clear glass."
   },
   {
@@ -164,8 +164,15 @@
   },
   {
     "slug": "sledgehammer",
-    "altSlugs": ["sledge"],
+    "altSlugs": [
+      "sledge"
+    ],
     "id": "SLEDGE",
     "look": "It's pretty heavy but could do a lot of damage."
+  },
+  {
+    "slug": "puffball",
+    "id": "PUFFBALL",
+    "look": "It is the off-white color of bone. It's a rough sphere, about a foot in diameter but it's surface isn't smooth. Instead, it's covered in multitudinous little white spikes all over. It's got an umbilical-like stem that is a bone-white color with blue veins just beneath the surface."
   }
 ]

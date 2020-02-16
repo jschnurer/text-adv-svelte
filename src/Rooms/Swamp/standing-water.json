@@ -18,10 +18,31 @@
     },
     {
       "slug": "puffball",
-      "altSlugs": ["puffballs","plant","plants"],
+      "altSlugs": [
+        "puffballs",
+        "plant",
+        "plants"
+      ],
       "look": "The puffballs are an off-white color like bone. They're about a foot in diameter. Their surfaces aren't smooth. Instead, it looks like they grow multitudinous little white spikes all over. Each has an umbilical-like stem that is a bone-white color that snakes down beneath the muddy water.",
       "take": "callCommon|die_puffball",
-      "touch": "callCommon|die_puffball"
+      "touch": "callCommon|die_puffball",
+      "use": {
+        "": "You don't think that's possible.",
+        "SCISSORS": [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "TOOKPUFFBALL",
+              "You don't currently have a need for another one and don't relish the thought of getting back into that water.",
+              [
+                "You slosh out into the reeking water and carefully pull part of the bone-white, umbilical-like stem out of the water so you can see it. It's covered in disgusting blue veins that throb just beneath the surface. You take the glass scissors in hand and snip the stem in one, clean cut.\nA jet of blue liquid squirts out of the stem as it falls away back into the water. All the other puffballs floating in the water quiver and shake. You hastily retreat from the fetid waters, holding the puffball by the stem.",
+                "addItem|PUFFBALL",
+                "setFlag|TOOKPUFFBALL"
+              ]
+            ]
+          }
+        ]
+      }
     },
     {
       "slug": "lake",

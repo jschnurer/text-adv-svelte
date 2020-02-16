@@ -96,9 +96,10 @@
           [
             "With all the ingredients for the cure now gathered, Rhode sets about her work.",
             "With her mortar and pestle she grinds the rainbow egg into shimmering dust. While doing so, she chews on the tarnroot, occasionally spitting its juices into a small bowl. She incants something in some magical language and taps the puffball. With a hissing sound it deflates into a small white pouch. She cuts it open and pours it into the bowl with the tarnroot juice. To this mixture she adds the rainbow dust. She mixes these ingredients together for some time, all the while enchanting them with her magical words.",
-            "She hands you a small vial of shimmering liquid. \"Quaff this and the effects should be instant.\" You take the small, glass vial.",
+            "She hands you a small vial of shimmering liquid. \"Quaff this and the effects shouldst be instant.\" You take the small, glass vial.",
             "addItem|BLIGHT_CURE",
-            "\"Oh, the mosquito egg? No, 'tis not needed for the cure. But I require compensation for my work and the look on thy face when thou hadst that egg in their hands was payment enough!\" She laughs."
+            "setFlag|CUREMADE",
+            "\"Oh, the mosquito egg? No, 'tis not needed for the cure. But I require compensation for my work and the look on thy face when thou hadst that egg in thy hands was payment enough!\" She laughs."
           ],
           [
             "You're one step closer to the cure for the mosquito blight."
@@ -149,10 +150,38 @@
                   "sword": "\"A holy sword blessed by someone or other. I did not ask whom as it plunged toward my heart. It once belonged to a dear...\" She looks away and clears her throat. \"Acquaintance.\"",
                   "shield": "\"It doth not look like much, but the holy enchantments upon it were enough to stop Akavak's blade.\"",
                   "mosquito|mosquitoes|giant mosquito|giant mosquitoes": "\"Lovely, aren't they?\" She asks, without a single trace of mirth in her voice. \"They doth carry a disease of some sort. Other, less enlightened minds wouldst call it a curse. It afflicted me... ages ago. I had to cure it myself. At first, my acquaintance bade me pray for a cure. Silly. Eventually I convinced him to help me search for ingredients with which I fashioned a cure.\"",
-                  "cure": "\"A cure for the blight carried by the mosquitoes? Verily, thou doest ask the right person. 'Tis a remedy of mine own creation. If thou wouldst bring to me the required ingredients, I couldst fashion for thee the cure.\" Suddenly, she furrows her brow and looks annoyed. She reaches into her hair and plucks an errant twig, tossing it on the floor.",
+                  "cure": [
+                    "\"A cure for the blight carried by the mosquitoes? Verily, thou doest ask the right person. 'Tis a remedy of mine own creation. If thou wouldst bring to me the required ingredients, I couldst fashion for thee the cure.\" Suddenly, she furrows her brow and looks annoyed. She reaches into her hair and plucks an errant twig, tossing it on the floor.",
+                    "ifFlagWrite|CUREMADE|\"Thou hast already received a cure. I shan't make another.\""
+                  ],
                   "ingredients": [
                     "\"The cure for the mosquito blight doth require many ingredients. Some are dangerous to acquire. If thou doest wish to gather these, I would beseech thee to be careful. Thou shouldst gather the following: a puffball, a giant mosquito egg, tarnroot, and a rainbow shell.\"",
-                    "setFlag|G.WANTMOSQUITOEGG"
+                    "setFlag|G.WANTMOSQUITOEGG",
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "CUREMADE",
+                        null,
+                        [
+                          {
+                            "cmd": "ifVar",
+                            "args": [
+                              "INGREDIENTCOUNT",
+                              ">",
+                              0,
+                              [
+                                "\"So far,\" she recounts, \"thou hast given to me:\"",
+                                "ifFlagWrite|GAVEEGG]\"An egg of the giant mosquito.\"",
+                                "ifFlagWrite|GAVEPUFFBALL]\"A puffball.\"",
+                                "ifFlagWrite|GAVESHELL]\"A sparkling rainbow shell of purest color.\"",
+                                "ifFlagWrite|GAVEROOT]\"A white-leafed tarnroot.\""
+                              ],
+                              null
+                            ]
+                          }
+                        ]
+                      ]
+                    }
                   ],
                   "puffball": [
                     "\"I call them puffballs, for I know not their true name. Thou shouldst not handle them directly. They doth grow tiny spikes which causes them to explode when touched.\"",
@@ -258,6 +287,13 @@
               ]
             ]
           }
+        ],
+        "PUFFBALL": [
+          "You carefully produce the white puffball, holding it by its veiny umbilical cord. Rhode stands and gingerly takes it from you, being very careful to handle only the cord. She sets it down gently on a nearby table.",
+          "removeItem|PUFFBALL",
+          "incVar|INGREDIENTCOUNT",
+          "setFlag|GAVEPUFFBALL",
+          "callCommon|returned_ingredient"
         ]
       }
     },
@@ -314,7 +350,7 @@
             "CANTAKESCISSORS",
             [
               "You gently take the glass scissors.",
-              "addItem|GLASS_SCISSORS",
+              "addItem|SCISSORS",
               "setFlag|TOOKSCISSORS"
             ],
             "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
