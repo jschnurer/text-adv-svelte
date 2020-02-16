@@ -1,7 +1,7 @@
 {
   "name": "A Rocky Cliff Peninsula, High Above the Ocean",
   "slug": "Coast/peninsula",
-  "description": "You're standing at the end of a peninsula on a rocky trail, at least eighty feet above the ocean below and a couple hundred feet from the coastline.\nJust ahead of you the trail ends at the edge of the cliff. A hundred feet beyond that, across open air you see the lighthouse, built atop a column of rock that's as tall as the cliff you're on.",
+  "description": "You're standing at the end of a peninsula on a rocky trail, at least eighty feet above the ocean below and a couple hundred feet away from the coastline. Just ahead of you the trail ends at the edge of the cliff. A hundred feet beyond that, across the open air you see the lighthouse, built atop a column of rock that's as tall as the cliff you're on.",
   "load": [
     {
       "cmd":"ifFlag",
@@ -34,6 +34,7 @@
     },
     {
       "slug": "posts",
+      "altSlugs": ["post"],
       "destroyedFlag": "BRIDGEREPAIRED",
       "roomDesc": "Two large, wooden posts are driven into the rocky surface here and there are frayed remains of thick rope tied to them. You can see the same across the chasm near the lighthouse.",
       "look": "They're driven into the ground with ropes tied to them. They must have anchored a rope bridge at one point."
@@ -41,7 +42,7 @@
     {
       "slug": "glimmer",
       "destroyedFlag": "BRIDGEREPAIRED",
-      "roomDesc": "There is a glimmer in the air causing the light to bend and shift. It stretches all the way across the chasm.",
+      "roomDesc": "There is a glimmer in the air causing the light to bend and shift. It spans all the way across the chasm.",
       "look": "As the glimmer bends the light, you can see part of a ghostly image, mostly transparent, of a rope bridge extending partially across the chasm ahead of you."
     },
     {
@@ -49,6 +50,13 @@
       "altSlugs": ["rope bridge"],
       "destroyedFlag": "CANTSEEBRIDGE",
       "roomDesc": "Two large posts are driven into the rocky surface near the edge of the cliff. A long rope bridge that looks basically brand new is anchored to it. The bridge is anchored in the same way across the chasm near the lighthouse."
+    },
+    {
+      "slug": "chasm",
+      "look": [
+        "The chasm is a hundred feet across from where you stand to the spire of rock with the lighthouse on it.",
+        "ifNotFlagWrite|BRIDGEREPAIRED|There's a glimmer in the air that spans the entire length of the chasm."
+      ]
     }
   ]
 }
