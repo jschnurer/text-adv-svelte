@@ -18,6 +18,10 @@ export default function look() {
     if (this.room.features) {
       this.showFeatures(this.room.features);
     }
+
+    if(this.getFlag("G.HASLIGHT")) {
+      this.write("Your flashlight is on.");
+    }
   }
 
   this.write("...");

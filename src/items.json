@@ -81,7 +81,9 @@
   },
   {
     "slug": "red fabric",
-    "altSlugs": ["fabric"],
+    "altSlugs": [
+      "fabric"
+    ],
     "id": "RED_FABRIC",
     "look": [
       "The strip of red fabric is faded and tattered."
@@ -89,7 +91,10 @@
   },
   {
     "slug": "journal",
-    "altSlugs": ["notebook", "ophelia's journal"],
+    "altSlugs": [
+      "notebook",
+      "ophelia's journal"
+    ],
     "id": "OPHELIAS_JOURNAL1",
     "look": [
       "The cover says \"__HELI_'S JOUR__L\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
@@ -100,7 +105,10 @@
   },
   {
     "slug": "journal",
-    "altSlugs": ["notebook", "ophelia's journal"],
+    "altSlugs": [
+      "notebook",
+      "ophelia's journal"
+    ],
     "id": "OPHELIAS_JOURNAL2",
     "look": [
       "The cover says \"OPHELIA'S JOURNAL\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
@@ -111,13 +119,18 @@
   },
   {
     "slug": "glass scissors",
-    "altSlugs": ["scissors"],
+    "altSlugs": [
+      "scissors"
+    ],
     "id": "GLASS_SCISSORS",
     "look": "They're a pair of scissors. They're the size you would expect except they're made of clear glass."
   },
   {
     "slug": "giant mosquito egg",
-    "altSlugs": ["mosquito egg", "egg"],
+    "altSlugs": [
+      "mosquito egg",
+      "egg"
+    ],
     "id": "MOSQUITO_EGG",
     "look": "It's a whitish color and throbs and shakes. It holds life within. Horrible, horrible life."
   },
@@ -125,5 +138,28 @@
     "slug": "cure",
     "id": "BLIGHT_CURE",
     "look": "It's a small glass vial with a cork stopper. The liquid within shimmers."
+  },
+  {
+    "slug": "flashlight",
+    "id": "FLASHLIGHT",
+    "look": "It's a heavy duty metal flashlight. There's a button on it that toggles it on and off. You could \"use flashlight\" to toggle the switch back and forth.",
+    "use": {
+      "": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.HASLIGHT",
+            [
+              "You flick the switch on your flashlight, turning it off.",
+              "unsetFlag|G.HASLIGHT"
+            ],
+            [
+              "You flick the switch on your flashlight, turning it on.",
+              "setFlag|G.HASLIGHT"
+            ]
+          ]
+        }
+      ]
+    }
   }
 ]
