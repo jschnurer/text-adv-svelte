@@ -69,10 +69,7 @@
       ],
       "destroyedFlag": "G.FORESTBRIDGEREPAIRED",
       "look": [
-        "The glimmering sparkles in the air, bending and shifting in the light. You can see the beginnings of a spectral, nearly transparent vision of a bridge that spans the river.",
-        "Suddenly, something pops into your head. A vague memory, half formed. You can now \"incant deisigh\", the Charm of Repairing!",
-        "callCommon|after_learn_incant|global-common",
-        "setFlag|G.DEISIGH"
+        "The glimmering sparkles in the air, bending and shifting in the light. You can see the beginnings of a spectral, nearly transparent vision of a bridge that spans the river."
       ]
     },
     {

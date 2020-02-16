@@ -25,7 +25,7 @@
       "roomDesc": "Lying in the dust next to the note is a magical rune representing deisigh. You have no idea how you know that.",
       "take": [
         "You take the deisigh rune from the floor.",
-        "addItem|RUNE_DEISIGH",
+        "addItem|DEISIGH_RUNE",
         "setFlag|TOOKRUNE"
       ]
     }

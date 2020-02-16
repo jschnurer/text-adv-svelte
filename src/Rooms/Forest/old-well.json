@@ -1,10 +1,46 @@
 {
   "name": "An Old Well in the Forest",
   "slug": "Forest/old-well",
-  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank{pail}.\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
+  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank. {pail}\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
   "west": "loadRoom|Forest/well-worn-trail",
   "north": "loadRoom|Forest/hornet-nest",
   "south": "loadRoom|Forest/swamp-entrance",
+  "_common": {
+    "look_pail_on_edge": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "PAILHASWATER",
+          [
+            "It's full of crystal-clear water.",
+            "callCommon|look_pail_check_deisigh"
+          ],
+          [
+            "callCommon|look_pail_check_deisigh"
+          ]
+        ]
+      }
+    ],
+    "look_pail_check_deisigh": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "DEISIGH_IN_PAIL",
+          [
+            {
+              "cmd": "ifFlag",
+              "args": [
+                "DEISIGH_CHARGED",
+                "The deisigh rune sits in the pail, glimmering with magic.",
+                "The deisigh rune sits in the pail."
+              ]
+            }
+          ],
+          null
+        ]
+      }
+    ]
+  },
   "features": [
     {
       "slug": "well",
@@ -17,8 +53,8 @@
           "cmd": "ifFlag",
           "args": [
             "PAILDOWN",
-            null,
-            " with a rope attached to a pail sitting on its edge"
+            "The rope hangs down into the well.",
+            "The rope is retracted and it's attached to a pail sitting on the edge of the well."
           ]
         }
       ],
@@ -30,14 +66,7 @@
             "You can't see it. It's all the way down at the bottom of the well.",
             [
               "The pail's sitting on the edge of the well and is attached to the well via a rope.",
-              {
-                "cmd": "ifFlag",
-                "args": [
-                  "PAILHASWATER",
-                  "It's full of crystal-clear water.",
-                  "It's empty."
-                ]
-              }
+              "callCommon|look_pail_on_edge"
             ]
           ]
         }
@@ -52,11 +81,26 @@
             [
               "You grab the pail and drop it down into the well. It falls all the way to the bottom and you can hear a splash from down in the darkness.",
               "setFlag|PAILDOWN",
-              "setFlag|PAILHASWATER"
+              "setFlag|PAILHASWATER",
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "DEISIGH_IN_PAIL",
+                  "setFlag|DEISIGH_CHARGED",
+                  null
+                ]
+              }
             ]
           ]
         }
-      ]
+      ],
+      "use": {
+        "DEISIGH_RUNE": [
+          "You put the deisigh rune into the pail.",
+          "removeItem|DEISIGH_RUNE",
+          "setFlag|DEISIGH_IN_PAIL"
+        ]
+      }
     },
     {
       "slug": "rope",
@@ -88,6 +132,61 @@
     {
       "slug": "trail",
       "look": "It's a well-worn dirt trail. It must see frequent traffic since there's hardly any weeds or grass growing."
+    },
+    {
+      "slug": "rune",
+      "altSlugs": [
+        "deisigh rune"
+      ],
+      "targetFlag": "DEISIGH_IN_PAIL",
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "PAILDOWN",
+            "You can't see it. It's in the pail at the bottom of the well.",
+            [
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "DEISIGH_CHARGED",
+                  "The rune glimmers with magic.",
+                  "The rune is sitting in the pail."
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "take": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "PAILDOWN",
+            "It's out of reach. It's in the pail at the bottom of the well.",
+            [
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "DEISIGH_CHARGED",
+                  [
+                    "You take the rune from the pail. The glimmering surrounding the rune grows in intensity and you watch as the rune dissolves into nothingness before your very eyes.",
+                    "Suddenly, something pops into your head. A vague memory, half formed. You can now \"incant deisigh\", the Charm of Repairing!",
+                    "callCommon|after_learn_incant|global-common",
+                    "setFlag|G.DEISIGH",
+                    "unsetFlag|DEISIGH_IN_PAIL"
+                  ],
+                  [
+                    "You take the deisigh rune from the pail.",
+                    "addItem|DEISIGH_RUNE",
+                    "unsetFlag|DEISIGH_IN_PAIL"
+                  ]
+                ]
+              }
+            ]
+          ]
+        }
+      ]
     }
   ]
 }
