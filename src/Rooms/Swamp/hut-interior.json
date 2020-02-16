@@ -82,8 +82,8 @@
     ],
     "ophelia_info": [
       "\"I remember. 'Twas Ophelia that I first met on the island, after Merek of course. 'Twas strange. Ophelia told me that I came to the island long before them but that they hadst been here longer. Time doth flows in strange ways on the island.\"",
-      "She thinks for a moment. \"I canst recall much. They were a diplomat of some kind, and very pensive. Their theory was that all of us here doth share a link with another. They said that those on the island were either hunters... or prey.\"",
-      "\"They were adamant about finding a way to escape the island. I traveled with them for a long while. Merek, Ophelia and I climbed the black mountain. We doth found something there. Something that shook my resolve, though I canst recall what. Afterward, we traveled the island for a spell. Eventually, we went our separate ways.\"",
+      "She thinks for a moment. \"I cannot recall much. They were a diplomat of some kind, and very pensive. Their theory was that all of us here doth share a link with another. They said that those on the island were either hunters... or prey.\"",
+      "\"They were adamant about finding a way to escape the island. I traveled with them for a long while. Merek, Ophelia and I climbed the black mountain. We doth found something there. Something that shook my resolve, though I cannot recall what. Afterward, we traveled the island for a spell. Eventually, we went our separate ways.\"",
       "She closes her eyes and sighs. \"I've not dreamt of escape in a long, long time.\""
     ],
     "returned_ingredient": [
@@ -171,10 +171,10 @@
                               0,
                               [
                                 "\"So far,\" she recounts, \"thou hast given to me:\"",
-                                "ifFlagWrite|GAVEEGG]\"An egg of the giant mosquito.\"",
-                                "ifFlagWrite|GAVEPUFFBALL]\"A puffball.\"",
-                                "ifFlagWrite|GAVESHELL]\"A sparkling rainbow shell of purest color.\"",
-                                "ifFlagWrite|GAVEROOT]\"A white-leafed tarnroot.\""
+                                "ifFlagWrite|GAVEEGG|]\"An egg of the giant mosquito.\"",
+                                "ifFlagWrite|GAVEPUFFBALL|]\"A puffball.\"",
+                                "ifFlagWrite|GAVESHELL|]\"A sparkling rainbow shell of purest color.\"",
+                                "ifFlagWrite|GAVEROOT|]\"A white-leafed tarnroot.\""
                               ],
                               null
                             ]
@@ -225,14 +225,14 @@
                                   ]
                                 }
                               ],
-                              "\"They are simple shears, really. I canst recall why they are made of glass. Perhaps I conjured them from the beach sands.\""
+                              "\"They are simple shears, really. I cannot recall why they are made of glass. Perhaps I conjured them from the beach sands.\""
                             ]
                           }
                         ]
                       ]
                     }
                   ],
-                  "crude map|map": "She stands and retrieves the parchment from a shelf. \"This map. I canst recall from whence it came nor what it depicts. If thou doest desire it, I would trade it to thee for an ivory chalice. One exists somewhere in this strange land, thou canst be sure.\"",
+                  "crude map|map": "She stands and retrieves the parchment from a shelf. \"This map. I cannot recall from whence it came nor what it depicts. If thou doest desire it, I would trade it to thee for an ivory chalice. One exists somewhere in this strange land, thou canst be sure.\"",
                   "crystal ball": "\"Tis an esotery from an ancient time. Only an arcane mind couldst gaze into its depths. Pay it no heed.\"",
                   "trapdoor|cellar": "\"Thou shouldst not inquire of this. Pay it no mind. 'Tis' of no import.\"",
                   "swamp": "\"Tis not a nice place, I admit. Thou art brave to come here.\"",
@@ -267,7 +267,7 @@
         "RED_FABRIC": [
           "You hand Rhode the piece of faded, red fabric. She takes it and gazes wistfully at it for a long while before speaking.",
           "\"'Twas a scrap of Merek's cloak. He tried to kill me once, a lifetime ago. He hadst been a holy knight of the Order of the Griffin.\" She scoffs. \"Their 'holy quest'? Hunting down and slaying any manner of sorcerer, regardless of their disposition.\"",
-          "\"I canst recall how, but we both ended up here, together. He, of course, blamed me; Accusing me of using mine incantations to bring us here. We hated each other. But after ages of being here with none save ourselves, we became... attached.\" She smirks before quickly hiding it. \"I used my conjury where possible, and he his strong sword arm. Eventually, he renounced his holy quest and abandoned the Order. Though I forgave him for his attempt on my life, I know he always carried his remorse inside him. 'Twas a shadow upon his soul.\"",
+          "\"I cannot recall how, but we both ended up here, together. He, of course, blamed me; Accusing me of using mine incantations to bring us here. We hated each other. But after ages of being here with none save ourselves, we became... attached.\" She smirks before quickly hiding it. \"I used my conjury where possible, and he his strong sword arm. Eventually, he renounced his holy quest and abandoned the Order. Though I forgave him for his attempt on my life, I know he always carried his remorse inside him. 'Twas a shadow upon his soul.\"",
           "\"We met and traveled with Ophelia for a while. But one night, Merek simply left in the night, leaving his equipment behind. I've not seen him since.\"",
           "She holds the tattered scrap fabric in silence for a while before returning it to you.",
           "setFlag|REMEMBERSMEREK"
@@ -293,6 +293,13 @@
           "removeItem|PUFFBALL",
           "incVar|INGREDIENTCOUNT",
           "setFlag|GAVEPUFFBALL",
+          "callCommon|returned_ingredient"
+        ],
+        "RAINBOW_SHELL": [
+          "You hand Rhode the rainbow shell. She takes it eagerly and holds it in the scintillating purple light emitted from the cracked crystal ball. She turns it over and over in the light, casting purple-tinted rainbow all over the interior of the hut. \"Beautiful,\" she whispers. After studying it she turns and places it onto a nearby table.",
+          "removeItem|RAINBOW_SHELL",
+          "incVar|INGREDIENTCOUNT",
+          "setFlag|GAVESHELL",
           "callCommon|returned_ingredient"
         ]
       }
