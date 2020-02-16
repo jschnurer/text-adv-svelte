@@ -13,15 +13,6 @@
     {
       "slug": "gas",
       "look": "The gas is a yellowish-green color and burns the eyes and lungs. You shouldn't be breathing this."
-    },
-    {
-      "slug": "cairn",
-      "roomDesc": "Stacked on one of the logs is a small cairn of stones only a foot tall. The stones are covered in runic markings.",
-      "look": "The cairn stands only about a foot tall. The stones are covered in runic markings. They're oddly completely clean of any of the muck, grime, mildew or rot of the swamp.",
-      "touch": [
-        "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones.",
-        "saveGame"
-      ]
     }
   ]
 }

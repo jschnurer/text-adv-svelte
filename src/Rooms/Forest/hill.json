@@ -36,10 +36,7 @@
     {
       "slug": "cairn",
       "look": "The cairn stands only about 3 feet tall. The stones are covered in runic markings.",
-      "touch": [
-        "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones.",
-        "saveGame"
-      ]
+      "touch": "callCommon|cairn_touch|global-common"
     }
   ]
 }

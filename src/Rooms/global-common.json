@@ -1,6 +1,10 @@
 {
   "slug": "global-common",
   "_common": {
+    "cairn_touch": [
+      "You reach out and gingerly and respectfully touch the cairn. For just a moment you feel at peace--like everything is going to be OK. A new runic symbol slowly etches itself onto one of the stones.",
+      "saveGame"
+    ],
     "mosquito_blurb": "You can see giant mosquitoes the size of housecats buzzing around in the distance all over the swamp. Some hover nearby, waiting for you to stop paying attention. Occasionally, one draws near and you bat it away.",
     "mosquito_look": "They're pretty much the stuff of nightmares. They've got huge wings and legs attached to long cylindrical bodies. Their proboscises are long and thin, like oversized needles. You can see some in the distance that are fat with the blood of some unfortunate creature. As long as you're attentive, they shouldn't pose any threat.",
     "after_learn_incant": "You can recall the list of all incantations you have learned by typing \"incantations\".",

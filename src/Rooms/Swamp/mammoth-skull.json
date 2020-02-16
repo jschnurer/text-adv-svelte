@@ -26,6 +26,12 @@
     {
       "slug": "lake",
       "look": "It's algae-coated with a black film over its surface. You can see a peninsula reaching out into it from the east shore. There's some sort of building on the peninsula."
+    },
+    {
+      "slug": "cairn",
+      "roomDesc": "Stacked atop the giant skull is a small cairn of stones only a foot tall. The stones are covered in runic markings.",
+      "look": "The cairn stands only about a foot tall with stones covered in runic markings. They're oddly completely clean of any of the muck, grime, mildew or rot of the swamp.",
+      "touch": "callCommon|cairn_touch|global-common"
     }
   ]
 }
