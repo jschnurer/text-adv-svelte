@@ -1,0 +1,28 @@
+{
+  "name": "Chamber of Spires",
+  "slug": "Caves/bat-den",
+  "dark": true,
+  "south": "loadRoom|Coast/coast-exit",
+  "description": "You're in a large, damp cave. Stalactices hang from the ceiling, with stalagmites reaching up toward them from the wet cavern floor. Some meet in the middle forming thick spires of minerals that reach from the floor to ceiling. The floor is uneven and slippery. Bowl-like depressions in the cavern floor lead to wide holes that fall away to darkness below you. The chamber has an opening to the west and another to the south.",
+  "features": [
+    {
+      "slug": "hole",
+      "altSlugs": ["holes"],
+      "look": "These must be those bottomless pits you've always heard about."
+    },
+    {
+      "slug": "bats",
+      "roomDesc": "Hundreds of small, dark figures hang from the rough cave ceiling. Some study you with beady little eyes. They listen intently for any sign of trouble.",
+      "look": ""
+    },
+    {
+      "slug": "wall",
+      "roomDesc": "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
+      "smash|kick|break|destroy": "There's no way you'd be able to damage it with your bare hands."
+    },
+    {
+      "slug": "glimmer",
+      "look": "The faint glimmer dances and plays across the wall and all throughout the fractures snaking across it."
+    }
+  ]
+}

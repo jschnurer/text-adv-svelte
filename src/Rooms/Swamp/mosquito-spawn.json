@@ -28,14 +28,13 @@
             "G.WANTMOSQUITOEGG",
             [
               {
-                "cmd": "ifFlag",
+                "cmd": "ifHasItem",
                 "args": [
-                  "TOOKEGG",
-                  "You have absolutely no reason why you'd ever want to again.",
+                  "MOSQUITO_EGG",
+                  "You definitely don't want to somehow carry two at once!",
                   [
                     "You kneel down into the brackish water and dig the egg out of the muck. It jiggles and throbs as the unborn life within writhes. You shudder.",
-                    "addItem|MOSQUITO_EGG",
-                    "setFlag|TOOKEGG"
+                    "addItem|MOSQUITO_EGG"
                   ]
                 ]
               }

@@ -57,9 +57,12 @@ export { default as coast_beachEast } from "./Coast/beach-east.json";
 export { default as coast_rockyIncline } from "./Coast/rocky-incline.json";
 export { default as coast_rockyTrail } from "./Coast/rocky-trail.json";
 export { default as coast_peninsula } from "./Coast/peninsula.json";
+export { default as coast_rockyCliffside } from "./Coast/rocky-cliffside.json";
 
 // Lighthouse
 
 // Caves
+export { default as c_coastExit } from "./Caves/coast-exit.json";
+export { default as c_batNest } from "./Caves/bat-den.json";
 
 // Mountains

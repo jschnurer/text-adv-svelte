@@ -1,7 +1,8 @@
 export default function loadRoom (slug) {
   this.room = this.rooms[slug];
   if (!this.room) {
-    console.log(`Room '${slug}' not found!`);
+    alert(`Room '${slug}' not found!`);
+    return;
   }
 
   if (this.room.load) {
