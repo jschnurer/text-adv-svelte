@@ -32,5 +32,8 @@ export default function handleDevCmd(str) {
   } else if(str.startsWith('loadRoom')) {
     let varName = str.split('|')[1];
     this.loadRoom(varName);
+  } else if (str.startsWith('cleanInventory')) {
+    this.inventory = this.inventory.filter(x => !!x && x.slug);
+    this.write("~Cleaned inventory of undefined objects~");
   }
 }
