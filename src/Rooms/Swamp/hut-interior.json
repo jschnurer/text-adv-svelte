@@ -244,10 +244,20 @@
           "setFlag|REMEMBERSMEREK"
         ],
         "MOSQUITO_EGG": [
-          "You produce the quivering white, gelatinous egg. You grimace as it shakes in your hands. Rhode takes it without hesitation and sets it on a table where it continues to throb. She just smiles at you.",
-          "removeItem|MOSQUITO_EGG",
-          "incVar|INGREDIENTCOUNT",
-          "callCommon|returned_ingredient"
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "GAVEEGG",
+              "Rhode blinks in surprise. \"Thou art carrying about another egg? I need it not.\"",
+              [
+                "You produce the quivering white, gelatinous egg. You grimace as it shakes in your hands. Rhode takes it without hesitation and sets it on a table where it continues to throb. She just smiles at you.",
+                "removeItem|MOSQUITO_EGG",
+                "incVar|INGREDIENTCOUNT",
+                "setFlag|GAVEEGG",
+                "callCommon|returned_ingredient"
+              ]
+            ]
+          }
         ]
       }
     },
