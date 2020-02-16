@@ -20,6 +20,24 @@
     {
       "slug": "shells",
       "look": "There are shells of all different shapes and sizes. They've been washed white by the sun and smoothed by the ocean waves. None of them are particularly impressive, though."
+    },
+    {
+      "slug": "boat",
+      "roomDesc": "On the sandy beach far from the ocean waves is a ruined boat.",
+      "look": [
+        "It's a small boat that could carry around eight people. There are holes smashed through the hull all over the place. Broken oars and a sledgehammer have been tossed into the boat.",
+        "setFlag|SAWSLEDGE"
+      ]
+    },
+    {
+      "slug": "sledge",
+      "altSlugs": ["sledgehammer"],
+      "targetFlag": "SAWSLEDGE",
+      "look": "It's a somewhat rusty sledgehammer. It looks like it could really do a lot of damage.",
+      "take": [
+        "You drag the sledgehammer off the boat and take it with you.",
+        "addItem|SLEDGE"
+      ]
     }
   ]
 }
