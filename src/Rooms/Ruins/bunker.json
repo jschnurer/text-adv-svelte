@@ -1,0 +1,33 @@
+{
+  "name": "Inside the Hatch",
+  "slug": "Ruins/bunker",
+  "description": "You're standing in a small, stone chamber at the bottom of a shaft, about 20 feet underground. A ladder attached to the wall of the shaft leads upward, back to the surface.",
+  "dark": true,
+  "up": "loadRoom|Ruins/ruined-square-north",
+  "features": [
+    {
+      "slug": "note",
+      "destroyedFlag": "TOOKNOTE",
+      "roomDesc": "There's a dust-covered note laying on the floor.",
+      "look": "callCommon|hatch_note_look|global-common",
+      "take": [
+        "setFlag|TOOKNOTE",
+        "addItem|HATCH_NOTE",
+        "You dust off the note and take it."
+      ]
+    },
+    {
+      "slug": "rune",
+      "altSlugs": [
+        "deisigh rune"
+      ],
+      "destroyedFlag": "TOOKRUNE",
+      "roomDesc": "Lying in the dust next to the note is a magical rune representing deisigh. You have no idea how you know that.",
+      "take": [
+        "You take the deisigh rune from the floor.",
+        "addItem|RUNE_DEISIGH",
+        "setFlag|TOOKRUNE"
+      ]
+    }
+  ]
+}

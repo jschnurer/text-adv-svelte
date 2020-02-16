@@ -1,16 +1,15 @@
 {
-  "name": "Ruined Square",
-  "slug": "Ruins/ruined-square",
-  "description": [
-    "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble."
-  ],
+  "name": "Ruined Square, South",
+  "slug": "Ruins/ruined-square-south",
+  "description": "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble. To the west is a ruined hall. To the south is a ruined home. To the east is __________. A path leads through the rubble to the north.",
+  "north": "loadRoom|Ruins/ruined-square-north",
   "south": [
     {
       "cmd": "ifFlag",
       "args": [
         "WALLDESTROYED",
         "loadRoom|Ruins/ruined-house",
-        "The building to the south is sealed shut by a brick wall. You'll have to deal with that first."
+        "The building to the south is sealed shut by a much newer brick wall. It's covered in fractures and looks pretty weak. You'll have to deal with that first."
       ]
     }
   ],
@@ -27,29 +26,21 @@
   "features": [
     {
       "slug": "door",
-      "altSlugs": ["stone door", "west door"],
-      "roomDesc": [
-        {
-          "cmd": "ifFlag",
-          "args": [
-            "G.RUINEDHALLOPEN",
-            "To the west, an open doorway leads to a ruined hall.",
-            "To the west, a heavy stone door blocks the way."
-          ]
-        }
+      "altSlugs": [
+        "stone door",
+        "west door"
       ],
       "look": "It's a heavy stone door blocking the way."
     },
     {
       "slug": "wall",
-      "altSlugs": ["brick wall", "south wall", "south brick wall"],
-      "roomDesc": [
-        "ifNotFlagWrite|WALLDESTROYED|To the south is a ruined building with its entrance bricked over. The brick wall is covered in fractures and looks weakened.",
-        "ifFlagWrite|WALLDESTROYED|To the south is a ruined building. A brick wall once sealed its entrance but it's been destroyed and allows entry."
+      "altSlugs": [
+        "brick wall",
+        "south wall",
+        "south brick wall"
       ],
       "smash|destroy|break|kick|bash": "You're not strong enough to break it down with your bare hands.",
       "use": {
-        "": "You consider using the brick wall and then realize the absurdity of that statement.",
         "SLEDGE": [
           {
             "cmd": "ifFlag",
@@ -64,6 +55,12 @@
           }
         ]
       }
+    },
+    {
+      "slug": "cairn",
+      "roomDesc": "In the middle of the ruined square, small bits of rubble have been stacked, forming a cairn about 3 feet tall.",
+      "look": "The cairn is made out of broken bits of the rubble itself, each piece inscribed with small runes.",
+      "touch": "callCommon|cairn_touch|global-common"
     }
   ]
 }

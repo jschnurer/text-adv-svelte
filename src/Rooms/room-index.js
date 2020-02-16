@@ -46,8 +46,10 @@ export { default as s_ridge } from "./Swamp/ridge.json";
 
 // Ruins
 export { default as r_ruinedHall } from "./Ruins/ruined-hall.json";
-export { default as r_ruinedSquare } from "./Ruins/ruined-square.json";
+export { default as r_ruinedSquareSouth } from "./Ruins/ruined-square-south.json";
+export { default as r_ruinedSquareNoth } from "./Ruins/ruined-square-north.json";
 export { default as r_ruinedHouse } from "./Ruins/ruined-house.json";
+export { default as r_bunker } from "./Ruins/bunker.json";
 
 // Coast
 export { default as coast_dunes } from "./Coast/dunes.json";

@@ -1,0 +1,54 @@
+{
+  "name": "Ruined Square, North",
+  "slug": "Ruins/ruined-square-north",
+  "description": "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble. To the north is a temple that is still standing. Long, tattered banners hang from its walls.",
+  "south": "loadRoom|Ruins/ruined-square-south",
+  "down": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "HATCHOPEN",
+        "loadRoom|Ruins/bunker",
+        "The hatch is closed. You'll have to open it before heading down."
+      ]
+    }
+  ],
+  "features": [
+    {
+      "slug": "temple",
+      "look": "It's a large building supported by doric columns. Unlike the rest of the buildings, the temple is still mostly intact. It has long, tattered banners hanging from its walls."
+    },
+    {
+      "slug": "banner",
+      "altSlugs": ["banners"],
+      "look": "The banners are long and tattered. They each depict a yellow griffon clutching a dozen red roses in its talons."
+    },
+    {
+      "slug": "hatch",
+      "roomDesc": [
+        "ifNotFlagWrite|HATCHOPEN|Partially obscured by the rubble is a metal hatch in the ground.",
+        "ifFlagWrite|HATCHOPEN|Partially obscured by the rubble is a metal hatch in the ground. It's currently open."
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "HATCHOPEN",
+            "It's a large, metal hatch set into the ground. It's currently open, revealing a dark shaft that leads downward into the Earth. A metal ladder is affixed to the shaft wall.",
+            "It's a large, metal hatch set into the ground. It's got a handle on it. Maybe it could be opened."
+          ]
+        }
+      ],
+      "open": [
+        "ifFlagWrite|HATCHOPEN|It's already open.",
+        "ifNotFlagWrite|HATCHOPEN|You lift with all your strength and manage to lift the hatch open.",
+        "setFlag|HATCHOPEN"
+      ],
+      "close": [
+        "ifFlagWrite|HATCHOPEN|You take hold of the heavy hatch door and slowly lower it closed.",
+        "ifNotFlagWrite|HATCHOPEN|It's already closed.",
+        "unsetFlag|HATCHOPEN"
+      ]
+    }
+  ]
+}
