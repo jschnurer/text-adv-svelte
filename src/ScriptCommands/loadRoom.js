@@ -1,9 +1,10 @@
 export default function loadRoom (slug) {
-  this.room = this.rooms[slug];
-  if (!this.room) {
+  if (!this.rooms[slug]) {
     alert(`Room '${slug}' not found!`);
     return;
   }
+
+  this.room = this.rooms[slug];
 
   if (this.room.load) {
     this.parseCmds(this.room.load);

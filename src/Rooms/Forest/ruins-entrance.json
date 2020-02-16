@@ -2,7 +2,7 @@
   "name": "Entrance to Ancient Ruins",
   "slug": "Forest/ruins-entrance",
   "description": "You are standing in the center of an overgrown stone plaza. The forest to the west hasn't yet overtaken the area. To the east is a ruined building which seems to be the harbinger of a small, ruined settlement. A footpath leads to the west. To the east is an entrance into the ruined building.",
-  "east": "loadRoom|Ruins/forest-entrance",
+  "east": "loadRoom|Ruins/ruined-hall",
   "west": "loadRoom|Forest/abrupt-turn",
   "features": [
     {

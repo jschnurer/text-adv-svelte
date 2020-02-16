@@ -45,7 +45,9 @@ export { default as s_dryTrail } from "./Swamp/dry-trail.json";
 export { default as s_ridge } from "./Swamp/ridge.json";
 
 // Ruins
-export { default as r_forestEntrance } from "./Ruins/forest-entrance.json";
+export { default as r_ruinedHall } from "./Ruins/ruined-hall.json";
+export { default as r_ruinedSquare } from "./Ruins/ruined-square.json";
+export { default as r_ruinedHouse } from "./Ruins/ruined-house.json";
 
 // Coast
 export { default as coast_dunes } from "./Coast/dunes.json";

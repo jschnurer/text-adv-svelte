@@ -1,14 +1,14 @@
 {
   "name": "Ruined Hall",
-  "slug": "Ruins/forest-entrance",
+  "slug": "Ruins/ruined-hall",
   "description": "You stand in a dimly lit, very wide and long ruined hall. Light streams in through cracks in the walls and ceiling, which is very high above you. There is a solid stone altar at the far end, engraved with a runic symbol.\nThere is a doorway that leads outside to the west. {door} There is a metal device affixed to the wall next to the large stone door.",
   "west": "loadRoom|Forest/ruins-entrance",
   "east": [
     {
       "cmd": "ifFlag",
       "args": [
-        "DOOROPEN",
-        "TODO:Add more to the ruins!",
+        "G.RUINEDHALLOPEN",
+        "loadRoom|Ruins/ruined-square",
         "You can't go east. The large stone door is blocking your path. Maybe the device on the wall has something to do with it."
       ]
     }
@@ -40,8 +40,8 @@
         {
           "cmd": "ifFlag",
           "args": [
-            "DOOROPEN",
-            "There is an open passage leads to the east.",
+            "G.RUINEDHALLOPEN",
+            "There is an open doowary that leads outside to the east.",
             "There is also a large stone door that leads to the east."
           ]
         }
@@ -50,7 +50,7 @@
         {
           "cmd": "ifFlag",
           "args": [
-            "DOOROPEN",
+            "G.RUINEDHALLOPEN",
             "The door has slid out of the way, granting access eastward.",
             "The door is large and solid. It looks like it's made out of the same material as the altar."
           ]
@@ -66,7 +66,7 @@
         {
           "cmd": "ifFlag",
           "args": [
-            "DOOROPEN",
+            "G.RUINEDHALLOPEN",
             "It's a metal base affixed to the wall. It's rounded and looks like it pivots up and down. It's currently pointed upward.",
             "It's a metal base affixed to the wall. It's rounded and looks like it pivots up and down. It's currently pointed downward."
           ]
@@ -90,14 +90,14 @@
                 {
                   "cmd": "ifFlag",
                   "args": [
-                    "DOOROPEN",
+                    "G.RUINEDHALLOPEN",
                     [
                       "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides downward, sealing the passage.",
-                      "unsetFlag|DOOROPEN"
+                      "unsetFlag|G.RUINEDHALLOPEN"
                     ],
                     [
                       "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the large stone door to the east slides upward, unsealing the passage.",
-                      "setFlag|DOOROPEN"
+                      "setFlag|G.RUINEDHALLOPEN"
                     ]
                   ]
                 }

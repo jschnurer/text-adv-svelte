@@ -1,0 +1,69 @@
+{
+  "name": "Ruined Square",
+  "slug": "Ruins/ruined-square",
+  "description": [
+    "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble."
+  ],
+  "south": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "WALLDESTROYED",
+        "loadRoom|Ruins/ruined-house",
+        "The building to the south is sealed shut by a brick wall. You'll have to deal with that first."
+      ]
+    }
+  ],
+  "west": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.RUINEDHALLOPEN",
+        "loadRoom|Ruins/ruined-hall",
+        "The way west is sealed by a heavy stone door."
+      ]
+    }
+  ],
+  "features": [
+    {
+      "slug": "door",
+      "altSlugs": ["stone door", "west door"],
+      "roomDesc": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.RUINEDHALLOPEN",
+            "To the west, an open doorway leads to a ruined hall.",
+            "To the west, a heavy stone door blocks the way."
+          ]
+        }
+      ],
+      "look": "It's a heavy stone door blocking the way."
+    },
+    {
+      "slug": "wall",
+      "altSlugs": ["brick wall", "south wall", "south brick wall"],
+      "roomDesc": [
+        "ifNotFlagWrite|WALLDESTROYED|To the south is a ruined building with its entrance bricked over. The brick wall is covered in fractures and looks weakened.",
+        "ifFlagWrite|WALLDESTROYED|To the south is a ruined building. A brick wall once sealed its entrance but it's been destroyed and allows entry."
+      ],
+      "smash|destroy|break|kick|bash": "You're not strong enough to break it down with your bare hands.",
+      "use": {
+        "": "You consider using the brick wall and then realize the absurdity of that statement.",
+        "SLEDGE": [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "WALLDESTROYED",
+              "It's already been broken open. You smash up a couple loose bricks to make yourself feel better.",
+              [
+                "You take the sledgehammer in hand and swing with all your might. You shatter a brick in the center of the wall, bowing the entire wall inward slightly. After another few strong strikes, the wall gives out and collapses into a heap of bricks. The way south is open.",
+                "setFlag|WALLDESTROYED"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "name": "Ruined House",
+  "slug": "Ruins/ruined-house",
+  "description": "You're in the remains of a ruined house. The upper floor has collapsed, leaving rubble everywhere. You can see blue sky above you. Amidst all the rubble there is a metal chest.\nThere's an exit to the north that leads back outside.",
+  "north": "loadRoom|Ruins/ruined-square",
+  "features": [
+    {
+      "slug": "chest",
+      "altSlugs": [
+        "metal chest"
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CHESTOPEN",
+            [
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "TOOKFLASHLIGHT",
+                  "It's a metal storage chest. It's badly dented and scuffed but still in one piece. There's nothing inside.",
+                  "It's a metal storage chest. It's badly dented and scuffed but still in one piece. There's a heavy-duty flashlight inside."
+                ]
+              }
+            ],
+            "It's a metal storage chest. It's badly dented and scuffed but still in one piece. It's shut tight."
+          ]
+        }
+      ],
+      "open": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CHESTOPEN",
+            "It's already open!",
+            [
+              "You clear some rubble off the top of the metal chest and open it. There's a heavy-duty flashlight inside.",
+              "setFlag|SAWFLASHLIGHT",
+              "setFlag|CHESTOPEN"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "flashlight",
+      "destroyedFlag": "TOOKFLASHLIGHT",
+      "look": "It's a heavy-duty, blue metal flashlight.",
+      "take": [
+        "You take the flashlight from the metal chest.",
+        "setFlag|TOOKFLASHLIGHT",
+        "addItem|FLASHLIGHT"
+      ]
+    }
+  ]
+}
