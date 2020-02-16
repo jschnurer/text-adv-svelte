@@ -107,9 +107,7 @@
       "notice": " and a waterlogged notebook",
       "targetFlag": "SAWNOTEBOOK",
       "destroyedFlag": "TOOKNOTEBOOK",
-      "look": [
-        "The cover says \"R_ODE'S JOUR__L\". It's badly water damaged. If you took it, you could look through it."
-      ],
+      "look": "callCommon|ophelias_journal1_look|global-common",
       "take": [
         "You take the notebook.",
         "setFlag|TOOKNOTEBOOK",

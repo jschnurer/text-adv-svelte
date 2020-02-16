@@ -15,6 +15,18 @@
     "hatch_note_look": [
       "The handwritten note reads:",
       "]Lowered into darkness, far and out of sight\\Plunged into clear waters, deisigh regains its might."
+    ],
+    "ophelias_journal1_look": [
+      "The cover says \"__HELI_'S JOUR__L\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
+      "]_er__ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear. We ma_e a flagpo__ a__ us_d a str_p of hi_ fav__it_ clo_k as t__ fl_g. __ybe he'_l se_ it an_ ret__n.",
+      "You find another passage, though it seems the author had lost their mind:",
+      "]To travers_ t_e mist_ of t_me a_d tr__el th_oug_ t__ li__t, touc_ o_r fav___te colo_s th_n per_or_ __e rite:\\Edr_\\Mine!\\Merek\\Rh_d_\\Ar_en\\M__edit_\\Sta_le_"
+    ],
+    "ophelias_journal2_look": [
+      "The cover says \"OPHELIA'S JOURNAL\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
+      "]Merek left without us in the middle of the night. We followed after at dawn. It's been weeks and there's no sign of him. It seems like when people split up here they just... disappear. We made a flagpole and used a strip of his favorite cloak as the flag. Maybe he'll see it and return.",
+      "You find another passage, though it seems the author had lost their mind:",
+      "]To traverse the mists of time and travel through the light, touch our favorite colors then perform the rite:\\Edra\\Mine!\\Merek\\Rhode\\Arden\\Meredith\\Stanley"
     ]
   }
 }
