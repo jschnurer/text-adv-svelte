@@ -1,0 +1,93 @@
+{
+  "name": "Lighthouse, Light",
+  "slug": "Coast/lighthouse-light",
+  "description": "You're standing at the topmost point of the lighthouse in the glass-enclosed area with the giant, rotating light. There's a trapdoor that leads downward.",
+  "down": "loadRoom|Coast/lighthouse-2f",
+  "_common": {
+    "need_potion": "\"Ionyne know human make potions. Need potion. Please.\" She winces in pain."
+  },
+  "features": [
+    {
+      "slug": "light",
+      "look": "The blindingly bright light is encased in lenses and rotates slowly. You don't see any gears or machinery so you're not sure how it's working."
+    },
+    {
+      "slug": "woman",
+      "altSlugs": [
+        "harpy",
+        "bird",
+        "bird person",
+        "bird woman",
+        "ionyne"
+      ],
+      "destroyedFlag": "G.BIRDFRIEND",
+      "roomDesc": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "LEARNNAME",
+            "Ionyne's here. She's a feathered woman with wings instead of arms. She's laying on the floor, curled into a ball. One of her wings is broken. She looks up at you, pitiably.",
+            "There's someone else here! A feathered woman with wings instead of arms lays on the floor, curled into a ball. One of her wings is broken. She looks up at you in fear."
+          ]
+        }
+      ],
+      "look": "She's a woman but covered in feathers and with wings instead of arms! Instead of feet she has sharp talons. One of her wings looks broken.",
+      "greet": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "FRIEND",
+            "\"Ionyne friend return,\" she says, holding her broken wing. \"Ionyne need help. Wing broken.\"",
+            [
+              "She scrambles away from you, her broken wing flopping sickeningly. \"Please. No hurt Ionyne,\" she says, in a shrill, squawking voice. \"Or... you friend?\"",
+              "setFlag|LEARNNAME",
+              {
+                "cmd": "choice",
+                "args": [
+                  "\"Ionyne not understand. You friend?\"",
+                  [
+                    "yes",
+                    "no"
+                  ],
+                  {
+                    "yes": [
+                      "She visibly relaxes. \"Oh. Ionyne need help. Wing broken.\"",
+                      "setFlag|FRIEND"
+                    ],
+                    "no": "\"Go then. Leave Ionyne!\" She shrieks in her shrill voice."
+                  }
+                ]
+              }
+            ]
+          ]
+        }
+      ],
+      "ask": [
+        {
+          "cmd": "dialog",
+          "args": {
+            "": "\"Ionyne not understand. Wing broken, please help. Please!\"",
+            "help|wing|broken wing|wings|broken wings": "\"Ionyne wing broken,\" she says, pitiably. \"No fly. Need healing. Ionyne know human make potions. Need potion. Please. If have, please give. Give and be bird friend. Please. Please!\" She winces in pain.",
+            "healing": "callCommon|need_potion",
+            "ionyne|herself": "\"Ionyne is Ionyne. No hurt Ionyne more,\" she says in her shrill voice."
+          }
+        }
+      ],
+      "give": {
+        "": [
+          "\"Ionyne not need that!\" She squawks.",
+          "callCommon|need_potion"
+        ],
+        "POTION": [
+          "You take out the glass bottle of red liquid labeled \"potion of healing\". \"Yes, yes!\" Ionyne squawks in her shrill voice excitedly. \"That it! Please! Please! Give!\" She tilts her head back and opens her mouth.",
+          "You uncork the bottle and she drinks the entirety of its contents. Within moments the fractured bone in her wing sets itself and heals completely. Ionyne stands up, reaching her full height of four and a half feet.",
+          "She opens and closes her wings slowly. \"Yes, yes! Pain gone! Wing fix! Thank you! Thank you!\" She moves to one of the glass panels and pushes on it, opening it. She turns back to you and speaks once more in her shrill voice. \"Thank you! Ionyne tell all birds. You bird friend now! Thank you!\"",
+          "With that, she leaps out the window, spreads her wings, and takes flight, disappearing into the sky.",
+          "removeItem|POTION",
+          "addItem|BOTTLE",
+          "setFlag|G.BIRDFRIEND"
+        ]
+      }
+    }
+  ]
+}

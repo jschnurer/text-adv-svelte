@@ -25,13 +25,13 @@ export default function give(args) {
     return;
   }
 
-  if (target.give._requiredFlag && !this.getFlag(target.give._requiredFlag)) {
-    this.write(`You can't give things to ${matches[2]} yet.`);
+  if (!target.give) {
+    this.write(`You can't give things to ${matches[2]}.`);
     return;
   }
 
-  if (!target.give) {
-    this.write(`You can't give things to ${matches[2]}.`);
+  if (target.give._requiredFlag && !this.getFlag(target.give._requiredFlag)) {
+    this.write(`You can't give things to ${matches[2]} yet.`);
     return;
   }
 

@@ -1,6 +1,21 @@
 {
   "name": "Lighthouse, Exterior",
   "slug": "Coast/lighthouse-exterior",
-  "description": "TODO: lighthouse exterior",
-  "enter": "loadRoom|Coast/lighthouse-1f"
+  "description": "You're standing outside the lighthouse, high atop a spire of stone about a hundred feet above the crashing waves of the ocean and a few hundred from shore. It's really windy here! There's a red door that would let you enter the lighthouse.",
+  "north": "loadRoom|Coast/peninsula",
+  "features": [
+    {
+      "slug": "lighthouse",
+      "look": "It's tall and white. The light at the top is still working. Little rectangular windows dot the exterior of the tower all the way up to the top.",
+      "enter": "loadRoom|Coast/lighthouse-1f"
+    },
+    {
+      "slug": "door",
+      "look": "It's a solid wood door painted red. It would let you enter the lighthouse."
+    },
+    {
+      "slug": "ocean",
+      "look": "callCommon|see_ocean|global-common"
+    }
+  ]
 }

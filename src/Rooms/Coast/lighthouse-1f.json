@@ -1,0 +1,67 @@
+{
+  "name": "Lighthouse, First Floor",
+  "slug": "Coast/lighthouse-1f",
+  "description": "You're inside the lighthouse, on the first floor. It's a single, medium sized room. There's a bed, a small fireplace, a small kitchen, a table and chair, and spiral stairs that leads upward.\nThe front door is to the north, leading back outside.",
+  "north": "loadRoom|Coast/lighthouse-exterior",
+  "up": "loadRoom|Coast/lighthouse-2f",
+  "features": [
+    {
+      "slug": "fireplace",
+      "look": "It's a little fireplace with a chimney. There's a small pile of firewood next to it. There are scant few traces of ash inside. It doesn't look like it's been used in a very long time."
+    },
+    {
+      "slug": "kitchen",
+      "look": "It's a small, simple kitchen. There's a wooden trough and a couple pots and pans. Nothing too exciting."
+    },
+    {
+      "slug": "table",
+      "look": "It's very table-like."
+    },
+    {
+      "slug": "chair",
+      "look": "It's a chair. You're pretty sure because you've seen lots of them in your lifetime.",
+      "sit": "You sit down at the table. You try to imagine what it must have been like to live here all alone, tending the light. After your contemplation you stand back up."
+    },
+    {
+      "slug": "bed",
+      "look": [
+        "It's a single. It doesn't look very comfortable. It's got a heavy, brown wool blanket on it and a pillow.",
+        "setFlag|SAWPILLOW"
+      ]
+    },
+    {
+      "slug": "blanket",
+      "look": "It's a heavy, brown wool blanket."
+    },
+    {
+      "slug": "pillow",
+      "targetFlag": "SAWPILLOW",
+      "look": [
+        "It's little more than a burlap sack stuffed with rotting hay.",
+        "ifNotFlagWrite|TOOKKEY|Upon inspection, you notice there's an iron key underneath it.",
+        "setFlag|SAWKEY"
+      ]
+    },
+    {
+      "slug": "stairs",
+      "altSlugs": [
+        "staircase"
+      ],
+      "look": "The metal stairs spiral around and around inside the tower of the lighthouse and lead all the way to the top."
+    },
+    {
+      "slug": "iron key",
+      "altSlugs": [
+        "key"
+      ],
+      "targetFlag": "SAWKEY",
+      "destroyedFlag": "TOOKKEY",
+      "look": "It's an iron key.",
+      "take": [
+        "You take the iron key from under the pillow.",
+        "addItem|LIGHTHOUSE_KEY",
+        "setFlag|TOOKKEY"
+      ]
+    }
+  ]
+}

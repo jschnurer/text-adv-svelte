@@ -26,7 +26,8 @@
   {
     "slug": "stone",
     "id": "FISH_STONE",
-    "look": [{
+    "look": [
+      {
         "cmd": "ifRoom",
         "args": [
           "Forest/broken-bridge",
@@ -187,11 +188,36 @@
   },
   {
     "slug": "potion of healing",
-    "altSlugs": ["potion","healing potion"],
+    "altSlugs": [
+      "potion",
+      "healing potion"
+    ],
     "id": "POTION",
     "look": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\".",
     "use": {
       "": "Now's not the time. You might need it later."
     }
+  },
+  {
+    "slug": "empty bottle",
+    "altSlugs": [
+      "bottle"
+    ],
+    "id": "BOTTLE",
+    "look": "It's a glass bottle with a cork stopper. It's empty and a label that reads \"potion of healing\"."
+  },
+  {
+    "slug": "iron key",
+    "altSlugs": [
+      "key"
+    ],
+    "id": "LIGHTHOUSE_KEY",
+    "look": "It's an iron key."
+  },
+  {
+    "slug": "rainbow shell",
+    "altSlugs": ["shell"],
+    "id": "RAINBOW_SHELL",
+    "look": "It's a large rainbow-colored shell, probably six inches in diameter, reflecting all the colors of the rainbow. It's one of the most beautiful things you've ever seen."
   }
 ]

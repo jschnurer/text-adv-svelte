@@ -1,0 +1,40 @@
+{
+  "name": "Lighthouse, Below the Light",
+  "slug": "Coast/lighthouse-2f",
+  "description": "You're inside the lighthouse, standing on the spiral stairs just below where the main light is kept. The spiral stairs lead back down to the first floor and there's a ladder that leads to a trapdoor above you. There's a very sturdy looking padlock on it. {padlock}",
+  "up": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "OPEN",
+        "loadRoom|Coast/lighthouse-light",
+        "You can't reach the light until you've unlocked the trapdoor."
+      ]
+    }
+  ],
+  "down": "loadRoom|Coast/lighthouse-1f",
+  "features": [
+    {
+      "slug": "trapdoor",
+      "look": "It's made of solid wood. There's a very sturdy looking padlock on it."
+    },
+    {
+      "slug": "padlock",
+      "notice": [
+        "ifNotFlagWrite|OPEN|It's locked tight.",
+        "ifFlagWrite|OPEN|It's unlocked."
+      ],
+      "look": [
+        "ifNotFlagWrite|OPEN|It looks very sturdy and it's locked tight.",
+        "ifFlagWrite|OPEN|It looks very sturdy and it's unlocked."
+      ],
+      "use": {
+        "LIGHTHOUSE_KEY": [
+          "The iron key fits the padlock perfectly. You unlock it. You have no further use of the iron key so you discard it.",
+          "removeItem|LIGHTHOUSE_KEY",
+          "setFlag|OPEN"
+        ]
+      }
+    }
+  ]
+}
