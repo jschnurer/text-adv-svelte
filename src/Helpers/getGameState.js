@@ -9,7 +9,7 @@ import give from "../Commands/give.js";
 import incant from "../Commands/incant.js";
 import incantations from "../Commands/incantations.js";
 import listInventory from "../Commands/listInventory.js";
-import lookRoom from "../ScriptCommands/lookRoom.js";
+import look from "../Commands/look.js";
 import move from "../Commands/move.js";
 import take from "../Commands/take.js";
 import use from "../Commands/use.js";
@@ -45,6 +45,7 @@ import getLocalVars from "./getLocalVars.js";
 import getRoomDictionary from "./getRoomDictionary.js";
 import getVarValue from "./getVarValue.js";
 import handleChoiceInput from "./handleChoiceInput.js";
+import handleDarkRoom from "./handleDarkRoom.js";
 import handleDevCmd from "./handleDevCmd.js";
 import handleUserEntry from "./handleUserEntry.js";
 import knowsAnyIncantations from "./knowsAnyIncantations.js";
@@ -87,6 +88,8 @@ export default function getGameState(loadGame, updateScroll, update) {
     waitCmds: null,
     // The current user entry.
     userEntry: null,
+    // The last direction command entered by the user that caused a room load.
+    lastMoveDir: null,
 
     // User Commands
     ask,
@@ -130,11 +133,12 @@ export default function getGameState(loadGame, updateScroll, update) {
     getLocalVars,
     getVarValue,
     handleChoiceInput,
+    handleDarkRoom,
     handleDevCmd,
     handleUserEntry,
     knowsAnyIncantations,
     loadRoom,
-    lookRoom,
+    look,
     parseCmds,
     parseStringCmd,
     setVarValue,

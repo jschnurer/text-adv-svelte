@@ -9,5 +9,5 @@ export default function loadRoom (slug) {
     this.parseCmds(this.room.load);
   }
 
-  this.lookRoom();
+  this.look();
 };

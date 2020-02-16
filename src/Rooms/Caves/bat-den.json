@@ -2,7 +2,7 @@
   "name": "Chamber of Spires",
   "slug": "Caves/bat-den",
   "dark": true,
-  "south": "loadRoom|Coast/coast-exit",
+  "south": "loadRoom|Caves/coast-exit",
   "description": "You're in a large, damp cave. Stalactices hang from the ceiling, with stalagmites reaching up toward them from the wet cavern floor. Some meet in the middle forming thick spires of minerals that reach from the floor to ceiling. The floor is uneven and slippery. Bowl-like depressions in the cavern floor lead to wide holes that fall away to darkness below you. The chamber has an opening to the west and another to the south.",
   "features": [
     {

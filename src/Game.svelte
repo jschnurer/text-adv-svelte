@@ -32,7 +32,7 @@
     if (!loadGame) {
       await gs.loadRoom(config.initial_room);
     } else {
-      gs.lookRoom();
+      gs.look();
     }
   });
 

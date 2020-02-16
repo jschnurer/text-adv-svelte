@@ -4,5 +4,7 @@ export default function move(dir) {
     return false;
   }
 
+  this.lastMoveDir = dir;
+
   this.parseCmds(this.room[dir]);
 };

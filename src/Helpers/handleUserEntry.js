@@ -54,6 +54,16 @@ export default function handleUserEntry(entry) {
     return;
   }
 
+  // Convert shortcuts to full words to match with properties.
+  if (shortcuts[cmd]) {
+    cmd = shortcuts[cmd];
+  }
+
+  // Handle input in a darkened room.
+  if(!this.handleDarkRoom(cmd, args)) {
+    return;
+  }
+
   // Special cases for 4-word commands and others.
   switch (cmd) {
     case "ask":
@@ -81,11 +91,6 @@ export default function handleUserEntry(entry) {
     }
   }
 
-  // Convert shortcuts to full words to match with properties.
-  if (shortcuts[cmd]) {
-    cmd = shortcuts[cmd];
-  }
-
   // If targeting something and that something has the command in it, run those commands.
   if (target) {
     if (target[cmd]) {
@@ -105,7 +110,7 @@ export default function handleUserEntry(entry) {
     case "look":
       // Look needs to be checked here because if there is no
       // target, it should run the look command without one.
-      this.lookRoom();
+      this.look();
       break;
     case "inventory":
       this.listInventory();
