@@ -1,9 +1,43 @@
 [
   {
+    "slug": "tutorial key",
+    "altSlugs": [
+      "key"
+    ],
+    "id": "TUTORIAL_KEY",
+    "look": [
+      "It's a brass key. You get the feeling that it's only useful in the tutorial. It definitely opens a locked door or two."
+    ]
+  },
+  {
+    "slug": "banana",
+    "id": "TUTORIAL_BANANA",
+    "look": [
+      "It's a regular old banana. It has a pleasing yellow color."
+    ]
+  },
+  {
+    "slug": "belt",
+    "id": "TUTORIAL_BELT",
+    "look": [
+      "It's a belt. Like, not the kind you wear, the kind that connect pulleys together. You know, the mechanical kind of belt."
+    ]
+  },
+  {
     "slug": "stone",
     "id": "FISH_STONE",
-    "look": [
-      "It's a small, smooth stone. You feel the urge to throw it for some reason."
+    "look": [{
+        "cmd": "ifRoom",
+        "args": [
+          "Forest/broken-bridge",
+          [
+            "It's a small, smooth stone. You feel the urge to throw it for some reason."
+          ],
+          [
+            "It's a small, smooth stone. You feel the urge to throw it for some reason--but not here."
+          ]
+        ]
+      }
     ],
     "throw": [
       {
@@ -24,7 +58,7 @@
     "slug": "rod",
     "id": "RUINS_ROD",
     "look": [
-      "It's a cylindrical metal rod about an inch and a half in diameter. It's rusty but still sturdy."
+      "It's a cylindrical metal rod about an inch and a half in diameter. It's rusty but still sturdy. It has a grip at one end. Maybe it's a handle of some kind."
     ]
   },
   {
@@ -35,30 +69,6 @@
     "id": "NAIL",
     "look": [
       "It's rusty but should still do its job well enough."
-    ]
-  },
-  {
-    "slug": "tutorial key",
-    "altSlugs": [
-      "key"
-    ],
-    "id": "TUTORIAL_KEY",
-    "look": [
-      "It's a brass key. You get the feeling that it's only useful in the tutorial. It definitely opens a locked door."
-    ]
-  },
-  {
-    "slug": "banana",
-    "id": "TUTORIAL_BANANA",
-    "look": [
-      "It's a regular old banana."
-    ]
-  },
-  {
-    "slug": "belt",
-    "id": "TUTORIAL_BELT",
-    "look": [
-      "It's a belt. Like, not the kind you wear, the kind that connect pulleys together. You know, the mechanical kind of belt."
     ]
   },
   {
@@ -76,7 +86,7 @@
     ],
     "id": "WOOD_BUCKET",
     "look": [
-      "It's a plain, wooden bucket with a handle."
+      "It's a plain, wooden bucket with a handle. You assume it will be useful at some point."
     ]
   },
   {
@@ -96,12 +106,7 @@
       "ophelia's journal"
     ],
     "id": "OPHELIAS_JOURNAL1",
-    "look": [
-      "The cover says \"__HELI_'S JOUR__L\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
-      "]_er__ _eft w_thou_ us in _he mid_le of the n____. We f_llow__ _fter _t dawn. It'_ be_n _eeks _n_ the_e's no sig_ of h__. It se_ms li_e _hen pe__le spl__ u_ here t_ey just... disa__ear. We ma_e a flagpo__ a__ us_d a str_p of hi_ fav__it_ clo_k as t__ fl_g. __ybe he'_l se_ it an_ ret__n.",
-      "You find another passage, though it seems the author had lost their mind:",
-      "]To travers_ t_e mist_ of t_me a_d tr__el th_oug_ t__ li__t, touc_ o_r fav___te colo_s th_n per_or_ __e rite:\\Edr_\\Mine!\\Merek\\Rh_d_\\Ar_en\\M__edit_\\Sta_le_"
-    ]
+    "look": "callCommon|ophelias_journal1_look|global-common"
   },
   {
     "slug": "journal",
@@ -110,12 +115,7 @@
       "ophelia's journal"
     ],
     "id": "OPHELIAS_JOURNAL2",
-    "look": [
-      "The cover says \"OPHELIA'S JOURNAL\". It's badly water damaged. You try to flip through the pages. Most are clumped together or completely destroyed. You do find a couple passages that are still legible:",
-      "]Merek left without us in the middle of the night. We followed after at dawn. It's been weeks and there's no sign of him. It seems like when people split up here they just... disappear. We made a flagpole and used a strip of his favorite cloak as the flag. Maybe he'll see it and return.",
-      "You find another passage, though it seems the author had lost their mind:",
-      "]To traverse the mists of time and travel through the light, touch our favorite colors then perform the rite:\\Edra\\Mine!\\Merek\\Rhode\\Arden\\Meredith\\Stanley"
-    ]
+    "look": "callCommon|ophelias_journal2_look|global-common"
   },
   {
     "slug": "glass scissors",
@@ -184,5 +184,14 @@
     "slug": "hatch note",
     "id": "HATCH_NOTE",
     "look": "callCommon|hatch_note_look|global-common"
+  },
+  {
+    "slug": "potion of healing",
+    "altSlugs": ["potion","healing potion"],
+    "id": "POTION",
+    "look": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\".",
+    "use": {
+      "": "Now's not the time. You might need it later."
+    }
   }
 ]
