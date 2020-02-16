@@ -2,7 +2,7 @@
   "name": "Ruined Lab",
   "slug": "Ruins/lab",
   "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass vials, instruments, and other scientific equipment.\nAn open doorway leads outside to the west and there are steps that lead down into darkness.",
-  "south": "loadRoom|Ruins/ruined-square-north",
+  "west": "loadRoom|Ruins/ruined-square-south",
   "down": "TODO: caves",
   "features": [
     {
