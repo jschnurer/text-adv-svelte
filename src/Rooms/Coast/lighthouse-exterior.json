@@ -1,0 +1,6 @@
+{
+  "name": "Lighthouse, Exterior",
+  "slug": "Coast/lighthouse-exterior",
+  "description": "TODO: lighthouse exterior",
+  "enter": "loadRoom|Coast/lighthouse-1f"
+}

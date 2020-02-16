@@ -63,6 +63,7 @@ export { default as coast_rockyIncline } from "./Coast/rocky-incline.json";
 export { default as coast_rockyTrail } from "./Coast/rocky-trail.json";
 export { default as coast_peninsula } from "./Coast/peninsula.json";
 export { default as coast_rockyCliffside } from "./Coast/rocky-cliffside.json";
+export { default as coast_lighthouseExt } from "./Coast/lighthouse-exterior.json";
 
 // Lighthouse
 
