@@ -68,3 +68,13 @@ hint {
 speech {
   color: #efefef;
 }
+
+frow {
+  display: flex;
+  flex-direction: row;
+}
+
+fcol {
+  display: flex;
+  flex-direction: column;
+}

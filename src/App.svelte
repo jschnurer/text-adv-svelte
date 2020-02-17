@@ -1,6 +1,6 @@
 <script>
   import { Router, Route } from "svelte-routing";
-  import RoomEditor from "./Editor/RoomEditor.svelte";
+  import RoomEditor from "./Editor2/RoomEditor.svelte";
   import Start from "./Start.svelte";
 
   export let url = "";
