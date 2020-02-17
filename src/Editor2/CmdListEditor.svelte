@@ -7,11 +7,19 @@
 
   let newCmdVisible = false;
 
+  const newCmdList = () => {
+    obj[prop] = [];
+  }
+
   const addNewCmd = ({ detail }) => {
-    console.log(obj[prop]);
     obj[prop] = [...obj[prop], detail];
-    console.log(obj[prop]);
   };
+
+  const deleteCmd = () => {
+    if (Array.isArray(obj)) {
+      obj = obj.filter((_, ix) => ix != prop);
+    }
+  }
 </script>
 
 <style>
@@ -28,14 +36,14 @@
 </style>
 
 {#if !obj[prop]}
-  <button>+Cmd</button>
+  <button on:click={newCmdList}>+CmdList</button>
 {/if}
 
 {#if obj[prop]}
   {#if typeof obj[prop] === 'string'}
     <div>
       <input bind:value={obj[prop]} />
-      <button>x</button>
+      <button on:click={deleteCmd}>x</button>
     </div>
   {:else if obj[prop].hasOwnProperty('length')}
     <div class="list">

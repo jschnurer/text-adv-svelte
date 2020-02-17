@@ -2,7 +2,7 @@
   import CmdListEditor from "../CmdListEditor.svelte";
 
   export let obj = {};
-  $: itemId = obj.args[0];
+  $: roomName = obj.args[0];
 </script>
 
 <style>
@@ -14,7 +14,7 @@
     display: block;
   }
   div {
-    border-left: 1px yellow solid;
+    border-left: 1px orange solid;
     padding-left: 1em;
   }
 </style>
@@ -22,8 +22,8 @@
 <div>
   <fcol>
     <frow>
-      <label>If player has item...</label>
-      <input bind:value={itemId} />
+      <label>If current room is...</label>
+      <input bind:value={roomName} />
     </frow>
     <label>...then do this:</label>
     <CmdListEditor obj={obj.args} prop={1} />

@@ -9,26 +9,26 @@
   input {
     display: inline;
   }
-  flexcol,
-  flexrow {
+  fcol,
+  frow {
     display: block;
   }
   div {
-    border-left: 1px blue solid;
+    border-left: 1px green solid;
     padding-left: 1em;
   }
 </style>
 
 <div>
-  <flexcol>
-    <flexrow>
+  <fcol>
+    <frow>
       <label>If this flag...</label>
       <input bind:value={flag} />
-    </flexrow>
+    </frow>
     <label>...is true do this:</label>
     <CmdListEditor obj={obj.args} prop={1} />
     <label>...else do this:</label>
     <br />
     <CmdListEditor obj={obj.args} prop={2} />
-  </flexcol>
+  </fcol>
 </div>

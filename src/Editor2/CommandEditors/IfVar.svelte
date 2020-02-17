@@ -13,7 +13,7 @@
     display: inline-block;
     width: 7em;
   }
-  flexcol {
+  fcol {
     display: block;
   }
   div {
@@ -23,7 +23,7 @@
 </style>
 
 <div>
-  <flexcol>
+  <fcol>
     <label>If</label>
     <input bind:value={varName} />
     <select bind:value={obj.args[1]}>
@@ -38,5 +38,5 @@
     <label>...else do this:</label>
     <br />
     <CmdListEditor obj={obj.args} prop={4} />
-  </flexcol>
+  </fcol>
 </div>

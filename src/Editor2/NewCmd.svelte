@@ -10,7 +10,7 @@
     unsetFlag: { group: "Flags", label: "set flag = false", obj: "unsetFlag|" },
     ifFlag: {
       group: "Conditionals",
-      label: "if flag is true...",
+      label: "flag == true?",
       obj: {
         cmd: "ifFlag",
         args: ["flagName", [], []]
@@ -20,8 +20,8 @@
     addItem: { group: "Items", label: "add item", obj: "addItem|" },
     removeItem: { group: "Items", label: "remove item", obj: "removeItem|" },
     ifHasItem: {
-      group: "Items",
-      label: "if player has item...",
+      group: "Conditionals",
+      label: "has item?",
       obj: {
         cmd: "ifHasItem",
         args: ["itemId", [], []]
@@ -35,7 +35,7 @@
     } },
     ifRoom: {
       group: "Conditionals",
-      label: "if current room is...",
+      label: "currRoom == ?",
       obj: {
         cmd: "ifRoom",
         args: ["roomSlug", [], []]
@@ -57,7 +57,7 @@
       obj: {
         cmd: "dialog",
         args: {
-          "": ["unknownTopicPhrase"]
+          "": ["unknownTopicText"]
         }
       }
     },
@@ -86,7 +86,7 @@
   const focus = el => el.focus();
 
   const save = cmd => {
-    dispatch("save", commands[cmd].obj);
+    dispatch("save", Object.assign({}, commands[cmd].obj));
     dispatch("close");
   };
 </script>
