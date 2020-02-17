@@ -4,18 +4,24 @@
   import NewCmd from "./NewCmd.svelte";
 
   const dirs = ["north", "south", "east", "west", "up", "down"];
-  const notDynamicProps = dirs.concat(["name", "slug", "description", "features"]);
+  const notDynamicProps = dirs.concat([
+    "name",
+    "slug",
+    "description",
+    "features"
+  ]);
 
-  let newCmdVisible = true;
+  let newCmdVisible = false;
 
   let room = {
     north: ["loadRoom|blabla"],
     south: ["Something is amiss...", "loadRoom|blablabla2"],
-    throw: [],
-    features: [{
-      "slug": "wooo",
-      "look": ["there it is"]
-    }]
+    features: [
+      {
+        slug: "wooo",
+        look: ["there it is"]
+      }
+    ]
   };
 
   $: dProps = Object.keys(room).filter(x => notDynamicProps.indexOf(x) === -1);
@@ -25,7 +31,8 @@
   .outer {
     padding: 0 1em;
   }
-  h2,h4 {
+  h2,
+  h4 {
     margin: 0 0 0.5em 0;
   }
   :global(input),
@@ -89,5 +96,5 @@
 </div>
 
 {#if newCmdVisible}
-  <NewCmd />
+  <NewCmd on:close={() => (newCmdVisible = false)} on:save />
 {/if}

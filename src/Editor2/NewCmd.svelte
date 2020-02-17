@@ -4,32 +4,89 @@
 
   let cmdType = "write";
 
-  const simpleCmds = {
-    write: "Write Text",
-    setFlag: "set flag = true",
-    unsetFlag: "set flag = false",
-    ifFlag: "if flag is true...",
-    loadRoom: "load new room",
-    addItem: "add item",
-    removeItem: "remove item",
-    ifHasItem: "if player has item...",
-    incVar: "var++",
-    decVar: "var--",
-    ifVar: "if var ...",
-    ifRoom: "if current room is...",
-    callCommon: "call common",
-    waitForInput: "wait for input",
-    dialog: "dialog",
-    choice: "choice",
-    saveGame: "save game",
-    gameOver: "game over",
+  const commands = {
+    write: { group: "Common", label: "Write Text", obj: "text" },
+    setFlag: { group: "Flags", label: "set flag = true", obj: "setFlag|" },
+    unsetFlag: { group: "Flags", label: "set flag = false", obj: "unsetFlag|" },
+    ifFlag: {
+      group: "Conditionals",
+      label: "if flag is true...",
+      obj: {
+        cmd: "ifFlag",
+        args: ["flagName", [], []]
+      }
+    },
+    loadRoom: { group: "Common", label: "load new room", obj: "loadRoom|" },
+    addItem: { group: "Items", label: "add item", obj: "addItem|" },
+    removeItem: { group: "Items", label: "remove item", obj: "removeItem|" },
+    ifHasItem: {
+      group: "Items",
+      label: "if player has item...",
+      obj: {
+        cmd: "ifHasItem",
+        args: ["itemId", [], []]
+      }
+    },
+    incVar: { group: "Vars", label: "var++", obj: "incVar|" },
+    decVar: { group: "Vars", label: "var--", obj: "decVar|" },
+    ifVar: { group: "Conditionals", label: "if var ...", obj: {
+      cmd: "ifVar",
+      args: ["varName",">","value",[],[]]
+    } },
+    ifRoom: {
+      group: "Conditionals",
+      label: "if current room is...",
+      obj: {
+        cmd: "ifRoom",
+        args: ["roomSlug", [], []]
+      }
+    },
+    callCommon: {
+      group: "Common",
+      label: "call common",
+      obj: "callCommon|funcName|roomName"
+    },
+    waitForInput: {
+      group: "Common",
+      label: "wait for input",
+      obj: "waitForInput"
+    },
+    dialog: {
+      group: "Common",
+      label: "dialog",
+      obj: {
+        cmd: "dialog",
+        args: {
+          "": ["unknownTopicPhrase"]
+        }
+      }
+    },
+    choice: {
+      group: "Common",
+      label: "choice",
+      obj: {
+        cmd: "choice",
+        args: [
+          ["unknownChoiceResponse"],
+          ["choice1", "choice2"],
+          {
+            choice1: [],
+            choice2: []
+          }
+        ]
+      }
+    },
+    saveGame: { group: "Common", label: "save game", obj: "saveGame" },
+    gameOver: { group: "Common", label: "game over", obj: "gameOver|" }
   };
 
-  $: simpleCmdList = Object.keys(simpleCmds);
+  $: cmdList = Object.keys(commands);
+  $: groups = [...new Set(cmdList.map(x => commands[x].group))];
 
   const focus = el => el.focus();
 
-  const save = () => {
+  const save = cmd => {
+    dispatch("save", commands[cmd].obj);
     dispatch("close");
   };
 </script>
@@ -59,11 +116,13 @@
   actions {
     display: block;
   }
-  input {
-    display: inline-block;
-  }
-  label {
+  button {
     display: block;
+    width: 100%;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: #fff;
   }
   div {
     column-count: 2;
@@ -74,18 +133,16 @@
 <container>
   <header>New Command</header>
   <form on:submit|preventDefault={save}>
-    <h5>Command</h5>
     <div>
-      {#each simpleCmdList as cmd}
-        <label>
-          <input type="radio" bind:group={cmdType} value={cmd} />
-          {simpleCmds[cmd]}
-        </label>
+      {#each groups as group}
+        <h5>{group}</h5>
+        {#each cmdList.filter(x => commands[x].group === group) as cmd}
+          <button on:click={() => save(cmd)}>{commands[cmd].label}</button>
+        {/each}
       {/each}
     </div>
   </form>
   <actions>
-    <button on:click={save}>Save</button>
-    <button on:click={() => dispatch('close')}>Cancel</button>
+    <button style="width: auto;" on:click={() => dispatch('close')}>Cancel</button>
   </actions>
 </container>

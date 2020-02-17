@@ -10,7 +10,7 @@
 
 <style>
   div {
-    border-left: 1px yellow solid;
+    border-left: 1px gray solid;
     padding-left: 1em;
     margin-bottom: .5em;
   }
