@@ -1,0 +1,45 @@
+{
+  "name": "Cave of Bones",
+  "slug": "Forest/well-cave",
+  "description": "You're in a fairly large cavern chamber. It's made of rough, gray stone. The cavern ceiling is at least 12 feet high. It smells of death and rot in here.\nYour footsteps crunch beneath you as you walk on innumerable bones, carcasses, and unidentifiable remains. You're pretty sure a fair number of the bones are human... Something makes this place its home. Best not tarry long.",
+  "west": "loadRoom|Forest/old-well",
+  "dark": true,
+  "features": [
+    {
+      "slug": "giant hornet",
+      "altSlugs": ["hornet", "corpse"],
+      "roomDesc": "A recent kill sits atop the rest of the remains--a giant hornet.",
+      "look": [
+        "setFlag|SAWSAC",
+        "The hornet was something's snack. Its head has been gnawed clean off and its abdomen has been split open. Its innards are visible, with a pink-ish blob {sac} hanging out of it."
+      ]
+    },
+    {
+      "slug": "blob",
+      "look": "It's a pink-ish blob. It looks really wet and disgusting.",
+      "take": "You consider taking some hornet guts but decide it would be too disgusting."
+    },
+    {
+      "slug": "sac",
+      "altSlugs": ["pheromone sac"],
+      "notice": "and a purple-ish sac",
+      "targetFlag": "SAWSAC",
+      "destroyedFlag": "TOOKSAC",
+      "look": "It's a purplish-ish lumpy sac. It looks really wet and disgusting.",
+      "take": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.SAWPOSTER",
+            [
+              "You identify the pheromone sac in the corpse. Thinking it might be useful you grab it and yank it free, taking it with you.",
+              "addItem|SAC",
+              "setFlag|TOOKSAC"
+            ],
+            "You consider taking some hornet guts but decide it would be too disgusting."
+          ]
+        }
+      ]
+    }
+  ]
+}

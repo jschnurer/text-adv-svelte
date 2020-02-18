@@ -11,7 +11,10 @@
         "anatomical poster"
       ],
       "roomDesc": "There's an anatomical poster of a bug hanging on the wall.",
-      "look": "The poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\"."
+      "look": [
+        "The poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\".",
+        "setFlag|G.SAWPOSTER"
+      ]
     },
     {
       "slug": "table",

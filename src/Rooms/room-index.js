@@ -26,6 +26,7 @@ export { default as f_wellWornTrail } from "./Forest/well-worn-trail.json";
 export { default as f_cabinEntrance } from "./Forest/cabin-entrance.json";
 export { default as f_cabinInterior } from "./Forest/cabin-interior.json";
 export { default as f_oldWell } from "./Forest/old-well.json";
+export { default as f_wellCave } from "./Forest/well-cave.json";
 export { default as f_hornetNest } from "./Forest/hornet-nest.json";
 export { default as f_swampEntrance } from "./Forest/swamp-entrance.json";
 

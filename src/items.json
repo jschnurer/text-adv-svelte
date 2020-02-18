@@ -204,7 +204,7 @@
       "bottle"
     ],
     "id": "BOTTLE",
-    "look": "It's a glass bottle with a cork stopper. It's empty and a label that reads \"potion of healing\"."
+    "look": "It's an empty glass bottle with a cork stopper. It's labeled \"potion of healing\"."
   },
   {
     "slug": "iron key",

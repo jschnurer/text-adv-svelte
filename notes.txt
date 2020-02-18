@@ -3,19 +3,28 @@
 color sequence:
 blue, indigo, red, purple, orange, green, yellow
 
-Edra (blue) -- 1990s free-spirit
-Ophelia (indigo) -- 2040s ambassador
-Merek (red) -- medieval knight
-Rhode (purple) -- medieval witch
-Arden (orange) -- 1990s accountant
-Meredith (green) -- 1990s office worker
-Stanley (yellow) -- 2040s security personnel
+Edra (blue) -- 1990s free-spirit, prey
+Ophelia (indigo) -- 2040s ambassador, prey
+Merek (red) -- medieval knight, hunter
+Rhode (purple) -- medieval witch, prey
+Arden (orange) -- 1990s accountant, bystander
+Meredith (green) -- 1990s office worker, hunter
+Stanley (yellow) -- 2040s security personnel, hunter
 
 Groups:
 
 2040s:      Ophelia, Stanley
 1990s:      Edra, Arden, Meredith
 MiddleAges: Merek, Rhode
+
+Locations:
+Edra - cabin interior
+Ophelia - black mountain peak
+Merek - ruins, temple
+Rhode - swamp hut
+Arden - cabin interior
+Meredith - caves
+Stanley - black mountain peak
 
 Lore:
 

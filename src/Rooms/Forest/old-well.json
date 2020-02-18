@@ -1,10 +1,11 @@
 {
   "name": "An Old Well in the Forest",
   "slug": "Forest/old-well",
-  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank. {pail}\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. You hear a cacophonous buzzing coming from the north.",
-  "west": "loadRoom|Forest/well-worn-trail",
+  "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank. {pail}\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. To the east there is a trail that leads to a cave in a small hill.\nYou hear a cacophonous buzzing coming from the north.",
   "north": "loadRoom|Forest/hornet-nest",
   "south": "loadRoom|Forest/swamp-entrance",
+  "east": "loadRoom|Forest/well-cave",
+  "west": "loadRoom|Forest/well-worn-trail",
   "_common": {
     "look_pail_on_edge": [
       {
@@ -187,6 +188,12 @@
           ]
         }
       ]
+    },
+    {
+      "slug": "cairn",
+      "roomDesc": "There is a small cairn, only about a foot high, standing next to the old well.",
+      "look": "The pile of stones stands only about a foot tall. It's covered in runic markings.",
+      "touch": "callCommon|cairn_touch|global-common"
     }
   ]
 }
