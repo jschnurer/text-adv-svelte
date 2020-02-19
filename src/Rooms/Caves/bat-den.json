@@ -4,21 +4,36 @@
   "dark": true,
   "south": "loadRoom|Caves/coast-exit",
   "description": "You're in a large, damp cave. Stalactices hang from the ceiling, with stalagmites reaching up toward them from the wet cavern floor. Some meet in the middle forming thick spires of minerals that reach from the floor to ceiling. The floor is uneven and slippery. Bowl-like depressions in the cavern floor lead to wide holes that fall away to darkness below you. The chamber has an opening to the west and another to the south.",
+  "incant": {
+    "scrios": [
+
+    ]
+  },
   "features": [
     {
       "slug": "hole",
       "altSlugs": ["holes"],
-      "look": "These must be those bottomless pits you've always heard about."
+      "look": "These must be those bottomless pits you've always heard about. You'd best watch your step."
     },
     {
       "slug": "bats",
       "roomDesc": "Hundreds of small, dark figures hang from the rough cave ceiling. Some study you with beady little eyes. They listen intently for any sign of trouble.",
-      "look": ""
+      "look": "There are hundreds of them. Every time you shuffle your feet or take a step, dozens of them open their beady little eyes and look around."
     },
     {
       "slug": "wall",
+      "altSlugs": ["north wall"],
       "roomDesc": "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
-      "smash|kick|break|destroy": "There's no way you'd be able to damage it with your bare hands."
+      "smash|kick|break|destroy": "There's no way you'd be able to damage it with your bare hands.",
+      "use": {
+        "SLEDGE": [
+          "You take a tight grip on the handle of the heavy sledgehammer and pull back, tightening all your muscles. You swing forward, crashing the sledgehammer into the weakened wall with all your might!",
+          {
+            "cmd": "waitForInput",
+            "args": "gameOver|Before the onslaught of your mightly blow, the cracked wall stood no chance. It collapses in a heap of stone, sending a cloud of dust into the air. The sound shatters the silence of the cavern and reverberates off the walls, amplifying it. It's quickly followed by the sound of hundreds of screeching bats and flapping wings. Before you even have time to react, they're all around you, clawing and biting. You flail your arms and stumble under the weight of dozens of bats. You manage a few steps backwards before falling.\nYou brace for impact with the ground but it never comes. You fall backward into one of the large holes in the cavern floor and begin falling. The bats leave you be, now, and flap away. You continue to fall, tumbling through the air as it rushes past you. Somewhere along the way you lost your flashlight so you fall in utter darkness.\nIs this really a bottomless pit? You fall for at least 30 seconds before you get your answer. You strike the rocky ground, shattering every bone in your body, dying instantly.\nIf only you had a quieter way to destroy the wall..."
+          }
+        ]
+      }
     },
     {
       "slug": "glimmer",
