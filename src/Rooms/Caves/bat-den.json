@@ -2,11 +2,24 @@
   "name": "Chamber of Spires",
   "slug": "Caves/bat-den",
   "dark": true,
+  "west": "loadRoom|Caves/lab-exit",
   "south": "loadRoom|Caves/coast-exit",
   "description": "You're in a large, damp cave. Stalactices hang from the ceiling, with stalagmites reaching up toward them from the wet cavern floor. Some meet in the middle forming thick spires of minerals that reach from the floor to ceiling. The floor is uneven and slippery. Bowl-like depressions in the cavern floor lead to wide holes that fall away to darkness below you. The chamber has an opening to the west and another to the south.",
   "incant": {
     "scrios": [
-
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "WALLDESTROYED",
+          [
+            "You quietly incant the Charm of Destruction but nothing happens."
+          ],
+          [
+            "You quietly incant the Charm of Destruction. The glimmering, spectral vision of a bridge grows more solid and a bridge made of light stretches across the chasm before you. It grows brighter and brighter until suddenly, with a flash, the light is gone and a new rope bridge spans all the way to the other side.",
+            "setFlag|WALLDESTROYED"
+          ]
+        ]
+      }
     ]
   },
   "features": [

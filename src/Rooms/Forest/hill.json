@@ -1,7 +1,7 @@
 {
   "name": "A Hilltop above a Dense Forest",
   "slug": "Forest/hill",
-  "description": "You're standing at the top of a rocky hill. The ground is covered in rocks and grass. The hill is tall enough to allow you to see over the treetops of the forest below. There is a small cairn of stones piled here at the top of the hill. The only way down is to the west.",
+  "description": "You're standing at the top of a rocky hill. The ground is covered in rocks and grass. The hill is tall enough to allow you to see over the treetops of the forest below. The only way down is to the west.",
   "west": "loadRoom|Forest/river-bank",
   "features": [
     {
@@ -15,7 +15,7 @@
         "ruin"
       ],
       "roomDesc": "To the east you can see stone ruins of some kind poking through the forest.",
-      "look": "The ruins were once a building of some kind, but from here you can't even begin to guess what their purpose might have been."
+      "look": "The ruins were once a building of some kind, but from here you can't even begin to guess what their purpose might have been. Beyond it to the east are even more ruins."
     },
     {
       "slug": "mountain",
@@ -32,11 +32,6 @@
       ],
       "roomDesc": "To the south you can see a marsh.",
       "look": "The marsh is filled with all manners of drooping, sad-looking trees. It's too far away to make out any other details."
-    },
-    {
-      "slug": "cairn",
-      "look": "The cairn stands only about 3 feet tall. The stones are covered in runic markings.",
-      "touch": "callCommon|cairn_touch|global-common"
     }
   ]
 }

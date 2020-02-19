@@ -1,12 +1,17 @@
 {
   "name": "A Quiet Fork in the Forest",
   "slug": "Forest/quiet-fork",
-  "description": "You are at a fork in a dirt path in a dense forest. A lone bird tweets from the treetops somewhere nearby. A rotting chunk of wood that must have once been a signpost decays in the long grass. The dirt path leads to the north, south, east, and west.",
+  "description": "You are at a fork in a dirt path in a dense forest. A lone bird tweets from the treetops somewhere nearby. A rotting chunk of wood that must have once been a signpost decays in the long grass. There's a 3-foot-tall cairn of small stones in the exact center of the fork. The dirt path leads to the north, south, east, and west.",
   "north": "loadRoom|Forest/river-bank",
   "east": "loadRoom|Forest/lonely-path",
   "west": "loadRoom|Forest/west-clearing",
   "south": "loadRoom|Forest/quiet-path",
   "features": [
+    {
+      "slug": "cairn",
+      "look": "The cairn stands only about 3 feet tall. The stones are covered in runic markings.",
+      "touch": "callCommon|cairn_touch|global-common"
+    },
     {
       "slug": "bird",
       "look": "You can hear it but can't see it."
