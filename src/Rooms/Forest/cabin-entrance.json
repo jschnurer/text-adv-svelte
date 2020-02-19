@@ -132,29 +132,6 @@
             "They're just ordinary wooden buckets with handles. They're all wet. They must be used to water the garden."
           ]
         }
-      ],
-      "take": [
-        {
-          "cmd": "ifFlag",
-          "args": [
-            "G.BUCKET_PERMISSION",
-            [
-              {
-                "cmd": "ifFlag",
-                "args": [
-                  "G.TOOK_BUCKET",
-                  "You've already taken one.",
-                  [
-                    "Now that Arden said it was alright, you take one of the buckets. You're not sure yet what you'll use it for but you're sure it'll be useful at some point.",
-                    "setFlag|G.TOOK_BUCKET",
-                    "addItem|WOOD_BUCKET"
-                  ]
-                ]
-              }
-            ],
-            "You shouldn't take one without permission."
-          ]
-        }
       ]
     },
     {

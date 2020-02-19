@@ -80,17 +80,6 @@
     ]
   },
   {
-    "slug": "bucket",
-    "altSlugs": [
-      "wood bucket",
-      "wooden bucket"
-    ],
-    "id": "WOOD_BUCKET",
-    "look": [
-      "It's a plain, wooden bucket with a handle. You assume it will be useful at some point."
-    ]
-  },
-  {
     "slug": "red fabric",
     "altSlugs": [
       "fabric"
