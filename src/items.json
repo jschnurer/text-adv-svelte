@@ -219,5 +219,14 @@
     "altSlugs": ["shell"],
     "id": "RAINBOW_SHELL",
     "look": "It's a large rainbow-colored shell, probably six inches in diameter, reflecting all the colors of the rainbow. It's one of the most beautiful things you've ever seen."
+  },
+  {
+    "slug": "pheromone sac",
+    "altSlugs": ["sac"],
+    "id": "SAC",
+    "look": "It's a purplish-ish lumpy sac. It once lived inside a giant hornet but it's yours now.",
+    "use": {
+      "": "There's no need to use it."
+    }
   }
 ]

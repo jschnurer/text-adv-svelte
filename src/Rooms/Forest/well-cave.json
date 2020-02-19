@@ -1,10 +1,14 @@
 {
   "name": "Cave of Bones",
   "slug": "Forest/well-cave",
-  "description": "You're in a fairly large cavern chamber. It's made of rough, gray stone. The cavern ceiling is at least 12 feet high. It smells of death and rot in here.\nYour footsteps crunch beneath you as you walk on innumerable bones, carcasses, and unidentifiable remains. You're pretty sure a fair number of the bones are human... Something makes this place its home. Best not tarry long.",
+  "description": "You're in a fairly large cavern chamber. It's made of rough, gray stone. The cavern ceiling is at least 12 feet high. It smells of death and rot in here.\nYour footsteps crunch beneath you as you walk on innumerable bones, carcasses, and unidentifiable remains. You're pretty sure a fair number of the bones are human...\nSomething makes this place its home. Best not dawdle.",
   "west": "loadRoom|Forest/old-well",
   "dark": true,
   "features": [
+    {
+      "slug":"bones",
+      "look": "They're everywhere. Some appear animal but others seem like they're probably human..."
+    },
     {
       "slug": "giant hornet",
       "altSlugs": ["hornet", "corpse"],
@@ -16,6 +20,7 @@
     },
     {
       "slug": "blob",
+      "targetFlag": "SAWSAC",
       "look": "It's a pink-ish blob. It looks really wet and disgusting.",
       "take": "You consider taking some hornet guts but decide it would be too disgusting."
     },
