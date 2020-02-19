@@ -25,7 +25,7 @@
       "slug": "boat",
       "roomDesc": "On the sandy beach far from the ocean waves is a ruined boat.",
       "look": [
-        "It's a small boat that could carry around eight people. There are holes smashed through the hull all over the place. Broken oars and a sledgehammer have been tossed into the boat.",
+        "It's a small boat that could carry about eight people. There are holes smashed through the hull all over the place. Broken oars {sledge} have been tossed into the boat.",
         "setFlag|SAWSLEDGE"
       ]
     },
@@ -33,10 +33,13 @@
       "slug": "sledge",
       "altSlugs": ["sledgehammer"],
       "targetFlag": "SAWSLEDGE",
+      "destroyedFlag": "TOOKSLEDGE",
+      "notice": "ifNotFlagWrite|TOOKSLEDGE|and a sledgehammer",
       "look": "It's a somewhat rusty sledgehammer. It looks like it could really do a lot of damage.",
       "take": [
         "You drag the sledgehammer off the boat and take it with you.",
-        "addItem|SLEDGE"
+        "addItem|SLEDGE",
+        "setFlag|TOOKSLEDGE"
       ]
     },
     {

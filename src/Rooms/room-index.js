@@ -73,6 +73,7 @@ export { default as coast_lighthouseLight } from "./Coast/lighthouse-light.json"
 // Lighthouse
 
 // Caves
+export { default as c_templeExit } from "./Caves/temple-exit.json";
 export { default as c_coastExit } from "./Caves/coast-exit.json";
 export { default as c_batNest } from "./Caves/bat-den.json";
 

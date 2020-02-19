@@ -171,6 +171,11 @@
     "look": "You don't know how you know this, but the rune represents the deisigh charm."
   },
   {
+    "slug": "scrios rune",
+    "id": "SCRIOS_RUNE",
+    "look": "You don't know how you know this, but the rune represents the scrios charm."
+  },
+  {
     "slug": "hatch note",
     "id": "HATCH_NOTE",
     "look": "callCommon|hatch_note_look|global-common"
@@ -194,6 +199,14 @@
     ],
     "id": "BOTTLE",
     "look": "It's an empty glass bottle with a cork stopper. It's labeled \"potion of healing\"."
+  },
+  {
+    "slug": "bottle of water",
+    "altSlugs": [
+      "bottle"
+    ],
+    "id": "BOTTLE_OF_WATER",
+    "look": "It's an glass bottle with a cork stopper filled with water. It's labeled \"potion of healing\"."
   },
   {
     "slug": "iron key",

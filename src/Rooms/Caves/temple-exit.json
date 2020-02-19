@@ -1,0 +1,16 @@
+{
+  "name": "Cavern With Steps Leading Upward",
+  "slug": "Caves/temple-exit",
+  "up": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.TEMPLEOPEN",
+        "loadRoom|Ruins/temple",
+        "You can't go that way."
+      ]
+    }
+  ],
+  "dark": true,
+  "description": "You're in a dry, rocking cave. It looks like it is a natural cave but was widened manually--you can see the tool marks on the walls and floor. A set of stones is cut into the wall leading upward. There's also a passage that leads to the north."
+}

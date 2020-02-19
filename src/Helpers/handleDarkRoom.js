@@ -24,7 +24,7 @@ export default function handleDarkRoom(cmd, args) {
       }
     }
 
-    this.parseStringCmd("gameOver|You fumble around in the dark for a few moments. You think you hear something so you immediately stop what you're doing, ears attuned to the silence all around you. Did you really hear something or are your ears playing tricks on you? Your question is answered only a few seconds later. The sound of slapping feet approaches, its direction indeterminate!\nClaws dig into your flesh and something large and leather wraps long, spindly arms around you. You struggle to free yourself but the grue is far, far stronger than you are. You let out a scream as it bites down on your neck.\nYou should fear the dark...");
+    this.parseStringCmd("gameOver|You fumble around in the dark for a few moments. You think you hear something so you immediately stop what you're doing, ears attuned to the silence all around you. Did you really hear something or are your ears playing tricks on you? Your question is answered only a few seconds later. The sound of slapping feet approaches, its direction indeterminate!\nClaws dig into your flesh and something large and leathery wraps long, spindly arms around you. You struggle to free yourself but the its strength far, far, surpasses your own. You let out a scream as it bites down on your neck.\nYou should fear the dark...");
 
     return false;
   }
