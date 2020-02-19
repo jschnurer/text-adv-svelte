@@ -1,0 +1,109 @@
+{
+  "name": "A Grand Temple",
+  "slug": "Ruins/temple",
+  "description": "You are standing inside a grand temple. The ceiling is held high above you by pillars. Faded tapestries on the walls depict angels and demons doing battle. Yellow banners hang from virtually every available space on the walls. Doorways on the sides of the main temple lead off to various other, unimportant areas like storage rooms, barracks, kitchens, mess halls, and the like. A large stone altar waits at the far north end of the hall atop a small flight of steps. Beyond it is a solid stone wall with a metal device affixed to it.\nThe main entrance leads to the south, back out to the ruined square.",
+  "south": "loadRoom|Ruins/ruined-square-north",
+  "features": [
+    {
+      "slug": "banner",
+      "altSlugs": ["banners"],
+      "look": "The banners are long and tattered. They each depict a yellow griffin clutching a dozen red roses in its talons."
+    },
+    {
+      "slug": "altar",
+      "look": "It's pretty large and its made of stone."
+    },
+    {
+      "slug": "merek",
+      "altSlugs": ["man","knight"],
+      "roomDesc": "Sitting on the edge of the altar is... well, a knight. He's wearing dented and dirty plate armor and has a helmet sitting next to him.",
+      "look": "He's wearing dented, dirty plate armor and his helmet is sitting next to him. He doesn't have a weapon or shield with him. The tattered remains of a red cloak lays across his back. He's just sitting there staring off into space. It's like he hasn't even noticed you even though you're basically right in front of him. He occasionally mumbles to himself.",
+      "greet": "He doesn't seem to notice you but mumbles something. \"...hunt them down... ...cleanse their souls...\"",
+      "ask": [
+        {
+          "cmd": "dialog",
+          "args": {
+            "": "\"...\"",
+            "meredith": "\"...hunter with golden hair... ...the brothers... ...it doth feed...\"",
+            "arden": "\"...elder brother... ...innocent... ...it doth watch...\"",
+            "edra": "\"...younger brother... ...the hunted... ...it doth wait...\"",
+            "rhode": "\"...my prey... ... ... ...nay, I was wrong... ...she alone... ...I could trust... ...it doth plan...\"",
+            "ophelia": "\"...the ambassador... ...the hunted... ...atop the black mountain... ...not what she doth appear... ...it doth fight...\"",
+            "stanley": "\"...hunter... ...doth pursue his prey... ...even still... ...atop the black mountain... ...it doth control...\"",
+            "merek": "\"...\" He is silent for a long while. \"...Merek... ...'Tis I?\"",
+            "order of the griffin|order|griffin": "\"...hunters... ...hunting the wicked... ...nay... ...'twas a ruse... ...the hunters misled... ...it lied...\"",
+            "temple|ruins": "\"...not real... ...'tis naught... ...but a memory... ...mine?... ...and others'...\"",
+            "island": "\"...not real... ...made not of stone... ...but of shadows... ...shadows of memories... ...it keeps us here...\"",
+            "it": "\"...the warden... ...feeds on memories... ...memories of its prisoners...\""
+          }
+        }
+      ]
+    },
+    {
+      "slug": "device",
+      "altSlugs": [
+        "metal device"
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.TEMPLEOPEN",
+            "It's a metal base affixed to the wall. It's rounded and looks like it pivots up and down. It's currently pointed upward.",
+            "It's a metal base affixed to the wall. It's rounded and looks like it pivots up and down. It's currently pointed downward."
+          ]
+        },
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "RODINSERTED",
+            "There's a rusty metal rod sticking out of it. You could probably use the device now.",
+            "There's a round opening in the front of it that is about an inch and a half in diameter."
+          ]
+        }
+      ],
+      "use": {
+        "": [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "RODINSERTED",
+              [
+                {
+                  "cmd": "ifFlag",
+                  "args": [
+                    "G.TEMPLEOPEN",
+                    [
+                      "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts forward, revealing steps leading down to darkness. The knight didn't seem to notice at all.",
+                      "unsetFlag|G.TEMPLEOPEN"
+                    ],
+                    [
+                      "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
+                      "setFlag|G.TEMPLEOPEN"
+                    ]
+                  ]
+                }
+              ],
+              "There's no way to use the device in its current state. It seems like there's something missing."
+            ]
+          }
+        ],
+        "RUINS_ROD": [
+          "You slot the metal rod into the opening in the device. It fits perfectly!",
+          "removeItem|RUINS_ROD",
+          "setFlag|RODINSERTED"
+        ]
+      }
+    },
+    {
+      "slug": "rod",
+      "targetFlag": "RODINSERTED",
+      "look": "It's a rusty metal rod sticking out of the device.",
+      "take": [
+        "You pull the metal rod out of the device and take it.",
+        "addItem|RUINS_ROD",
+        "unsetFlag|RODINSERTED"
+      ]
+    }
+  ]
+}

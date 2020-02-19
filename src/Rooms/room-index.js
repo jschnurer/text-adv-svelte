@@ -52,6 +52,7 @@ export { default as r_ruinedSquareNoth } from "./Ruins/ruined-square-north.json"
 export { default as r_ruinedHouse } from "./Ruins/ruined-house.json";
 export { default as r_bunker } from "./Ruins/bunker.json";
 export { default as r_lab } from "./Ruins/lab.json";
+export { default as r_temple } from "./Ruins/temple.json";
 
 // Coast
 export { default as coast_dunes } from "./Coast/dunes.json";
