@@ -1,5 +1,12 @@
 ## Game Notes (TODO) ##
 
+
+- Add hornet nest (implement sac for entry)
+- Add what lies beyond the scrios'ed wall in the bat den
+- Add more to the caves
+- Add the mountain
+- Add the mushroom sequence -> deisigh -> memory
+
 color sequence:
 blue, indigo, red, purple, orange, green, yellow
 
