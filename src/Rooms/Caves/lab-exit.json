@@ -1,0 +1,28 @@
+{
+  "name": "Basement With Ladder Leading Upward",
+  "slug": "Caves/lab-exit",
+  "up": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.LABRUGMOVED",
+        "loadRoom|Ruins/lab",
+        "There's a rug covering the opening in the ceiling. You'd have to move it first."
+      ]
+    }
+  ],
+  "east": "loadRoom|Caves/bat-den",
+  "dark": true,
+  "description": "You're in a stone basement. The basement continues to the east where the worked stone gives way to a natural cavern. A ladder leads upward to the ceiling.",
+  "features": [
+    {
+      "slug": "rug",
+      "destroyedFlag": "G.LABRUGMOVED",
+      "roomDesc": "ifNotFlagWrite|G.LABRUGMOVED|There's a brown rug covering the opening above the ladder. It would be easily moved.",
+      "move": [
+        "setFlag|G.LABRUGMOVED",
+        "You climb part way up the ladder and push the rug to the side. You could now go upward into whatever is above you."
+      ]
+    }
+  ]
+}

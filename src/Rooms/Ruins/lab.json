@@ -1,9 +1,18 @@
 {
   "name": "Ruined Lab",
   "slug": "Ruins/lab",
-  "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass vials, instruments, and other scientific equipment.\nAn open doorway leads outside to the west and there are steps that lead down into darkness.",
+  "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass vials, instruments, and other scientific equipment. {rug}\nAn open doorway leads outside to the west and there are steps that lead down into darkness.",
   "west": "loadRoom|Ruins/ruined-square-south",
-  "down": "TODO: caves",
+  "down": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.LABRUGMOVED",
+        "loadRoom|Caves/lab-exit",
+        "You can't go that way."
+      ]
+    }
+  ],
   "features": [
     {
       "slug": "poster",
@@ -14,6 +23,30 @@
       "look": [
         "The poster depicts a dissected giant hornet, pointing out what each of the internal organs is. The picture depicting a purple-ish sac is circled with red marker. It's labeled \"pheromone sac\".",
         "setFlag|G.SAWPOSTER"
+      ]
+    },
+    {
+      "slug": "rug",
+      "look": [
+        "ifFlagWrite|G.LABRUGMOVED|It's a very plain brown rug. It's been moved to the side.",
+        "ifNotFlagWrite|G.LABRUGMOVED|It's a very plain brown rug. It sags downward into the floor in the middle."
+      ],
+      "notice": [
+        "ifFlagWrite|G.LABRUGMOVED|There's a brown rug near the corner of the room. It's been moved to the side, revealing a hole in the floor with a ladder that leads down into darkness.",
+        "ifNotFlagWrite|G.LABRUGMOVED|There's a conspicuous brown rug on the floor near the corner of the room."
+      ],
+      "move": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.LABRUGMOVED",
+            "You kick the rug a little. It was pointless but made you feel better.",
+            [
+              "You drag the rug to the side, revealing a hole in the floor with a ladder that leads down into darkness.",
+              "setFlag|G.LABRUGMOVED"
+            ]
+          ]
+        }
       ]
     },
     {
