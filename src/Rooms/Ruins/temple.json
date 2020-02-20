@@ -1,7 +1,7 @@
 {
   "name": "A Grand Temple",
   "slug": "Ruins/temple",
-  "description": "You are standing inside a grand temple. The ceiling is held high above you by pillars. Faded tapestries on the walls depict angels and demons doing battle. Yellow banners hang from virtually every available space on the walls. Doorways on the sides of the main temple lead off to various other, unimportant areas like storage rooms, barracks, kitchens, mess halls, and the like. A large stone altar waits at the far north end of the hall atop a small flight of steps. Beyond it is a solid stone wall with a metal device affixed to it.\nThe main entrance leads to the south, back out to the ruined square.",
+  "description": "You are standing inside a grand temple. The ceiling is held high above you by pillars. Faded tapestries on the walls depict angels and demons doing battle. Yellow banners hang from virtually every available space on the walls. Doorways on the sides of the main temple lead off to various other, unimportant areas like storage rooms, barracks, kitchens, mess halls, and the like. A large stone altar waits at the far north end of the hall atop a small flight of steps. Just behind it is a wall with a metal device affixed to it.\nThe main entrance leads to the south, back out to the ruined square.",
   "south": "loadRoom|Ruins/ruined-square-north",
   "down": [
     {

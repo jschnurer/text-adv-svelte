@@ -12,7 +12,8 @@
     "copy:templates": "copy-files-from-to",
     "dev": "run-s copy:templates host:local host:local:css autobuild start:dev",
     "start": "sirv public --single",
-    "start:dev": "sirv public --single --dev"
+    "start:dev": "sirv public --single --dev",
+    "rebuild:dev": "run-s copy:templates host:local host:local:css"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",

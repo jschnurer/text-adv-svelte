@@ -41,7 +41,23 @@
             ]
           ]
         }
-      ]
+      ],
+      "close": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CHESTOPEN",
+            [
+              "You shut the metal chest.",
+              "unsetFlag|CHESTOPEN"
+            ],
+            "It's already closed!"
+          ]
+        }
+      ],
+      "use": {
+        "": "You can't use that. Try opening it instead."
+      }
     },
     {
       "slug": "flashlight",

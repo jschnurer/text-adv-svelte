@@ -37,6 +37,7 @@
       "slug": "wall",
       "altSlugs": ["north wall"],
       "roomDesc": "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
+      "look": "It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
       "smash|kick|break|destroy": "There's no way you'd be able to damage it with your bare hands.",
       "use": {
         "SLEDGE": [
