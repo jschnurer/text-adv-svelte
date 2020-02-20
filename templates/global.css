@@ -45,6 +45,11 @@ room {
   overflow: auto;
 }
 
+room > p:first-child, room h3
+{
+  margin-top: 0;
+}
+
 input, textarea {
   background-color: #444;
   border: 1px #555 solid;

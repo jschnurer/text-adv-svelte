@@ -191,7 +191,7 @@
         <h3>GAME OVER</h3>
       {/if}
 
-      {#each gameState.text.split('\n') as line}
+      {#each gameState.text.split('\n').filter(x => !!x) as line}
         <p class={line.startsWith(']') ? 'indent' : ''}>
           {@html convertSyntax(sanitize(line))}
         </p>
