@@ -1,6 +1,7 @@
 {
   "name": "Cavern With Steps Leading Upward",
   "slug": "Caves/temple-exit",
+  "north": "loadRoom|Caves/narrow-passage",
   "up": [
     {
       "cmd": "ifFlag",

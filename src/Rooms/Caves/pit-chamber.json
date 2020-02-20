@@ -1,0 +1,9 @@
+{
+  "name": "The Pit",
+  "slug": "Caves/pit-chamber",
+  "south": "loadRoom|Caves/narrow-passage",
+  "east": "loadRoom|Caves/moist-cavern",
+  "west": "loadRoom|Caves/chasm",
+  "dark": true,
+  "description": ""
+}

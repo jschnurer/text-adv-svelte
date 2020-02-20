@@ -1,0 +1,7 @@
+{
+  "name": "Hidden Cache",
+  "slug": "Caves/cache",
+  "south": "loadRoom|Caves/bat-den",
+  "dark": true,
+  "description": ""
+}

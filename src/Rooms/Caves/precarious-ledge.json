@@ -1,0 +1,8 @@
+{
+  "name": "Precarious Ledge",
+  "slug": "Caves/precarious-ledge",
+  "up": "loadRoom|Mountain/caves-entrance",
+  "down": "loadRoom|Caves/bottom-of-shaft",
+  "dark": true,
+  "description": ""
+}

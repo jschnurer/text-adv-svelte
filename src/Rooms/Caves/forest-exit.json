@@ -1,0 +1,9 @@
+{
+  "name": "Shrouded Cavern",
+  "slug": "Caves/forest-exit",
+  "south": "loadRoom|Forest/forest-cave-entrance",
+  "north": "loadRoom|Caves/bottom-of-shaft",
+  "east": "loadRoom|Caves/mushrooms",
+  "dark": true,
+  "description": ""
+}

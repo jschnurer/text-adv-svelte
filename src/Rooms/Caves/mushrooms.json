@@ -1,0 +1,9 @@
+{
+  "name": "Mushroom Forest",
+  "slug": "Caves/mushrooms",
+  "north": "loadRoom|Caves/sunless-lake",
+  "east": "loadRoom|Caves/weight-puzzle",
+  "west": "loadRoom|Caves/forest-exit",
+  "dark": true,
+  "description": ""
+}

@@ -1,0 +1,8 @@
+{
+  "name": "Very Narrow Passage",
+  "slug": "Caves/narrow-passage",
+  "north": "loadRoom|Caves/pit-chamber",
+  "south": "loadRoom|Caves/temple-exit",
+  "dark": true,
+  "description": ""
+}

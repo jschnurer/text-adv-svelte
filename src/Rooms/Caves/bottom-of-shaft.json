@@ -1,0 +1,8 @@
+{
+  "name": "Bottom of a Vertical Shaft",
+  "slug": "Caves/bottom-of-shaft",
+  "up": "loadRoom|Caves/precarious-ledge",
+  "south": "loadRoom|Caves/forest-exit",
+  "dark": true,
+  "description": ""
+}

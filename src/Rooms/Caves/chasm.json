@@ -1,0 +1,8 @@
+{
+  "name": "Underground Chasm",
+  "slug": "Caves/chasm",
+  "south": "loadRoom|Caves/weight-puzzle",
+  "east": "loadRoom|Caves/pit-chamber",
+  "dark": true,
+  "description": ""
+}

@@ -77,5 +77,16 @@ export { default as c_templeExit } from "./Caves/temple-exit.json";
 export { default as c_coastExit } from "./Caves/coast-exit.json";
 export { default as c_labExit } from "./Caves/lab-exit.json";
 export { default as c_batNest } from "./Caves/bat-den.json";
+export { default as c_narrowPassage } from "./Caves/narrow-passage.json";
+export { default as c_pitChamber } from "./Caves/pit-chamber.json";
+export { default as c_moistCavern } from "./Caves/moist-cavern.json";
+export { default as c_chasm } from "./Caves/chasm.json";
+export { default as c_weightPuzzle } from "./Caves/weight-puzzle.json";
+export { default as c_mushrooms } from "./Caves/mushrooms.json";
+export { default as c_sunlessLake } from "./Caves/sunless-lake.json";
+export { default as c_forestExit } from "./Caves/forest-exit.json";
+export { default as c_bottomOfShaft } from "./Caves/bottom-of-shaft.json";
+export { default as c_precariousLedge } from "./Caves/precarious-ledge.json";
+export { default as c_cache } from "./Caves/cache.json";
 
 // Mountains

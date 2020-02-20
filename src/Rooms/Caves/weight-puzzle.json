@@ -1,0 +1,8 @@
+{
+  "name": "Silent Chamber",
+  "slug": "Caves/weight-puzzle",
+  "north": "loadRoom|Caves/chasm",
+  "west": "loadRoom|Caves/mushrooms",
+  "dark": true,
+  "description": ""
+}

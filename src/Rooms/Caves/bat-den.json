@@ -1,7 +1,17 @@
 {
-  "name": "Chamber of Spires",
+  "name": "The Bat Cave",
   "slug": "Caves/bat-den",
   "dark": true,
+  "north": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "WALLDESTROYED",
+        "loadRoom|Caves/cache",
+        "You can't go that way."
+      ]
+    }
+  ],
   "west": "loadRoom|Caves/lab-exit",
   "south": "loadRoom|Caves/coast-exit",
   "description": "You're in a large, damp cave. Stalactices hang from the ceiling, with stalagmites reaching up toward them from the wet cavern floor. Some meet in the middle forming thick spires of minerals that reach from the floor to ceiling. The floor is uneven and slippery. Bowl-like depressions in the cavern floor lead to wide holes that fall away to darkness below you. The chamber has an opening to the west and another to the south.",
@@ -11,11 +21,9 @@
         "cmd": "ifFlag",
         "args": [
           "WALLDESTROYED",
+          "You quietly incant the Charm of Destruction but nothing happens.",
           [
-            "You quietly incant the Charm of Destruction but nothing happens."
-          ],
-          [
-            "You quietly incant the Charm of Destruction. The glimmering, spectral vision of a bridge grows more solid and a bridge made of light stretches across the chasm before you. It grows brighter and brighter until suddenly, with a flash, the light is gone and a new rope bridge spans all the way to the other side.",
+            "You quietly incant the Charm of Destruction. The faint glimmer running through the cracks in the northern chamber wall spreads outward in all directions. The glimmer begins to fade away, starting at the center of the wall. As it does, you realize that the stone is disappearing with it! The glimmer quickly and silently eats away a large section of the wall before disappearing completely.\nThere is a chamber to the north, through the newly formed passage.",
             "setFlag|WALLDESTROYED"
           ]
         ]
@@ -25,7 +33,9 @@
   "features": [
     {
       "slug": "hole",
-      "altSlugs": ["holes"],
+      "altSlugs": [
+        "holes"
+      ],
       "look": "These must be those bottomless pits you've always heard about. You'd best watch your step."
     },
     {
@@ -35,8 +45,19 @@
     },
     {
       "slug": "wall",
-      "altSlugs": ["north wall"],
-      "roomDesc": "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
+      "altSlugs": [
+        "north wall"
+      ],
+      "roomDesc": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "WALLDESTROYED",
+            "The northern wall of the chamber has a large hole in it, leading to another chamber to the north.",
+            "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall."
+          ]
+        }
+      ],
       "look": "It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
       "smash|kick|break|destroy": "There's no way you'd be able to damage it with your bare hands.",
       "use": {

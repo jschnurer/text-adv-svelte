@@ -1,0 +1,7 @@
+{
+  "name": "Sunless Lake",
+  "slug": "Caves/sunless-lake",
+  "south": "loadRoom|Caves/mushrooms",
+  "dark": true,
+  "description": ""
+}

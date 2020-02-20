@@ -1,0 +1,7 @@
+{
+  "name": "Moist Cavern",
+  "slug": "Caves/moist-cavern",
+  "west": "loadRoom|Caves/pit-chamber",
+  "dark": true,
+  "description": ""
+}
