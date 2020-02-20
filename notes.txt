@@ -1,11 +1,16 @@
 ## Game Notes (TODO) ##
 
-
 - Add hornet nest (implement sac for entry)
+  - Need to bring scrios rune here to unlock destruction
 - Add what lies beyond the scrios'ed wall in the bat den
 - Add more to the caves
 - Add the mountain
 - Add the mushroom sequence -> deisigh -> memory
+- Add Ivory Chalice
+  - Trade for Map
+- Add mountain labyrinth
+  - Without map, there is only 1 way to go
+  - With map, can go to other areas in the labyrinth
 
 color sequence:
 blue, indigo, red, purple, orange, green, yellow
