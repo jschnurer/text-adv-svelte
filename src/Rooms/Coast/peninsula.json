@@ -2,16 +2,6 @@
   "name": "A Rocky Cliff Peninsula, High Above the Ocean",
   "slug": "Coast/peninsula",
   "description": "You're standing at the end of a peninsula on a rocky trail, at least eighty feet above the ocean below and a couple hundred feet away from the coastline. Just ahead of you the trail ends at the edge of the cliff. A hundred feet beyond that, across the open air you see the lighthouse, built atop a column of rock that's as tall as the cliff you're on.",
-  "load": [
-    {
-      "cmd":"ifFlag",
-      "args": [
-        "BRIDGEREPAIRED",
-        null,
-        "setFlag|CANTSEEBRIDGE"
-      ]
-    }
-  ],
   "north": "loadRoom|Coast/rocky-trail",
   "south": [
     {
@@ -34,8 +24,7 @@
           ],
           [
             "You incant the Charm of Repairing. The glimmering, spectral vision of a bridge grows more solid and a bridge made of light stretches across the chasm before you. It grows brighter and brighter until suddenly, with a flash, the light is gone and a new rope bridge spans all the way to the other side.",
-            "setFlag|BRIDGEREPAIRED",
-            "unsetFlag|CANTSEEBRIDGE"
+            "setFlag|BRIDGEREPAIRED"
           ]
         ]
       }
@@ -70,8 +59,9 @@
     {
       "slug": "bridge",
       "altSlugs": ["rope bridge"],
-      "destroyedFlag": "CANTSEEBRIDGE",
-      "roomDesc": "Two large posts are driven into the rocky surface near the edge of the cliff. A long rope bridge that looks basically brand new is anchored to it. The bridge is anchored in the same way across the chasm near the lighthouse.\nYou could travel south across the bridge to the lighthouse."
+      "destroyedFlag": "!BRIDGEREPAIRED",
+      "roomDesc": "Two large posts are driven into the rocky surface near the edge of the cliff. A long rope bridge that looks basically brand new is anchored to it. The bridge is anchored in the same way across the chasm near the lighthouse.\nYou could travel south across the bridge to the lighthouse.",
+      "look": "It's a sturdy-looking rope bridge that spans the entire chasm."
     },
     {
       "slug": "chasm",

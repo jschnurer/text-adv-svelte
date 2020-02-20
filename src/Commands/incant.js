@@ -16,7 +16,7 @@ export default function incant(incantation) {
     return false;
   }
 
-  if (!this.room.incant) {
+  if (!this.room.incant || !this.room.incant[incantation]) {
     this.write("You murmur the incantation. Nothing happens...");
     return false;
   }

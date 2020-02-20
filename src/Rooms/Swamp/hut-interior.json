@@ -18,7 +18,7 @@
         [
           "\"Thou hast returned with perfect timing! My studies of the silver box are complete.\" She produces the broken silver box and returns it to you.",
           "addItem|BROKENBOX",
-          "\"The artifact holds a powerful sealing enchantment inside it. But to use it, it doth need repairs. My scrying orb hath now been attuned to the box to facilitate its reconstruction. If thou finds a way to repair the box, return here and do so.\"",
+          "\"The artifact holds a powerful enchantment inside it. One with the power to seal something away. But to use it, it doth need repairs. My scrying orb hath now been attuned to the box to facilitate its reconstruction. If thou finds a way to repair the box, return here and do so.\"",
           "incVar|G.BOXQUEST"
         ],
         null
@@ -134,7 +134,7 @@
           "==",
           3,
           [
-            "You incant the Charm of Repairing. Whisps of energy swirl outward from Rhode's crystal ball and swirl about the room before streaking downward and striking the broken silver box. You hear a loud crack from the crystal ball as the crack deepens within it. The silver box glows with power and reforms in your hand!",
+            "You incant the Charm of Repairing. Whisps of energy stretch outward from Rhode's crystal ball and swirl about the room before streaking downward and striking the broken silver box. The silver box glows with power and reforms in your hand!",
             "addItem|SILVERBOX",
             "removeItem|BROKENBOX",
             "\"Wondrous!\" Rhode exclaims excitedly. \"Now there is naught but one final step. The magic of the box must somehow be revealed to us before it canst be used. If thou learns of anything, return here and we shalt attempt to activate it together.\"",
@@ -152,9 +152,9 @@
           "==",
           4,
           [
-            "You incant the Charm of Revealing. Whisps of energy swirl outward from Rhode's crystal ball and swirl about the room before streaking downward and striking the broken silver box. You hear a loud crack and the sound of shattering glass as the crystal ball shatters, sending shards of scintillating glass everywhere! The silver box's surface is now covered in glowing runes!",
+            "You incant the Charm of Revealing. Whisps of energy stretch outward from Rhode's crystal ball and swirl about the room before streaking downward and striking the silver box. The silver box's surface is now covered in glowing runes!",
             "setFlag|G.BOXACTIVATED",
-            "Rhode stammers in surprise. \"I-I... That was amazing! I know not exactly what this box is for, but I feel it deep in my soul that it is of the highest import. Use it well.\"",
+            "Rhode stammers in surprise. \"I-I... This is amazing! The power that doth inhabit this artifact is so powerful that I can feel it from here. I know not exactly what this box is for, but I doth know it, deep in my soul, that it is of the highest import. Use it well.\"",
             "incVar|G.BOXQUEST"
           ],
           "You murmur the incantation. Nothing happens..."
@@ -440,7 +440,7 @@
           "You present the pieces of the broken silver box to Rhode. She takes them from you carefully and reverently. She places the broken silver box on a nearby table.",
           "\"Thou hast brought to me that which I desire. The map is yours shouldst thou still desire it. I have some memory of this silver box, though I can recall nothing specific. I shall try to discover what I can. Thou shouldst return later after I have had some time to study it.\"",
           "setFlag|GAVEBOX",
-          "setVar|G.BOXQUEST|1",
+          "setVarValue|G.BOXQUEST|1",
           "removeItem|BROKENBOX"
         ]
       }
