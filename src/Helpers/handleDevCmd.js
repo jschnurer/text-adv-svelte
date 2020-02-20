@@ -35,5 +35,8 @@ export default function handleDevCmd(str) {
   } else if (str.startsWith('cleanInventory')) {
     this.inventory = this.inventory.filter(x => !!x && x.slug);
     this.write("~Cleaned inventory of undefined objects~");
+  } else if(str.startsWith('addAllItems')) {
+    this.inventory = [...this.items];
+    this.write("~Added all items to inventory.~");
   }
 }
