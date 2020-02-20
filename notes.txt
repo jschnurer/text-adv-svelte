@@ -11,6 +11,7 @@
 - Add mountain labyrinth
   - Without map, there is only 1 way to go
   - With map, can go to other areas in the labyrinth
+- Take nocht rune to lighthouse and bathe in light to unlock reveal
 
 color sequence:
 blue, indigo, red, purple, orange, green, yellow
