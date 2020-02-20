@@ -34,6 +34,7 @@
       "]But I did what I was told and hid the cup. So why am I being punished? I can feel \"It\" inside me, draining my memories. Soon there will be nothing left...",
       "] -Meredith"
     ],
-    "broken_box_look": "It's a small silver box about 4 inches square and 2 inches deep. It's broken into two pieces. The hinges are completely destroyed and the top and bottom are separated. The outside of the box is very ornamental but the inside is empty and devoid of any filligree."
+    "broken_box_look": "It's a small silver box about 4 inches square and 2 inches deep. It's broken into two pieces. The hinges are completely destroyed and the top and bottom are separated. The outside of the box is very ornamental but the inside is empty and devoid of any filligree.",
+    "open_activated_box": "TODO: open dat box, yo!"
   }
 }

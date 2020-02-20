@@ -100,6 +100,22 @@
           "You put the deisigh rune into the pail.",
           "removeItem|DEISIGH_RUNE",
           "setFlag|DEISIGH_IN_PAIL"
+        ],
+        "BOTTLE": [
+
+        ]
+      }
+    },
+    {
+      "slug": "water",
+      "targetFlag": "PAILHASWATER&!PAILDOWN",
+      "look": "The water in the pail is crystal clear.",
+      "take": "If you had a container that you could hold the water in, you could use it on the water.",
+      "use": {
+        "BOTTLE": [
+          "You uncork the glass bottle and submerge it in the pail of water until it's full. Then you stopper the bottle and take it with you.",
+          "removeItem|BOTTLE",
+          "addItem|BOTTLE_OF_WATER"
         ]
       }
     },

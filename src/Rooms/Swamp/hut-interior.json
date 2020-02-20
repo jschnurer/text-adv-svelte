@@ -8,6 +8,23 @@
     "ifNotFlagWrite|MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
     "There is a trapdoor in the floor leading downward and the door to the swamp is to the east."
   ],
+  "load": [
+    {
+      "cmd": "ifVar",
+      "args": [
+        "G.BOXQUEST",
+        "==",
+        2,
+        [
+          "\"Thou hast returned with perfect timing! My studies of the silver box are complete.\" She produces the broken silver box and returns it to you.",
+          "addItem|BROKENBOX",
+          "\"The artifact holds a powerful sealing enchantment inside it. But to use it, it doth need repairs. My scrying orb hath now been attuned to the box to facilitate its reconstruction. If thou finds a way to repair the box, return here and do so.\"",
+          "incVar|G.BOXQUEST"
+        ],
+        null
+      ]
+    }
+  ],
   "east": "loadRoom|Swamp/hut",
   "down": [
     {
@@ -104,6 +121,43 @@
           [
             "You're one step closer to the cure for the mosquito blight."
           ]
+        ]
+      }
+    ]
+  },
+  "incant": {
+    "deisigh": [
+      {
+        "cmd": "ifVar",
+        "args": [
+          "G.BOXQUEST",
+          "==",
+          3,
+          [
+            "You incant the Charm of Repairing. Whisps of energy swirl outward from Rhode's crystal ball and swirl about the room before streaking downward and striking the broken silver box. You hear a loud crack from the crystal ball as the crack deepens within it. The silver box glows with power and reforms in your hand!",
+            "addItem|SILVERBOX",
+            "removeItem|BROKENBOX",
+            "\"Wondrous!\" Rhode exclaims excitedly. \"Now there is naught but one final step. The magic of the box must somehow be revealed to us before it canst be used. If thou learns of anything, return here and we shalt attempt to activate it together.\"",
+            "incVar|G.BOXQUEST"
+          ],
+          "You murmur the incantation. Nothing happens..."
+        ]
+      }
+    ],
+    "nochtann": [
+      {
+        "cmd": "ifVar",
+        "args": [
+          "G.BOXQUEST",
+          "==",
+          4,
+          [
+            "You incant the Charm of Revealing. Whisps of energy swirl outward from Rhode's crystal ball and swirl about the room before streaking downward and striking the broken silver box. You hear a loud crack and the sound of shattering glass as the crystal ball shatters, sending shards of scintillating glass everywhere! The silver box's surface is now covered in glowing runes!",
+            "setFlag|G.BOXACTIVATED",
+            "Rhode stammers in surprise. \"I-I... That was amazing! I know not exactly what this box is for, but I feel it deep in my soul that it is of the highest import. Use it well.\"",
+            "incVar|G.BOXQUEST"
+          ],
+          "You murmur the incantation. Nothing happens..."
         ]
       }
     ]
@@ -263,6 +317,60 @@
                         "\"Eventually we met another. A woman of fair hair and stoic demeanor.\" She pauses again, scrunching her brow, trying to recall distant memories. \"I'm sorry. This story of mine is at its end, for I can recall no more.\""
                       ]
                     }
+                  ],
+                  "silver box|box|broken box|broken silver box": [
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "GAVEBOX",
+                        [
+                          {
+                            "cmd": "ifVar",
+                            "args": [
+                              "G.BOXQUEST",
+                              "==",
+                              1,
+                              "\"My studies continue. Thou doest return too early.\"",
+                              [
+                                {
+                                  "cmd": "ifVar",
+                                  "args": [
+                                    "G.BOXQUEST",
+                                    "==",
+                                    3,
+                                    "\"Once thou hast found a way to repair the silver box, return here and do so.\"",
+                                    [
+                                      {
+                                        "cmd": "ifVar",
+                                        "args": [
+                                          "G.BOXQUEST",
+                                          "==",
+                                          4,
+                                          "\"Once thou hast found a way to reveal the box's magic, return here and do so.\"",
+                                          [
+                                            {
+                                              "cmd": "ifVar",
+                                              "args": [
+                                                "G.BOXQUEST",
+                                                "==",
+                                                5,
+                                                "\"'Tis fully repaired and activated. I know not exactly what it's for but I believe it to be important. Use it well.\"",
+                                                null
+                                              ]
+                                            }
+                                          ]
+                                        ]
+                                      }
+                                    ]
+                                  ]
+                                }
+                              ]
+                            ]
+                          }
+                        ],
+                        "\"If thou shouldst find a silver box, I wouldst trade to thee the map I have upon my shelf.\""
+                      ]
+                    }
                   ]
                 }
               }
@@ -332,7 +440,7 @@
           "You present the pieces of the broken silver box to Rhode. She takes them from you carefully and reverently. She places the broken silver box on a nearby table.",
           "\"Thou hast brought to me that which I desire. The map is yours shouldst thou still desire it. I have some memory of this silver box, though I can recall nothing specific. I shall try to discover what I can. Thou shouldst return later after I have had some time to study it.\"",
           "setFlag|GAVEBOX",
-          "setFlag|G.RHODESTUDYINGBOX",
+          "setVar|G.BOXQUEST|1",
           "removeItem|BROKENBOX"
         ]
       }

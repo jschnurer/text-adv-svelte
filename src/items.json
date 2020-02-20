@@ -252,7 +252,21 @@
     ],
     "id": "SILVERBOX",
     "look": [
-      "It's a small silver box about 4 inches square and 2 inches deep. The outside of the box is very ornamental but the inside is empty and devoid of any filligree."
+      "ifNotFlagWrite|G.BOXACTIVATED|It's a small silver box about 4 inches square and 2 inches deep. The outside of the box is very ornamental but the inside is empty and devoid of any filligree.",
+      "ifFlagWrite|G.BOXACTIVATED|It's a small silver box about 4 inches square and 2 inches deep. The outside of the box is very ornamental but the inside is empty and devoid of any filligree. All across its surface it is covered in glowing runes."
+    ],
+    "use": "To use a box, you usually open them. Try that instead.",
+    "open": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "G.BOXACTIVATED",
+          [
+            "callCommon|open_activated_box|global-common"
+          ],
+          "You open the box. There's nothing inside so you close it again."
+        ]
+      }
     ]
   },
   {

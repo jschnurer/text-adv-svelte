@@ -7,7 +7,16 @@ export default function findTarget(slug) {
 
     if (x.slug.toLowerCase() === slug || (x.altSlugs && x.altSlugs.map(z => z.toLowerCase()).indexOf(slug) > -1)) {
       if (x.targetFlag) {
-        if (this.getLocalVars()[x.targetFlag] || this.globalVars[x.targetFlag]) {
+        if (x.targetFlag.indexOf('&')) {
+          if (x.targetFlag.split('&').filter(f => !this.getFlag(f)).length) {
+            // One or more targetFlags is not true.
+            return false;
+          } else {
+            return true;
+          }
+        }
+
+        if (this.getFlag(x.targetFlag)) {
           return true;
         } else {
           return false;
