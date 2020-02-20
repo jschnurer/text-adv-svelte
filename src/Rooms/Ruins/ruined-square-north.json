@@ -21,7 +21,9 @@
     },
     {
       "slug": "banner",
-      "altSlugs": ["banners"],
+      "altSlugs": [
+        "banners"
+      ],
       "look": "The banners are long and tattered. They each depict a yellow griffin clutching a dozen red roses in its talons."
     },
     {
@@ -49,7 +51,10 @@
         "ifFlagWrite|HATCHOPEN|You take hold of the heavy hatch door and slowly lower it closed.",
         "ifNotFlagWrite|HATCHOPEN|It's already closed.",
         "unsetFlag|HATCHOPEN"
-      ]
+      ],
+      "use": {
+        "": "You can't use that. Try opening or closing it instead."
+      }
     }
   ]
 }
