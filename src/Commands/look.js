@@ -8,7 +8,7 @@ export default function look() {
     this.write(`^${this.room.name}^`);
 
     if (this.room.description) {
-      this.write(this.room.description);
+      this.parseCmds(this.room.description);
     }
 
     if (this.room.look) {
