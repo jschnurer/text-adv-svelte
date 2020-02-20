@@ -25,13 +25,13 @@ Silver box Quest:
 ==============================================================================
 
 color sequence:
-blue, indigo, red, purple, orange, green, yellow
+orange, indigo, red, purple, blue, green, yellow
 
-Edra (blue) -- 1990s free-spirit, prey
+Arden (orange) -- 1990s accountant, bystander
 Ophelia (indigo) -- 2040s ambassador, prey
 Merek (red) -- medieval knight, hunter
 Rhode (purple) -- medieval witch, prey
-Arden (orange) -- 1990s accountant, bystander
+Edra (blue) -- 1990s free-spirit, prey
 Meredith (green) -- 1990s office worker, hunter
 Stanley (yellow) -- 2040s security personnel, hunter
 

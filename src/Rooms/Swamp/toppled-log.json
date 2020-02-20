@@ -8,6 +8,21 @@
   "load": [
     "setVarValue|SEQ|0"
   ],
+  "incant": {
+    "deisigh": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "ALLGLOWING&!CRACKREPAIRED",
+          [
+            "You incant the Charm of Repairing. The spasming crack of light immediately stops and holds its position.",
+            "setFlag|CRACKREPAIRED"
+          ],
+          "You incant the Charm of Repairing but nothing happens."
+        ]
+      }
+    ]
+  },
   "_common": {
     "mushroom_gameover": [
       "gameOver|As soon as you touch the mushroom you feel a jolt of pain fire down your arm and into your chest. You drop to your knees in the muck. The pain still in your chest, you begin retching violently. At some point you realize that you're laying on your side in the stagnant water. You can't seem to move your body. It's raining and you feel like you're on fire.\nYou can hear the buzzing of giant mosquitos as they land on you. You can feel their needle-like proboscises pierce into your skin. You'd wince if you could. The monsters are so thirsty you can feel your blood being drained away.\nYou close your eyes... just for a moment... ..."
@@ -42,8 +57,12 @@
                   "SEQ",
                   ">=",
                   7,
-                  ["All the colored mushrooms are glowing brightly."],
-                  ["Some of the colored mushrooms are glowing brightly."]
+                  [
+                    "All the colored mushrooms are glowing brightly."
+                  ],
+                  [
+                    "Some of the colored mushrooms are glowing brightly."
+                  ]
                 ]
               }
             ],
@@ -122,7 +141,8 @@
             6,
             [
               "incVar|SEQ",
-              "You touch the yellow mushroom and it begins to glow.\nAll of the colored mushrooms on the log are all glowing.",
+              "You touch the yellow mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
+              "Something strange begins to happen. A small crack seems to have formed in the open air beside the log. You can see a brilliant white light filtering out of the crack.",
               "setFlag|ALLGLOWING"
             ],
             [
@@ -315,6 +335,60 @@
     {
       "slug": "lake",
       "look": "It's algae-coated with a black film over its surface. You can see a peninsula reaching out into it from the east shore. There's some sort of building on the peninsula."
+    },
+    {
+      "slug": "crack",
+      "roomDesc": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CRACKREPAIRED",
+            "Hanging in the air next to the log and shifting around slightly, is a small crack. You can see a brilliant white light filtering out of it. You feel drawn to it, as though you should reach out and touch it.",
+            [
+              "Hanging in the air next to the log and shifting around slightly, is a small crack. You can see a brilliant white light filtering out of it. Occasionally, the crack seems to spasm in the air and reform in a different orientation. It doesn't seem very stable. You feel drawn to it, as though you could reach out and touch it."
+            ]
+          ]
+        }
+      ],
+      "destroyedFlag": "!ALLGLOWING",
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CRACKREPAIRED",
+            "It's just hanging in the air next to the log and shifting around slightly. You can see a brilliant white light filtering out of it. You feel drawn to it, as though you should reach out and touch it.",
+            [
+              "It's just hanging in the air next to the log and shifting around slightly. You can see a brilliant white light filtering out of it. Occasionally, the crack seems to spasm in the air and reform in a different orientation. It doesn't seem very stable. You feel drawn to it, as though you could reach out and touch it."
+            ]
+          ]
+        }
+      ],
+      "touch": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "CRACKREPAIRED",
+            [
+              "You feel a tingling sensation as your hand passes through the crack. The crack widens and widens until you are blinded by white light. You begin to remember memories that aren't your own.",
+              {
+                "cmd": "waitForInput",
+                "args": [
+                  "loadRoom|Memories/merek"
+                ]
+              }
+            ],
+            [
+              "You feel a tingling sensation as your hand passes through the crack. The crack widens and widens until you are blinded by white light. You begin to remember memories that aren't your own. Suddenly, the whole universe seems to spasm and shift into a different orientation.",
+              {
+                "cmd": "waitForInput",
+                "args": [
+                  "gameOver|U ded."
+                ]
+              }
+            ]
+          ]
+        }
+      ]
     }
   ]
 }
