@@ -3,5 +3,31 @@
   "slug": "Caves/cache",
   "south": "loadRoom|Caves/bat-den",
   "dark": true,
-  "description": ""
+  "description": [
+    "You're standing in a small chamber with an uneven floor. It's about 10 feet across but the ceiling is only 5' high. You have to stoop just to be in here.",
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "TOOKBOX",
+        "There's nothing in the chamber except silence and dust.",
+        "There's a bunch of pieces of a small, broken silver box laying near each other on the uneven cavern floor."
+      ]
+    }
+  ],
+  "features": [
+    {
+      "slug": "box",
+      "altSlugs": [
+        "broken silver box",
+        "silver box"
+      ],
+      "destroyedFlag": "TOOKBOX",
+      "look": "callCommon|broken_box_look|global-common",
+      "take": [
+        "You gather up the pieces of the broken box and take them with you.",
+        "addItem|BROKENBOX",
+        "setFlag|TOOKBOX"
+      ]
+    }
+  ]
 }

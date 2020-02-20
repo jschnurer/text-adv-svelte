@@ -6,12 +6,17 @@
 - Add more to the caves
 - Add the mountain
 - Add the mushroom sequence -> deisigh -> memory
-- Add Ivory Chalice
+- Add Broken Silver Box
   - Trade for Map
+  - Rhode will say come back later after studying (must reach the black keep and return)
+- Rhode study finished: deisigh the box to fix, then nocht to reveal runes
+- Add scrios somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
   - Without map, there is only 1 way to go
   - With map, can go to other areas in the labyrinth
 - Take nocht rune to lighthouse and bathe in light to unlock reveal
+- Stop Ophelia with Stanley for bad ending
+- Use nocht to reveal It in black keep then use activated silver box in black keep for good ending
 
 color sequence:
 blue, indigo, red, purple, orange, green, yellow

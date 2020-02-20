@@ -36,7 +36,11 @@ export default function give(args) {
   }
 
   if (!target.give[item.id]) {
-    this.parseCmds(target.give[""]);
+    if (target.give[""]) {
+      this.parseCmds(target.give[""]);
+    } else {
+      this.write("You can't give that to them.");
+    }
     return;
   }
 

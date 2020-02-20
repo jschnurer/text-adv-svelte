@@ -78,7 +78,7 @@
     ],
     "rhode_kill": "gameOver|The woman with purple eyes throws back her cloak revealing a wooden knife in her hand. The knife is covered in all manner of runic symbols burned into the wood. She tosses it into the air and shouts \"KAVAKA!\" The knife takes on a life of its own and zips through the air toward you. You leap to the side to avoid its trajectory but it turns in midair, tracking your fall to the ground. It pierces you in the chest and digs deep, reaching your heart. You gasp for air but cannot draw breath.\nThe woman kneels down beside you and wrenches the knife free from your rapidly-dying body.",
     "no_harm": [
-      "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou verily mean no harm, then I wouldst answer thy questions. Rhode is mine name and thou art the first person that I have laid eyes upon in a long time.\""
+      "\"Verily?\" She sits back down at the small table with the crystal ball. \"If thou doest mean me no harm, then I wouldst answer thy questions. My name is Rhode and thou art the first person that I have laid eyes upon in a long time. Doest thou have any specific questions or wouldst thou like to hear about %my past%?\""
     ],
     "ophelia_info": [
       "\"I remember. 'Twas Ophelia that I first met on the island, after Merek of course. 'Twas strange. She told me that I came to the island long before her but that she hadst been here longer. Time doth flows in strange ways on the island.\"",
@@ -232,13 +232,38 @@
                       ]
                     }
                   ],
-                  "crude map|map": "She stands and retrieves the parchment from a shelf. \"This map. I cannot recall from whence it came nor what it depicts. If thou doest desire it, I would trade it to thee for an ivory chalice. One exists somewhere in this strange land, thou canst be sure.\"",
+                  "crude map|map": [
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "TOOKMAP",
+                        [
+                          "\"I hope it serves you well.\""
+                        ],
+                        "She stands and retrieves the parchment from a shelf. \"This map. I cannot recall from whence it came nor what it depicts. If thou doest desire it, I would trade it to thee for something in return. A small, silver box exists somewhere in this strange land. Bring it to me and thou canst have the map in return.\""
+                      ]
+                    }
+                  ],
                   "crystal ball": "\"Tis an esotery from an ancient time. Only an arcane mind couldst gaze into its depths. Pay it no heed.\"",
                   "trapdoor|cellar": "\"Thou shouldst not inquire of this. Pay it no mind. 'Tis' of no import.\"",
                   "swamp": "\"Tis not a nice place, I admit. Thou art brave to come here. Especially with yon mosquitoes.\"",
                   "totem|totems|dreamcatcher|dreamcatchers": "\"These are creations of mine. They take the required shape to house various enchantments and charms. Mostly they doth protect and enhance my memories. Mostly.\" She narrows her eyes at you briefly.",
                   "cairn|cairns": "\"No, I did not make them. Nor do I know who did or how. I have, however, divined their purpose. They are powerfully enchanted. When thou doest touch a cairn, a new rune is scribed and it remembers thy deeds, creating a divergent destiny. If thy journey doest end prematurely, thou canst return to the point of divergence.\"",
-                  "past|her past|story|her story|story": ""
+                  "past|my past|my story|her past|story|her story|story": [
+                    "\"'Tis true, as thou might have guessed, that I am a witch. An occultist. A thaumaturge. It doth not matter what name others give unto me, 'tis all the same. I harness powers from the great beyond to shape reality.\" She pauses and smiles. \"In other words, I use magic.\"",
+                    "\"I once lived near a small village; Its name doth escape me now. 'Twas there that I worked my trade. Under my care, the sick were cured, crops flourished, and healthy babies were born. 'Tis true that most in the village believed that I performed the black arts of the devil and such nonsense, but there were some that were grateful. I lived unmolested there for many years.\"",
+                    "She shifts uncomfortably. \"Then one day a witch hunter came from the Order of...\" She pauses. \"Hmm. I seem to have forgotten. Anyway, a witch hunter had come for me. He invaded my home with hate and fear and murder in his eyes. He ran his cold steel through my belly with naught a word. But as I lay upon the floor with my humours spreading out about me, he finally spake.\"",
+                    "\"'Thou foul witch,' he said, 'thy profane life is ended. They spirit shalt be split asunder and swept to a place that not even thou shalt escape'. Then, and I doth remember this clearly for I could not believe it myself, he incanted a spell!\"",
+                    "She takes a deep breath",
+                    {
+                      "cmd": "waitForInput",
+                      "args": [
+                        "She continues her story. \"Then, I recall waking on this island with naught but vague memories of before and no worse for wear. I wandered for a bit, searching for others. Wouldst thou believe it? The first person I met was none other than the man who had tried to slay me! He took up his arms against me but he had not the will to slay me. For we were the only ones on the island as far as we knew and the prospect of being alone was the greater spectre in his eyes.\"",
+                        "\"We explored together and slowly a... bond formed. I learned his name was Merek. He was a young recruit of his Order and was eager to prove himself. How we ended up here, neither of us knew.\"",
+                        "\"Eventually we met another. A woman of fair hair and stoic demeanor.\" She pauses again, scrunching her brow, trying to recall distant memories. \"I'm sorry. This story of mine is at its end, for I can recall no more.\""
+                      ]
+                    }
+                  ]
                 }
               }
             ],
@@ -250,6 +275,7 @@
       ],
       "give": {
         "_requiredFlag": "MET",
+        "": "\"Wherefore does thou present such a thing to me? I desire it not.\"",
         "OPHELIAS_JOURNAL1": [
           "You produce the journal and hand it to Rhode. \"What, praytell, is this?\"\nShe considers the text on the cover for a few minutes before opening it and flipping through the pages.",
           "\"'Tis quite damaged. I shall attempt to repair it.\" She sets the journal down on the table next to the cracked crystal ball. She places one hand onto the surface of the journal, palm down. With her other hand she plucks a long, black hair from her disheveled head and holds it dangling over the hand she has on the journal.",
@@ -301,6 +327,13 @@
           "incVar|INGREDIENTCOUNT",
           "setFlag|GAVESHELL",
           "callCommon|returned_ingredient"
+        ],
+        "BROKENBOX": [
+          "You present the pieces of the broken silver box to Rhode. She takes them from you carefully and reverently. She places the broken silver box on a nearby table.",
+          "\"Thou hast brought to me that which I desire. The map is yours shouldst thou still desire it. I have some memory of this silver box, though I can recall nothing specific. I shall try to discover what I can. Thou shouldst return later after I have had some time to study it.\"",
+          "setFlag|GAVEBOX",
+          "setFlag|G.RHODESTUDYINGBOX",
+          "removeItem|BROKENBOX"
         ]
       }
     },
@@ -339,8 +372,22 @@
     },
     {
       "slug": "map",
-      "look": "It's a piece of parchment, yellowed with age, partially rolled up at the edges. It depicts some kind of layout, showing areas connected together.",
-      "take": "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
+      "destroyedFlag": "TOOKMAP",
+      "look": "It's a piece of parchment, yellowed with age, partially rolled up at the edges. It depicts some kind of layout, showing areas connected together. The map doesn't seem to make any sense.",
+      "take": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "GAVEBOX",
+            [
+              "You retrieve the crude map from the shelf and take it with you.",
+              "addItem|MAP",
+              "setFlag|TOOKMAP"
+            ],
+            "You probably shouldn't try to take anything without permission. It could be hazardous to your health."
+          ]
+        }
+      ]
     },
     {
       "slug": "scissors",

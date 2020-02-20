@@ -38,6 +38,9 @@ export default function handleDevCmd(str) {
   } else if(str.startsWith('addAllItems')) {
     this.inventory = [...this.items];
     this.write("~Added all items to inventory.~");
+  } else if(str.startsWith('clearInventory')) {
+    this.inventory = [];
+    this.write("~Remove all items from inventory.~");
   } else if(str.startsWith('learnAllIncants')) {
     this.setFlag("G.DEISIGH");
     this.setFlag("G.NOCHT");

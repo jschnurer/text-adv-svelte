@@ -218,17 +218,46 @@
   },
   {
     "slug": "rainbow shell",
-    "altSlugs": ["shell"],
+    "altSlugs": [
+      "shell"
+    ],
     "id": "RAINBOW_SHELL",
     "look": "It's a large rainbow-colored shell, probably six inches in diameter, reflecting all the colors of the rainbow. It's one of the most beautiful things you've ever seen."
   },
   {
     "slug": "pheromone sac",
-    "altSlugs": ["sac"],
+    "altSlugs": [
+      "sac"
+    ],
     "id": "SAC",
     "look": "It's a purplish-ish lumpy sac. It once lived inside a giant hornet but it's yours now.",
     "use": {
       "": "There's no need to use it."
     }
+  },
+  {
+    "slug": "broken silver box",
+    "altSlugs": [
+      "box",
+      "silver box",
+      "broken box"
+    ],
+    "id": "BROKENBOX",
+    "look": "callCommon|broken_box_look|global-common"
+  },
+  {
+    "slug": "silver box",
+    "altSlugs": [
+      "box"
+    ],
+    "id": "SILVERBOX",
+    "look": [
+      "It's a small silver box about 4 inches square and 2 inches deep. The outside of the box is very ornamental but the inside is empty and devoid of any filligree."
+    ]
+  },
+  {
+    "slug": "map",
+    "id": "MAP",
+    "look": "It's a piece of parchment, yellowed with age, partially rolled up at the edges. It depicts some kind of layout, showing areas connected together. The map doesn't seem to make any sense."
   }
 ]
