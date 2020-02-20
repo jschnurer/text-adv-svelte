@@ -3,20 +3,17 @@
 - Add hornet nest (implement sac for entry)
   - Need to bring scrios rune here to unlock destruction
 - Add what lies beyond the scrios'ed wall in the bat den
-- Add more to the caves
+- Fill in the empty cave rooms
 - Add the mountain
 - Add the mushroom sequence -> deisigh -> memory
-- Add Broken Silver Box
-  - Trade for Map
-  - Rhode will say come back later after studying (must reach the black keep and return)
-- Rhode study finished: deisigh the box to fix, then nochtann to reveal runes
+- Add incVar|G.BOXQUEST if G.BOXQUEST = 1 when reaching mountain
 - Add scrios somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
   - Without map, there is only 1 way to go
   - With map, can go to other areas in the labyrinth
-- Take nochtann rune to lighthouse and bathe in light to unlock reveal
+- Take nochtann rune to lighthouse and bathe in light to unlock charm
 - Stop Ophelia with Stanley for bad ending
-- Use nochtann to reveal It in black keep then use activated silver box in black keep for good ending
+- Use nochtann to reveal It in black keep then open activated silver box for good ending
 
 Silver box Quest:
 1 - rhode is studying
