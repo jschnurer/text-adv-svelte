@@ -3,5 +3,26 @@
   "slug": "Caves/moist-cavern",
   "west": "loadRoom|Caves/pit-chamber",
   "dark": true,
-  "description": ""
+  "description": "You're standing in a cavern filled with stalactites and stalagmites. There are so many that you can't even cross the chamber. Everything in here is slick and moist, reflecting the light of your flashlight. It smells like mildew here.",
+  "features": [
+    {
+      "slug": "crumpled note",
+      "altSlugs": [
+        "note",
+        "paper",
+        "crumpled note"
+      ],
+      "destroyedFlag": "TOOKNOTE",
+      "roomDesc": "There's a soggy, crumpled piece of paper on the ground here.",
+      "look": [
+        "callCommon|crumpled_note|global-common",
+        "You crumple the note back up and put it back where you found it."
+      ],
+      "take": [
+        "You take the crumpled note from the floor and pocket it.",
+        "addItem|MEREDITH_NOTE1",
+        "setFlag|TOOKNOTE"
+      ]
+    }
+  ]
 }

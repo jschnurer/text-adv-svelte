@@ -5,5 +5,21 @@
   "east": "loadRoom|Caves/moist-cavern",
   "west": "loadRoom|Caves/chasm",
   "dark": true,
-  "description": ""
+  "description": "You find yourself in a massive chamber. You can't even guess how far across it is. You're standing on a ledge that's around 10 feet wide. It circumnavigates a gigantic pit that falls away into utter blackness. The ledge circles the entire chamber.\nYou can see passages that leads to the east, west, and south.",
+  "features": [
+    {
+      "slug": "pit",
+      "look": "It nearly fills the entire chamber, save for the ledge jutting out from the cavern walls. You can't even begin to imagine how deep this pit must be."
+    },
+    {
+      "slug": "ledge",
+      "look": "It's a rocky outcropping sticking out from the wall. It's the only floor in this chamber. It's uneven and dangerous. You'd best watch your step!"
+    },
+    {
+      "slug": "cairn",
+      "roomDesc": "A small cairn stands here on the ledge. It's hardly a cairn at all--it's only a foot tall. Nevertheless, it's covered in runic markings.",
+      "look": "It's a really small cairn. It's only a foot tall. The stones are covered in arcane markings.",
+      "touch": "callCommon|cairn_touch|global-common"
+    }
+  ]
 }

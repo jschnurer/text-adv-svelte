@@ -273,5 +273,10 @@
     "slug": "map",
     "id": "MAP",
     "look": "It's a piece of parchment, yellowed with age, partially rolled up at the edges. It depicts some kind of layout, showing areas connected together. The map doesn't seem to make any sense."
+  },
+  {
+    "slug": "crumpled note",
+    "id": "MEREDITH_NOTE1",
+    "look": "callCommon|crumpled_note|global-common"
   }
 ]

@@ -4,5 +4,5 @@
   "north": "loadRoom|Caves/pit-chamber",
   "south": "loadRoom|Caves/temple-exit",
   "dark": true,
-  "description": ""
+  "description": "You're squeezing through a very narrow, twisting passage. It's only a couple feet wide and you have to literally drag yourself forward just to make any progress. The passage heads north and south."
 }

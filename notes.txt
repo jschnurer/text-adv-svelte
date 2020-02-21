@@ -1,17 +1,21 @@
 ## Game Notes (TODO) ##
 
+- Fill in the empty cave rooms
 - Add hornet nest (implement sac for entry)
   - Need to bring scrios rune here to unlock destruction
 - Add what lies beyond the scrios'ed wall in the bat den
-- Fill in the empty cave rooms
 - Add the mountain
-- Add the mushroom sequence -> deisigh -> memory
-  - Go through each person's memory, learning a Charm in each
 - Add incVar|G.BOXQUEST if G.BOXQUEST = 1 when reaching mountain
 - Add scrios somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
-  - Without map, there is only 1 way to go
+  - Without map, you automatically go to
+    1. Lost in the Labyrinth
+    2. Still Lost...
+    3. Even Still Lost...
+    4. way you wanted to go
   - With map, can go to other areas in the labyrinth
+- Add the mushroom sequence -> deisigh -> memory
+- Go through each person's memory, learning a Charm in each
 - Take nochtann rune to lighthouse and bathe in light to unlock charm
 - Stop Ophelia with Stanley for bad ending
 - Use nochtann to reveal It in black keep
@@ -31,12 +35,12 @@ color sequence:
 orange, indigo, red, purple, blue, green, yellow
 
 Arden (orange) -- 1990s accountant, bystander
-Ophelia (indigo) -- 2040s ambassador, prey
+Stanley (indigo) -- 2040s security personnel, hunter
 Merek (red) -- medieval knight, hunter
 Rhode (purple) -- medieval witch, prey
 Edra (blue) -- 1990s free-spirit, prey
 Meredith (green) -- 1990s office worker, hunter
-Stanley (yellow) -- 2040s security personnel, hunter
+Ophelia (yellow) -- 2040s ambassador, prey
 
 Groups:
 
