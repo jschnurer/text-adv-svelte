@@ -6,6 +6,7 @@
 - Fill in the empty cave rooms
 - Add the mountain
 - Add the mushroom sequence -> deisigh -> memory
+  - Go through each person's memory, learning a Charm in each
 - Add incVar|G.BOXQUEST if G.BOXQUEST = 1 when reaching mountain
 - Add scrios somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
@@ -13,7 +14,9 @@
   - With map, can go to other areas in the labyrinth
 - Take nochtann rune to lighthouse and bathe in light to unlock charm
 - Stop Ophelia with Stanley for bad ending
-- Use nochtann to reveal It in black keep then open activated silver box for good ending
+- Use nochtann to reveal It in black keep
+  - then open activated silver box for good ending
+  - then recite all the charms from the memories
 
 Silver box Quest:
 1 - rhode is studying
