@@ -36,7 +36,7 @@
       ],
       "look": [
         "They come in ever shape, size, and color. They range in size from clusters of tiny ones all the way up to huge ones that are the size of trees! Everything seems safe enough and you could move through the cavern without having to touch any of them.",
-        "ifFlagWrite|!TOOKNOTE|Concealed behind a patch of large mushrooms is a folded note.",
+        "ifFlagWrite|!TOOKNOTE|Concealed behind a patch of large mushrooms is a moldy note.",
         "setFlag|SAWNOTE"
       ],
       "touch": [
@@ -53,7 +53,7 @@
     {
       "slug": "note",
       "altSlugs": [
-        "folded note"
+        "moldy note"
       ],
       "targetFlag": "SAWNOTE",
       "destroyedFlag": "TOOKNOTE",
