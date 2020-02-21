@@ -17,6 +17,12 @@
   "description": "This cavern chamber is about 20 feet tall and quite large. It's filled with a dense forest of mushrooms. Hundreds and hundreds of different types of mushrooms grow here. Most are the size of mushrooms you've seen before but many others are the size of bushes. Many more are even the size of trees! It's impossible to see through the dense mushroom forest.\nAfter exploring a little, you find a passage that leads to the west, another that leads to the north, and {east}",
   "features": [
     {
+      "slug": "cairn",
+      "roomDesc": "A small cairn stands amongst the mushrooms.",
+      "look": "It's a little moldy. The stones are covered in runes.",
+      "touch": "callCommon|cairn_touch|global-common"
+    },
+    {
       "slug": "east",
       "notice": [
         {
