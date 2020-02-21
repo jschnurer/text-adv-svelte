@@ -31,6 +31,15 @@ All items must have the following properties:
 
 Items can also have a property called `altSlugs` which is an array of strings. The player can target this item by typing any of the altSlugs. This is useful because the slug "key" might target multiple keys in a player's inventory. The alt slugs (like "rusty key", "steel key", "brass key", etc.) lets the player target specific keys.
 
+## Flags
+The engine uses a concept of flags. These are just named boolean values. They can be set and checked in a variety of ways (see commands below). If the engine is ever given a flag name to evaluate, it does a little bit of parsing before checking its value.
+
+If the flag name specified has a `&` anywhere in it, the flag name will be split by the `&` and the resulting pieces will each be evaluated as separate flags. They will then be anded together before being returned. This check is performed first.
+
+If the flag name specified begins with a `!`, the value will be negated before being returned. This check is performed second.
+
+If the flag name specified begins with a `G.`, the flag is considered a global flag rather than a flag local to the room. This check is performed last.
+
 ## Text Replacement
 When the engine writes text output, it will automatically replace certain special syntaxes.
 
