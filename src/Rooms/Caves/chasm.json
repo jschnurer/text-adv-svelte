@@ -1,8 +1,64 @@
 {
   "name": "Underground Chasm",
   "slug": "Caves/chasm",
-  "south": "loadRoom|Caves/weight-puzzle",
+  "south": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "BRIDGEFIXED",
+        "loadRoom|Caves/weight-puzzle",
+        "You can't get there from here. The stone arch is broken."
+      ]
+    }
+  ],
   "east": "loadRoom|Caves/pit-chamber",
   "dark": true,
-  "description": ""
+  "description": [
+    "You're standing on a ledge overlooking a wide chasm that bisects the room, separating passages that head east and south."
+  ],
+  "incant": {
+    "deisigh": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "BRIDGEFIXED",
+          [
+            "You incant the Charm of Repairing but nothing happens."
+          ],
+          [
+            "You incant the Charm of Repairing. The glimmering, spectral vision of the stone arch grows brighter and more solid until finally, with a silent flash of light, it disappears completely. Once your vision clears you can see that the stone arch appears whole again.",
+            "setFlag|BRIDGEFIXED"
+          ]
+        ]
+      }
+    ]
+  },
+  "features": [
+    {
+      "slug": "stone arch",
+      "altSlugs": [
+        "arch"
+      ],
+      "roomDesc": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "BRIDGEFIXED",
+            "A narrow, natural stone arch spans the gap across the chasm.",
+            "A narrow, natural stone arch once spanned the gap across the chasm, but its middle is broken and missing. The broken ends of the stone arch glimmer and you can faintly see a ghostly echo of what once was."
+          ]
+        }
+      ],
+      "look": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "BRIDGEFIXED",
+            "It's probably safe enough to let you cross. You can exit the cavern to the east or south.",
+            "The stone arch is broken and doesn't make it all the way across. The broken ends of the stone arch glimmer and you can faintly see a ghostly echo of what once was."
+          ]
+        }
+      ]
+    }
+  ]
 }
