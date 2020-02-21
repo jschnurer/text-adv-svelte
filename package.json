@@ -13,7 +13,8 @@
     "dev": "run-s copy:templates host:local host:local:css autobuild start:dev",
     "start": "sirv public --single",
     "start:dev": "sirv public --single --dev",
-    "rebuild:dev": "run-s copy:templates host:local host:local:css"
+    "rebuild:dev": "run-s copy:templates host:local host:local:css",
+    "wordcount": "node ./.scripts/word-count.js"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
