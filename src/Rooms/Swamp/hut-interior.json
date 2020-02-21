@@ -5,7 +5,7 @@
     "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, {scissors}and a crude map scrawled on a bit of parchment.",
     "Oscillating purple light is emitted from a cracked crystal ball sitting on a small, round table in the center of the room.",
     "ifFlagWrite|MET|Rhode, with twigs intertwined throughout her her disheveled, voluminous black hair, sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
-    "ifNotFlagWrite|MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
+    "ifFlagWrite|!MET|A disheveled woman with twigs in her voluminous black hair sits on a stump at the table, studying the crystal ball. She doesn't seem to have noticed your intrusion.",
     "There is a trapdoor in the floor leading downward and the door to the swamp is to the east."
   ],
   "load": [
@@ -170,7 +170,7 @@
       ],
       "notice": [
         "ifFlagWrite|MET|Rhode",
-        "ifNotFlagWrite|MET|the woman"
+        "ifFlagWrite|!MET|the woman"
       ],
       "look": "She's disheveled and covered in filth, muck, and grime. She looks like she's in her mid twenties. Even under all the filth she's stunningly beautiful. She's wearing medieval clothing and a dark cloak--something that you'd expect to see in a fantasy movie. Her unblinking gaze is transfixed on the cracked crystal ball emitting oscillating purple light. Her eyes are a vibrant purple color.",
       "greet": [

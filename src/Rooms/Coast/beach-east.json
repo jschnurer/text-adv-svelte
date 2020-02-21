@@ -34,7 +34,7 @@
       "altSlugs": ["sledgehammer"],
       "targetFlag": "SAWSLEDGE",
       "destroyedFlag": "TOOKSLEDGE",
-      "notice": "ifNotFlagWrite|TOOKSLEDGE|and a sledgehammer",
+      "notice": "ifFlagWrite|!TOOKSLEDGE|and a sledgehammer",
       "look": "It's a somewhat rusty sledgehammer. It looks like it could really do a lot of damage.",
       "take": [
         "You drag the sledgehammer off the boat and take it with you.",

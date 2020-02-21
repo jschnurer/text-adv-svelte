@@ -43,7 +43,7 @@
       "destroyedFlag": "ARDENINSIDE",
       "notice": [
         "ifFlagWrite|METARDEN|Arden's standing at the fence. It looks like he's trying to repair it.",
-        "ifNotFlagWrite|METARDEN|There's an older man standing at the fence. It looks like he's trying to repair it."
+        "ifFlagWrite|!METARDEN|There's an older man standing at the fence. It looks like he's trying to repair it."
       ],
       "look": "He's an older man with graying hair and a crudely trimmed gray beard. With one hand he's holding a new board up to the fence and in the other he's holding a hammer. The new board is only attached to the fence on one end. He's grumbling to himself. \"How does this sort of thing always happen? One single nail short of finishing the job.\"",
       "ask": [

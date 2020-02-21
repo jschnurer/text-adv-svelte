@@ -18,7 +18,7 @@
     {
       "slug": "rug",
       "destroyedFlag": "G.LABRUGMOVED",
-      "roomDesc": "ifNotFlagWrite|G.LABRUGMOVED|There's a brown rug covering the opening above the ladder. It would be easily moved.",
+      "roomDesc": "ifFlagWrite|!G.LABRUGMOVED|There's a brown rug covering the opening above the ladder. It would be easily moved.",
       "move": [
         "setFlag|G.LABRUGMOVED",
         "You climb part way up the ladder and push the rug to the side. You could now go upward into whatever is above you."

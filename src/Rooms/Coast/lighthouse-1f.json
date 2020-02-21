@@ -38,7 +38,7 @@
       "targetFlag": "SAWPILLOW",
       "look": [
         "It's little more than a burlap sack stuffed with rotting hay.",
-        "ifNotFlagWrite|TOOKKEY|Upon inspection, you notice there's an iron key underneath it.",
+        "ifFlagWrite|!TOOKKEY|Upon inspection, you notice there's an iron key underneath it.",
         "setFlag|SAWKEY"
       ]
     },

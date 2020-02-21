@@ -29,11 +29,11 @@
       "slug": "rug",
       "look": [
         "ifFlagWrite|G.LABRUGMOVED|It's a very plain brown rug. It's been moved to the side.",
-        "ifNotFlagWrite|G.LABRUGMOVED|It's a very plain brown rug. It sags downward into the floor in the middle."
+        "ifFlagWrite|!G.LABRUGMOVED|It's a very plain brown rug. It sags downward into the floor in the middle."
       ],
       "notice": [
         "ifFlagWrite|G.LABRUGMOVED|There's a brown rug near the corner of the room. It's been moved to the side, revealing a hole in the floor with a ladder that leads down into darkness.",
-        "ifNotFlagWrite|G.LABRUGMOVED|There's a conspicuous brown rug on the floor near the corner of the room."
+        "ifFlagWrite|!G.LABRUGMOVED|There's a conspicuous brown rug on the floor near the corner of the room."
       ],
       "move": [
         {

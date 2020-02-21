@@ -24,7 +24,6 @@ import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifFlagWrite from "../ScriptCommands/ifFlagWrite.js";
 import ifHasItem from "../ScriptCommands/ifHasItem.js";
-import ifNotFlagWrite from "../ScriptCommands/ifNotFlagWrite.js";
 import ifRoom from "../ScriptCommands/ifRoom.js";
 import ifVar from "../ScriptCommands/ifVar.js";
 import incVar from "../ScriptCommands/incVar.js";
@@ -113,7 +112,6 @@ export default function getGameState(loadGame, updateScroll, update) {
     ifFlag,
     ifFlagWrite,
     ifHasItem,
-    ifNotFlagWrite,
     ifRoom,
     ifVar,
     incVar,

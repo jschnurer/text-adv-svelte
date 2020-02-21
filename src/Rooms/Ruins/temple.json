@@ -23,7 +23,7 @@
       "slug": "altar",
       "look": [
         "ifFlagWrite|G.TEMPLEOPEN|It's pretty large and its made of stone. It's shifted forward, revealing steps leading downward into darkness",
-        "ifNotFlagWrite|G.TEMPLEOPEN|It's pretty large and its made of stone."
+        "ifFlagWrite|!G.TEMPLEOPEN|It's pretty large and its made of stone."
       ],
       "roomDesc": [
         {

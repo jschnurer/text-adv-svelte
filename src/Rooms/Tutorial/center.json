@@ -62,7 +62,7 @@
       "look": [
         "There's a pile of odds and ends. Tools, greeting cards, thumbtacks and all other manner of useless kitsch. {key}",
         "Hint: When you investigate things you may notice other objects you can interact with. Some things might not be interactable, like the tools, greeting cards, or thumbtacks (try \"look tools\" to see).",
-        "ifNotFlagWrite|TOOKKEY|Hint: Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\").",
+        "ifFlagWrite|!TOOKKEY|Hint: Now that you've noticed the key, you can \"look\" at it or \"take\" it (\"look tutorial key\").",
         "setFlag|SAWKEY"
       ]
     },

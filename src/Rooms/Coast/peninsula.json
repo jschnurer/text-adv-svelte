@@ -43,10 +43,10 @@
       "slug": "posts",
       "altSlugs": ["post"],
       "roomDesc": [
-        "ifNotFlagWrite|BRIDGEREPAIRED|Two large, wooden posts are driven into the rocky surface here and there are frayed remains of thick rope tied to them. You can see the same across the chasm near the lighthouse."
+        "ifFlagWrite|!BRIDGEREPAIRED|Two large, wooden posts are driven into the rocky surface here and there are frayed remains of thick rope tied to them. You can see the same across the chasm near the lighthouse."
       ],
       "look": [
-        "ifNotFlagWrite|BRIDGEREPAIRED|They're driven into the ground with ropes tied to them. They must have anchored a rope bridge at one point.",
+        "ifFlagWrite|!BRIDGEREPAIRED|They're driven into the ground with ropes tied to them. They must have anchored a rope bridge at one point.",
         "ifFlagWrite|BRIDGEREPAIRED|They're driven into the ground, anchoring this side of the rope bridge."
       ]
     },
@@ -67,7 +67,7 @@
       "slug": "chasm",
       "look": [
         "The chasm is a hundred feet across from where you stand to the spire of rock with the lighthouse on it.",
-        "ifNotFlagWrite|BRIDGEREPAIRED|There's a glimmer in the air that spans the entire length of the chasm."
+        "ifFlagWrite|!BRIDGEREPAIRED|There's a glimmer in the air that spans the entire length of the chasm."
       ]
     }
   ]

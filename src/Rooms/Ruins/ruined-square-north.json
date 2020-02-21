@@ -29,7 +29,7 @@
     {
       "slug": "hatch",
       "roomDesc": [
-        "ifNotFlagWrite|HATCHOPEN|Partially obscured by the rubble is a metal hatch in the ground.",
+        "ifFlagWrite|!HATCHOPEN|Partially obscured by the rubble is a metal hatch in the ground.",
         "ifFlagWrite|HATCHOPEN|Partially obscured by the rubble is a metal hatch in the ground. It's currently open."
       ],
       "look": [
@@ -44,12 +44,12 @@
       ],
       "open": [
         "ifFlagWrite|HATCHOPEN|It's already open.",
-        "ifNotFlagWrite|HATCHOPEN|You lift with all your strength and manage to lift the hatch open.",
+        "ifFlagWrite|!HATCHOPEN|You lift with all your strength and manage to lift the hatch open.",
         "setFlag|HATCHOPEN"
       ],
       "close": [
         "ifFlagWrite|HATCHOPEN|You take hold of the heavy hatch door and slowly lower it closed.",
-        "ifNotFlagWrite|HATCHOPEN|It's already closed.",
+        "ifFlagWrite|!HATCHOPEN|It's already closed.",
         "unsetFlag|HATCHOPEN"
       ],
       "use": {

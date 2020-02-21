@@ -29,7 +29,7 @@
     {
       "slug": "arden",
       "roomDesc": [
-        "ifNotFlagWrite|SITTING|Arden sits in a chair at the table with two tin cups and a kettle. \"Please, take a seat. Have some tea and let's talk.\"",
+        "ifFlagWrite|!SITTING|Arden sits in a chair at the table with two tin cups and a kettle. \"Please, take a seat. Have some tea and let's talk.\"",
         "ifFlagWrite|SITTING|Arden sits in a chair across the table from you at the table with two tin cups and a kettle."
       ],
       "look": "Arden's an older man with graying hair and a crudely trimmed gray beard. He's sitting in a chair at the table holding a cup of tea, watching you, waiting patiently to answer any of your questions.",
@@ -111,7 +111,7 @@
       "slug": "chair",
       "look": [
         "It's a crudely made, wooden chair. Arden sees you looking at it. \"Not very fancy, I know. But you make do with what you can make with your own two hands out here.\"",
-        "ifNotFlagWrite|SITTING|\"Take a seat and let's talk.\""
+        "ifFlagWrite|!SITTING|\"Take a seat and let's talk.\""
       ],
       "sit": [
         {

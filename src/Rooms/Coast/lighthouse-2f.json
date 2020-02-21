@@ -21,11 +21,11 @@
     {
       "slug": "padlock",
       "notice": [
-        "ifNotFlagWrite|OPEN|It's locked tight.",
+        "ifFlagWrite|!OPEN|It's locked tight.",
         "ifFlagWrite|OPEN|It's unlocked."
       ],
       "look": [
-        "ifNotFlagWrite|OPEN|It looks very sturdy and it's locked tight.",
+        "ifFlagWrite|!OPEN|It looks very sturdy and it's locked tight.",
         "ifFlagWrite|OPEN|It looks very sturdy and it's unlocked."
       ],
       "use": {
