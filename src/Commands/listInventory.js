@@ -31,8 +31,6 @@ export default function listInventory() {
       }
 
       this.write("#" + invLines.join('\\') + "#");
-
-      //this.write(this.inventory.map(mapper).join('\\'));
     }
   } else {
     this.write("You're not carrying anything.");
