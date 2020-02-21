@@ -9,7 +9,6 @@ body {
 	color: #aaa;
 	margin: 0;
 	box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   font-family: 'Lora', serif;
   font-size: 1.25em;
   padding-top: 1em;
@@ -83,4 +82,8 @@ frow {
 fcol {
   display: flex;
   flex-direction: column;
+}
+
+pre {
+  font-family: 'PT Mono';
 }
