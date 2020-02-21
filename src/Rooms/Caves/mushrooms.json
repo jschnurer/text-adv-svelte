@@ -2,8 +2,67 @@
   "name": "Mushroom Forest",
   "slug": "Caves/mushrooms",
   "north": "loadRoom|Caves/sunless-lake",
-  "east": "loadRoom|Caves/weight-puzzle",
+  "east": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "G.WEIGHTPUZZLESOLVED",
+        "loadRoom|Caves/weight-puzzle",
+        "The eastern passage is sealed shut from the other side."
+      ]
+    }
+  ],
   "west": "loadRoom|Caves/forest-exit",
   "dark": true,
-  "description": ""
+  "description": "This cavern chamber is about 20 feet tall and quite large. It's filled with a dense forest of mushrooms. Hundreds and hundreds of different types of mushrooms grow here. Most are the size of mushrooms you've seen before but many others are the size of bushes. Many more are even the size of trees! It's impossible to see through the dense mushroom forest.\nAfter exploring a little, you find a passage that leads to the west, another that leads to the north, and {east}",
+  "features": [
+    {
+      "slug": "east",
+      "notice": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "G.WEIGHTPUZZLESOLVED",
+            "another rectangular passage through the eastern wall.",
+            "another rectangular passage through the eastern wall that seems sealed from the other side."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "mushrooms",
+      "altSlugs": [
+        "mushroom"
+      ],
+      "look": [
+        "They come in ever shape, size, and color. They range in size from clusters of tiny ones all the way up to huge ones that are the size of trees! Everything seems safe enough and you could move through the cavern without having to touch any of them.",
+        "ifFlagWrite|!TOOKNOTE|Concealed behind a patch of large mushrooms is a folded note.",
+        "setFlag|SAWNOTE"
+      ],
+      "touch": [
+        "You reach out to touch a random, nearby mushroom. Just before you lay your hand on it you begin to have second thoughts. Oh well, you've come this far and you've made up your mind. You poke the mushroom right in its cap.",
+        "Nothing happens for a moment but then it shudders suddenly, sending a fog of spores outward!",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "You quickly jump back away from the cloud! You decide that letting the spores touch you or breathing them in would probably be a very bad idea. You wait until the cloud settles to the floor before continuing."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "note",
+      "altSlugs": [
+        "folded note"
+      ],
+      "targetFlag": "SAWNOTE",
+      "destroyedFlag": "TOOKNOTE",
+      "look": "It looks a little moldy. You think you could take it without disturbing the mushrooms.",
+      "take": [
+        "You carefully reach around the cluster of mushrooms and take the moldy note.",
+        "addItem|MOLDY_NOTE",
+        "setFlag|TOOKNOTE"
+      ]
+    }
+  ]
 }

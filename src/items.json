@@ -279,5 +279,15 @@
     "slug": "crumpled note",
     "id": "MEREDITH_NOTE1",
     "look": "callCommon|crumpled_note|global-common"
+  },
+  {
+    "slug": "moldy note",
+    "id": "MOLDY_NOTE",
+    "look": [
+      "It's a little blue from the mold but you can read it just fine:",
+      "] I'm going to the black mountain to delay \"It\". Rhode, continue the search. If we can find it, maybe we can stop \"It\". I already told you of the man that pursues me but in case \"It\" has eaten the memory, I will write it here.",
+      "] DO NOT TRUST THE MAN NAMED STANLEY.",
+      "] -O"
+    ]
   }
 ]
