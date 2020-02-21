@@ -2,7 +2,131 @@
   "name": "Silent Chamber",
   "slug": "Caves/weight-puzzle",
   "north": "loadRoom|Caves/chasm",
-  "west": "loadRoom|Caves/mushrooms",
+  "west": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "PASSAGEOPEN",
+        "loadRoom|Caves/mushrooms",
+        "You search around the rectangular inset in the western wall trying to find a latch or lever or handle. You can't. The way is blocked for now."
+      ]
+    }
+  ],
   "dark": true,
-  "description": ""
+  "description": "You are in a roughly rectangular chamber. The walls and floor are rough and uneven, but toward the west they look to be tooled and evened out. {west}\nAbout six feet before the western wall is a statue depicting a featureless human being holding a set of metal scales out in front of them.",
+  "_common": {
+    "scales_even": [
+      "The scales bob up and down but eventually they grow still. They're perfectly weighted! You hear a clunk and then the sound of grinding stone. The inset in the western wall pushes inward and then slides to the side, revealing a passage through it to the west.",
+      "setFlag|PASSAGEOPEN"
+    ],
+    "scales_heavy": [
+      "The scales bob up and down but eventually they grow still. The item you placed in them is heavier than the stone bottle."
+    ],
+    "scales_light": [
+      "The scales bob up and down but eventually they grow still. The item you placed in them is lighter than the stone bottle."
+    ]
+  },
+  "features": [
+    {
+      "slug": "west",
+      "notice": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "PASSAGEOPEN",
+            "The western cavern wall has a rectangular passage through it, leading to the west.",
+            "The western cavern wall is tooled flat and there's a section that is inset like it's a door but there's no handle."
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "statue",
+      "look": "The face and body are featureless. It holds a set of metal scales out in front of them."
+    },
+    {
+      "slug": "scales",
+      "altSlugs": [
+        "metal scales",
+        "scale"
+      ],
+      "look": [
+        "The scales look like they work.",
+        "ifFlagWrite|!POTIONIN&!EMPTYIN&!WATERIN|One side is empty and the other has a carved stone bottle on it. The side with nothing on it is much lighter than the stone bottle.",
+        "ifFlagWrite|POTIONIN|One side has a glass bottle of red liquid on it labeled \"potion of healing\" and the other has a carved stone bottle on it. The side with the potion is heavier than the stone bottle.",
+        "ifFlagWrite|EMPTYIN|One side has an empty glass bottle on it and the other has a carved stone bottle on it. The side with the empty bottle is lighter than the stone bottle.",
+        "ifFlagWrite|WATERIN|One side has a glass bottle of water on it and the other has a carved stone bottle on it. The two sides are perfectly balanced."
+      ],
+      "use": {
+        "": "To use the scales, you'd have to put something on it.",
+        "BOTTLE_OF_WATER": [
+          "You place the bottle of water onto the empty scale.",
+          "callCommon|scales_even",
+          "removeItem|BOTTLE_OF_WATER",
+          "setFlag|WATERIN"
+        ],
+        "POTION": [
+          "You place the bottle of red liquid onto the empty scale.",
+          "callCommon|scales_heavy",
+          "removeItem|POTION",
+          "setFlag|POTIONIN"
+        ],
+        "BOTTLE": [
+          "You place the empty glass bottle onto the empty scale.",
+          "callCommon|scales_light",
+          "removeItem|BOTTLE",
+          "setFlag|EMPTYIN"
+        ]
+      }
+    },
+    {
+      "slug": "stone bottle",
+      "altSlugs": [
+        "carved stone bottle"
+      ],
+      "look": "It looks like a corked bottle but it's carved from solid stone. It's even got a carved label on it. It's hard to make out but you think it says \"potion of healing\". It gives off a very faint light. Maybe it's somehow magical.",
+      "take": "You try to take the stone bottle but you can't separate it from the scales. It's stuck somehow."
+    },
+    {
+      "slug": "empty bottle",
+      "altSlugs": [
+        "bottle"
+      ],
+      "destroyedFlag": "!EMPTYIN",
+      "look": "It's an empty glass bottle with a cork stopper. It's labeled \"potion of healing\".",
+      "take": [
+        "You take the empty glass bottle out of the scales.",
+        "addItem|BOTTLE",
+        "unsetFlag|EMPTYIN"
+      ]
+    },
+    {
+      "slug": "potion",
+      "altSlugs": [
+        "potion of healing"
+      ],
+      "destroyedFlag": "!POTIONIN",
+      "look": "It's a glass bottle with a cork stopper. It has red liquid inside and a label that reads \"potion of healing\".",
+      "take": [
+        "You take the glass bottle of red liquid out of the scales.",
+        "addItem|POTION",
+        "unsetFlag|POTIONIN"
+      ]
+    },
+    {
+      "slug": "bottle of water",
+      "altSlugs": [
+        "bottle"
+      ],
+      "destroyedFlag": "!WATERIN",
+      "look": "It's an glass bottle with a cork stopper filled with water. It's labeled \"potion of healing\".",
+      "take": [
+        "You take the glass bottle of water out of the scales.",
+        "addItem|BOTTLE_OF_WATER",
+        "The scales shift. The side with the stone bottle falls to the bottom and with a clunk and grinding noise, the western passage seals itself.",
+        "unsetFlag|PASSAGEOPEN",
+        "unsetFlag|WATERIN"
+      ]
+    }
+  ]
 }

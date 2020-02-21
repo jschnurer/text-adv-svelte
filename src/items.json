@@ -203,7 +203,8 @@
   {
     "slug": "bottle of water",
     "altSlugs": [
-      "bottle"
+      "bottle",
+      "water bottle"
     ],
     "id": "BOTTLE_OF_WATER",
     "look": "It's an glass bottle with a cork stopper filled with water. It's labeled \"potion of healing\"."
