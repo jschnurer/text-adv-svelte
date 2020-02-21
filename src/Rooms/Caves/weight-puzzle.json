@@ -6,7 +6,7 @@
     {
       "cmd": "ifFlag",
       "args": [
-        "PASSAGEOPEN",
+        "G.WEIGHTPUZZLESOLVED",
         "loadRoom|Caves/mushrooms",
         "You search around the rectangular inset in the western wall trying to find a latch or lever or handle. You can't. The way is blocked for now."
       ]
@@ -17,7 +17,7 @@
   "_common": {
     "scales_even": [
       "The scales bob up and down but eventually they grow still. They're perfectly weighted! You hear a clunk and then the sound of grinding stone. The inset in the western wall pushes inward and then slides to the side, revealing a passage through it to the west.",
-      "setFlag|PASSAGEOPEN"
+      "setFlag|G.WEIGHTPUZZLESOLVED"
     ],
     "scales_heavy": [
       "The scales bob up and down but eventually they grow still. The item you placed in them is heavier than the stone bottle."
@@ -33,7 +33,7 @@
         {
           "cmd": "ifFlag",
           "args": [
-            "PASSAGEOPEN",
+            "G.WEIGHTPUZZLESOLVED",
             "The western cavern wall has a rectangular passage through it, leading to the west.",
             "The western cavern wall is tooled flat and there's a section that is inset like it's a door but there's no handle."
           ]
@@ -124,7 +124,7 @@
         "You take the glass bottle of water out of the scales.",
         "addItem|BOTTLE_OF_WATER",
         "The scales shift. The side with the stone bottle falls to the bottom and with a clunk and grinding noise, the western passage seals itself.",
-        "unsetFlag|PASSAGEOPEN",
+        "unsetFlag|G.WEIGHTPUZZLESOLVED",
         "unsetFlag|WATERIN"
       ]
     }
