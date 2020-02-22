@@ -13,10 +13,23 @@
       {
         "cmd": "ifFlag",
         "args": [
-          "ALLGLOWING&!CRACKREPAIRED",
+          "ALLGLOWING&SEECRACK&!CRACKREPAIRED",
           [
             "You incant the Charm of Repairing. The spasming crack of light immediately stops and holds its position.",
             "setFlag|CRACKREPAIRED"
+          ],
+          "You incant the Charm of Repairing but nothing happens."
+        ]
+      }
+    ],
+    "lievnu": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "ALLGLOWING&!SEECRACK",
+          [
+            "You incant the Charm of Revealing. The faint glimmer in the air coalesces into a tiny point of light then suddenly a crack appears in the fabric of reality, just hanging there in the air.",
+            "setFlag|SEECRACK"
           ],
           "You incant the Charm of Repairing but nothing happens."
         ]
@@ -142,7 +155,7 @@
             [
               "incVar|SEQ",
               "You touch the yellow mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
-              "Something strange begins to happen. A small crack seems to have formed in the open air beside the log. You can see a brilliant white light filtering out of the crack.",
+              "A faint glimmer appears in the air nearby.",
               "setFlag|ALLGLOWING"
             ],
             [
@@ -337,6 +350,12 @@
       "look": "It's algae-coated with a black film over its surface. You can see a peninsula reaching out into it from the east shore. There's some sort of building on the peninsula."
     },
     {
+      "slug": "glimmer",
+      "destroyedFlag": "!ALLGLOWING|SEECRACK",
+      "roomDesc": "There's a faint glimmer hanging in the air.",
+      "look": "It's a small patch of faintly glimmering light just hanging in the air. Somehow, you feel that there's something more to it..."
+    },
+    {
       "slug": "crack",
       "roomDesc": [
         {
@@ -350,7 +369,7 @@
           ]
         }
       ],
-      "destroyedFlag": "!ALLGLOWING",
+      "destroyedFlag": "!SEECRACK",
       "look": [
         {
           "cmd": "ifFlag",
