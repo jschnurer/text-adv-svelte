@@ -11,13 +11,15 @@ export default function incant(incantation) {
     return false;
   }
 
-  if (!incantations.find(x => x.name === incantation.toLowerCase())) {
+  let incantationObj = incantations.find(x => x.name === incantation.toLowerCase());
+
+  if (!incantationObj) {
     this.write("You murmur useless syllables. It wasn't an incantation. You must've gotten it wrong...");
     return false;
   }
 
   if (!this.room.incant || !this.room.incant[incantation]) {
-    this.write("You murmur the incantation. Nothing happens...");
+    this.write(`You incant ${incantationObj.description}. Nothing happens...`);
     return false;
   }
 
