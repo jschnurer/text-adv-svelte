@@ -9,15 +9,14 @@ export default function getFlag(name) {
     }
   }
 
-  if (name.indexOf('&')) {
-    if (name.split('&').filter(f => !getFlagValue(f)).length) {
-      // One or more targetFlags is not true.
-      return false;
-    } else {
-      return true;
-    }
+  if (name.indexOf('&') > -1) {
+    // Only return true if none of the flags are false.
+    return name.split('&').filter(f => !getFlagValue(f)).length === 0;
+  } else if(name.indexOf('|') > -1) {
+    // Return true if any of the flags are true.
+    return name.split('|').filter(f => !!getFlagValue(f)).length > 0;
+  } else {
+    return getFlagValue(name);
   }
-
-  
 }
 
