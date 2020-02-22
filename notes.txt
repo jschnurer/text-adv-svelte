@@ -3,9 +3,9 @@
 - Fill in the empty cave rooms
 - Add hornet nest (implement sac for entry)
   - Need to bring eltnamsid rune here to unlock destruction
-- Add what lies beyond the eltnamsid'ed wall in the bat den
 - Add the mountain
-- Add incVar|G.BOXQUEST if G.BOXQUEST = 1 when reaching mountain
+- Add mountain labyrinth (unnavigable without map)
+- Add lievnu rune inside the labyrinth, set incVar|G.BOXQUEST if G.BOXQUEST = 1
 - Add eltnamsid somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
   - Without map, you automatically go to
@@ -15,13 +15,44 @@
     4. way you wanted to go
   - With map, can go to other areas in the labyrinth
 - Add the mushroom sequence -> etavoner -> memory
-- Go through each person's memory, learning a Charm in each
+- Go through each person's memory, learning etalosi, hsinimid, partne along the way
 - Take lievnu rune to lighthouse and bathe in light to unlock charm
-- Stop Ophelia with Stanley for bad ending
+- Stop Ophelia with Stanley for BAD ENDING
 - Use lievnu to reveal It in black keep
   - then open activated silver box
-    - then incant séalaigh (seal)
-  - then recite all the charms from the memories
+  - then recite hsinimid -> partne -> etalosi
+  - GOOD ENDING
+
+1. Go past mountain labyrinth
+2. Find eltnamsid rune, activate it in hornet's nest, learn incantation
+3. Return to bat-den cave, destroy wall, find box
+4. Bring box to rhode, get map
+5. Go to labyrinth with map, get lievnu rune, rhode finishes study when rune found
+6. Go to lighthouse, activate lievnu, learn incantation
+7. Return to rhode, incant etavoner to fix, lievnu to reveal runes
+8. Solve mushroom sequence, lievnu to see crack, etavoner to fix crack
+9. Visit all memories, learning etalosi, hsinimid, and partne
+10. Return to black mt, enter black keep, arrive at battle
+  a. lievnu to reveal It
+  b. incant hsinimid to weaken It
+  c. open the box
+  d. incant partne to pull it into the box
+  e. close the box
+  f. incant etalosi to seal the box
+  g. GOOD ENDING
+
+Memories:
+- Merek, evil mage destroys his village as a child, joins order, trains. Learns that to truly stop an evil sorcerer, their soul must be excised and trapped. Learns a secret incantation to do so. Goes on a journey, arrives at Rhode's house. This is his first hunt. He's nervous but he steels his resolve by remembering the evil mage that destroyed his village. He kicks in the door.
+
+- Rhode, learns healing magic from mother as a child, as a kid she is playing with a girl from the village. the girl falls from a fence and breaks her leg. Rhode heals it. The girl is terrified and runs home. Pitchforks and torches, they chase rhode and her mother from the village. Much later, rhode continues helping but is scorned. Her front door is kicked in, Merek arrives and attacks. He stabs her then incants "thy soul shalt be condemned to that faraway place, the island of the lost". Their souls are visible pulled from their bodies and into a black crack in space-time. Merek is SHOCKED that he is also sucked in.
+
+- Arden, a studious child that never did anything wrong. An adult working long hours to make money as an accountant to take care of his sick mother. Edra isn't around, so he shoulders the burden. His mother dies and his absent brother finally shows up during the funeral.
+
+- Edra, a wild child, always getting in trouble. A 20-something, gets a hotrod. Always partying. Arden scolds him. Later, Edra uses sorcery to win at a casino, gives his winnings to homeless. Travels the US using magic to help unknowing people. A woman is following him, watching, planning. He hears that his mother dies so he goes to the funeral. Meets Arden. Apologizes. Edra convinces Arden to go on a road trip with him to get away from work an the sadness. They go on a roadtrip. Later, as they leave a diner in the evening, a woman is waiting by the hotrod. She attacks with magic, missing and fatally wounding Arden. Edra enraged, very powerful. Meredith incants HSINIMID (LEARNED!), weakening Edra. Meredith incants "thy soul shalt be condemned to that faraway place, the island of the lost" and all three souls are sucked into the void. Meredith is SHOCKED that she's trapped too.
+
+- Ophelia, a serious woman in the 2040s that wants to make the world a better place. She is given the title of Ambassador. She uses magic to ease tensions and make the world more peaceful. Occasionally, she is attacked by members of the Order. She opens a silver box and incants PARTNE (LEARNED) which sucks them into the silver box. She then slams the lid shut and incants ETALOSI (LEARNED), which seals them in. 
+
+- Stanley, as a boy in poverty living has a robber come into his house. his single father resists and the robber uses magic to kill him. Stanley cries and the man steals stuff and leaves. A while later, a group of men and women arrive wearing brooches depicting a griffin holding a dozen roses. They investigate the area and perform rituals to detect where the magic user went. A woman holds out her hand to the crying Stanley. Stanley, as a middle aged man is briefed that a dark sorcerer has invaded the government and works an ambassador. She is dangerous and has sealed many operatives in a silver box. Stanley breaks into her office and breaks the silver box. He then waits for her in the dark. When she arrives, he jumps out and attacks, stabbing her in the chest. He incants "thy soul shalt be condemned to that faraway place, the island of the lost". They are both sucked into the void. STANLEY is SHOCKED.
 
 Silver box Quest:
 1 - rhode is studying
