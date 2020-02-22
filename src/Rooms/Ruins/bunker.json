@@ -19,13 +19,13 @@
     {
       "slug": "rune",
       "altSlugs": [
-        "deisigh rune"
+        "etavoner rune"
       ],
       "destroyedFlag": "TOOKRUNE",
-      "roomDesc": "Lying in the dust next to the note is a magical rune representing deisigh. You have no idea how you know that.",
+      "roomDesc": "Lying in the dust next to the note is a magical rune representing etavoner. You have no idea how you know that.",
       "take": [
-        "You take the deisigh rune from the floor.",
-        "addItem|DEISIGH_RUNE",
+        "You take the etavoner rune from the floor.",
+        "addItem|ETAVONER_RUNE",
         "setFlag|TOOKRUNE"
       ]
     }

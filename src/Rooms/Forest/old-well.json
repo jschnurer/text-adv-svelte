@@ -14,26 +14,26 @@
           "PAILHASWATER",
           [
             "It's full of crystal-clear water.",
-            "callCommon|look_pail_check_deisigh"
+            "callCommon|look_pail_check_etavoner"
           ],
           [
-            "callCommon|look_pail_check_deisigh"
+            "callCommon|look_pail_check_etavoner"
           ]
         ]
       }
     ],
-    "look_pail_check_deisigh": [
+    "look_pail_check_etavoner": [
       {
         "cmd": "ifFlag",
         "args": [
-          "DEISIGH_IN_PAIL",
+          "ETAVONER_IN_PAIL",
           [
             {
               "cmd": "ifFlag",
               "args": [
-                "DEISIGH_CHARGED",
-                "The deisigh rune sits in the pail, glimmering with magic.",
-                "The deisigh rune sits in the pail."
+                "ETAVONER_CHARGED",
+                "The etavoner rune sits in the pail, glimmering with magic.",
+                "The etavoner rune sits in the pail."
               ]
             }
           ],
@@ -86,8 +86,8 @@
               {
                 "cmd": "ifFlag",
                 "args": [
-                  "DEISIGH_IN_PAIL",
-                  "setFlag|DEISIGH_CHARGED",
+                  "ETAVONER_IN_PAIL",
+                  "setFlag|ETAVONER_CHARGED",
                   null
                 ]
               }
@@ -96,10 +96,10 @@
         }
       ],
       "use": {
-        "DEISIGH_RUNE": [
-          "You put the deisigh rune into the pail.",
-          "removeItem|DEISIGH_RUNE",
-          "setFlag|DEISIGH_IN_PAIL"
+        "ETAVONER_RUNE": [
+          "You put the etavoner rune into the pail.",
+          "removeItem|ETAVONER_RUNE",
+          "setFlag|ETAVONER_IN_PAIL"
         ],
         "BOTTLE": [
 
@@ -153,9 +153,9 @@
     {
       "slug": "rune",
       "altSlugs": [
-        "deisigh rune"
+        "etavoner rune"
       ],
-      "targetFlag": "DEISIGH_IN_PAIL",
+      "targetFlag": "ETAVONER_IN_PAIL",
       "look": [
         {
           "cmd": "ifFlag",
@@ -166,7 +166,7 @@
               {
                 "cmd": "ifFlag",
                 "args": [
-                  "DEISIGH_CHARGED",
+                  "ETAVONER_CHARGED",
                   "The rune glimmers with magic.",
                   "The rune is sitting in the pail."
                 ]
@@ -185,18 +185,18 @@
               {
                 "cmd": "ifFlag",
                 "args": [
-                  "DEISIGH_CHARGED",
+                  "ETAVONER_CHARGED",
                   [
                     "You take the rune from the pail. The glimmering surrounding the rune grows in intensity and you watch as the rune dissolves into nothingness before your very eyes.",
-                    "Suddenly, something pops into your head. A vague memory, half formed. You can now \"incant deisigh\", the Charm of Repairing!",
+                    "Suddenly, something pops into your head. A vague memory, half formed. You can now \"incant etavoner\", the Charm of Repairing!",
                     "callCommon|after_learn_incant|global-common",
-                    "setFlag|G.DEISIGH",
-                    "unsetFlag|DEISIGH_IN_PAIL"
+                    "setFlag|G.ETAVONER",
+                    "unsetFlag|ETAVONER_IN_PAIL"
                   ],
                   [
-                    "You take the deisigh rune from the pail.",
-                    "addItem|DEISIGH_RUNE",
-                    "unsetFlag|DEISIGH_IN_PAIL"
+                    "You take the etavoner rune from the pail.",
+                    "addItem|ETAVONER_RUNE",
+                    "unsetFlag|ETAVONER_IN_PAIL"
                   ]
                 ]
               }

@@ -166,14 +166,14 @@
     "look": "It is the off-white color of bone. It's a rough sphere, about a foot in diameter but it's surface isn't smooth. Instead, it's covered in multitudinous little white spikes all over. It's got an umbilical-like stem that is a bone-white color with blue veins just beneath the surface."
   },
   {
-    "slug": "deisigh rune",
-    "id": "DEISIGH_RUNE",
-    "look": "You don't know how you know this, but the rune represents the deisigh charm."
+    "slug": "etavoner rune",
+    "id": "ETAVONER_RUNE",
+    "look": "You don't know how you know this, but the rune represents the etavoner charm."
   },
   {
-    "slug": "scrios rune",
-    "id": "SCRIOS_RUNE",
-    "look": "You don't know how you know this, but the rune represents the scrios charm."
+    "slug": "eltnamsid rune",
+    "id": "ELTNAMSID_RUNE",
+    "look": "You don't know how you know this, but the rune represents the eltnamsid charm."
   },
   {
     "slug": "hatch note",

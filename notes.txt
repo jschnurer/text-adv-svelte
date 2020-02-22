@@ -2,11 +2,11 @@
 
 - Fill in the empty cave rooms
 - Add hornet nest (implement sac for entry)
-  - Need to bring scrios rune here to unlock destruction
-- Add what lies beyond the scrios'ed wall in the bat den
+  - Need to bring eltnamsid rune here to unlock destruction
+- Add what lies beyond the eltnamsid'ed wall in the bat den
 - Add the mountain
 - Add incVar|G.BOXQUEST if G.BOXQUEST = 1 when reaching mountain
-- Add scrios somewhere AFTER mountain labyrinth
+- Add eltnamsid somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
   - Without map, you automatically go to
     1. Lost in the Labyrinth
@@ -14,12 +14,13 @@
     3. Even Still Lost...
     4. way you wanted to go
   - With map, can go to other areas in the labyrinth
-- Add the mushroom sequence -> deisigh -> memory
+- Add the mushroom sequence -> etavoner -> memory
 - Go through each person's memory, learning a Charm in each
-- Take nochtann rune to lighthouse and bathe in light to unlock charm
+- Take lievnu rune to lighthouse and bathe in light to unlock charm
 - Stop Ophelia with Stanley for bad ending
-- Use nochtann to reveal It in black keep
-  - then open activated silver box for good ending
+- Use lievnu to reveal It in black keep
+  - then open activated silver box
+    - then incant séalaigh (seal)
   - then recite all the charms from the memories
 
 Silver box Quest:

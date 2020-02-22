@@ -1,14 +1,26 @@
 [
   {
-    "name": "deisigh",
+    "name": "etavoner",
     "description": "The Charm of Repairing"
   },
   {
-    "name": "scrios",
+    "name": "eltnamsid",
     "description": "The Charm of Destruction"
   },
   {
-    "name": "nochtann",
+    "name": "lievnu",
     "description": "The Charm of Revealing"
+  },
+  {
+    "name": "hsinimid",
+    "description": "The Charm of Enfeeblement"
+  },
+  {
+    "name": "partne",
+    "description": "The Charm of Ensnaring"
+  },
+  {
+    "name": "etalosi",
+    "description": "The Charm of Sealing"
   }
 ]

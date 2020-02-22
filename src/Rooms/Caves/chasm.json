@@ -17,7 +17,7 @@
     "You're standing on a ledge overlooking a wide chasm that bisects the room, separating passages that head east and south."
   ],
   "incant": {
-    "deisigh": [
+    "etavoner": [
       {
         "cmd": "ifFlag",
         "args": [

@@ -42,9 +42,9 @@ export default function handleDevCmd(str) {
     this.inventory = [];
     this.write("~Remove all items from inventory.~");
   } else if(str.startsWith('learnAllIncants')) {
-    this.setFlag("G.DEISIGH");
-    this.setFlag("G.NOCHTANN");
-    this.setFlag("G.SCRIOS");
+    this.setFlag("G.ETAVONER");
+    this.setFlag("G.LIEVNU");
+    this.setFlag("G.ELTNAMSID");
     this.write("~Learned all incantations~");
   }
 }

@@ -126,7 +126,7 @@
     ]
   },
   "incant": {
-    "deisigh": [
+    "etavoner": [
       {
         "cmd": "ifVar",
         "args": [
@@ -144,7 +144,7 @@
         ]
       }
     ],
-    "nochtann": [
+    "lievnu": [
       {
         "cmd": "ifVar",
         "args": [
