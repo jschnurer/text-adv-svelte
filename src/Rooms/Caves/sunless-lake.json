@@ -3,5 +3,32 @@
   "slug": "Caves/sunless-lake",
   "south": "loadRoom|Caves/mushrooms",
   "dark": true,
-  "description": ""
+  "description": [
+    "You're standing on the black sand shore of an underground lake. The light from your flashlight can't hope to reveal its vastness. The water is dark and still. There's nowhere to go except back to the south, through the passageway.",
+    "Set careful on the shore is a pair of sneakers. There are bare footprints in the black sand near them that head into the water."
+  ],
+  "features": [
+    {
+      "slug": "sneakers",
+      "altSlugs": [
+        "shoes"
+      ],
+      "look": "They're a pair of women's sneakers, size 8."
+    },
+    {
+      "slug": "note",
+      "altSlugs": [
+        "folded note"
+      ],
+      "roomDesc": "Set atop the sneakers is a folded note.",
+      "look": [
+        "It's a note folded in half.",
+        "todo: add note text"
+      ],
+      "take": [
+        "You take the folded note.",
+        "addItem|FOLDED_NOTE"
+      ]
+    }
+  ]
 }

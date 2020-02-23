@@ -34,9 +34,25 @@
           "You incant the Charm of Repairing but nothing happens."
         ]
       }
+    ],
+    "rohcna": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "!CALMED",
+          [
+            "You incant the Charm of Stillness. The mushrooms all shudder for a moment and then grow still.",
+            "setFlag|CALMED"
+          ],
+          "You incant the Charm of Stillness but nothing happens."
+        ]
+      }
     ]
   },
   "_common": {
+    "mushroom_move": [
+      "You reach out to touch the mushroom but before you can quite reach it, it shudders and and suddenly shuffles across the log, avoiding your touch. You've never heard of moving mushrooms before!\nYou might be able to touch them if you had some way of preventing them from moving."
+    ],
     "mushroom_gameover": [
       "gameOver|As soon as you touch the mushroom you feel a jolt of pain fire down your arm and into your chest. You drop to your knees in the muck. The pain still in your chest, you begin retching violently. At some point you realize that you're laying on your side in the stagnant water. You can't seem to move your body. It's raining and you feel like you're on fire.\nYou can hear the buzzing of giant mosquitos as they land on you. You can feel their needle-like proboscises pierce into your skin. You'd wince if you could. The monsters are so thirsty you can feel your blood being drained away.\nYou close your eyes... just for a moment... ..."
     ]
@@ -111,18 +127,27 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            5,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the green mushroom and it begins to glow."
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  5,
+                  [
+                    "incVar|SEQ",
+                    "You touch the green mushroom and it begins to glow."
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]
@@ -147,20 +172,29 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            6,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the yellow mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
-              "A faint glimmer appears in the air nearby.",
-              "setFlag|ALLGLOWING"
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  6,
+                  [
+                    "incVar|SEQ",
+                    "You touch the yellow mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
+                    "A faint glimmer appears in the air nearby.",
+                    "setFlag|ALLGLOWING"
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]
@@ -185,18 +219,27 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            1,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the indigo mushroom and it begins to glow."
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  1,
+                  [
+                    "incVar|SEQ",
+                    "You touch the indigo mushroom and it begins to glow."
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]
@@ -221,18 +264,27 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            2,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the red mushroom and it begins to glow."
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  2,
+                  [
+                    "incVar|SEQ",
+                    "You touch the red mushroom and it begins to glow."
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]
@@ -257,18 +309,27 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            3,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the purple mushroom and it begins to glow."
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  3,
+                  [
+                    "incVar|SEQ",
+                    "You touch the purple mushroom and it begins to glow."
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]
@@ -281,7 +342,7 @@
           "args": [
             "SEQ",
             ">",
-            4,
+            0,
             [
               "It's glowing a bright blue color."
             ],
@@ -293,18 +354,27 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            4,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the blue mushroom and it begins to glow."
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  4,
+                  [
+                    "incVar|SEQ",
+                    "You touch the blue mushroom and it begins to glow."
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]
@@ -317,7 +387,7 @@
           "args": [
             "SEQ",
             ">",
-            0,
+            4,
             [
               "It's glowing a bright orange color."
             ],
@@ -329,18 +399,27 @@
       ],
       "touch": [
         {
-          "cmd": "ifVar",
+          "cmd": "ifFlag",
           "args": [
-            "SEQ",
-            "==",
-            0,
+            "CALMED",
             [
-              "incVar|SEQ",
-              "You touch the orange mushroom and it begins to glow."
+              {
+                "cmd": "ifVar",
+                "args": [
+                  "SEQ",
+                  "==",
+                  0,
+                  [
+                    "incVar|SEQ",
+                    "You touch the orange mushroom and it begins to glow."
+                  ],
+                  [
+                    "callCommon|mushroom_gameover"
+                  ]
+                ]
+              }
             ],
-            [
-              "callCommon|mushroom_gameover"
-            ]
+            "callCommon|mushroom_move"
           ]
         }
       ]

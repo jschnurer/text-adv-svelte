@@ -1,5 +1,6 @@
 ## Game Notes (TODO) ##
 
+- Give cure to Edra -> learn ROHCNA
 - Fill in the empty cave rooms
 - Add hornet nest (implement sac for entry)
   - Need to bring eltnamsid rune here to unlock destruction
@@ -64,13 +65,13 @@ Silver box Quest:
 ==============================================================================
 
 color sequence:
-orange, indigo, red, purple, blue, green, yellow
+blue, indigo, red, purple, orange, green, yellow
 
-Arden (orange) -- 1990s accountant, bystander
+Edra (blue) -- 1990s free-spirit, prey
 Stanley (indigo) -- 2040s security personnel, hunter
 Merek (red) -- medieval knight, hunter
 Rhode (purple) -- medieval witch, prey
-Edra (blue) -- 1990s free-spirit, prey
+Arden (orange) -- 1990s accountant, bystander
 Meredith (green) -- 1990s office worker, hunter
 Ophelia (yellow) -- 2040s ambassador, prey
 

@@ -48,6 +48,7 @@ export default function handleDevCmd(str) {
     this.setFlag("G.HSINIMID");
     this.setFlag("G.PARTNE");
     this.setFlag("G.ETALOSI");
+    this.setFlag("G.ROHCNA");
 
     this.write("~Learned all incantations~");
   }
