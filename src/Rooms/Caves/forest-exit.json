@@ -5,5 +5,19 @@
   "north": "loadRoom|Caves/bottom-of-shaft",
   "east": "loadRoom|Caves/mushrooms",
   "dark": true,
-  "description": ""
+  "description": [
+    "You're standing in a shrouded cavern. Almost no light at all filters in through all the thick forest growth covering the south exit. Some small critters must have made this cavern their home. Dead grasses and leaves are heaped into nests near the corners of the small chamber. Rat droppings are basically everywhere. It's an unpleasant smell.",
+    "You could head south through the underbrush or through either of the rocky passages that head east and north."
+  ],
+  "features": [
+    {
+      "slug": "nests",
+      "altSlugs": ["nest", "grass", "grasses", "droppings"],
+      "look": "The nests stink. You don't see any critters in them at the moment."
+    },
+    {
+      "slug": "underbrush",
+      "look": "The thick underbrush covers the southern exit, blocking most of the light. You can push through it just fine, though."
+    }
+  ]
 }

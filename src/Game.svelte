@@ -131,11 +131,21 @@
       .replace(/"(.+?)"/g, '<speech>"$1"</speech>');
 
     if (nt.startsWith("]")) {
-      return nt.substring(1);
+      return nt.replace(/^]+/, '');
     } else {
       return nt;
     }
   };
+
+  const getClass = line => {
+    if (line.startsWith(']]')) {
+      return 'indent2';
+    } else if (line.startsWith(']')) {
+      return 'indent';
+    }
+
+    return '';
+  }
 </script>
 
 <style>
@@ -170,6 +180,10 @@
     margin-left: 2em;
   }
 
+   .indent2 {
+    margin-left: 4em;
+  }
+
   :global(entry) {
     color: #666;
   }
@@ -192,7 +206,7 @@
       {/if}
 
       {#each gameState.text.split('\n').filter(x => !!x) as line}
-        <p class={line.startsWith(']') ? 'indent' : ''}>
+        <p class={getClass(line)}>
           {@html convertSyntax(sanitize(line))}
         </p>
       {/each}

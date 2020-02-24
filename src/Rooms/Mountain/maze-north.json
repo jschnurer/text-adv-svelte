@@ -1,0 +1,17 @@
+{
+  "name": "Labyrinth, North Gate",
+  "slug": "Mountain/maze-north",
+  "north": "loadRoom|Mountain/winding-path",
+  "south": "loadRoom|Mountain/maze-center",
+  "east": [
+    {
+      "cmd": "ifHasItem",
+      "args": [
+        "MAP",
+        "loadRoom|Mountain/maze-diner-sign",
+        "callCommon|maze_lost|global-common"
+      ]
+    }
+  ],
+  "description": ""
+}

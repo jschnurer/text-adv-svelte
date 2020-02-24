@@ -1,8 +1,35 @@
 {
   "name": "Precarious Ledge",
   "slug": "Caves/precarious-ledge",
-  "up": "loadRoom|Mountain/caves-entrance",
-  "down": "loadRoom|Caves/bottom-of-shaft",
+  "up": [
+    "You grab the lowest ledge and pull yourself up onto it. It's going to be a long climb.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "loadRoom|Mountain/caves-entrance"
+      ]
+    }
+  ],
+  "down": [
+    "You carefully lower yourself onto the ledge below you. It's going to be a long descent.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "loadRoom|Caves/bottom-of-shaft"
+      ]
+    }
+  ],
   "dark": true,
-  "description": ""
+  "description": [
+    "After a long, arduous climb, you find yourself on a precarious ledge on a rocky wall in an immensely tall vertical shaft. Your arms and legs are sore and your lungs are burning. The ledge is large enough to sit down and rest so you decide to do so. You carefully sweep your flashlight up and down and can't see the top or bottom of the shaft.",
+    "More handholds and ledges lead upward and downward into the darkness."
+  ],
+  "features": [
+    {
+      "slug": "cairn",
+      "roomDesc": "There's a tiny cairn on this ledge. It's actually only made of 3 stones stacked atop each other.",
+      "look": "The stones are covered in tiny runic markings.",
+      "touch": "callCommon|cairn_touch|global-common"
+    }
+  ]
 }

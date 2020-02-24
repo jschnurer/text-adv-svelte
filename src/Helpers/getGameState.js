@@ -28,6 +28,7 @@ import ifRoom from "../ScriptCommands/ifRoom.js";
 import ifVar from "../ScriptCommands/ifVar.js";
 import incVar from "../ScriptCommands/incVar.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
+import pickOne from "../ScriptCommands/pickOne.js";
 import removeItem from "../ScriptCommands/removeItem.js";
 import saveGame from "../ScriptCommands/saveGame.js";
 import setFlag from "../ScriptCommands/setFlag.js";
@@ -116,6 +117,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     ifVar,
     incVar,
     invokeRoom,
+    pickOne,
     removeItem,
     saveGame,
     setFlag,

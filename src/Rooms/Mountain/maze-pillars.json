@@ -1,0 +1,8 @@
+{
+  "name": "Labyrinth, Pillared Hall",
+  "slug": "Mountain/maze-pillars",
+  "north": "loadRoom|Mountain/maze-fountain",
+  "south": "loadRoom|Mountain/maze-office",
+  "east": "loadRoom|Mountain/maze-center",
+  "description": ""
+}

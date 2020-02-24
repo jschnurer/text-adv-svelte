@@ -1,0 +1,7 @@
+{
+  "name": "Grand Steps",
+  "slug": "Mountain/grand-steps",
+  "up": "loadRoom|Mountain/summit",
+  "east": "loadRoom|Mountain/campsite",
+  "description": ""
+}

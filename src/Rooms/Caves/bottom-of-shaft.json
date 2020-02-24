@@ -1,8 +1,34 @@
 {
   "name": "Bottom of a Vertical Shaft",
   "slug": "Caves/bottom-of-shaft",
-  "up": "loadRoom|Caves/precarious-ledge",
+  "up": [
+    "You grab the lowest ledge and pull yourself up onto it. It's going to be a long climb.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "loadRoom|Caves/precarious-ledge"
+      ]
+    }
+  ],
   "south": "loadRoom|Caves/forest-exit",
   "dark": true,
-  "description": ""
+  "description": [
+    "You're standing at the bottom of extremely tall vertical shaft. You can see handholds and ledges along the wall heading upward higher than what your flashlight allows you to see. The cavern floor is jagged and uneven. There are shattered bones littering the cavern floor.",
+    "There is a passage leading to the south. You could probably head up as well, though it will be a tough climb."
+  ],
+  "features": [
+    {
+      "slug": "ledges",
+      "altSlugs": [
+        "handholds",
+        "handhold",
+        "ledge"
+      ],
+      "look": "They look dangerous but there's enough of them that you'd be able to head upward."
+    },
+    {
+      "slug": "bones",
+      "look": "You think they're human. They're smashed to bits. Looks like they fell from a great height..."
+    }
+  ]
 }

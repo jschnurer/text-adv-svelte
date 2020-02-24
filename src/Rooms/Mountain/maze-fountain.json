@@ -1,0 +1,6 @@
+{
+  "name": "Labyrinth, Fountain",
+  "slug": "Mountain/maze-fountain",
+  "south": "loadRoom|Mountain/maze-pillars",
+  "description": ""
+}

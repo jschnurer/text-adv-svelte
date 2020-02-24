@@ -1,0 +1,7 @@
+{
+  "name": "Campsite at the Cliffside",
+  "slug": "Mountain/campsite",
+  "south": "loadRoom|Mountain/winding-path",
+  "west": "loadRoom|Mountain/grand-steps",
+  "description": ""
+}
