@@ -90,6 +90,7 @@ export { default as c_precariousLedge } from "./Caves/precarious-ledge.json";
 export { default as c_cache } from "./Caves/cache.json";
 
 // Mountains
+export { default as m_cavesEntrance } from "./Mountain/caves-entrance.json";
 
 // Memories
 export { default as mem_merek } from "./Memories/merek.json";

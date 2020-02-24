@@ -1,0 +1,15 @@
+{
+  "name": "Top of the Vertical Shaft",
+  "slug": "Mountain/caves-entrance",
+  "down": [
+    "You carefully lower yourself onto the first ledge below. It's going to be a long descent.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "loadRoom|Caves/precarious-ledge"
+      ]
+    }
+  ],
+  "dark": true,
+  "description": "You stand at the edge of a vertical shaft that heads downward into darkness. With your flashlight you can see that there are copious handholds and ledges along the surface of it, leading downward into darkness. There's also a passage that leads to the west."
+}
