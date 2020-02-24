@@ -53,6 +53,9 @@ export default function parseCmds(cmds, feature) {
       case "dialog":
         this.dialog(cmd.args);
         break;
+      case "pickOne":
+        this.pickOne(cmd.args);
+        break;
     }
 
     this.update();

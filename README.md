@@ -159,6 +159,17 @@ The command will then compare the two values against each other using the specif
 
 The fourth argument is a **cmdList** for if the comparison is true. The fifth argument is a **cmdList** for if the comparison is false.
 
+### pickOne
+```json
+args: [
+  [],
+  [],
+  [],
+  ...
+]
+```
+The pickOne command accepts an array of **cmdLists**. It will randomly choose one of the **cmdLists** and parse it.
+
 ### waitForInput
 ```json
 args: []

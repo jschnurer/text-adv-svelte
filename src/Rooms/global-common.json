@@ -43,7 +43,7 @@
       "]-Meredith"
     ],
     "maze_lost": [
-      "You enter the maze and follow its twists and turns. You reach a dead end and turn around. The way back seems... different. You're not sure but you've gotten completely turned around. Without a map to guide the way, you're hopelessly lost. You wander for what seems like hours.",
+      "You enter the maze and follow its twists and turns. You reach a dead end and turn around. The way back seems... different. You're not sure how but you've gotten completely turned around. Without a map to guide the way, you're hopelessly lost. You wander for what seems like hours.",
       {
         "cmd": "waitForInput",
         "args": [
