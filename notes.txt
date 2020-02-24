@@ -9,11 +9,7 @@
 - Add lievnu rune inside the labyrinth, set incVar|G.BOXQUEST if G.BOXQUEST = 1
 - Add eltnamsid somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
-  - Without map, you automatically go to
-    1. Lost in the Labyrinth
-    2. Still Lost...
-    3. Even Still Lost...
-    4. way you wanted to go
+  - Without map, you automatically go to one of central areas
   - With map, can go to other areas in the labyrinth
 - Add the mushroom sequence -> etavoner -> memory
 - Go through each person's memory, learning etalosi, hsinimid, partne along the way

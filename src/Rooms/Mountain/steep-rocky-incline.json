@@ -3,5 +3,23 @@
   "slug": "Mountain/steep-rocky-incline",
   "east": "loadRoom|Mountain/caves-entrance",
   "west": "loadRoom|Mountain/lake",
-  "description": ""
+  "description": [
+    "You are standing on a steep rocky incline on the side of the black mountain. The stones beneath your feet are jet black and a little shiny. It reminds you of Dragonglass, from some fantasy story you heard once.",
+    "To the south and far below you, you can see a vast forest bisected by a river. Beyond that you see a swamp and eventually the coastline. You can just make out a lighthouse there, sweeping the horizon with its rotating light.",
+    "The tortuous, rocky path leads ever higher to the west. It also leads downward to the east."
+  ],
+  "features": [
+    {
+      "slug": "lighthouse",
+      "look": "It's a white lighthouse. It looks really tiny from here. The light's still working."
+    },
+    {
+      "slug": "forest",
+      "look": "It's really vast and dense."
+    },
+    {
+      "slug": "swamp",
+      "look": "The swamp is shrouded in thick fog. Or possibly mosquitoes. Gross."
+    }
+  ]
 }
