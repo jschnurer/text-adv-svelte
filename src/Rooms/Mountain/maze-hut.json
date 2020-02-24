@@ -1,0 +1,6 @@
+{
+  "name": "Labyrinth, Ramshackle Hut",
+  "slug": "Mountain/maze-hut",
+  "north": "loadRoom|Mountain/maze-alley",
+  "description": ""
+}

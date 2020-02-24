@@ -1,0 +1,7 @@
+{
+  "name": "Labyrinth, Seedy Back Alley",
+  "slug": "Mountain/maze-alley",
+  "north": "loadRoom|Mountain/maze-diner-sign",
+  "south": "loadRoom|Mountain/maze-hut",
+  "description": ""
+}

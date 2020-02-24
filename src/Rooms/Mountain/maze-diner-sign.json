@@ -1,0 +1,7 @@
+{
+  "name": "Labyrinth, Neon Sign",
+  "slug": "Mountain/maze-diner-sign",
+  "south": "loadRoom|Mountain/maze-alley",
+  "west": "loadRoom|Mountain/maze-north",
+  "description": ""
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Steep Rocky Incline",
+  "slug": "Mountain/steep-rocky-incline",
+  "east": "loadRoom|Mountain/caves-entrance",
+  "west": "loadRoom|Mountain/lake",
+  "description": ""
+}

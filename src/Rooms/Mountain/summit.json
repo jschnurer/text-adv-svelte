@@ -1,0 +1,6 @@
+{
+  "name": "The Black Summit",
+  "slug": "Mountain/summit",
+  "down": "loadRoom|Mountain/grand-steps",
+  "description": ""
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Small Mountain Lake",
+  "slug": "Mountain/lake",
+  "north": "loadRoom|Mountain/maze-south",
+  "east": "loadRoom|Mountain/steep-rocky-incline",
+  "description": ""
+}

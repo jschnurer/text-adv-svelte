@@ -1,0 +1,7 @@
+{
+  "name": "Steep, Winding Path",
+  "slug": "Mountain/winding-path",
+  "north": "loadRoom|Mountain/campsite",
+  "south": "loadRoom|Mountain/maze-north",
+  "description": ""
+}

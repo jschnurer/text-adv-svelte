@@ -1,0 +1,17 @@
+{
+  "name": "Labyrinth, Central Plaza",
+  "slug": "Mountain/maze-center",
+  "north": "loadRoom|Mountain/maze-north",
+  "south": "loadRoom|Mountain/maze-south",
+  "west": [
+    {
+      "cmd": "ifHasItem",
+      "args": [
+        "MAP",
+        "loadRoom|Mountain/maze-pillars",
+        "callCommon|maze_lost|global-common"
+      ]
+    }
+  ],
+  "description": ""
+}
