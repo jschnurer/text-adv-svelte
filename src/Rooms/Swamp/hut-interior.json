@@ -112,8 +112,8 @@
           4,
           [
             "With all the ingredients for the cure now gathered, Rhode sets about her work.",
-            "With her mortar and pestle she grinds the rainbow egg into shimmering dust. While doing so, she chews on the tarnroot, occasionally spitting its juices into a small bowl. She incants something in some magical language and taps the puffball. With a hissing sound it deflates into a small white pouch. She cuts it open and pours it into the bowl with the tarnroot juice. To this mixture she adds the rainbow dust. She mixes these ingredients together for some time, all the while enchanting them with her magical words.",
-            "She hands you a small vial of shimmering liquid. \"Quaff this and the effects shouldst be instant.\" You take the small, glass vial.",
+            "With her mortar and pestle she grinds the rainbow egg into shimmering dust. While doing so, she chews on the tarnroot, occasionally spitting its juices into a small bowl. She incants something in some magical language and taps the puffball. With a hissing sound it deflates into a small white pouch. She cuts it open and pours its innards into the bowl with the tarnroot juice. To this mixture she adds the rainbow dust. She mixes these ingredients together for some time, all the while enchanting them with her magical words.",
+            "She hands you a small vial of shimmering liquid. \"Quaff this and the healing can begin.\" You take the small, glass vial.",
             "addItem|BLIGHT_CURE",
             "setFlag|CUREMADE",
             "\"Oh, the mosquito egg? No, 'tis not needed for the cure. But I require compensation for my work and the look on thy face when thou hadst that egg in thy hands was payment enough!\" She laughs."
@@ -434,6 +434,13 @@
           "removeItem|RAINBOW_SHELL",
           "incVar|INGREDIENTCOUNT",
           "setFlag|GAVESHELL",
+          "callCommon|returned_ingredient"
+        ],
+        "TARNROOT": [
+          "You take out the root with white leaves and hand it to Rhode. \"Yes. This root doth be the one of which I spoke.\" She takes it and sets it on her work table.",
+          "removeItem|TARNROOT",
+          "incVar|INGREDIENTCOUNT",
+          "setFlag|GAVEROOT",
           "callCommon|returned_ingredient"
         ],
         "BROKENBOX": [

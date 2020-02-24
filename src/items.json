@@ -294,5 +294,10 @@
     "slug": "folded note",
     "id": "FOLDED_NOTE",
     "look": "callCommon|folded_note|global-common"
+  },
+  {
+    "slug": "root",
+    "id": "TARNROOT",
+    "look": "It's a plant with white leaves and a thick, brown, two-pronged root."
   }
 ]

@@ -3,5 +3,65 @@
   "slug": "Mountain/lake",
   "north": "loadRoom|Mountain/maze-south",
   "east": "loadRoom|Mountain/steep-rocky-incline",
-  "description": ""
+  "description": [
+    "You're standing at the edge of a lake a few hundred feet across. The water is the clearest you've ever seen. It's hard to tell how deep it is because you can hardly see the water! The lakebed is made of the same black stone that the rest of the mountain is made of.",
+    "The black, rocky terrain prevents most vegetation from growing here. It's completely devoid of trees, although various grasses and plants grow near the water's edge.",
+    "Around the lake, to the north, there is a colossal black gate that leads into a black labyrinth. A steep path leads to the east, descending back down the mountain."
+  ],
+  "features": [
+    {
+      "slug": "gate",
+      "look": "The gate is open, permitting entry to the north into the black labyrinth."
+    },
+    {
+      "slug": "labyrinth",
+      "altSlugs": ["maze","black labyrinth"],
+      "look": "You can only see inside through the open gate. Its outer walls are made of black stone like the rest of the mountain. Even from here you can see a maze of passages inside through it appears there's a straight path going all the way to the other side of the maze."
+    },
+    {
+      "slug": "water",
+      "altSlugs": [
+        "lake",
+        "tarn"
+      ],
+      "look": "It's so clear it's basically invisible!"
+    },
+    {
+      "slug": "grasses",
+      "altSlugs": [
+        "grass"
+      ],
+      "look": "The grass is long and rigid. It's a blackish green color."
+    },
+    {
+      "slug": "plants",
+      "look": [
+        "There are various blackish-green bushes, shrubs, flowers, and white-leafed plants.",
+        "setFlag|SAWROOT"
+      ]
+    },
+    {
+      "slug": "white-leafed plant",
+      "altSlugs": [
+        "white plant",
+        "plant",
+        "tarnroot"
+      ],
+      "look": "It's a small plant with white leaves growing out of the rocky ground.",
+      "take": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "TOOKROOT",
+            "You've already taken one and you don't think you need another.",
+            [
+              "setFlag|TOOKROOT",
+              "addItem|TARNROOT",
+              "You kneel down on the black, rocky ground and bundle the leaves together. You grip them all together as low as you can and you uproot the plant. It's root is thick and brown and two-pronged. You take the root with you."
+            ]
+          ]
+        }
+      ]
+    }
+  ]
 }
