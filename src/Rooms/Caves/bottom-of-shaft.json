@@ -1,7 +1,15 @@
 {
   "name": "Bottom of a Vertical Shaft",
   "slug": "Caves/bottom-of-shaft",
-  "up": "loadRoom|Caves/precarious-ledge",
+  "up": [
+    "You grab the lowest ledge and pull yourself up onto it. It's going to be a long climb.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "loadRoom|Caves/precarious-ledge"
+      ]
+    }
+  ],
   "south": "loadRoom|Caves/forest-exit",
   "dark": true,
   "description": [
@@ -11,7 +19,11 @@
   "features": [
     {
       "slug": "ledges",
-      "altSlugs": ["handholds","handhold","ledge"],
+      "altSlugs": [
+        "handholds",
+        "handhold",
+        "ledge"
+      ],
       "look": "They look dangerous but there's enough of them that you'd be able to head upward."
     },
     {
