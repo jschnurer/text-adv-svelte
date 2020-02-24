@@ -21,10 +21,7 @@
         "folded note"
       ],
       "roomDesc": "Set atop the sneakers is a folded note.",
-      "look": [
-        "It's a note folded in half.",
-        "todo: add note text"
-      ],
+      "look": "callCommon|folded_note|global-common",
       "take": [
         "You take the folded note.",
         "addItem|FOLDED_NOTE"
