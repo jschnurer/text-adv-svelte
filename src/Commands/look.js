@@ -19,7 +19,7 @@ export default function look() {
       this.showFeatures(this.room.features);
     }
 
-    if(this.getFlag("G.HASLIGHT")) {
+    if(this.getFlag("G.HASLIGHT") && this.room.slug.indexOf('Memories/') === -1) {
       this.write("Your flashlight is on.");
     }
   }
