@@ -28,7 +28,17 @@
         "You take the rune from atop the pedestal.",
         "setFlag|TOOKRUNE",
         "addItem|LIEVNU_RUNE",
-        "You look around again only to find a new passage to the north."
+        "You look around again only to find a new passage to the north.",
+        {
+          "cmd": "ifVar",
+          "args": [
+            "G.BOXQUEST",
+            "==",
+            1,
+            "incVar|G.BOXQUEST",
+            null
+          ]
+        }
       ]
     },
     {

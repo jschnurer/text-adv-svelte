@@ -1,11 +1,6 @@
 ## Game Notes (TODO) ##
 
-- Add the mountain
-- Add mountain labyrinth
-  - Without map, you automatically go to one of central areas
-  - With map, can go to other areas in the labyrinth
-  - Add LIEVNU rune inside the labyrinth, set incVar|G.BOXQUEST if G.BOXQUEST = 1
-- Take LIEVNU rune to lighthouse and bathe in light to unlock charm
+- Fill in the mountain rooms
 - Add the mushroom sequence -> LIEVNU -> etavoner -> memories
   - Go through each person's memory, learning etalosi, hsinimid, partne along the way
 - Stop Ophelia with Stanley for BAD ENDING
