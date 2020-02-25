@@ -4,10 +4,15 @@
   "south": "loadRoom|Mountain/winding-path",
   "west": "loadRoom|Mountain/grand-steps",
   "description": [
-    "You're at the edge of a steep precipice. There's an abandoned old campsite here. There's a bunch of black stones arranged in a circle but it's so old there's no sign of ash. Perhaps the chill winds up here carried it away. Naught but scraggy bushes grow here.",
-    "The narrow path circles around the side of the mountain, heading south and west."
+    "You're at the edge of a steep precipice. There's an abandoned old campsite here. There's a bunch of black stones arranged in a circle but it's so old there's no sign of ash. Perhaps the chill winds up here carried it away. Instead, there is a small pile of runic stones in the center, forming a small cairn. Naught but scraggy bushes grow here.",
+    "The narrow path circles around the side of the mountain, heading south. Another, narrower path follows a cliff ledge and heads upward to the west."
   ],
   "features": [
+    {
+      "slug": "cairn",
+      "look": "It is sloppily made. Some of the stones have spilled out from the stack but it still stands.",
+      "touch": "callCommon|cairn_touch|global-common"
+    },
     {
       "slug": "pouch",
       "altSlugs": [
