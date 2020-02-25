@@ -13,7 +13,9 @@ export default function addItem(id) {
     this.setFlag(`G.ITEM_PICKUP_${id}`);
     this.incVar('G.TOTAL_ITEMS_FOUND');
     this.setVarValue('G.ITEMPERCENT',
-      Math.floor(parseFloat(this.getVarValue('G.TOTAL_ITEMS_FOUND'), 10) / parseFloat(this.items.length) * 100) + ' %'
+      Math.floor(
+        parseFloat(this.getVarValue('G.TOTAL_ITEMS_FOUND'), 10)
+        / parseFloat(this.items.filter(x => x.slug.indexOf('TUTORIAL') === -1).length) * 100) + ' %'
     );
   }
 

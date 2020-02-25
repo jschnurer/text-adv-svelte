@@ -73,10 +73,10 @@
     ]
   },
   {
-    "slug": "trowel",
-    "id": "TROWEL",
+    "slug": "coin",
+    "id": "COIN",
     "look": [
-      "It's a gardening trowel--a little rusty but should still be fine."
+      "It's an ancient silver coin. It's so old that it's been rubbed smooth. Maybe it's lucky."
     ]
   },
   {
