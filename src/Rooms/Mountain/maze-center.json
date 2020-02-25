@@ -5,5 +5,8 @@
   "south": "loadRoom|Mountain/maze-south",
   "east": "callCommon|maze_enter|global-common",
   "west": "callCommon|maze_enter|global-common",
-  "description": ""
+  "description": [
+    "You're standing in the center of the labyrinth halfway through a wide passage that connects the northern and southern gates. It's a straight shot through this labyrinth. That doesn't strike you as particularly labyrinthine.",
+    "Side passages to the east and west lead into twisting, turning passages. The wide passage also leads south toward the southern gate or north to the northern gate."
+  ]
 }

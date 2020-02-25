@@ -5,5 +5,8 @@
   "south": "loadRoom|Mountain/lake",
   "east": "callCommon|maze_enter|global-common",
   "west": "callCommon|maze_enter|global-common",
-  "description": ""
+  "description": [
+    "You're standing just inside the labyrinth, near the southern gate. There's a wide passage straight ahead of you that leads all the way to the north gate on the far side of the labyrinth. It's a straight shot through this labyrinth. That doesn't strike you as particularly labyrinthine.",
+    "Side passages to the east and west lead into twisting, turning passages. To the south, the gate leads outside the labyrinth."
+  ]
 }
