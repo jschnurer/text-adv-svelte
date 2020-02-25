@@ -3,5 +3,8 @@
   "slug": "Mountain/grand-steps",
   "up": "loadRoom|Mountain/summit",
   "east": "loadRoom|Mountain/campsite",
-  "description": ""
+  "description": [
+    "You are standing at the bottom of a grand set of steps carved directly out of the black surface of the mountain. The steps number in the hundreds. Looking up toward the top of the steps you can see flashing lights and you can hear crackling like electricity. Looking up toward the summit gives you an uneasy feeling.",
+    "The grand steps lead up toward the summit. There is also a narrow ledge that leads back to the east, spiraling around the mountain."
+  ]
 }
