@@ -1,0 +1,33 @@
+{
+  "name": "Memory of the Wild Child",
+  "slug": "Memories/edra",
+  "description": [
+    "You're a young boy. You don't have a head for studies or math. You like to play outside and do things you're not supposed to. Sometimes you can get out of trouble just by focusing and telling someone to let you go. You're not sure why the other kids can't get out of trouble as easily as you can. Though you still get into your fair share.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "You're 22 today. Driving to another party in your '70 Chevelle SS, blue with white stripes. You're still pissed off from earlier. Who the hell does Arden think he is? He's not dad! Get a job! Work hard, save money for the future! Doesn't he see that he's missing the present? You gun it.",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "You're in Vegas again. It's really easy to win Texas Hold'Em when you can read the others' minds. You make sure not to win too big and to lose a few hands just to throw off suspicion. Later, you stumble out drunk, pockets stuffed with winnings. You pass a seedy alley with a group of homeless living in it. You whistle to get their attention and empty your pockets, tossing them the wad. You walk away before they can break their stunned silence.",
+            "For a while you drive around the country using your sorcery to help those that need it (after helping yourself, of course). Eventually, you get a call from one of your buddy's from back home. Mom's dead, he says.",
+            {
+              "cmd": "waitForInput",
+              "args": [
+                "You're standing outside the funeral home. Mom's inside. The service started 5 minutes ago but you couldn't quiet bring yourself to go in yet. Arden's going to be so pissed. You head inside. Arden's here and a couple of old ladies who must've been friends of mom. Arden ain't happy.",
+                "Later, you older brother has words with you. You apologize and try to explain how life can be a prison if you let it. He's having none of it. With a little arcane nudge he starts to see it your way. You convince him to take some time off work and see the country with you. A roadtrip. Together.",
+                {
+                  "cmd": "waitForInput",
+                  "args": [
+                    "You and Arden just left the diner and stepped outside. You're still laughing from the first joke you've ever heard Arden tell. You're walking toward your car when a woman steps out of the shadows."
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

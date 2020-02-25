@@ -467,7 +467,7 @@
           "args": [
             "CRACKREPAIRED",
             [
-              "You feel a tingling sensation as your hand passes through the crack. The crack widens and widens until you are blinded by white light. You begin to remember memories that aren't your own.",
+              "You feel a tingling sensation as your hand passes through the crack. The crack widens and widens until you are blinded by shimmering white light. You begin to remember memories that aren't your own.",
               {
                 "cmd": "waitForInput",
                 "args": [

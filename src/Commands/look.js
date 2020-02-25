@@ -23,6 +23,4 @@ export default function look() {
       this.write("Your flashlight is on.");
     }
   }
-
-  this.write("...");
 };

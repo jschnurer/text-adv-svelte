@@ -1,0 +1,20 @@
+{
+  "name": "Memory of the Accountant",
+  "slug": "Memories/arden",
+  "description": [
+    "You're a young boy. The other boys cut school and play at the skate park. You're not rebellious, though. Every day after school you do your homework and study. Mom's very proud of you. She always scolds your younger brother and tells him he should be more like you. She depends on you for a lot, since dad died.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "You're at the office. Your boss stops and knocks on your door. \"Hey Arden. How's it going?\" He doesn't give you time to answer. \"Listen, we're a bit behind on the Atkinson file. We need to play a bit of catch-up. Can I count on you?\" Of course he can count on you, you assure him. You didn't have any plans this weekend anyway. You never have plans for the weekend. Besides, with mom sick and the medical bills piling up you can always use the extra money. Plus with Edra gone, you're the only source of income. \"I knew I could count on you. You're one of our best. Well, catch you later.\" Your boss leaves.",
+        "You turn back to your spreadsheet full of credits and debits, assets and expenditures.",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "You're at mom's funeral. It's just you and a couple of her friends. Halfway through the service, the door opens. In comes Edra. You seethe. Of course he'd only come back after she was dead."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,29 @@
 {
   "name": "Memory of the Warrior",
   "slug": "Memories/merek",
-  "description": ""
+  "description": [
+    "You're a young boy standing in a village aflame. Raiders on horseback chase down your neighbors and cut them down. A man in long, black robes wearing a wooden mask conjures a ball of flame in his hands and hurls it onto the roof of the only house not yet on fire. He lets out a maniacally laugh. With tears in your eyes, you run.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "You're a young man, training hard with sword and shield. Today the Order finally gave you your own tunic emblazoned with the yellow griffin holding a dozen roses. You parry an incoming blow and smash into your training partner with your shield, sending him reeling. You come down with your wooden sword and catch him in the neck. He crumples to the ground. \"I yield. I yield...\" he groans.",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "Your training is over. The elder members of the Order of the Griffin have summoned you to the temple. They taught you an incantation. One that will banish the dark souls of sorcerers to a place where even they cannot escape from. You feel your holy purpose burning inside of you. You will find every last sorcerer and put them down.",
+            {
+              "cmd": "waitForInput",
+              "args": [
+                "You've been on a long journey the past few months. Following a trail of rumors and heresay. The peasants you speak to fear you. They are right to. You ride with the violent glory of god. You've finally found your first sorcerer. The evil witch is just inside the rundown house ahead of you. You're excited but also nervous and a little bit afraid. You'll have to work on that last bit. You remember back and can see the black-robed sorcerer with the wooden mask and how his eyes laughed as he slaughtered your friends and family. You steel your resolve and kick down the door.",
+                {
+                  "cmd": "waitForInput",
+                  "args": "loadRoom|Memories/rhode"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,0 +1,29 @@
+{
+  "name": "Memory of the Witch",
+  "slug": "Memories/rhode",
+  "description": [
+    "You're a young, raven-haired girl. You and your mother live alone at the edge of the village. She tells the villagers it's because she likes the quiet but you know the real reason. In secret, she teaches you her trade. Magic. She's taught you a few simple incantations so far: to know when someone's lying to you, to re-ripen rotten food, to help plants grow, and how to heal wounds.",
+    "One day, you're playing with your friend Sofie, a girl from the village. Sofie's walking along the top of Mr. Gabor's fence and you're walking on the trail beside her. She's talking about a boy she likes but you're not really paying attention. She trips and falls, landing awkwardly. The bone is broken. She screams in pain. You tell her it'll be okay. You lean down and lay hands upon the wound and incant the spell your mother taught you. The bone sets itself and heals instantly. Sofie's eyes are wide with terror. She jumps up and runs screaming into the village.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "It's night time. Your mother wakes you and tells you to get dressed quickly. \"Take with thee only the things of most import. Leave thy toys and clothing.\" She sounds panicked. You quickly do as she says. You head outside with her and mount horses. In the distance you can see a bunch of lit torches along the road. A whole mob is heading from the village to your home. \"Come, Rhode.\" Your mother says to you. \"We must ride hard.\" With that, she sets her horse to a gallop toward the wilderness.",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "Your mother died some years ago so you found a new home for yourself. The villagers in your new home scorn you. Some spit as you pass by so you try to avoid visiting the village unless necessary. They curse your name and say prayers when you are near. They hide their children when you visit the village. But you ensure their crops are bountiful and they're all healthy. When one is sick and the church can no longer help, they invariably come to you, though afeared as they are. You sit in your home, working a charm on a pouch of seeds. Once you are done they should grow faster and larger.",
+            "Suddenly, the door to your home slams open and a knight emblazoned with the yellow griffin of the Order of the Griffin bursts in. He has sword and shield drawn. He rushes across the room before you can mount a defense! You feel his cold steel drive through your belly.",
+            "With scorn and hate he speaks: \"Thy soul shalt be condemned to that faraway place, the island of the lost\". You suddenly feel light. Very light. You look down at the floor and see your own body. You hold your hands out in front of you and you're mostly transparent. Your soul has been excised! Standing next to you is the soul of the warrior! He looks around confused and shocked. Did he not fully understand what his incantation would do?",
+            "Spacetime shatters in front of the two of you, forming a black crack in reality. You and the warrior are pulled inside...",
+            {
+              "cmd": "waitForInput",
+              "args": [
+                "loadRoom|Memories/arden"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
