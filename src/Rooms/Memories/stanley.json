@@ -1,5 +1,30 @@
 {
   "name": "Memories of the Downtrodden Boy",
   "slug": "Memories/stanley",
-  "description": ""
+  "description": [
+    "You're a young boy living alone in a trashy apartment with your single father. Dad hasn't worked in a long time. Not with all the jobs being lost to automation. You somehow manage to barely scrape by on welfare and foodstamps. Dad always tells you that the people need to band together and rise up to make the world a better place. But he never does anything about it.",
+    "One evening, a woman kicks in the door to your home. Dad leaps to his feet. She just wants the food, she says, but dad resists. With a word and the flick of her wrist, she sends an arc of lightning across the room striking him in the chest. Dad slumps to the floor dead. You dash over to him and hug his lifeless body. You weep. The woman ignores you and takes all your valuables (such as they are) and food.",
+    "Later, a group of men and woman arrive wearing insignia depicting a griffin holding a dozen roses. They've come to your house following the trail of that woman. One of their members holds out her hand to you. You wipe away the tears and take it.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "You've been a member of the Order for a long time, now. Intel and special ops has been your game for over 30 years. But now, you've been given your first removal mission. You've gathered all the intel and done all the planning. She's a blonde woman, mid 40s, U.S. ambassador to the UN. It'll be tough getting close. The Order's sent many operatives to take her out but she has a silver box that she imprisons them in. But you have a plan.",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "You've worked as a security guard at the UN headquarters for 8 years now, biding your time. You greet her nearly every day when she gets to the office. You smile at her as she walks by but she never smiles back. You wait until she leaves her office and let yourself in. You wait behind the door for her to return.",
+            "When the door opens, you grab her from behind, covering her mouth before she can incant the infernal charms. You recite the phrase that you've heard your whole life as you stab her. \"Thy soul shalt be condemned to that faraway place, the island of the lost.\"",
+            "But what's this? Both of you slump to the floor. A moment later you both scramble to your feet, leaving your bodies behind. What's happening? Is your soul the price you must pay to rid the world of one of these demons? So be it, you decide.",
+            "The air shatters, causing a spiderweb of black cracks to arc out all around you both. A crack of utter darkness splits reality. You and the ambassador are pulled inside.",
+            {
+              "cmd": "waitForInput",
+              "args": "loadRoom|Swamp/toppled-log"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "notes": "Stanley, as a middle aged man is briefed that a dark sorcerer has invaded the government and works an ambassador. She is dangerous and has sealed many operatives in a silver box. Stanley breaks into her office and breaks the silver box. He then waits for her in the dark. When she arrives, he jumps out and attacks, stabbing her in the chest. He incants \"thy soul shalt be condemned to that faraway place, the island of the lost\". They are both sucked into the void. STANLEY is SHOCKED."
 }
+
