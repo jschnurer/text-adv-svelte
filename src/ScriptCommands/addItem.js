@@ -1,7 +1,7 @@
 export default function addItem(id) {
   let item = this.items.find(x => x.id === id);
 
-  if(!item) {
+  if (!item) {
     alert(`Item ${id} not found!`);
     return;
   }
@@ -12,6 +12,9 @@ export default function addItem(id) {
   if (id.indexOf('TUTORIAL') == -1 && !this.getFlag(`G.ITEM_PICKUP_${id}`)) {
     this.setFlag(`G.ITEM_PICKUP_${id}`);
     this.incVar('G.TOTAL_ITEMS_FOUND');
+    this.setVarValue('G.ITEMPERCENT',
+      Math.floor(parseFloat(this.getVarValue('G.TOTAL_ITEMS_FOUND'), 10) / parseFloat(this.items.length) * 100) + ' %'
+    );
   }
 
   this.inventory.push(Object.assign({}, item));

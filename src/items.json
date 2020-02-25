@@ -268,9 +268,35 @@
         "args": [
           "G.BOXACTIVATED",
           [
-            "callCommon|open_activated_box|global-common"
+            {
+              "cmd": "ifRoom",
+              "args": [
+                "Mountain/summit",
+                "callCommon|open_box|Mountain/summit",
+                "You open the silver box. Nothing happens so you close it."
+              ]
+            }
           ],
           "You open the box. There's nothing inside so you close it again."
+        ]
+      }
+    ],
+    "close": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "G.BOXACTIVATED",
+          [
+            {
+              "cmd": "ifRoom",
+              "args": [
+                "Mountain/summit",
+                "callCommon|close_box|Mountain/summit",
+                "It's not open."
+              ]
+            }
+          ],
+          "It's not open."
         ]
       }
     ]

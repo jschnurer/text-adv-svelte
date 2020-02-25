@@ -1,9 +1,7 @@
 ## Game Notes (TODO) ##
 
-- Fill in the mountain rooms
 - Add the mushroom sequence -> LIEVNU -> etavoner -> memories
   - Go through each person's memory, learning etalosi, hsinimid, partne along the way
-- Stop Ophelia with Stanley for BAD ENDING
 - Use LIEVNU to reveal It in black keep
   - then open activated silver box
   - then recite hsinimid -> partne -> etalosi
@@ -57,12 +55,12 @@ color sequence:
 blue, indigo, red, purple, orange, green, yellow
 
 Edra (blue) -- 1990s free-spirit, prey
- Stanley (indigo) -- 2040s security personnel, hunter
+Stanley (indigo) -- 2040s security personnel, hunter
 Merek (red) -- medieval knight, hunter
 Rhode (purple) -- medieval witch, prey
 Arden (orange) -- 1990s accountant, bystander
 Meredith (green) -- 1990s office worker, hunter
- Ophelia (yellow) -- 2040s ambassador, prey
+Ophelia (yellow) -- 2040s ambassador, prey
 
 Groups:
 

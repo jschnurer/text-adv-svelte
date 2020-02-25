@@ -1,6 +1,264 @@
 {
   "name": "The Black Summit",
   "slug": "Mountain/summit",
-  "down": "loadRoom|Mountain/grand-steps",
-  "description": ""
+  "down": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "DANGER",
+        "callCommon|try_leave",
+        [
+          "setFlag|MET",
+          "loadRoom|Mountain/grand-steps"
+        ]
+      ]
+    }
+  ],
+  "description": [
+    "You stand at the summit of the black mountain. It's a small area, only about thirty feet in diameter.",
+    "There is a beautiful, golden-haired woman sitting on a black stone throne. She sits facing you but her eyes are closed. Her hands are in her lap holding a large, glowing yellow crystal. She's enveloped in swirling light. A sustained beam of magical energy is blasting out of her crystal toward a man wearing an indigo security uniform.",
+    "The man is leaning forward, bracing himself against the onslaught of magical energies. He holds his hands out before him, stopping the magical beam. The beam occasionally splits off, sending errant energy off into the open sky with a loud crackle of electricity. The sound of the magical battle is nearly deafening. It looks like it's all he can do just to stay upright.",
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "MET",
+        "The man sees you and shouts over the din. \"You fool! Where did you go?! It's all I can do just to survive her onslaught! Take the crystal before she destroys us all with it!\"",
+        "The man sees you and shouts over the din. \"Quickly! She intends to destroy us all! Take the crystal from her grasp!\""
+      ]
+    },
+    "Hundreds of steps lead downward off the summit."
+  ],
+  "_common": {
+    "try_leave": "gameOver|\"Not so fast!\" The man shouts at you.\nThe entity of darkness floating behind and above him reaches out a misty arm and shatters the air with a black bolt of lightning. It arcs through the air striking you in the chest.\nYou drop to your knees, unable to feel your body. Your vision swims and you collapse, the cold stone against your face the only thing you can feel. Your vision dims and the cacaphonous magical battle slowly fades from your hearing. Then there is nothing but blackness.",
+    "death_orb": "gameOver|\"It\" hurls an orb of darkness at you from across the summit of the black mountain. You try to leap to the side but it doesn't matter. It stops in the air where you were standing and explodes!\nThe cold darkness envelopes you completely. You can see and hear nothing. You can't even move.\nYou can feel your memories quickly being siphoned out of your mind into the cold, dark void. In just a few short moments the only thing you can remember is your own name. Then... not even that.\nYou are left and empty husk.",
+    "release_it": "gameOver|TODO",
+    "open_box": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "INSIDEBOX",
+          "callCommon|release_it",
+          [
+            {
+              "cmd": "ifFlag",
+              "args": [
+                "REVEALED",
+                [
+                  {
+                    "cmd": "ifFlag",
+                    "args": [
+                      "BOXOPEN",
+                      "It's already open! \"It\" continues charging a ball of darkness!",
+                      [
+                        "You open the silver box. \"It\" reels back in fear. It begins charging a ball of darkness in its misty hands!",
+                        "setFlag|BOXOPEN"
+                      ]
+                    ]
+                  }
+                ],
+                "You open the silver box. Nothing happens so you close it."
+              ]
+            }
+          ]
+        ]
+      }
+    ],
+    "close_box": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "REVEALED&BOXOPEN",
+          [
+            "You close the silver box.",
+            {
+              "cmd": "waitForInput",
+              "args": "callCommon|death_orb"
+            }
+          ]
+        ]
+      }
+    ],
+    "it_is_trapped": [
+      "You incant the Charm of Sealing. The runes covering the silver box all glow brightly and then flash. The silver box is gone!",
+      "All the magical energy in the place explodes into scintillating radiance. When your vision clears, all the magic is gone, along with the man. The woman on the throne opens her eyes and stands. She has a stoic expression on her face. She approaches you with the yellow crystal in her hands.",
+      "Finally, she speaks. \"You have done us all a great service, archmage. You have sealed the being of darkness within the silver box from my memory which I will now forget.\"",
+      "She focuses on the yellow crystal. Then with her thumb and forefinger, she pulls a strand of light out of the crystal and flicks it into the wind. It dissipates into nothingness. \"You must do the same.\" she tells you. \"Place your hand upon the crystal and focus on the silver box.\"",
+      {
+        "cmd": "waitForInput",
+        "args": [
+          "You follow her instructions. You focus on the silver box and can see it in your mind but it grows faint and disappears completely. You pluck a strand of light from the crystal and toss it away.",
+          "The edges of your vision begin to warp. You look out across the entire island. The horizon begins to... evaporate? In the distance, everything begins to dissolve into nothingness.",
+          {
+            "cmd": "waitForInput",
+            "args": [
+              "The woman speaks to you again. \"I cannot thank you enough. You have seen through 'Its' charade. 'It' was controlling Stanley trying to get this away from me.\" She holds up the yellow crystal. \"This isn't really a crystal at all,\" she explains. \"This is just a representation of the memories of everyone on the island. I was protecting them from 'It'. For thousands of years, 'It' has been corrupting people, whispering to them that magic is the root of all evil and should be destroyed.\"",
+              "She looks out at the rapidly evaporating horizon and continues. \"An Order was formed hundreds of years ago. The Order of the Griffin. It was made up of mage hunters and holy warriors. They were taught an incantation, one that I think you've already learned of. It trapped the souls of both the hunter and their prey and brought them to this place.\" She pauses and watches as the coastline of the island evaporate into nothingness.",
+              {
+                "cmd": "waitForInput",
+                "args": [
+                  "\"It is here that 'It' would wait. This extradimensional prison was its feeding grounds. It would slowly siphon the memories of all the lost souls that were sent here, savoring each and every one of them, until nothing was left. And mages were 'Its' delicacy. But I learned of this by meeting everyone on the island and hearing their stories. I focused all those memories into this crystal.\"",
+                  "She turns back to you. \"But now it is finally over. Thanks you to. This place is disappearing. I hope that now, all the lost souls can achieve their eternal rest.\"",
+                  "As the mountain begins to evaporate all around you she finally smiles. \"If we go on, find me in the next life.\" She disappears along with the rest of the island. The last thing you experience is hearing her voice in the void. \"My name's Ophelia! I'll see you soon!\"",
+                  {
+                    "cmd": "waitForInput",
+                    "args": [
+                      "end|You have freed all the lost souls from the island and sealed \"It\" away for all time. Now your soul can finally ascend to its final rest.\nYou found $G.ITEMPERCENT$ of the items in the game!\nThanks for playing!"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "it_breaks_free": [
+      "gameOver|The silver box alone is not powerful enough to trap \"It\". The lid springs open and dark mist blasts outward, enveloping you!"
+    ]
+  },
+  "incant": {
+    "lievnu": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "REVEALED",
+          "You incant the Charm of Revealing but nothing happens.",
+          [
+            "You incant the Charm of Revealing. Hovering behind and slightly above the man appears a vaguely human figure of utter darkness. Now that you have revealed \"It\", you seem to be the target of its attention.",
+            "setFlag|REVEALED",
+            "setFlag|DANGER"
+          ]
+        ]
+      }
+    ],
+    "hsinimid": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "WEAKENED",
+          "You incant the Charm of Enfeeblement but nothing happens.",
+          [
+            "You incant the Charm of Enfeeblement. The dark energy given off by \"It\" seems weaker somehow.",
+            "setFlag|WEAKENED"
+          ]
+        ]
+      }
+    ],
+    "partne": [
+      {
+        "cmd": "ifFlag",
+        "args": [
+          "INSIDEBOX",
+          "You incant the Charm of Ensnaring but \"It\" is already ensnared in the silver box!",
+          [
+            {
+              "cmd": "ifFlag",
+              "args": [
+                "WEAKENED",
+                [
+                  {
+                    "cmd": "ifFlag",
+                    "args": [
+                      "BOXOPEN",
+                      [
+                        "You incant the Charm of Ensnaring. \"It\" is swept away on an unseen breeze which swirls around and around before being sucked into the silver box. You quickly snap the box shut! You can feel \"It\" stressing the confines of the box. You need to do something quick!",
+                        "setFlag|INSIDEBOX",
+                        {
+                          "cmd": "choice",
+                          "args": [
+                            [
+                              "Before you can do anything else, it's already too late!",
+                              {
+                                "cmd": "waitForInput",
+                                "args": "callCommon|it_breaks_free"
+                              }
+                            ],
+                            [
+                              "incant etalosi",
+                              "incantations"
+                            ],
+                            {
+                              "incant etalosi": "callCommon|it_is_trapped",
+                              "incantations": [
+                                "In the time it takes you to try to recall the incantations you know, it's already too late!",
+                                {
+                                  "cmd": "waitForInput",
+                                  "args": "callCommon|it_breaks_free"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      [
+                        "You incant the Charm of Ensnaring but you have nothing to trap \"It\" in!",
+                        {
+                          "cmd": "waitForInput",
+                          "args": [
+                            "callCommon|die_lightning"
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ],
+                "You incant the Charm of Ensnaring. But \"It\" is too powerful to be ensnared! It continues charging it's ball of dark, magical energy!"
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "features": [
+    {
+      "slug": "woman",
+      "look": "She's beautiful! She has golden hair and is wearing a formal suit jacket and skirt. Her eyes are closed. She looks very calm and doesn't response to what's going on around her at all. Is she even awake?",
+      "greet": "She doesn't respond in any way.",
+      "ask": "She doesn't respond in any way."
+    },
+    {
+      "slug": "man",
+      "look": "He's wearing an indigo security uniform. He looks really weary like he's barely holding on.",
+      "greet": "\"The crystal! Take it quickly!\"",
+      "ask": "\"There's no time for questions! Quickly! You must take the crystal to save us all!\""
+    },
+    {
+      "slug": "crystal",
+      "look": "It glows with an inner yellow light. Magical energies swirl out of it and into the air around the woman.",
+      "take": [
+        "You push through the swirling wind and magical energies, each step more difficult than the last. Finally you reach the throne the woman sits upon. You reach out to take the crystal from her hands. Just as you touch the crystal, her eyes open and you make eye contact. She says nothing to you but her eyes are pleading.",
+        "Do you take the crystal from her grasp?",
+        {
+          "cmd": "choice",
+          "args": [
+            "Do you take the crystal from her grasp (yes/no)?",
+            [
+              "yes",
+              "no"
+            ],
+            {
+              "yes": [
+                "end|You sieze the crystal from her grasp. As soon as you do, the swirling magical energy all around her dissipates into nothing. The man quickly runs up beside you. \"Quickly now! Before she awakens!\" He reaches out for the crystal. You give it to him. He pulls back, holding the crystal high above him and then hurls it into the stony ground with all his might.\nThe crystal strikes the ground and with a brilliant flash of light, shatters into a million little pieces that evaporate into nothingness. The woman vanishes completely.\nThe man catches his breath and turns to you. \"Thank you! Thank you. You've saved us all from being wiped from existence.\" He shakes your hand. \"The name's Stanley, by the way. Now let's get out of here.\"\nOver the coming years you give up your search for an escape from the island and come to embrace it as your new home. You successfully saved it from inexistence and ensured that it and everyone on the island would continue on.\nYou found $G.ITEMPERCENT$ of the items in the game!\nThanks for playing!"
+              ],
+              "no": [
+                "You decide not to take the crystal from her yet. As soon as your hand leaves the crystal her eyes close again.",
+                "\"What are you doing?!\" the man screams from behind you. \"She's using that crystal to destroy us, the island, everything! We must stop her together!\""
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "it",
+      "altSlugs": [
+        "entity",
+        "darkness"
+      ],
+      "roomDesc": "An entity of darkness made of black fog hovers in the air behind and slightly above the man. \"It\" seems to be focusing all its attention on you.",
+      "destroyedFlag": "!REVEALED",
+      "look": "\"It\" is an entity of darkness, vaguely human shaped made of a black fog, hanging in the air behind and slightly above the man."
+    }
+  ]
 }
