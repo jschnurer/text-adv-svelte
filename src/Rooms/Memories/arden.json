@@ -11,7 +11,11 @@
         {
           "cmd": "waitForInput",
           "args": [
-            "You're at mom's funeral. It's just you and a couple of her friends. Halfway through the service, the door opens. In comes Edra. You seethe. Of course he'd only come back after she was dead."
+            "You're at mom's funeral. It's just you and a couple of her friends. Halfway through the service, the door opens. In comes Edra. You seethe. Of course he'd only come back after she was dead.",
+            {
+              "cmd": "waitForInput",
+              "args": "loadRoom|Memories/edra"
+            }
           ]
         }
       ]

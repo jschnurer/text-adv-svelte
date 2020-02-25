@@ -1,0 +1,40 @@
+{
+  "name": "Memories of the Lonely Girl",
+  "slug": "Memories/meredith",
+  "description": [
+    "You're a little girl. Your parents fight all the time. The only time they're not screaming at each other is when they're both passed out with needles sticking out their arms. You learn to be independent early. The kids at school all ignore you. It's okay, though. You hate them all and don't want to be their friend anyway. You're better than they are. You'd never let them know you're actually just lonely and afraid.",
+    {
+      "cmd": "waitForInput",
+      "args": [
+        "You're sitting at home on prom night. You're dialed up to the internet reading message boards. Here's something interesting. An Order of like-minded individuals that seek the truth. \"If you're reading this, we know you're better than the rest.\" Most people are just stupid pawns doing what they're told to do without questioning it. But you're different. You know you are. You respond to the message.",
+        {
+          "cmd": "waitForInput",
+          "args": [
+            "You've learned the Holy Virtues and the Violent Truth. You're a full-fledged member of the Order of the Griffin now. Your training is complete and your knowledge of the Virtues vast. Today you were taught an incantation. One that would seal the wicked away forever. Your first target is a young man named Edra. He drives a blue-and-white-striped muscle car from the 70s. You can't wait.",
+            {
+              "cmd": "waitForInput",
+              "args": [
+                "You've found him. You wait in the shadows near his car outside a diner in Nowhere, USA. You ready the handgun, feeling its weight in your hand. You finally get to do something about the stupid useless sheep in the world. Starting with this one. This wicked, demon-touched one. He's coming. You step out of the shadows and raise the gun. You fire, striking someone walking with him instead. Enraged, the target screams and conjures a whirling ring of lightning around him. You fire again but the bullet is deflected. The sky overhead starts to split apart with lightning!",
+                "He's far too powerful. You'll have to use the Holy Verse! You incant aloud \"HSINIMID!\" The sky quiets and the lightning surrounding your mark falters. You pull the trigger again, piercing him in the chest. He collapses to the ground.",
+                "]The memory returns to you. You can now \"incant hsinimid\", the Charm of Enfeeblement!",
+                "callCommon|after_learn_incant|global-common",
+                "setFlag|G.HSINIMID",
+                {
+                  "cmd": "waitForInput",
+                  "args": [
+                    "You approach your fallen quarry. You recite the words, exactly as you were taught. \"Thy soul shalt be condemned to that faraway place, the island of the lost.\" Wait... What's happening? You collapse to the ground next to the two you've shot. No, you're still standing. You look down and see that you're transparent. You're not in your body anymore! The two you shot stand up as well, out of their bodies. What's going on?!",
+                    "Reality shatters around you and a black crack in the fabric of time forms. The three of you are pulled inside.",
+                    {
+                      "cmd": "waitForInput",
+                      "args": "loadRoom|Memories/ophelia"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
