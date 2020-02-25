@@ -1,0 +1,11 @@
+{
+  "name": "Hive Tunnels",
+  "slug": "Forest/hive",
+  "dark": true,
+  "description": [
+    "You are crawling your way through tunnels roughly 5 feet wide deep inside a giant hornet nest. It's about as fun as you though it'd be. You constantly are having to squeeze yourself against the side of the tunnel to avoid passing hornets and many stop to inspect you with their antennae. Thankfully you must smell like one of them seeing as how you're still alive.",
+    "Tunnels branch out in every direction and turn back and forth on themselves and each other but they're too narrow for you to try to enter. The only way to go is up to the surface or down below."
+  ],
+  "up": "loadRoom|Forest/hornet-nest",
+  "down": "loadRoom|Forest/hive-queen"
+}

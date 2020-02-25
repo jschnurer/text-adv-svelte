@@ -4,7 +4,22 @@
   "description": "You're standing in a dense forest, hiding in the foliage. A cacophonous buzzing fills the area. Dozens of two-foot-long hornets fly about. Even more cling to nearby trees, crawling along the trunks and branches. There's a huge hole in the ground that countless hornets are crawling into and out of.\nTo the south, branches have been shorn clean off the trees, forming a path through the forest. The hole leads downward.",
   "south": "loadRoom|Forest/old-well",
   "down": [
-    "gameOver|You step out from your hiding place and sneak over to the hole. The hornets see you and catch your very-not-hornet-like scent. The entire colony of hornets immediately launches itself from the ground and nearby trees. A cyclone of hornets erupts from the hole in the ground! Before you even have time to respond you've been run through by the sword-like stingers of a dozen hornets.\nEven after you've collapsed to the ground, unable to move or protect yourself, they continue to sting, over and over and over. If only you had found a way to disguise your scent..."
+    {
+      "cmd": "ifHasItem",
+      "args": [
+        "SAC",
+        [
+          "You step out from your hiding place and sneak over to the hole. The hornets seem to be ignoring you, mostly. The few that come over to inspect you wave their antannae around and seem uninterested.",
+          {
+            "cmd": "waitForInput",
+            "args": [
+              "loadRoom|Forest/hive"
+            ]
+          }
+        ],
+        "gameOver|You step out from your hiding place and sneak over to the hole. The hornets see you and catch your very-not-hornet-like scent. The entire colony of hornets immediately launches itself from the ground and nearby trees. A cyclone of hornets erupts from the hole in the ground! Before you even have time to respond you've been run through by the sword-like stingers of a dozen hornets.\nEven after you've collapsed to the ground, unable to move or protect yourself, they continue to sting, over and over and over. If only you had found a way to disguise your scent..."
+      ]
+    }
   ],
   "features": [
     {
@@ -13,7 +28,9 @@
     },
     {
       "slug": "hornet",
-      "altSlugs": ["hornets"],
+      "altSlugs": [
+        "hornets"
+      ],
       "look": "They're everywhere. Their bodies are striped black and yellow and they've got long, sharp stingers. Their antennae twitch constantly, searching the area for possible threats."
     }
   ]

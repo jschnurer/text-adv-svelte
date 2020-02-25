@@ -1,0 +1,37 @@
+{
+  "name": "Hive, Queen's Chamber",
+  "slug": "Forest/hive-queen",
+  "dark": true,
+  "description": [
+    "You're standing in a large chamber filled with squirming hornet eggs clustered to the walls. A huge hornet queen is at the far end of the room, a mere ten feet away from you. Worker hornets wander around the chamber's walls, floor and ceiling, tending to the uncountable eggs.",
+    "There's an opening above you that leads up."
+  ],
+  "up": "loadRoom|Forest/hive",
+  "features": [
+    {
+      "slug": "eggs",
+      "altSlugs": [
+        "egg"
+      ],
+      "look": "There are so many of them. They're semitransparent and white colored. You can see half-formed hornets moving around inside them.",
+      "smash|kick|destroy|kill|break|squash": "gameOver|You decide, while deep within a nest of giant hornets, with hundreds if not thousands of them crawling all around you, that the best course of action would be to squash some of the queen's eggs. Maybe it would assert dominance. Only one way to find out! You start smashing squirming eggs, sending egg fluid and baby hornets smearing across the ground. This, of course, enrages the entire hive, which descends on you in mere moments. You're pierced by long stingers more times than can be counted. Your body ends up feeding the queen. Energy with which to increase the size of the brood."
+    },
+    {
+      "slug": "queen",
+      "altSlugs": [
+        "hornet queen"
+      ],
+      "look": "She's far bigger than the rest. At least three feet long and far fatter. She occasionally squirts out another hornet egg and one of the many workers in the area carries it to a clutch of eggs and plants it amidst them.",
+      "give": {
+        "": "There's no way a hornet queen would have any interest in that.",
+        "ELTNAMSID_RUNE": [
+          "You present the eltnamsid rune and slowly creep up to the hornet queen. You hold it in your palm and hold it out to her. Her antennae twitch and feel around on your arm. She leans her head forward and vomits a warm, clear liquid onto your hand, covering the rune. Then she returns to her royal duties.",
+          "You look down at the rune. It's glowing and giving off an aura of light. You watch as it disintegrates into motes of light before disappearing completely. Suddenly, an image appears in your mind. You see a boulder, solid, immense, immovable. Suddenly, cracks shatter its surface and spiderweb outward from its center. The boulder crumbles to pieces. You can now \"incant eltnamsid\", the Charm of Destruction!",
+          "callCommon|after_learn_incant|global-common",
+          "removeItem|ELTNAMSID_RUNE",
+          "setFlag|G.ELTNAMSID"
+        ]
+      }
+    }
+  ]
+}

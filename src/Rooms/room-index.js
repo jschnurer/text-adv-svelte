@@ -29,6 +29,8 @@ export { default as f_oldWell } from "./Forest/old-well.json";
 export { default as f_wellCave } from "./Forest/well-cave.json";
 export { default as f_hornetNest } from "./Forest/hornet-nest.json";
 export { default as f_swampEntrance } from "./Forest/swamp-entrance.json";
+export { default as f_hive } from "./Forest/hive.json";
+export { default as f_hiveQueen } from "./Forest/hive-queen.json";
 
 // Swamp
 export { default as s_forestEntrance } from "./Swamp/forest-entrance.json";
