@@ -203,7 +203,7 @@ The args must be a **cmdList**, which is executed after any input from user. Not
 ### choice
 ```json
 args: [
-  "invalid_choice_text",
+  ["invalid commands"],
   ["choice1", "choice2", "choice3"],
   {
     "choice1": [],
@@ -212,11 +212,9 @@ args: [
   }
 ]
 ```
-The user must enter text that matches one of the items in the second arg (an array of strings). If they do not, the invalid_choice_text will be written to the screen.
+The user must enter text that matches one of the items in the second arg (an array of strings). If they do not, the first argument (a **cmdList**) will be executed.
 
 The last argument must be a choice object. A choice object is an object whose property names match the strings in the list_of_choices and whose values are **cmdLists**.
-
-The user must enter text that matches one of the items in list_of_choices. If they do not, the invalid_choice_text will be written to the screen.
 
 ### dialog
 The command "dialog" must have args set to a single object (*not a **cmdList***). The dialog object should have properties whose names are the topics the player can ask about and whose values are **cmdLists**. It must also have a property named `""` (empty string). If the player asks about a topic that doesn't appear on the dialog object as a property, the `""` command list will be executed.
