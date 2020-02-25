@@ -1,19 +1,16 @@
 ## Game Notes (TODO) ##
 
-- Add hornet nest (implement sac for entry)
-  - Need to bring eltnamsid rune here to unlock destruction
 - Add the mountain
 - Add mountain labyrinth (unnavigable without map)
-- Add lievnu rune inside the labyrinth, set incVar|G.BOXQUEST if G.BOXQUEST = 1
-- Add eltnamsid somewhere AFTER mountain labyrinth
 - Add mountain labyrinth
   - Without map, you automatically go to one of central areas
   - With map, can go to other areas in the labyrinth
-- Add the mushroom sequence -> etavoner -> memory
-- Go through each person's memory, learning etalosi, hsinimid, partne along the way
-- Take lievnu rune to lighthouse and bathe in light to unlock charm
+  - Add LIEVNU rune inside the labyrinth, set incVar|G.BOXQUEST if G.BOXQUEST = 1
+- Take LIEVNU rune to lighthouse and bathe in light to unlock charm
+- Add the mushroom sequence -> LIEVNU -> etavoner -> memories
+  - Go through each person's memory, learning etalosi, hsinimid, partne along the way
 - Stop Ophelia with Stanley for BAD ENDING
-- Use lievnu to reveal It in black keep
+- Use LIEVNU to reveal It in black keep
   - then open activated silver box
   - then recite hsinimid -> partne -> etalosi
   - GOOD ENDING
