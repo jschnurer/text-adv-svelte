@@ -128,7 +128,8 @@
       .replace(/~(.+?)~/g, "<entry>$1</entry>")
       .replace(/#(.+?)#/g, "<pre>$1</pre>")
       .replace(/\\/g, "<br />")
-      .replace(/"(.+?)"/g, '<speech>"$1"</speech>');
+      .replace(/"(.+?)"/g, '<speech>"$1"</speech>')
+      .replace(/^\+(.+?)\+$/, '<waitForInput>$1</waitForInput>');
 
     if (nt.startsWith("]")) {
       return nt.replace(/^]+/, '');

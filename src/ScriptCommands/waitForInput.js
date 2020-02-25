@@ -6,5 +6,5 @@ export default function waitForInput(args) {
   
   this.waitCmds = args;
 
-  this.write("Press enter to continue...");
+  this.write("+Press enter to continue...+");
 }
