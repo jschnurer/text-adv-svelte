@@ -25,6 +25,25 @@
       ]
     }
   ],
+  "_common": {
+    "arden_applies_cure": [
+      "removeItem|BLIGHT_CURE",
+      "setFlag|EDRACURED",
+      "You hand the cure to Arden and he takes it with great reverence. He kneels beside Edra's bed. With one hand he gently opens Edra's mouth and with the other he slowly pours the shimmering liquid down his throat. For a moment, nothing happens and the silence is overbearing. Then, suddenly, Edra sputters out a cough and gasps for air.",
+      "Edra jolts awake and you make eye contact with him. He has the most brilliant blue eyes you've ever encountered, but they're wide with fear! He cries out \"ROHCNA!\" Both you and Arden are frozen in place! Your muscles refuse to work! The memory returns to you suddenly, as though you've always known it. You can now \"incant rohcna\", the Charm of Stillness!",
+      "For a few moments, Edra gathers his wits and looks around in a panic. Then he sees you and his brother paralyzed. \"Oh! Arden!\" He mumbles arcane words and Arden begins moving again. \"Who's that?\" he asks Arden, barely able to croak out the words.",
+      "\"Damn your sorcery, Edra! They're a friend!\" Arden groans.",
+      {
+        "cmd": "waitForInput",
+        "args": [
+          "Edra focuses on you and mumbles more arcane phrases. You can feel your muscles loosen. You can move again!",
+          "\"Edra, you're finally awake!\" Arden is ecstatic. He grabs Edra in a giant bear hug. Edra groans. \"I can't believe it. You're finally back!\" Arden is in tears. \"Edra?\" He releases his grip on his younger brother who is unconscious once again. Arden lays him back into his bed and covers him with his blanket. \"A little too much excitement all at once, eh brother?\" he asks while wiping away a tear. \"When you get your strength back, I'll be here waiting.\"",
+          "Arden returns to his seat at the table and regards you. \"I can never thank you enough for curing Edra. You have my eternal gratitude. It's strange, though, I can't believe I could forget that Edra was a sorcerer. It's coming back to me now, slowly. I learned only recently. It was quite a shock, let me tell you! I think... I think there was a woman involved. Someone after my brother. Ahh, but I can't recall now.\"",
+          "Arden smiles at you. \"But seriously, thank you. I only wish there was something I could do to repay you. You should come back sometime to see Edra when he's awake. I'm sure he'd like to meet his savior.\""
+        ]
+      }
+    ]
+  },
   "features": [
     {
       "slug": "arden",
@@ -44,32 +63,65 @@
                 "cmd": "dialog",
                 "args": {
                   "": "\"I don't know anything about that.\"",
-                  "what's going on": "\"To put it plainly, I don't know. But here's what I do know.\" He takes a sip of his tea. \"We,\" he motions toward Edra, \"like you, don't remember anything before we woke up here on the island. Yes, we're on an island if you didn't know already. Except we didn't wake up here in the forest. And we didn't wake up together. No, I woke up on the beach south of here past the swamp. Edra, the poor bastard, woke up in the swamp covered in giant mosquito bites.\"\n\"We've met a few others like yourself but not in a long, long time. We're not sure how people are getting to the island at all, let alone why hardly anyone new comes along anymore.\"",
+                  "what's going on": "\"To put it plainly, I don't know. But here's what I do know.\" He takes a sip of his tea. \"We,\" he motions toward Edra, \"like you, don't remember anything before we woke up here on the island. Yes, we're on an island if you didn't know already. Except we didn't wake up here in the forest. And we didn't wake up together. No, I woke up on the beach south of here past the swamp. Edra, the poor bastard. I found him in the swamp covered in giant mosquito bites.\"\n\"We've met a few others like yourself but not in a long, long time. We're not sure how people are getting to the island at all, let alone why hardly anyone new comes along anymore.\"",
                   "others": [
-                    "\"It's been a long time since we've met anyone new. You're the first person in... well... wow. I'm not really sure. A really long time. None of the others knew what was going on or had any memories from before waking up on the island. They all went off on their own trying to find a way off the island but I was never able to. I've got to stay here and look after Edra.\"\n\"How about you? If you'd like to, you could stay here and help out. There's no need to run off and meet whatever fate befell the others. So what do you say, do you want to settle down and live here instead?\"",
+                    "\"It's been a long time since we've met anyone new. You're the first person in... well... wow. I'm not really sure. A really long time. None of the others knew what was going on or had any memories from before waking up on the island. They all went off on their own trying to find a way off the island but I was never able to. I've got to stay here and look after Edra.\"",
                     {
-                      "cmd": "choice",
+                      "cmd": "ifFlag",
                       "args": [
-                        "Arden takes another sip of his tea and says \"I'm a simple man. Speak plainly. Do you want to give up exploring the island to settle down and live here instead? A simple yes or no will do.\"",
-                        [
-                          "yes",
-                          "no"
-                        ],
+                        "EDRACURED",
+                        "",
+                        "\"How about you? If you'd like to, you could stay here and help out. There's no need to run off and meet whatever fate befell the others. So what do you say, do you want to settle down and live here instead?\"",
                         {
-                          "yes": "gameOver|You decide that exploring the island would be too dangerous so you agree to Arden's offer. Over the coming months you and Arden build a small addition to the cabin which becomes your new room. You help tend the garden and fetch water from the well to the east but never venture any further. After a while, Arden passes away from old age. You dig him a grave in the backyard and visit it every day. You carry on, taking care of Edra for years. He never does wake up. Eventually, he passes away too. You live alone in the cabin for many years but no new arrivals ever show up.\nYou live a long, quiet life alone in your cabin in the woods. One night after you've grown to be quite elderly, you have a dream about exploring the island. It's equal parts adventurous, exciting, and scary. The dream is tinged with a feeling of what might have been.\nYou pass away peacefully in your sleep.",
-                          "no": "\"I thought not. Nobody's ever taken the offer. I can only imagine what's happened to them.\""
+                          "cmd": "choice",
+                          "args": [
+                            "Arden takes another sip of his tea and says \"I'm a simple man. Speak plainly. Do you want to give up exploring the island to settle down and live here instead? A simple yes or no will do.\"",
+                            [
+                              "yes",
+                              "no"
+                            ],
+                            {
+                              "yes": "gameOver|You decide that exploring the island would be too dangerous so you agree to Arden's offer. Over the coming months you and Arden build a small addition to the cabin which becomes your new room. You help tend the garden and fetch water from the well to the east but never venture any further. After a while, Arden passes away from old age. You dig him a grave in the backyard and visit it every day. You carry on, taking care of Edra for years. He never does wake up. Eventually, he passes away too. You live alone in the cabin for many years but no new arrivals ever show up.\nYou live a long, quiet life alone in your cabin in the woods. One night after you've grown to be quite elderly, you have a dream about exploring the island. It's equal parts adventurous, exciting, and scary. The dream is tinged with a feeling of what might have been.\nYou pass away peacefully in your sleep.",
+                              "no": "\"I thought not. Nobody's ever taken the offer. I can only imagine what's happened to them.\""
+                            }
+                          ]
                         }
                       ]
                     }
                   ],
-                  "edra": "\"He's my younger brother. Poor guy woke up in the swamp south of here covered in giant mosquito bites. By the time we found each other he was woozy and not feeling well. We managed to escape the swamp and find this clearing in the forest. It was... real tough at first. Edra couldn't help much and mostly rested. Eventually I finished the cabin and we moved inside. It's been... a long, long time since he's been awake. I've been taking care of him for years.\"\n\"If only there was a cure for whatever he's afflicted with. But,\" he sighs, \"I can't go far. Plus, at least we're safe here.\"\n\"Hah, not that he was really ever concerned about safety. He was always the adventurous, risk-taking type.\" He smiles and continues. \"I remember he had this old hotrod and... wait. Is that right? Or was it...? Hm.\" He's quiet for a few moments. \"Sometimes, I feel like I can almost remember my life before I woke up on the island but then it just slips away. I always thought the memories would return with time but I don't think that's the case anymore.\"",
+                  "edra": [
+                    "\"He's my younger brother. I found the poor guy in the swamp south of here covered in giant mosquito bites. By the time we found each other he was nearly sucked dry. I managed to carry him out of the swamp and find this clearing in the forest. It was... real tough at first. Edra was asleep the whole time. Eventually I finished the cabin and we moved inside.\"",
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "EDRACURED",
+                        [
+                          "\"And now, thanks to you, he's finally cured. I can't wait until he's up and about again! I can't wait to show him this safe little home I've built for us!\""
+                        ],
+                        [
+                          "\"It's been... a long, long time since he's been awake. I've been taking care of him for years.\"",
+                          "\"If only there was a cure for whatever he's afflicted with. But,\" he sighs, \"I can't go far. Plus, at least we're safe here.\""
+                        ]
+                      ]
+                    },
+                    "\"Hah, not that he was really ever concerned about safety. He was always the adventurous, risk-taking type.\" He smiles and continues. \"I remember he had this old hotrod and... wait. Is that right? Or was it...? Hm.\" He's quiet for a few moments. \"Sometimes, I feel like I can almost remember my life before I woke up on the island but then it just slips away. I always thought the memories would return with time but I don't think that's the case anymore.\""
+                  ],
                   "island": "\"Yeah, we're definitely on an island. I woke up on a sandy beach beyond the swamp to the south. Couldn't see anything but ocean on the horizon. I heard from others a long time ago that they'd climbed part way up a mountain to the north and were able to see the whole island.\"\n\"Le'see, what'd they say? There's a black mountain to the north, ruins to the east, the swamp, of course, to the south with the beach beyond that. Apparently there's some way to reach the mountain through the ruins. Oh, and there was a lighthouse on cliff off the beach. I couldn't get to it, though. The bridge was out. Plus I had to find Edra.\"",
                   "lighthouse": "\"Yup. Damndest thing too. The light was still working. I couldn't reach it, though. The bridge was out. It's south of here, past the swamp and on a spire of stone off the beach.\"",
-                  "swamp": "\"That's where Edra and I found each other after we woke up on the island. There are loads of blood-sucking giant mosquitoes all over the place down there. They're easy enough to keep off of you but poor Edra was asleep and nearly got sucked dry. I remember seeing some kind of creepy hut in the swamp but it gave us a bad feeling so we avoided it.\"",
-                  "hut": "\"The hut in the swamp, yeah. It was real creepy and gave Edra and I a bad feeling. We avoided it. What's that? Why? Because there were all these weird totems sticking up out of the muck with wicker and vine dreamcatcher-things hanging off them and weird lights coming from inside. Oh, and animal skulls, loads of animal skulls.\"",
+                  "swamp": "\"That's where I found Edra after I woke up on the island. There are loads of blood-sucking giant mosquitoes all over the place down there. They're easy enough to keep off of you but poor Edra was out cold and nearly got sucked dry. I remember seeing some kind of creepy hut in the swamp but it gave us a bad feeling so we avoided it.\"",
+                  "hut": "\"The hut in the swamp, yeah. It was real creepy and gave me a bad feeling. I avoided it. What's that? Why? Because there were all these weird totems sticking up out of the muck with wicker and vine dreamcatcher-things hanging off them and weird lights coming from inside. Oh, and animal skulls, loads of animal skulls.\"",
                   "mosquito|giant mosquito": "\"Those suckers are all over the swamp south of here. They're easy enough to keep off of you... as long as you're paying attention.\"",
-                  "cure": "\"Maybe one exists and maybe not. I'd guess that if there was one, you'd find what's necessary for it in the swamp. I can't go off looking for it, though. Not with Edra being in the state he is.\"",
-                  "cabin": "\"You like it? We built it years ago. Well, to be honest, it was mostly me. Edra rested most of the time.\"",
+                  "cure": [
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "EDRACURED",
+                        "\"I'll never be able to repay your kindness. Thank you again for finding the cure.\"",
+                        "\"Maybe one exists and maybe not. I'd guess that if there was one, you'd find what's necessary for it in the swamp. I can't go off looking for it, though. Not with Edra being in the state he is.\""
+                      ]
+                    }
+                  ],
+                  "cabin": "\"You like it? We built it years ago. Well, to be honest, it was just me. Edra was out cold after his ordeal in the swamp.\"",
                   "forest": "\"It's big and it's dense. I know there's a trail that leads north to a fork but I didn't explore much, not with Edra being sick and all. The trail from the cabin leads east to an old well that we found. I make the trek every day to draw water. Be careful over near the well, though.\"",
                   "well": "\"It's to the east. Have you been over there? Be real careful. I saw a giant hornet one time nearby. I think they've got a nest to the north.\"",
                   "hornet|giant hornet": "\"If you see one, run. Those things have stingers the size of swords!\"",
@@ -85,27 +137,64 @@
                   "favorite color": "\"Do you ask all the strangers you meet in the woods this question?\" He smiles. \"Orange. I've always liked orange.\"",
                   "edra's favorite color": "\"Now why would you possibly want to know that? I think it was... It was--you know? I've actually forgotten.\"",
                   "ophelia": "\"Hmmm... The name rings a bell...\" He looks downward and starts tugging on his beard, lost in thought.\n\"Oh! Ophelia! Of course! How could I have forgotten? We met her in the forest when we first arrived. She said she was exploring the island trying to figure out what was going on. She stayed with us for a little while while we built the cabin.\"\nEven through his beard you can see he begins to blush a little. \"She was really pretty. Eventually she said she needed to explore the rest of the island and look for a way to escape. She came back a long time afterward with some others in tow. They said they were heading to the black mountain to find a way out.\" He frowns. \"I think we saw some of them again, once. They told us that they had encountered something up there on the mountain.\"",
-                  "merek|stanley|rhode": "\"Sorry, I don't know anyone by that name.\"",
-                  "meredith": "\"Meredith... Meredith... The name's familiar but I can't recall anything.\" He frowns. \"I'd really like to be more of a help but I just can't remember.\""
+                  "merek|stanley|rhode|meredith": "\"Sorry, I don't know anyone by that name.\""
                 }
               }
             ],
             "Arden looks up at you from his seat. \"Please have a seat first. I don't like having to crane my neck.\""
           ]
         }
-      ]
+      ],
+      "give": {
+        "BLIGHT_CURE": [
+          "Arden watches wide-eyed as you produce the vial of shimmering liquid. \"Is that...?\" He trails off. \"I can't believe it. Thank you. Let's fix him up!\"",
+          "callCommon|arden_applies_cure"
+        ]
+      }
     },
     {
       "slug": "Edra",
       "altSlugs": [
         "man"
       ],
-      "roomDesc": "There's another man in one of the beds, asleep under a green, wool blanket.",
+      "roomDesc": "There's another man in one of the beds, asleep under a wool blanket.",
       "look": [
         "He's a younger man, maybe in his mid-30s, with a crudely trimmed brown beard and hair. He's fast asleep in bed.",
-        "Arden sees you looking at him. \"That's my younger brother Edra. He's been asleep a long time.\""
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "EDRACURED",
+            "Arden sees you looking at him. \"Edra was awake and talking a little while ago. You just missed him.\"",
+            "Arden sees you looking at him. \"That's my younger brother Edra. He's been asleep a long time.\""
+          ]
+        }
       ],
-      "greet": "Edra doesn't respond. \"He's not much for talking nowadays,\" Arden says then chuckles to himself."
+      "greet": [
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "EDRACURED",
+            "Edra mumbles something in his sleep and rolls over. \"He just needs his beauty sleep,\" Arden says with a chuckle.",
+            "Edra doesn't respond. \"He's not much for talking nowadays,\" Arden says then chuckles to himself."
+          ]
+        }
+      ],
+      "give": {
+        "": [
+          {
+            "cmd": "ifFlag",
+            "args": [
+              "EDRACURED",
+              "Edra's asleep. And he probably doesn't want that anyway.",
+              "Edra is in no condition to accept that."
+            ]
+          }
+        ],
+        "BLIGHT_CURE": [
+          "Arden watches wide-eyed as you produce the vial of shimmering liquid. \"Is that...?\" He trails off. You uncork the vial and approach Edra. \"Wait,\" Arden interrupts you, \"Let me. He's my little brother.\"",
+          "callCommon|arden_applies_cure"
+        ]
+      }
     },
     {
       "slug": "chair",
@@ -210,7 +299,7 @@
       "altSlugs": [
         "beds"
       ],
-      "look": "There are two beds. One's currently empty with a gray blanket and the other has a man sleeping in it under a green blanket. Arden tells you \"That's Edra, my younger brother\""
+      "look": "There are two beds. Each has a gray wool blanket. One's currently empty and the other has a man sleeping in it. Arden tells you \"That's Edra, my younger brother\""
     }
   ]
 }
