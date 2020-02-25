@@ -22,8 +22,11 @@ export default function handleUserEntry(entry) {
   this.capturedText = '';
 
   if (this.waitCmds) {
+    let oldWaitCmds = this.waitCmds;
     this.parseCmds(this.waitCmds);
-    this.waitCmds = null;
+    if (oldWaitCmds == this.waitCmds) {
+      this.waitCmds = null;
+    }
     return;
   } else if (!entry) {
     return;
