@@ -1,7 +1,6 @@
 ## Game Notes (TODO) ##
 
 - Add the mountain
-- Add mountain labyrinth (unnavigable without map)
 - Add mountain labyrinth
   - Without map, you automatically go to one of central areas
   - With map, can go to other areas in the labyrinth

@@ -1,5 +1,51 @@
 {
   "name": "Heart of the Labyrinth",
   "slug": "Mountain/maze-goal",
-  "description": "AWWWWW YEEEEEEEEEEEEEEEEEEEEEEEEEEE BOIIIIIIII"
+  "description": "You're standing in a circular area. It's a dead end. You turn around and find that even the passage that brought you here is gone! In the center of the circular area there is a black, stone pedestal. It's a smooth cylindrical column about a foot in diameter and four feet tall. It's engraved with writing that circles it, spiraling a message around and around from top to bottom.",
+  "north": [
+    {
+      "cmd": "ifFlag",
+      "args": [
+        "TOOKRUNE",
+        [
+          "You step through the passage to the north. When you check behind you, the way back is gone--there's just a dead end. The passage leads straight in front of you and only heads about fifteen feet before opening to another area. You continue on.",
+          {
+            "cmd": "waitForInput",
+            "args": ["loadRoom|Mountain/maze-center"]
+          }
+        ],
+        "You can't go that way."
+      ]
+    }
+  ],
+  "features": [
+    {
+      "slug": "rune",
+      "destroyedFlag": "TOOKRUNE",
+      "roomDesc": "Sitting atop the pedestal is a small rune.",
+      "look": "It's a magical rune representing lievnu.",
+      "take": [
+        "You take the rune from atop the pedestal.",
+        "setFlag|TOOKRUNE",
+        "You look around again only to find a new passage to the north."
+      ]
+    },
+    {
+      "slug": "pedestal",
+      "altSlugs": [
+        "column",
+        "message",
+        "writing"
+      ],
+      "look": [
+        "The spiraling message reads:",
+        "]ATOP THE LONELY SENTINEL\\WHOSE CROWN IS ALL AFLAME\\PRESENT IT TO THE DERVISH\\ITS POWER YOU RECLAIM"
+      ]
+    },
+    {
+      "slug": "north",
+      "destroyedFlag": "!TOOKRUNE",
+      "roomDesc": "A single passage leads away from the area to the north."
+    }
+  ]
 }
