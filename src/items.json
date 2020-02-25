@@ -299,5 +299,10 @@
     "slug": "root",
     "id": "TARNROOT",
     "look": "It's a plant with white leaves and a thick, brown, two-pronged root."
+  },
+  {
+    "slug": "parchment",
+    "id": "PARCHMENT",
+    "look": "callCommon|parchment_look|global-common"
   }
 ]

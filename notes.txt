@@ -1,7 +1,5 @@
 ## Game Notes (TODO) ##
 
-- Give cure to Edra -> learn ROHCNA
-- Fill in the empty cave rooms
 - Add hornet nest (implement sac for entry)
   - Need to bring eltnamsid rune here to unlock destruction
 - Add the mountain
