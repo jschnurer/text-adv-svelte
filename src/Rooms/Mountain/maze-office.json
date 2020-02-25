@@ -1,7 +1,0 @@
-{
-  "name": "Labyrinth, Office",
-  "slug": "Mountain/maze-office",
-  "north": "loadRoom|Mountain/maze-pillars",
-  "east": "loadRoom|Mountain/maze-south",
-  "description": ""
-}

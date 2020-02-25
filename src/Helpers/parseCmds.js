@@ -1,6 +1,10 @@
 export default function parseCmds(cmds, feature) {
   let bail = false;
 
+  if(!cmds) {
+    return;
+  }
+
   if (typeof cmds === "string") {
     this.parseStringCmd(cmds, feature);
     return;
@@ -55,6 +59,12 @@ export default function parseCmds(cmds, feature) {
         break;
       case "pickOne":
         this.pickOne(cmd.args);
+        break;
+      case "switchBranch":
+        this.switchBranch(cmd.args);
+        break;
+      case "ifIsIn":
+        this.ifIsIn(cmd.args);
         break;
     }
 

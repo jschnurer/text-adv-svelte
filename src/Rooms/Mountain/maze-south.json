@@ -3,15 +3,7 @@
   "slug": "Mountain/maze-south",
   "north": "loadRoom|Mountain/maze-center",
   "south": "loadRoom|Mountain/lake",
-  "west": [
-    {
-      "cmd": "ifHasItem",
-      "args": [
-        "MAP",
-        "loadRoom|Mountain/maze-office",
-        "callCommon|maze_lost|global-common"
-      ]
-    }
-  ],
+  "east": "callCommon|maze_enter|global-common",
+  "west": "callCommon|maze_enter|global-common",
   "description": ""
 }

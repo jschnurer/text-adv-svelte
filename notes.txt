@@ -33,6 +33,10 @@
   f. incant etalosi to seal the box
   g. GOOD ENDING
 
+Path through the maze:
+N E N S S W S E N E
+0 1 2 3 4 5 6 7 8 9 
+
 Memories:
 - Merek, evil mage destroys his village as a child, joins order, trains. Learns that to truly stop an evil sorcerer, their soul must be excised and trapped. Learns a secret incantation to do so. Goes on a journey, arrives at Rhode's house. This is his first hunt. He's nervous but he steels his resolve by remembering the evil mage that destroyed his village. He kicks in the door.
 

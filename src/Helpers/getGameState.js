@@ -28,10 +28,12 @@ import ifRoom from "../ScriptCommands/ifRoom.js";
 import ifVar from "../ScriptCommands/ifVar.js";
 import incVar from "../ScriptCommands/incVar.js";
 import invokeRoom from "../ScriptCommands/invokeRoom.js";
+import ifIsIn from "../ScriptCommands/ifIsIn.js";
 import pickOne from "../ScriptCommands/pickOne.js";
 import removeItem from "../ScriptCommands/removeItem.js";
 import saveGame from "../ScriptCommands/saveGame.js";
 import setFlag from "../ScriptCommands/setFlag.js";
+import switchBranch from "../ScriptCommands/switchBranch.js";
 import unsetFlag from "../ScriptCommands/unsetFlag.js";
 import waitForInput from "../ScriptCommands/waitForInput.js";
 import write from "../ScriptCommands/write.js";
@@ -117,10 +119,12 @@ export default function getGameState(loadGame, updateScroll, update) {
     ifVar,
     incVar,
     invokeRoom,
+    ifIsIn,
     pickOne,
     removeItem,
     saveGame,
     setFlag,
+    switchBranch,
     unsetFlag,
     waitForInput,
     write,

@@ -159,6 +159,30 @@ The command will then compare the two values against each other using the specif
 
 The fourth argument is a **cmdList** for if the comparison is true. The fifth argument is a **cmdList** for if the comparison is false.
 
+### ifIsIn
+```json
+args: [
+  "var_name",
+  ["val1","val2","val3"],
+  [],
+  []
+]
+```
+The first argument is the variable name that will be checked for. The second argument is an array of values that the variable will be compared against. They may be any combination of numbers or strings (the comparison is `==` not, `===`). The third arg is the **cmdList** to execute if the variable's value is found in the second argument and the fourth is a **cmdList** to execute if it is not.
+
+### switchBranch
+```json
+args: [
+  "var_name",
+  {
+    "": [],
+    "case1": [],
+    "case2": []
+  }
+]
+```
+The first argument is the name of the variable to check. The second argument must be an object whose properties are all **cmdLists**. If the value of the specified var matches the name of any of the properties, that property's **cmdList** will be executed. If a property appears on the object whose name is `""` and the var's value doesn't match any of the properties, the **cmdList** in `""` will be executed instead.
+
 ### pickOne
 ```json
 args: [

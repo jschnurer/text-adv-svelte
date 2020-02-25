@@ -43,7 +43,7 @@
       "]-Meredith"
     ],
     "maze_lost": [
-      "You enter the maze and follow its twists and turns. You reach a dead end and turn around. The way back seems... different. You're not sure how but you've gotten completely turned around. Without a map to guide the way, you're hopelessly lost. You wander for what seems like hours.",
+      "After wandering through the labyrinthine passages, you've gotten completely turned around. Without a map to guide the way, you're hopelessly lost. You wander for what seems like hours before finally stepping back out onto the main path through the labyrinth.",
       {
         "cmd": "waitForInput",
         "args": [
@@ -61,6 +61,15 @@
     "parchment_look": [
       "The parchment reads:",
       "To the fortress underground, where their queen has been crowned. To her highness present it, to unlock the truth of eltnamsid."
+    ],
+    "maze_enter": [
+      "You decide to leave the straight, obvious path through the labyrinth and step into a twisting, turning side passage.",
+      {
+        "cmd": "waitForInput",
+        "args": [
+          "loadRoom|Mountain/maze"
+        ]
+      }
     ]
   }
 }

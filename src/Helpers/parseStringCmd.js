@@ -1,8 +1,9 @@
 const singleWordCmds = [
-  "saveGame"
+  "saveGame",
+  "look"
 ]
 
-export default function parseStringCmd(cmd, feature) {
+export default function parseStringCmd(cmd) {
   let chunks = cmd.split("|");
 
   if (chunks.length > 1 || singleWordCmds.indexOf(cmd) > -1) {

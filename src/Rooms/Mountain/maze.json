@@ -1,0 +1,141 @@
+{
+  "name": "A Labyrinthine Passage",
+  "slug": "Mountain/maze",
+  "description": [
+    "You are in a labyrinthine passage. You've taken a few turns to get this far. And can't quite remember exactly what you did to get here. All the passages look the same. There are no landmarks to guide the way.",
+    "There are passages that head north, south, east, and west."
+  ],
+  "north": [
+    "setVarValue|DIR|1",
+    "callCommon|move"
+  ],
+  "south": [
+    "setVarValue|DIR|3",
+    "callCommon|move"
+  ],
+  "east": [
+    "setVarValue|DIR|2",
+    "callCommon|move"
+  ],
+  "west": [
+    "setVarValue|DIR|4",
+    "callCommon|move"
+  ],
+  "load": [
+    "setVarValue|STEP|0",
+    "setVarValue|PROGRESS|0"
+  ],
+  "_common": {
+    "move": [
+      {
+        "cmd": "switchBranch",
+        "args": [
+          "DIR",
+          {
+            "1": [
+              {
+                "cmd": "ifIsIn",
+                "args": [
+                  "STEP",
+                  [
+                    0,
+                    2,
+                    8
+                  ],
+                  "incVar|PROGRESS",
+                  "setVarValue|PROGRESS|-100"
+                ]
+              }
+            ],
+            "2": [
+              {
+                "cmd": "ifIsIn",
+                "args": [
+                  "STEP",
+                  [
+                    1,
+                    7,
+                    9
+                  ],
+                  "incVar|PROGRESS",
+                  "setVarValue|PROGRESS|-100"
+                ]
+              }
+            ],
+            "3": [
+              {
+                "cmd": "ifIsIn",
+                "args": [
+                  "STEP",
+                  [
+                    3,
+                    4,
+                    6
+                  ],
+                  "incVar|PROGRESS",
+                  "setVarValue|PROGRESS|-100"
+                ]
+              }
+            ],
+            "4": [
+              {
+                "cmd": "ifIsIn",
+                "args": [
+                  "STEP",
+                  [
+                    5
+                  ],
+                  "incVar|PROGRESS",
+                  "setVarValue|PROGRESS|-100"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "incVar|STEP",
+      {
+        "cmd": "ifVar",
+        "args": [
+          "STEP",
+          "==",
+          10,
+          [
+            {
+              "cmd": "ifVar",
+              "args": [
+                "PROGRESS",
+                "==",
+                10,
+                "loadRoom|Mountain/maze-goal",
+                "callCommon|maze_lost|global-common"
+              ]
+            }
+          ],
+          "You continue making your way through the labyrinth. You follow the turns in the passage until you come to another fork. You can head north, south, east, or west."
+        ]
+      }
+    ],
+    "map_look": [
+      "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient.",
+      {
+        "cmd": "switchBranch",
+        "args": [
+          "STEP",
+          {
+            "0": "The map indicates you should head north.",
+            "1": "The map indicates you should head east.",
+            "2": "The map indicates you should head north.",
+            "3": "The map indicates you should head south.",
+            "4": "The map indicates you should head south.",
+            "5": "The map indicates you should head west.",
+            "6": "The map indicates you should head south.",
+            "7": "The map indicates you should head east.",
+            "8": "The map indicates you should head north.",
+            "9": "The map indicates you should head east."
+          }
+        ]
+      }
+    ]
+  }
+}

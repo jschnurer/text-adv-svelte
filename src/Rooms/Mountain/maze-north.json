@@ -3,15 +3,7 @@
   "slug": "Mountain/maze-north",
   "north": "loadRoom|Mountain/winding-path",
   "south": "loadRoom|Mountain/maze-center",
-  "east": [
-    {
-      "cmd": "ifHasItem",
-      "args": [
-        "MAP",
-        "loadRoom|Mountain/maze-diner-sign",
-        "callCommon|maze_lost|global-common"
-      ]
-    }
-  ],
+  "east": "callCommon|maze_enter|global-common",
+  "west": "callCommon|maze_enter|global-common",
   "description": ""
 }

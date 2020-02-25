@@ -3,15 +3,7 @@
   "slug": "Mountain/maze-center",
   "north": "loadRoom|Mountain/maze-north",
   "south": "loadRoom|Mountain/maze-south",
-  "west": [
-    {
-      "cmd": "ifHasItem",
-      "args": [
-        "MAP",
-        "loadRoom|Mountain/maze-pillars",
-        "callCommon|maze_lost|global-common"
-      ]
-    }
-  ],
+  "east": "callCommon|maze_enter|global-common",
+  "west": "callCommon|maze_enter|global-common",
   "description": ""
 }
