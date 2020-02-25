@@ -176,6 +176,11 @@
     "look": "You don't know how you know this, but the rune represents the eltnamsid charm."
   },
   {
+    "slug": "lievnu rune",
+    "id": "LIEVNU_RUNE",
+    "look": "You don't know how you know this, but the rune represents the lievnu charm."
+  },
+  {
     "slug": "hatch note",
     "id": "HATCH_NOTE",
     "look": "callCommon|hatch_note_look|global-common"

@@ -27,6 +27,7 @@
       "take": [
         "You take the rune from atop the pedestal.",
         "setFlag|TOOKRUNE",
+        "addItem|LIEVNU_RUNE",
         "You look around again only to find a new passage to the north."
       ]
     },
@@ -39,7 +40,7 @@
       ],
       "look": [
         "The spiraling message reads:",
-        "]ATOP THE LONELY SENTINEL\\WHOSE CROWN IS ALL AFLAME\\PRESENT IT TO THE DERVISH\\ITS POWER YOU RECLAIM"
+        "]ATOP THE LONELY SENTINEL\\WHOSE CROWN IS ALL AFLAME\\USE IT ON THE DERVISH\\ITS POWER YOU RECLAIM"
       ]
     },
     {

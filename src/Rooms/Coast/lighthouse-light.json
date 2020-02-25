@@ -9,7 +9,15 @@
   "features": [
     {
       "slug": "light",
-      "look": "The blindingly bright light is encased in lenses and rotates slowly. You don't see any gears or machinery so you're not sure how it's working."
+      "look": "The blindingly bright light is encased in lenses and rotates slowly. You don't see any gears or machinery so you're not sure how it's working.",
+      "use": {
+        "LIEVNU_RUNE": [
+          "You hold the rune between thumb and forefinger, arm outstretched toward the light. The light slowly circles until is washes of you. You shield your eyes with your other hand and the light soon passes. The rune is gone, leaving nothing but a few motes of light in the air. The memory returns to you suddenly, as though you've always known it. You can now \"incant lievnu\", the Charm of Revealing!",
+          "callCommon|after_learn_incant|global-common",
+          "removeItem|LIEVNU_RUNE",
+          "setFlag|G.LIEVNU"
+        ]
+      }
     },
     {
       "slug": "woman",
