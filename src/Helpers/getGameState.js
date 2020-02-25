@@ -20,6 +20,7 @@ import choice from "../ScriptCommands/choice.js";
 import callCommon from "../ScriptCommands/callCommon.js";
 import decVar from "../ScriptCommands/decVar.js";
 import dialog from "../ScriptCommands/dialog.js";
+import end from "../ScriptCommands/end.js";
 import gameOver from "../ScriptCommands/gameOver.js";
 import ifFlag from "../ScriptCommands/ifFlag.js";
 import ifFlagWrite from "../ScriptCommands/ifFlagWrite.js";
@@ -74,6 +75,8 @@ export default function getGameState(loadGame, updateScroll, update) {
     globalVars: {},
     // The database of rooms.
     rooms: getRoomDictionary(),
+    // Whether or not the game has reached its end.
+    isEnd: false,
     // Whether or not the game is in a game over state.
     isGameOver: false,
     // The current room.
@@ -111,6 +114,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     callCommon,
     decVar,
     dialog,
+    end,
     gameOver,
     ifFlag,
     ifFlagWrite,

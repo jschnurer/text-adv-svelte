@@ -127,24 +127,24 @@
       .replace(/#(.+?)#/g, "<pre>$1</pre>")
       .replace(/\\/g, "<br />")
       .replace(/"(.+?)"/g, '<speech>"$1"</speech>')
-      .replace(/^\+(.+?)\+$/, '<waitForInput>$1</waitForInput>');
+      .replace(/^\+(.+?)\+$/, "<waitForInput>$1</waitForInput>");
 
     if (nt.startsWith("]")) {
-      return nt.replace(/^]+/, '');
+      return nt.replace(/^]+/, "");
     } else {
       return nt;
     }
   };
 
   const getClass = line => {
-    if (line.startsWith(']]')) {
-      return 'indent2';
-    } else if (line.startsWith(']')) {
-      return 'indent';
+    if (line.startsWith("]]")) {
+      return "indent2";
+    } else if (line.startsWith("]")) {
+      return "indent";
     }
 
-    return '';
-  }
+    return "";
+  };
 </script>
 
 <style>
@@ -179,7 +179,7 @@
     margin-left: 2em;
   }
 
-   .indent2 {
+  .indent2 {
     margin-left: 4em;
   }
 
@@ -202,6 +202,8 @@
     <room bind:this={output}>
       {#if gameState.isGameOver}
         <h3>GAME OVER</h3>
+      {:else if gameState.isEnd}
+        <h3>The End</h3>
       {/if}
 
       {#each gameState.text.split('\n').filter(x => !!x) as line}
@@ -210,13 +212,15 @@
         </p>
       {/each}
     </room>
-    {#if !gameState.isGameOver}
+    {#if gameState.isGameOver}
+      <button on:click={() => location.reload()}>Try again</button>
+    {:else if gameState.isEnd}
+      <button on:click={() => location.reload()}>New Game</button>
+    {:else}
       <form on:submit|preventDefault={submit}>
         <input use:focus bind:value={entry} on:keydown={keydown} />
         <span on:click={help}>❔</span>
       </form>
-    {:else}
-      <button on:click={() => location.reload()}>Try again</button>
     {/if}
   {/if}
 {/if}
