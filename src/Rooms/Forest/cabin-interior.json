@@ -31,11 +31,13 @@
       "setFlag|EDRACURED",
       "You hand the cure to Arden and he takes it with great reverence. He kneels beside Edra's bed. With one hand he gently opens Edra's mouth and with the other he slowly pours the shimmering liquid down his throat. For a moment, nothing happens and the silence is overbearing. Then, suddenly, Edra sputters out a cough and gasps for air.",
       "Edra jolts awake and you make eye contact with him. He has the most brilliant blue eyes you've ever encountered, but they're wide with fear! He cries out \"ROHCNA!\" Both you and Arden are frozen in place! Your muscles refuse to work! The memory returns to you suddenly, as though you've always known it. You can now \"incant rohcna\", the Charm of Stillness!",
-      "For a few moments, Edra gathers his wits and looks around in a panic. Then he sees you and his brother paralyzed. \"Oh! Arden!\" He mumbles arcane words and Arden begins moving again. \"Who's that?\" he asks Arden, barely able to croak out the words.",
-      "\"Damn your sorcery, Edra! They're a friend!\" Arden groans.",
+      "callCommon|after_learn_incant|global-common",
+      "setFlag|G.ROHCNA",
       {
         "cmd": "waitForInput",
         "args": [
+          "For a few moments, Edra gathers his wits and looks around in a panic. Then he sees you and his brother paralyzed. \"Oh! Arden!\" He mumbles arcane words and Arden begins moving again. \"Who's that?\" he asks Arden, barely able to croak out the words.",
+          "\"Damn your sorcery, Edra! They're a friend!\" Arden groans.",
           "Edra focuses on you and mumbles more arcane phrases. You can feel your muscles loosen. You can move again!",
           "\"Edra, you're finally awake!\" Arden is ecstatic. He grabs Edra in a giant bear hug. Edra groans. \"I can't believe it. You're finally back!\" Arden is in tears. \"Edra?\" He releases his grip on his younger brother who is unconscious once again. Arden lays him back into his bed and covers him with his blanket. \"A little too much excitement all at once, eh brother?\" he asks while wiping away a tear. \"When you get your strength back, I'll be here waiting.\"",
           "Arden returns to his seat at the table and regards you. \"I can never thank you enough for curing Edra. You have my eternal gratitude. It's strange, though, I can't believe I could forget that Edra was a sorcerer. It's coming back to me now, slowly. I learned only recently. It was quite a shock, let me tell you! I think... I think there was a woman involved. Someone after my brother. Ahh, but I can't recall now.\"",
