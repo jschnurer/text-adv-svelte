@@ -3,5 +3,8 @@
   "slug": "Mountain/winding-path",
   "north": "loadRoom|Mountain/campsite",
   "south": "loadRoom|Mountain/maze-north",
-  "description": ""
+  "description": [
+    "You are on a stony, winding path spiraling upward around the black mountain. High above you you can see the summit. There is flashing light up there but you can't see its source. The path and all the rocks--actually, pretty much everything around you--is made of jet black stone.",
+    "The path continues spiraling the mountain and heading north."
+  ]
 }
