@@ -50,7 +50,7 @@
     {
       "slug": "arden",
       "roomDesc": [
-        "ifFlagWrite|!SITTING|Arden sits in a chair at the table with two tin cups and a kettle. \"Please, take a seat. Have some tea and let's talk.\"",
+        "ifFlagWrite|!SITTING|Arden sits in a chair at the table with two tin cups and a kettle. His jacket is hanging on the chair behind him. He's wearing an orange plaid shirt.\"Please, take a seat. Have some tea and let's talk.\"",
         "ifFlagWrite|SITTING|Arden sits in a chair across the table from you at the table with two tin cups and a kettle."
       ],
       "look": "Arden's an older man with graying hair and a crudely trimmed gray beard. He's sitting in a chair at the table holding a cup of tea, watching you, waiting patiently to answer any of your questions.",
@@ -166,7 +166,7 @@
           "cmd": "ifFlag",
           "args": [
             "EDRACURED",
-            "Arden sees you looking at him. \"Edra was awake and talking a little while ago. You just missed him.\"",
+            "You can still remember his brilliant blue eyes. Arden sees you looking at him. \"Edra was awake and talking a little while ago. You just missed him.\"",
             "Arden sees you looking at him. \"That's my younger brother Edra. He's been asleep a long time.\""
           ]
         }

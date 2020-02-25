@@ -57,12 +57,12 @@ color sequence:
 blue, indigo, red, purple, orange, green, yellow
 
 Edra (blue) -- 1990s free-spirit, prey
-Stanley (indigo) -- 2040s security personnel, hunter
+ Stanley (indigo) -- 2040s security personnel, hunter
 Merek (red) -- medieval knight, hunter
 Rhode (purple) -- medieval witch, prey
 Arden (orange) -- 1990s accountant, bystander
 Meredith (green) -- 1990s office worker, hunter
-Ophelia (yellow) -- 2040s ambassador, prey
+ Ophelia (yellow) -- 2040s ambassador, prey
 
 Groups:
 
