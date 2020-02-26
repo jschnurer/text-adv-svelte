@@ -7,6 +7,6 @@
 </script>
 
 <Router url={url}>
-  <Route path="walkthrough" component={Walkthrough} />
+  <Route path={window.hostDir + "/walkthrough"} component={Walkthrough} />
   <Route path="" component={Start} />
 </Router>
