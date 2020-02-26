@@ -15,7 +15,7 @@ export default function addItem(id) {
     this.setVarValue('G.ITEMPERCENT',
       Math.floor(
         parseFloat(this.getVarValue('G.TOTAL_ITEMS_FOUND'), 10)
-        / parseFloat(this.items.filter(x => x.slug.indexOf('TUTORIAL') === -1).length) * 100) + ' %'
+        / parseFloat(this.items.filter(x => x.id.indexOf('TUTORIAL') === -1).length) * 100) + ' %'
     );
   }
 
