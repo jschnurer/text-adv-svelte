@@ -160,7 +160,7 @@
           "args": [
             "SEQ",
             ">",
-            6,
+            1,
             [
               "It's glowing a bright yellow color."
             ],
@@ -181,7 +181,7 @@
                 "args": [
                   "SEQ",
                   "==",
-                  6,
+                  1,
                   [
                     "incVar|SEQ",
                     "You touch the yellow mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
@@ -207,7 +207,7 @@
           "args": [
             "SEQ",
             ">",
-            "0",
+            6,
             [
               "It's glowing a bright indigo color."
             ],
@@ -228,7 +228,7 @@
                 "args": [
                   "SEQ",
                   "==",
-                  1,
+                  6,
                   [
                     "incVar|SEQ",
                     "You touch the indigo mushroom and it begins to glow."
