@@ -363,7 +363,7 @@
                 "args": [
                   "SEQ",
                   "==",
-                  4,
+                  0,
                   [
                     "incVar|SEQ",
                     "You touch the blue mushroom and it begins to glow."
