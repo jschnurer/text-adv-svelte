@@ -123,4 +123,7 @@
     you attune your soul to the cairn. If your adventure is cut short by
     tragedy, you can restart from the last cairn you touched.
   </p>
+  <p>
+  If you need more help, you can view the <a href="walkthrough" target="_blank">Spoiler-riffic Walkthrough.</a>
+  </p>
 </room>
