@@ -1,7 +1,8 @@
 # Room Data
 
 No license or permission is granted to use, distribute, publish, sublicense,
-and/or sell anything inside the `Rooms` directory.
+alter and/or sell anything inside the `Rooms` directory. All of the aforementioned
+is disallowed.
 
 # Everything Else
 
