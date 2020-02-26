@@ -184,9 +184,7 @@
                   1,
                   [
                     "incVar|SEQ",
-                    "You touch the yellow mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
-                    "A faint glimmer appears in the air nearby.",
-                    "setFlag|ALLGLOWING"
+                    "You touch the yellow mushroom and it begins to glow."
                   ],
                   [
                     "callCommon|mushroom_gameover"
@@ -231,7 +229,9 @@
                   6,
                   [
                     "incVar|SEQ",
-                    "You touch the indigo mushroom and it begins to glow."
+                    "You touch the indigo mushroom and it begins to glow. Now all of the colored mushrooms on the log are all glowing.",
+                    "A faint glimmer appears in the air nearby.",
+                    "setFlag|ALLGLOWING"
                   ],
                   [
                     "callCommon|mushroom_gameover"
@@ -408,7 +408,7 @@
                 "args": [
                   "SEQ",
                   "==",
-                  0,
+                  4,
                   [
                     "incVar|SEQ",
                     "You touch the orange mushroom and it begins to glow."
@@ -476,13 +476,7 @@
               }
             ],
             [
-              "You feel a tingling sensation as your hand passes through the crack. The crack widens and widens until you are blinded by white light. You begin to remember memories that aren't your own. Suddenly, the whole universe seems to spasm and shift into a different orientation.",
-              {
-                "cmd": "waitForInput",
-                "args": [
-                  "gameOver|U ded."
-                ]
-              }
+              "gameOver|You reach out and touch the unstable crack in reality. As soon as you do, you get a sinking feeling in your stomach like you're falling. All around you the air shatters into pieces, cracks spiderwebbing out in all directions. Then all the pieces come tumbling down. They fall away into nothingness, leaving only utter blackness in their wake.\nYour arms begin to ache. You look down at them and see cracks forming all across your skin. They shoot outward in every direction, covering your whole body. Then, in an instant, you shatter into pieces.\nIf only you had a way to repair the unstable crack first..."
             ]
           ]
         }
