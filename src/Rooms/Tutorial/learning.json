@@ -114,7 +114,7 @@
     },
     {
       "slug": "terminal",
-      "look": "It's a screen with a digital keypad. It says \"Enter keycode to access mechanical room\".",
+      "look": "It's a screen with a digital keypad. It probably controls the door to the mechanical room.\nHint: You'll have to \"use terminal\" to interact with it. Once you use it you'll need to enter the keycode. The keycode for the terminal isn't the same as the password for the computer!",
       "use": {
         "": [
           "You step up to the terminal. It says \"Enter keycode to access mechanical room\". Please type the keycode now.",
