@@ -170,7 +170,13 @@ export default function getGameState(loadGame, updateScroll, update) {
         Object.assign(gameState, savedGame);
 
         inv.forEach(x => {
-          let item = items.find(item => item.id === x);
+          let item = null;
+          if (typeof (x) === 'string') {
+            item = items.find(item => item.id === x);
+          } else if (typeof (x) === 'object') {
+            item = items.find(item => item.id === x.id);
+          }
+          
           if (item) {
             gameState.inventory.push(item);
           }
