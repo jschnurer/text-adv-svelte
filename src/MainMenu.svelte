@@ -78,7 +78,19 @@
     color: #0000ee;
     cursor: pointer;
     display: block;
-    margin-top: .5em;
+    margin-top: 0.5em;
+  }
+  .copy > span {
+    font-size: 0.875em;
+    margin-right: 0.125em;
+    position: relative;
+    top: -0.25em;
+    left: -0.125em;
+  }
+  .copy > span > span {
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
   }
 </style>
 
@@ -101,11 +113,11 @@
   <button on:click={startExport}>Export Saved Game →</button>
 {/if}
 {#if exportString}
-  <Modal showClose={true} on:close={() => exportString = ''}>
+  <Modal showClose={true} on:close={() => (exportString = '')}>
     <p>
       Copy this save code and put it somewhere safe. Then, on another computer,
-      you can import this save by clicking Import Saved Game and pasting this code
-      in.
+      you can import this save by clicking Import Saved Game and pasting this
+      code in.
     </p>
     <textarea
       value={exportString}
@@ -113,11 +125,9 @@
       class="export-text"
       bind:this={exportTextbox} />
     <span class="copy" on:click={copyExport}>
-      <span
-        style="font-size: .875em; margin-right: .125em; position: relative; top:
-        -.25em; left: -.125em">
+      <span>
         📄
-        <span style="position: absolute; top: .25em; left: .25em">📄</span>
+        <span>📄</span>
       </span>
       Copy to clipboard
     </span>
