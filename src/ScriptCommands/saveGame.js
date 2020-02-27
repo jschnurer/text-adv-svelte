@@ -4,7 +4,7 @@ export default function saveGame() {
       {},
       {
         options: this.options,
-        inventory: this.inventory,
+        inventory: this.inventory.map(x => x.id),
         roomVars: this.roomVars,
         globalVars: this.globalVars,
         currRoomSlug: this.room.slug,

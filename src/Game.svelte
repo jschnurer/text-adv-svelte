@@ -78,8 +78,12 @@
   };
 
   const submit = () => {
-    gameState.handleUserEntry(entry.trim().toLowerCase());
-    previousInputs = [...previousInputs, entry];
+    let ent = entry.trim();
+    if (!ent.startsWith("dev|")) {
+      ent = ent.toLowerCase();
+    }
+    gameState.handleUserEntry(ent);
+    previousInputs = [...previousInputs, ent];
     if (previousInputs.length > 10) {
       previousInputs = previousInputs.slice(1);
     }

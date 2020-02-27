@@ -164,9 +164,18 @@ export default function getGameState(loadGame, updateScroll, update) {
       savedGame = JSON.parse(savedGame);
       if (savedGame) {
         let currRoomSlug = savedGame.currRoomSlug;
+        let inv = savedGame.inventory;
+        delete savedGame.inventory;
         delete savedGame.currRoomSlug;
         Object.assign(gameState, savedGame);
-        //gameState.room = gameState.rooms[currRoomSlug];
+
+        inv.forEach(x => {
+          let item = items.find(item => item.id === x);
+          if (item) {
+            gameState.inventory.push(item);
+          }
+        });
+
         gameState.loadRoom(currRoomSlug);
       }
     }
