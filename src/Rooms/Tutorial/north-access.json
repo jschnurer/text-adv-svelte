@@ -7,7 +7,10 @@
       "cmd": "ifFlag",
       "args": [
         "NORTHOPEN",
-        "loadRoom|Tutorial/computer-room",
+        [
+          "setFlag|G.TUT_ENTERED_PC_ROOM",
+          "loadRoom|Tutorial/computer-room"
+        ],
         [
           {
             "cmd": "ifFlag",
@@ -16,6 +19,7 @@
               [
                 "When you approach the vault door, you can hear mechanics hidden in the walls start to operate. A moment later, the vault door swings open. Then you hear a clang in the mechanics somewhere and a mechanical voice says \"ERROR. INTERNAL MECHANISM FAULT. VAULT DOOR CANNOT BE CLOSED.\" At least you won't get trapped inside!",
                 "setFlag|NORTHOPEN",
+                "setFlag|G.TUT_ENTERED_PC_ROOM",
                 {
                   "cmd": "waitForInput",
                   "args": "loadRoom|Tutorial/computer-room"

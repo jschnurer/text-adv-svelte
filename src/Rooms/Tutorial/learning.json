@@ -21,7 +21,8 @@
       "greet": [
         "GOOD DAY. TO YOU, HUMAN.",
         "YOU CAN. ASK QUESTIONS. (\"ask [person] about [topic]\") YOU CAN. GIVE ITEMS. (\"give [item] to [person]\") SOMETIMES YOU. HAVE A. CHOICE. ASK ME. ABOUT CHOICE.",
-        "I WILL. GIVE COMPUTER. PASSWORD FOR. BANANA. I WILL. ALSO ANSWER. QUESTIONS."
+        "I WILL. GIVE COMPUTER. PASSWORD FOR. BANANA. I WILL. ALSO ANSWER. QUESTIONS.",
+        "IF YOU. GET STUCK. DURING THE. TUTORIAL. YOU CAN. ASK ME. ABOUT HELP. (\"ask [robot] about [help]\")"
       ],
       "ask": [
         {
@@ -67,6 +68,52 @@
                     "yes": "YOUR RESPONSE. IS AGREEABLE. PLEASE GIVE. BANANA.",
                     "no": "YOUR RESPONSE. IS UNPLEASANT. PLEASE GIVE. BANANA."
                   }
+                ]
+              }
+            ],
+            "help": [
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "SOUTHOPEN",
+                  [
+                    {
+                      "cmd": "ifFlag",
+                      "args": [
+                        "G.TUT_FIXED_MECHANISM",
+                        [
+                          {
+                            "cmd": "ifFlag",
+                            "args": [
+                              "G.TUT_ENTERED_PC_ROOM",
+                              [
+                                {
+                                  "cmd": "ifFlag",
+                                  "args": [
+                                    "LEARNED_TUT_PASS",
+                                    [
+                                      {
+                                        "cmd": "ifFlag",
+                                        "args": [
+                                          "G.TUT_EAST_UNLOCKED",
+                                          "YOU DID. IT. YOU SHOULD. HEAD EAST. INTO THE. TELEPORTER ROOM. AND THEN. PRESS THE. BUTTON IN. THERE."
+                                        ]
+                                      },
+                                      "YOU SHOULD. USE THE. COMPUTER AND. THEN ENTER. THE PASSWORD. (\"use computer\") THEN YOU. SHOULD PRESS. THE BUTTON. TO OPEN. THE EXIT. (\"push button\")"
+                                    ],
+                                    "YOU SHOULD. TAKE THE. BANANA FROM. THE COMPUTER. ROOM AND. THEN BRING. IT TO. ME."
+                                  ]
+                                }
+                              ],
+                              "YOU MUST. RETURN TO. THE SECURITY. ACCESS ROOM. AND THEN. HEAD NORTH. THE VAULT. DOOR WILL. OPEN FOR. YOU AUTOMATICALLY."
+                            ]
+                          }
+                        ],
+                        "YOU NEED. TO FIX. THE MECHANISM. IN THE. MACHINE ROOM. YOU MUST. USE THE. BELT TO. FIX IT. THE BELT. IS IN. THE SECURITY. ACCESS ROOM. (\"use [belt] on [mechanism]\")"
+                      ]
+                    }
+                  ],
+                  "YOU WILL. NEED ACCESS. TO THE. MECHANICAL ROOM. USE THE. TERMINAL TO. GAIN ENTRY. THE TERMINAL. WILL NEED. A KEYCODE. THE KEYCODE. IS DIFFERENT. FROM THE. PASSWORD. ASK ME. ABOUT KEYCODE. (\"ask [robot] about [keycode]\")"
                 ]
               }
             ]
