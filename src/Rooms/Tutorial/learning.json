@@ -1,18 +1,9 @@
 {
   "name": "The Learning Room",
   "slug": "Tutorial/learning",
-  "description": "You're standing in a room with a single chair in the center facing the west wall. On that wall there's a large blackboard filled with information. A whiteboard is next to it on the wall too. There's a door leading to the east and another one labeled \"Mechanical Room\" is to the south. There's a terminal next to the door to the mechanical room.\\\\{robot}",
+  "description": "You're standing in a room with a single chair in the center facing the west wall. On that wall there's a large blackboard filled with information. A whiteboard is next to it on the wall too. There's a door leading to the east and another one labeled \"Mechanical Room\" is to the south.\n{robot}",
   "east": "loadRoom|Tutorial/center",
-  "south": [
-    {
-      "cmd": "ifFlag",
-      "args": [
-        "SOUTHOPEN",
-        "loadRoom|Tutorial/mechanism-room",
-        "The door to the south is sealed. There's a terminal to the side of it."
-      ]
-    }
-  ],
+  "south": "loadRoom|Tutorial/mechanism-room",
   "features": [
     {
       "slug": "robot",
@@ -29,7 +20,7 @@
           "cmd": "dialog",
           "args": {
             "": "ERROR. I DO. NOT KNOW. ANYTHING ABOUT. THAT TOPIC.",
-            "banana": "YES, BANANA. I CANNOT. EAT BUT. THE COLOR. IS PLEASING. I WILL. GIVE PASSWORD. FOR BANANA.",
+            "banana": "YES, BANANA. I CANNOT. EAT BUT. THE COLOR. IS PLEASING. I WILL. GIVE PASSWORD. FOR BANANA. (\"give banana to robot\")",
             "sticker": "YES, STICKER. I FOUND. IT IN. THE TRASH. IS THE. COLOR NOT. PLEASING TO. THE OPTICAL. SENSORS?",
             "blackboard": "YES, BLACKBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
             "whiteboard": "YES, WHITEBOARD. MY CREATOR. WROTE THIS. INFORMATION FOR. YOU.",
@@ -51,8 +42,6 @@
             "creator": "YES, CREATOR. MY CREATOR. WAS A. VERY CLEVER. MAN. HE MADE. ALL OF. THIS FOR. YOU TO. ENJOY.",
             "mechanism": "YES, MECHANISM. THE MECHANISM. OPERATES THE. SECURITY DOORS. LEADING TO. THE COMPUTER. ROOM.",
             "belt": "YES, BELT. THE MECHANISM. USES BELTS. TO TURN. GEARS. THERE WAS. A SPARE. BELT SOMEWHERE. AROUND HERE.",
-            "terminal": "YES, TERMINAL. THE TERMINAL. CONTROLS ACCESS. TO THE. MECHANICAL ROOM. IT REQUIRES. A KEYCODE. TO USE.",
-            "keycode": "YES, KEYCODE. THE TERMINAL. NEEDS A. KEYCODE TO. OPEN THE. DOOR TO. THE MECHANICAL. ROOM. THE KEYCODE. REQUIRED IS. 62883.",
             "choice": [
               "I WILL. NOW PRESENT. YOU WITH. A DIFFICULT. CHOICE:",
               "DO YOU. THINK I. AM COOL?",
@@ -75,45 +64,36 @@
               {
                 "cmd": "ifFlag",
                 "args": [
-                  "SOUTHOPEN",
+                  "G.TUT_FIXED_MECHANISM",
                   [
                     {
                       "cmd": "ifFlag",
                       "args": [
-                        "G.TUT_FIXED_MECHANISM",
+                        "G.TUT_ENTERED_PC_ROOM",
                         [
                           {
                             "cmd": "ifFlag",
                             "args": [
-                              "G.TUT_ENTERED_PC_ROOM",
+                              "LEARNED_TUT_PASS",
                               [
                                 {
                                   "cmd": "ifFlag",
                                   "args": [
-                                    "LEARNED_TUT_PASS",
-                                    [
-                                      {
-                                        "cmd": "ifFlag",
-                                        "args": [
-                                          "G.TUT_EAST_UNLOCKED",
-                                          "YOU DID. IT. YOU SHOULD. HEAD EAST. INTO THE. TELEPORTER ROOM. AND THEN. PRESS THE. BUTTON IN. THERE."
-                                        ]
-                                      },
-                                      "YOU SHOULD. USE THE. COMPUTER AND. THEN ENTER. THE PASSWORD. (\"use computer\") THEN YOU. SHOULD PRESS. THE BUTTON. TO OPEN. THE EXIT. (\"push button\")"
-                                    ],
-                                    "YOU SHOULD. TAKE THE. BANANA FROM. THE COMPUTER. ROOM AND. THEN BRING. IT TO. ME."
+                                    "G.TUT_EAST_UNLOCKED",
+                                    "YOU DID. IT. YOU SHOULD. HEAD EAST. INTO THE. TELEPORTER ROOM. AND THEN. PRESS THE. BUTTON IN. THERE."
                                   ]
-                                }
+                                },
+                                "YOU SHOULD. USE THE. COMPUTER AND. THEN ENTER. THE PASSWORD. (\"use computer\") THEN YOU. SHOULD PRESS. THE BUTTON. TO OPEN. THE EXIT. (\"push button\")"
                               ],
-                              "YOU MUST. RETURN TO. THE SECURITY. ACCESS ROOM. AND THEN. HEAD NORTH. THE VAULT. DOOR WILL. OPEN FOR. YOU AUTOMATICALLY."
+                              "YOU SHOULD. TAKE THE. BANANA FROM. THE COMPUTER. ROOM AND. THEN BRING. IT TO. ME. (\"give robot to banana\")"
                             ]
                           }
                         ],
-                        "YOU NEED. TO FIX. THE MECHANISM. IN THE. MACHINE ROOM. YOU MUST. USE THE. BELT TO. FIX IT. THE BELT. IS IN. THE SECURITY. ACCESS ROOM. (\"use [belt] on [mechanism]\")"
+                        "YOU MUST. RETURN TO. THE SECURITY. ACCESS ROOM. AND THEN. HEAD NORTH. THE VAULT. DOOR WILL. OPEN FOR. YOU AUTOMATICALLY."
                       ]
                     }
                   ],
-                  "YOU WILL. NEED ACCESS. TO THE. MECHANICAL ROOM. USE THE. TERMINAL TO. GAIN ENTRY. THE TERMINAL. WILL NEED. A KEYCODE. THE KEYCODE. IS DIFFERENT. FROM THE. PASSWORD. ASK ME. ABOUT KEYCODE. (\"ask [robot] about [keycode]\")"
+                  "YOU NEED. TO FIX. THE MECHANISM. IN THE. MACHINE ROOM. YOU MUST. USE THE. BELT TO. FIX IT. THE BELT. IS IN. THE SECURITY. ACCESS ROOM. (\"use [belt] on [mechanism]\")"
                 ]
               }
             ]
@@ -142,7 +122,7 @@
     {
       "slug": "book",
       "targetFlag": "SAWBOOK",
-      "look": "The book is open to a chapter about using items:\nCertain items can be used. Some have to be used on other items. You previously learned how to \"use key on door\" so you're almost an expert! Sometimes items can be used as-is. For example, there's a terminal in this room. You can use it by typing \"use terminal\". Some items can even have other items used on them AND be used on their own! You'll just have to experiment to find out!",
+      "look": "The book is open to a chapter about using items:\nCertain items can be used. Some have to be used on other items. You previously learned how to \"use key on door\" so you're almost an expert! Sometimes items can be used as-is. For example, there's a computer in another room. You can use it by typing \"use computer\". Some items can even have other items used on them AND be used on their own! You'll just have to experiment to find out!",
       "take": "You should leave that for the next person who might need it."
     },
     {
@@ -158,32 +138,6 @@
         "There's a scrawled note at the bottom corner of the whiteboard:",
         "]Yo dawg, you should \"look\" at the chair in here. I left my book on it."
       ]
-    },
-    {
-      "slug": "terminal",
-      "look": "It's a screen with a digital keypad. It probably controls the door to the mechanical room.\nHint: You'll have to \"use terminal\" to interact with it. Once you use it you'll need to enter the keycode. The keycode for the terminal isn't the same as the password for the computer!",
-      "use": {
-        "": [
-          "You step up to the terminal. It says \"Enter keycode to access mechanical room\". Please type the keycode now.",
-          {
-            "cmd": "choice",
-            "args": [
-              "Incorrect keycode entered. Please enter keycode to access mechanical room or type \"cancel\".",
-              [
-                "62883",
-                "cancel"
-              ],
-              {
-                "62883": [
-                  "setFlag|SOUTHOPEN",
-                  "You punch in the keycode and the south door to the mechanical room slides open."
-                ],
-                "cancel": "You step away from the terminal. Hint: If you can't find the keycode anywhere in the tutorial, maybe there's someone you could ask about it. (\"ask robot about keycode\")"
-              }
-            ]
-          }
-        ]
-      }
     }
   ]
 }
