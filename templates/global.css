@@ -1,14 +1,14 @@
 html, body {
-	position: relative;
-	width: 100%;
+  position: relative;
+  width: 100%;
   height: 100%;
   background-color: #222;
 }
 
 body {
-	color: #aaa;
-	margin: 0;
-	box-sizing: border-box;
+  color: #aaa;
+  margin: 0;
+  box-sizing: border-box;
   font-family: 'Lora', serif;
   font-size: 1.25em;
   padding-top: 1em;
@@ -44,8 +44,7 @@ room {
   overflow: auto;
 }
 
-room > p:first-child, room h3
-{
+room>p:first-child, room h3 {
   margin-top: 0;
 }
 
@@ -55,7 +54,7 @@ input, textarea {
   color: #eee;
   font-size: 1.25em;
   padding: .25em;
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
 
 button {
@@ -93,14 +92,25 @@ waitForInput {
   align-items: center;
   text-align: center;
 }
+
 waitForInput::before, waitForInput::after {
   content: '';
   flex: 1;
   border-bottom: 1px solid;
 }
+
 waitForInput::before {
   margin-right: .25em;
 }
+
 waitForInput::after {
   margin-left: .25em;
+}
+
+a {
+  color: rgb(152, 152, 255);
+}
+
+a:visited {
+  color: rgb(139, 65, 139);
 }

@@ -96,7 +96,6 @@
 
 <h1>Adventure</h1>
 <p>A world of mystery and adventure awaits!</p>
-<p>&nbsp;</p>
 <button on:click={() => dispatch('newGame')}>New Game</button>
 <button
   class:continueDisabled
@@ -104,6 +103,7 @@
   on:click={() => dispatch('continueGame')}>
   Continue Saved Game
 </button>
+<p>&nbsp;</p>
 <p>
   If you want to move your saved game onto a different browser, you can export
   it to text and then import it in a different browser.
@@ -112,6 +112,14 @@
 {#if hasSavedGame}
   <button on:click={startExport}>Export Saved Game →</button>
 {/if}
+<p>&nbsp;</p>
+<p>
+  Download and print a few
+  <a href={window.hostDir + '/adventure-blank-map.pdf'} target="_blank">
+    blank maps
+  </a>
+  and fill them in as you play the game!<br />(Make sure to find the in-game compass first!)
+</p>
 {#if exportString}
   <Modal showClose={true} on:close={() => (exportString = '')}>
     <p>

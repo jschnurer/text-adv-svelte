@@ -11,12 +11,6 @@
   p {
     margin: initial 1em;
   }
-  a {
-    color: rgb(152, 152, 255);
-  }
-  a:visited {
-    color: rgb(139, 65, 139);
-  }
 </style>
 
 <h3>Help</h3>
