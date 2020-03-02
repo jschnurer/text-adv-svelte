@@ -1,5 +1,6 @@
 {
   "name": "Lighthouse, Light",
+  "coords": "Coast C4",
   "slug": "Coast/lighthouse-light",
   "description": "You're standing at the topmost point of the lighthouse in the glass-enclosed area with the giant, rotating light. There's a trapdoor that leads downward.",
   "down": "loadRoom|Coast/lighthouse-2f",

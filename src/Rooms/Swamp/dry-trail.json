@@ -1,5 +1,6 @@
 {
   "name": "A Trail on Solid Ground",
+  "coords": "Swamp D4",
   "slug": "Swamp/dry-trail",
   "description": "You're on a trail on solid ground, covered sparsely with long grass. You can see giant mosquitoes flying around looking for victims in the swamp.\nThe reeking swamp is to the west and the trail continues southward toward a ridge in the distance.",
   "south": "loadRoom|Swamp/ridge",

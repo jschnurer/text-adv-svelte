@@ -1,5 +1,6 @@
 {
   "name": "Lighthouse, First Floor",
+  "coords": "Coast E4",
   "slug": "Coast/lighthouse-1f",
   "description": "You're inside the lighthouse, on the first floor. It's a single, medium sized room. There's a bed, a small fireplace, a small kitchen, a table and chair, and spiral stairs that leads upward.\nThe front door is to the north, leading back outside.",
   "north": "loadRoom|Coast/lighthouse-exterior",

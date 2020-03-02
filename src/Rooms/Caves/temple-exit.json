@@ -1,5 +1,6 @@
 {
   "name": "Cavern With Steps Leading Upward",
+  "coords": "Caves D4",
   "slug": "Caves/temple-exit",
   "north": "loadRoom|Caves/narrow-passage",
   "up": [

@@ -1,5 +1,6 @@
 {
   "name": "Basement With Ladder Leading Upward",
+  "coords": "Caves E5",
   "slug": "Caves/lab-exit",
   "up": [
     {

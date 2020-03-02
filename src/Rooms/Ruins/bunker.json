@@ -1,5 +1,6 @@
 {
   "name": "Inside the Hatch",
+  "coords": "Ruins C2",
   "slug": "Ruins/bunker",
   "description": "You're standing in a small, stone chamber at the bottom of a shaft, about 20 feet underground. A ladder attached to the wall of the shaft leads upward, back to the surface.",
   "dark": true,

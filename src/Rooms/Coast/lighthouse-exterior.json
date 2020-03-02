@@ -1,5 +1,6 @@
 {
   "name": "Lighthouse, Exterior",
+  "coords": "Coast F4",
   "slug": "Coast/lighthouse-exterior",
   "description": "You're standing outside the lighthouse, high atop a spire of stone about a hundred feet above the crashing waves of the ocean and a few hundred from shore. It's really windy here! There's a red door that would let you enter the lighthouse.",
   "north": "loadRoom|Coast/peninsula",

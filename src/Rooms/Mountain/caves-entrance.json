@@ -1,5 +1,6 @@
 {
   "name": "Top of the Vertical Shaft",
+  "coords": "Mountain D6",
   "slug": "Mountain/caves-entrance",
   "west": "loadRoom|Mountain/steep-rocky-incline",
   "down": [

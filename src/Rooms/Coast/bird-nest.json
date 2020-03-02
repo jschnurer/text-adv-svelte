@@ -1,5 +1,6 @@
 {
   "name": "Gull Nesting Grounds",
+  "coords": "Coast A3",
   "slug": "Coast/bird-nest",
   "description": "You're standing on large, gray stone at the south end of the beach. The gray stone stretches out before you and is absolutely covered by seagulls and their nests. Just about everywhere you look is stained white by years of seagull poop.\nTo the north, you could head back to the beach.",
   "north": "loadRoom|Coast/shallow-bay",

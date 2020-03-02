@@ -1,5 +1,6 @@
 {
   "name": "Precarious Ledge on a Cliff",
+  "coords": "Coast G2",
   "slug": "Coast/rocky-cliffside",
   "description": "You're standing on a precariously narrow ledge on the side of a sheer cliff face. Looking down about a hundred feet below you, you see the ocean waves pounding against jagged rocks. It's a long way down. Seagulls hover in the air, coasting on the updraft and squaking incessantly. There's a cave opening here, in the side of the cliff that leads to darkness.\nYou could sidle your way to the west, back onto the rocky trail or you could head north into the darkness of the caves.",
   "north": "loadRoom|Caves/coast-exit",

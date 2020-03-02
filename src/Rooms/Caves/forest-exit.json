@@ -1,5 +1,6 @@
 {
   "name": "Shrouded Cavern",
+  "coords": "Caves A3",
   "slug": "Caves/forest-exit",
   "south": "loadRoom|Forest/forest-cave-entrance",
   "north": "loadRoom|Caves/bottom-of-shaft",

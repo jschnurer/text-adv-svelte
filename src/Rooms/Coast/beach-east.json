@@ -1,5 +1,6 @@
 {
   "name": "White Sand Beaches, East",
+  "coords": "Coast D2",
   "slug": "Coast/beach-east",
   "description": "You're standing on a white sand beach. Shells cover the sand near the water. Waves from the sparkling blue ocean crash over the beach before receding. Far to the southeast you can see a lighthouse built atop a tall column of rock a little ways out into the ocean. The beach continues to the east and west.",
   "east": "loadRoom|Coast/rocky-incline",

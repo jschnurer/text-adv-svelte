@@ -1,5 +1,6 @@
 {
   "name": "Small Mountain Lake",
+  "coords": "Mountain B6",
   "slug": "Mountain/lake",
   "north": "loadRoom|Mountain/maze-south",
   "east": "loadRoom|Mountain/steep-rocky-incline",

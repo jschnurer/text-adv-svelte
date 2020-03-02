@@ -1,5 +1,6 @@
 {
   "name": "Moist Cavern",
+  "coords": "Caves E2",
   "slug": "Caves/moist-cavern",
   "west": "loadRoom|Caves/pit-chamber",
   "dark": true,

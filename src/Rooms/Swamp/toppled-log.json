@@ -1,5 +1,6 @@
 {
   "name": "Toppled Tree, Growing Mushrooms",
+  "coords": "Swamp A2",
   "slug": "Swamp/toppled-log",
   "description": "You're standing in about 6 inches of stinking, putrid muck. It sucks at your shoes, making movement difficult. Stagnant, brackish water forms pools all over. An ancient toppled tree lays here, covered in mushrooms. \nThe terrain allows you to head north, south, and east. To the southeast is a large, rot-infested lake blocking the way.",
   "north": "loadRoom|Swamp/forest-entrance",

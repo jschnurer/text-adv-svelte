@@ -1,5 +1,6 @@
 {
   "name": "Silent Chamber",
+  "coords": "Caves C3",
   "slug": "Caves/weight-puzzle",
   "north": "loadRoom|Caves/chasm",
   "west": [

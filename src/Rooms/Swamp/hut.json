@@ -1,5 +1,6 @@
 {
   "name": "Creepy Hut in the Center of the Swamp",
+  "coords": "Swamp B3",
   "slug": "Swamp/hut",
   "description": "You're on a muddy peninsula in the middle of the swampy lake. There's a creepy, ramshackle hut that you could enter if you were brave enough. Totems are stuck into the earth all around the hut, encircling it. Hanging from them are dreamcatchers and runic symbols made of wicker and vine. Some have animal (and possibly) human skulls atop them. The area is utterly quiet. There aren't even any mosquitoes here.\nOut of the corner of your eye you see movement.",
   "east": "loadRoom|Swamp/bubbling-muck",

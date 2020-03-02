@@ -1,5 +1,6 @@
 {
   "name": "Ruined House",
+  "coords": "Ruins B4",
   "slug": "Ruins/ruined-house",
   "description": "You're in the remains of a ruined house. The upper floor has collapsed, leaving rubble everywhere. You can see blue sky above you. Amidst all the rubble there is a metal chest.\nThere's an exit to the north that leads back outside.",
   "north": "loadRoom|Ruins/ruined-square-south",

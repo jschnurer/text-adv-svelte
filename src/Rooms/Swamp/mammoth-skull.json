@@ -1,5 +1,6 @@
 {
   "name": "Muck-Buried Skull",
+  "coords": "Swamp C4",
   "slug": "Swamp/mammoth-skull",
   "description": "This field of muck has claimed many victims. You see mildew-covered bones sticking out of the black mud as far as the eye can see. There is a massive, half-buried skull here with long tusks. Oh! It's the skull of a... a... You can't quite remember.\nThe swampy terrain heads north and west. To the east, you can see the faint traces of a trail that heads toward solid ground. To the northwest, a fetid lake blocks the way.",
   "north": "loadRoom|Swamp/bubbling-muck",

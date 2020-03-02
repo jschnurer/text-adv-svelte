@@ -1,5 +1,6 @@
 {
   "name": "Precarious Ledge",
+  "coords": "Caves A1",
   "slug": "Caves/precarious-ledge",
   "up": [
     "You grab the lowest ledge and pull yourself up onto it. It's going to be a long climb.",

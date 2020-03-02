@@ -1,5 +1,6 @@
 {
   "name": "Labyrinth, Central Plaza",
+  "coords": "Mountain B4",
   "slug": "Mountain/maze-center",
   "north": "loadRoom|Mountain/maze-north",
   "south": "loadRoom|Mountain/maze-south",
