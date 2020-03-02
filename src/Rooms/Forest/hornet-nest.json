@@ -1,5 +1,6 @@
 {
   "name": "The Hive Entrance",
+  "coords": "Forest D5",
   "slug": "Forest/hornet-nest",
   "description": "You're standing in a dense forest, hiding in the foliage. A cacophonous buzzing fills the area. Dozens of two-foot-long hornets fly about. Even more cling to nearby trees, crawling along the trunks and branches. There's a huge hole in the ground that countless hornets are crawling into and out of.\nTo the south, branches have been shorn clean off the trees, forming a path through the forest. The hole leads downward.",
   "south": "loadRoom|Forest/old-well",

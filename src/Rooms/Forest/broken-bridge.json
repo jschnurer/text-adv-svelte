@@ -1,5 +1,6 @@
 {
   "name": "Forest Bridge, South Bank",
+  "coords": "Forest B3",
   "slug": "Forest/broken-bridge",
   "description": "Through the dense trees you can see that you're on the south bank of a raging river that bisects the forest. Its roaring shatters the eerie silence. The river must be at least 50 feet across.\nAn overgrown trail leads through the trees to the south.",
   "north": [

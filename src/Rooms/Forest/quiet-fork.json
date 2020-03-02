@@ -1,5 +1,6 @@
 {
   "name": "A Quiet Fork in the Forest",
+  "coords": "Forest C4",
   "slug": "Forest/quiet-fork",
   "description": "You are at a fork in a dirt path in a dense forest. A lone bird tweets from the treetops somewhere nearby. A rotting chunk of wood that must have once been a signpost decays in the long grass. There's a 3-foot-tall cairn of small stones in the exact center of the fork. The dirt path leads to the north, south, east, and west.",
   "north": "loadRoom|Forest/river-bank",

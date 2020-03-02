@@ -1,5 +1,6 @@
 {
   "name": "A Lonely Path Through the Forest",
+  "coords": "Forest D4",
   "slug": "Forest/lonely-path",
   "description": "You're on a lonely dirt path through the dense forest. The path is slowly being overgrown due to disuse. You can hear birds and other forest critters somewhere in the trees. A cloud of insects buzzes around, searching for prey. The path heads east and west.",
   "east": "loadRoom|Forest/bend-in-the-path",

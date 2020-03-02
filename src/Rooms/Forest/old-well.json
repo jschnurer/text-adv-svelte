@@ -1,5 +1,6 @@
 {
   "name": "An Old Well in the Forest",
+  "coords": "Forest D6",
   "slug": "Forest/old-well",
   "description": "You're standing near an old well in the middle of a small clearing in the dense forest. It has a little roof and a crank. {pail}\nA well-worn trail leads to the west and a separate, overgrown path leads to the south. To the north, branches have been shorn clean off the trees, forming a path through the forest. To the east there is a trail that leads to a cave in a small hill.\nYou hear a cacophonous buzzing coming from the north.",
   "north": "loadRoom|Forest/hornet-nest",
@@ -100,9 +101,6 @@
           "You put the etavoner rune into the pail.",
           "removeItem|ETAVONER_RUNE",
           "setFlag|ETAVONER_IN_PAIL"
-        ],
-        "BOTTLE": [
-
         ]
       }
     },

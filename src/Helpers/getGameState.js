@@ -38,6 +38,7 @@ import switchBranch from "../ScriptCommands/switchBranch.js";
 import unsetFlag from "../ScriptCommands/unsetFlag.js";
 import waitForInput from "../ScriptCommands/waitForInput.js";
 import write from "../ScriptCommands/write.js";
+import writeRoomCoords from "../ScriptCommands/writeRoomCoords.js";
 
 // Import helper functions
 import findItem from "./findItem.js";
@@ -132,6 +133,7 @@ export default function getGameState(loadGame, updateScroll, update) {
     unsetFlag,
     waitForInput,
     write,
+    writeRoomCoords,
 
     // Helpers
     findItem,

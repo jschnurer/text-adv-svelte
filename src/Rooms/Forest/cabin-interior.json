@@ -1,5 +1,6 @@
 {
   "name": "Cabin Interior",
+  "coords": "Forest A6",
   "slug": "Forest/cabin-interior",
   "description": "You're in a cozy, one-room cabin. There are two beds, a small stone fireplace, a kitchen and a dining table with two chairs. A small array of pots and pans hangs on nails on the wall above the kitchen. The cabin's only door leads east, back out to the forest.",
   "east": [

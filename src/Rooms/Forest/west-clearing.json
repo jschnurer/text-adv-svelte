@@ -1,6 +1,7 @@
 {
   "name": "Clearing in a Forest",
   "slug": "Forest/west-clearing",
+  "coords": "Forest B4",
   "description": "{intro}You are in a small clearing in a dense forest. There's a small hole in the ground nearby with a little pile of dirt next to it. An overgrown trail leads through the trees to the north. Another dirt path leads to the east.",
   "north": "loadRoom|Forest/broken-bridge",
   "east": "loadRoom|Forest/quiet-fork",

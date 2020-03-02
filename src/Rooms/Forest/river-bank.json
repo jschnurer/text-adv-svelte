@@ -1,5 +1,6 @@
 {
   "name": "Bank of a Raging River in a Forest",
+  "coords": "Forest C3",
   "slug": "Forest/river-bank",
   "description": "Through the trees you can see that you're at the southern bank of a raging river. A dirt path leads south and also climbs gradually upward to the east.",
   "south": "loadRoom|Forest/quiet-fork",

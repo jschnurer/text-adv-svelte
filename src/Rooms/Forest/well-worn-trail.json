@@ -1,5 +1,6 @@
 {
   "name": "A Well-Worn Trail Through the Forest",
+  "coords": "Forest C6",
   "slug": "Forest/well-worn-trail",
   "description": "You're on a well-worn trail through the dense forest. A mostly overgrown, disused path heads into the forest to the north. The well-worn trail heads east and west.\nYou can see smoke in the sky through the trees to the west.",
   "north": "loadRoom|Forest/quiet-path",

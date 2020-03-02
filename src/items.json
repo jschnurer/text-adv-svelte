@@ -347,5 +347,13 @@
     "slug": "parchment",
     "id": "PARCHMENT",
     "look": "callCommon|parchment_look|global-common"
+  },
+  {
+    "slug": "compass",
+    "id": "COMPASS",
+    "look": [
+      "It's a compass but the needle doesn't move. Instead, it points straight forward and two rings around the outside of its face rotate. One of the rings displays letters and another displays numbers. The rings spin to a new configuration whenever you move to a new area. The compass currently reads:",
+      "writeRoomCoords"
+    ]
   }
 ]

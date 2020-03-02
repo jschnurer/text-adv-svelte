@@ -1,5 +1,6 @@
 {
   "name": "A Quiet Path Through the Forest",
+  "coords": "Forest C5",
   "slug": "Forest/quiet-path",
   "description": "You're on quiet path surrounded by dense forest. The path is mostly overgrown. The path leads north and south.",
   "north": "loadRoom|Forest/quiet-fork",

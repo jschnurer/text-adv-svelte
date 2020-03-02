@@ -1,6 +1,7 @@
 const singleWordCmds = [
   "saveGame",
-  "look"
+  "look",
+  "writeRoomCoords"
 ]
 
 export default function parseStringCmd(cmd) {

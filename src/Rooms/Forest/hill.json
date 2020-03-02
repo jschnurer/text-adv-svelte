@@ -1,5 +1,6 @@
 {
   "name": "A Hilltop above a Dense Forest",
+  "coords": "Forest D3",
   "slug": "Forest/hill",
   "description": "You're standing at the top of a rocky hill. The ground is covered in rocks and grass. The hill is tall enough to allow you to see over the treetops of the forest below. The only way down is to the west.",
   "west": "loadRoom|Forest/river-bank",
@@ -32,6 +33,40 @@
       ],
       "roomDesc": "To the south you can see a marsh.",
       "look": "The marsh is filled with all manners of drooping, sad-looking trees. It's too far away to make out any other details."
+    },
+    {
+      "slug": "vending machine",
+      "altSlugs": ["vending","machine"],
+      "roomDesc": "There's a big metal vending machine standing at the top of the hill. It sounds like it's got power somehow.",
+      "look": [
+        "It's a big, metal vending machine. There's no glass display so you can't see what's inside. There are no words or logos on it either. It has a coin slot and a bin at the bottom where its items must drop into.",
+        {
+          "cmd": "ifFlag",
+          "args": [
+            "SAWCOMPASS&!TOOKCOMPASS",
+            "There's a brass compass sitting in the bin.",
+            null
+          ]
+        }
+      ],
+      "use": {
+        "COIN": [
+          "You insert the coin into the slot. You can hear it rattle and clunk its way into the machine's innards. You hear a mechanical whir from inside and then a clunk. A compass falls into the bin at the bottom.",
+          "setFlag|SAWCOMPASS",
+          "removeItem|COIN"
+        ]
+      }
+    },
+    {
+      "slug": "compass",
+      "targetFlag": "SAWCOMPASS",
+      "destroyedFlag": "TOOKCOMPASS",
+      "look": "It's a brass compass but its face is strange. Instead of North, South, East, and West, the outside is ringed with rotating letters and numbers and the needle always points forward.",
+      "take": [
+        "You take the compass with you.",
+        "setFlag|TOOKCOMPASS",
+        "addItem|COMPASS"
+      ]
     }
   ]
 }

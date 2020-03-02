@@ -1,5 +1,6 @@
 {
   "name": "Cave of Bones",
+  "coords": "Forest E6",
   "slug": "Forest/well-cave",
   "description": "You're in a fairly large cavern chamber. It's made of rough, gray stone. The cavern ceiling is at least 12 feet high. It smells of death and rot in here.\nYour footsteps crunch beneath you as you walk on innumerable bones, carcasses, and unidentifiable remains. You're pretty sure a fair number of the bones are human...\nSomething makes this place its home. Best not dawdle.",
   "west": "loadRoom|Forest/old-well",
