@@ -72,6 +72,7 @@
       "slug": "rod",
       "look": "It's a cylindrical, rusty metal rod sticking out of the water about 5 feet from shore.",
       "targetFlag": "SEEROD",
+      "destroyedFlag": "TOOKROD",
       "take": [
         {
           "cmd": "ifFlag",
