@@ -36,7 +36,7 @@
     },
     {
       "slug": "vending machine",
-      "altSlugs": ["vending","machine"],
+      "altSlugs": ["vending","machine","coin slot"],
       "roomDesc": "There's a big metal vending machine standing at the top of the hill. It sounds like it's got power somehow.",
       "look": [
         "It's a big, metal vending machine. There's no glass display so you can't see what's inside. There are no words or logos on it either. It has a coin slot and a bin at the bottom where its items must drop into.",
