@@ -18,6 +18,11 @@ export default function incant(incantation) {
     return false;
   }
 
+  if (!this.getFlag('G.' + incantation.toUpperCase())) {
+    this.write("You murmur useless syllables. It wasn't an incantation. You must've gotten it wrong...");
+    return false;
+  }
+
   if (!this.room.incant || !this.room.incant[incantation]) {
     this.write(`You incant ${incantationObj.description}. Nothing happens...`);
     return false;
