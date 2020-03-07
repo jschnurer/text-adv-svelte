@@ -16,8 +16,11 @@
     },
     {
       "slug": "labyrinth",
-      "altSlugs": ["maze","black labyrinth"],
-      "look": "You can only see inside through the open gate. Its outer walls are made of black stone like the rest of the mountain. Even from here you can see a maze of passages inside through it appears there's a straight path going all the way to the other side of the maze."
+      "altSlugs": [
+        "maze",
+        "black labyrinth"
+      ],
+      "look": "You can only see inside through the open gate. Its outer walls are made of black stone like the rest of the mountain. Even from here you can see a maze of passages inside, though it appears there's a straight path going all the way to the other side of the maze."
     },
     {
       "slug": "water",
