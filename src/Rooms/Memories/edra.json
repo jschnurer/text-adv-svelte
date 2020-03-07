@@ -16,7 +16,7 @@
               "cmd": "waitForInput",
               "args": [
                 "You're standing outside the funeral home. Mom's inside. The service started 5 minutes ago but you couldn't quiet bring yourself to go in yet. Arden's going to be so pissed. You head inside. Arden's here and a couple of old ladies who must've been friends of mom. Arden ain't happy.",
-                "Later, your older brother has words with you. You apologize and try to explain how life can be a prison if you let it. He's having none of it. With a little arcane nudge he starts to see it your way. You convince him to take some time off work and see the country with you. A roadtrip. Together.",
+                "Later, your older brother has words with you. You apologize and try to explain how life can be a prison if you let it be. He's having none of it. With a little arcane nudge he starts to see it your way. You convince him to take some time off work and see the country with you. A roadtrip. Together.",
                 {
                   "cmd": "waitForInput",
                   "args": [
