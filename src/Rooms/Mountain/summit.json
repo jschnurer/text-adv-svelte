@@ -151,12 +151,21 @@
       {
         "cmd": "ifFlag",
         "args": [
-          "WEAKENED",
-          "You incant the Charm of Enfeeblement but nothing happens.",
+          "REVEALED",
           [
-            "You incant the Charm of Enfeeblement. The dark energy given off by \"It\" seems weaker somehow.",
-            "setFlag|WEAKENED"
-          ]
+            {
+              "cmd": "ifFlag",
+              "args": [
+                "WEAKENED",
+                "You incant the Charm of Enfeeblement but nothing happens.",
+                [
+                  "You incant the Charm of Enfeeblement. The dark energy given off by \"It\" seems weaker somehow.",
+                  "setFlag|WEAKENED"
+                ]
+              ]
+            }
+          ],
+          "You incant the Charm of Enfeeblement but nothing happens."
         ]
       }
     ],
