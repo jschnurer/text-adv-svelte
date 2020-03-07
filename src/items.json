@@ -310,10 +310,62 @@
         "cmd": "ifRoom",
         "args": [
           "Mountain/maze",
+          "callCommon|map_look|Mountain/maze",
           [
-            "callCommon|map_look|Mountain/maze"
-          ],
-          null
+            {
+              "cmd": "ifRoom",
+              "args": [
+                "Mountain/maze-center",
+                [
+                  "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient.",
+                  {
+                    "cmd": "pickOne",
+                    "args": [
+                      "The map indicates you should head east.",
+                      "The map indicates you should head west."
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "cmd": "ifRoom",
+                    "args": [
+                      "Mountain/maze-north",
+                      [
+                        "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient.",
+                        {
+                          "cmd": "pickOne",
+                          "args": [
+                            "The map indicates you should head east.",
+                            "The map indicates you should head west."
+                          ]
+                        }
+                      ],
+                      [
+                        {
+                          "cmd": "ifRoom",
+                          "args": [
+                            "Mountain/maze-south",
+                            [
+                              "You reference the map... Oh! Now there's a red \"X\" on the map labeled \"You are here\". That's convenient.",
+                              {
+                                "cmd": "pickOne",
+                                "args": [
+                                  "The map indicates you should head east.",
+                                  "The map indicates you should head west."
+                                ]
+                              }
+                            ],
+                            null
+                          ]
+                        }
+                      ]
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
         ]
       }
     ]
