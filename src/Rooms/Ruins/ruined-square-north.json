@@ -1,5 +1,6 @@
 {
   "name": "Ruined Square, North",
+  "coords": "Ruins B2",
   "slug": "Ruins/ruined-square-north",
   "description": "You stand in the midst of a city in ruins. All around you are ruined buildings made of gray stone and piles of rubble. To the north is a temple that is still standing. Long, tattered banners hang from its walls.",
   "north": "loadRoom|Ruins/temple",

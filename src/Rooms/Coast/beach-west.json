@@ -1,5 +1,6 @@
 {
   "name": "White Sand Beaches, West",
+  "coords": "Coast B2",
   "slug": "Coast/beach-west",
   "description": "You're standing on a white sand beach. Shells cover the sand near the water. Waves from the sparkling blue ocean crash over the beach before receding. The beach continues to the east and west.",
   "east": "loadRoom|Coast/beach-central",

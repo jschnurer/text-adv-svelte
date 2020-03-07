@@ -1,5 +1,6 @@
 {
   "name": "Long Abandoned Campsite",
+  "coords": "Swamp B4",
   "slug": "Swamp/campsite",
   "description": "You're standing on a small hill that barely rises out of the surrounding putrid waters of the swamp. It's barren and rocky. Pools of standing water and an eternity of stinking muck stretch out in every direction.\nAt the center of the hill is a campsite that looks like it's been abandoned for a long time. You see the remains of a campfire and a tattered rag that was once a tent. {stick}\nThe swampy terrain makes travel difficult; You can only head east or west. To the north is a large, muddy lake blocking the way.",
   "east": "loadRoom|Swamp/mammoth-skull",

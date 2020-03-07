@@ -1,5 +1,6 @@
 {
   "name": "Rocky Incline",
+  "coords": "Coast E2",
   "slug": "Coast/rocky-incline",
   "description": "You're standing on a rocky incline. The sand here is mixed with small rocks of various sizes and the water crashes against a cliff face a dozen feet below you. To the southeast you can see a lighthouse built atop a tall column of rock a little ways out into the ocean.\nTo the west, you could head down the slope to the white, sandy beach. To the east, the incline continues steeply upward.",
   "east": "loadRoom|Coast/rocky-trail",

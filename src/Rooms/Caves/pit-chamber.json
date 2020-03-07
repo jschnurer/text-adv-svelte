@@ -1,5 +1,6 @@
 {
   "name": "The Pit",
+  "coords": "Caves D2",
   "slug": "Caves/pit-chamber",
   "south": "loadRoom|Caves/narrow-passage",
   "east": "loadRoom|Caves/moist-cavern",

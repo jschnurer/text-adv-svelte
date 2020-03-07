@@ -1,5 +1,6 @@
 {
   "name": "Ruined Hall",
+  "coords": "Ruins A3",
   "slug": "Ruins/ruined-hall",
   "description": "You stand in a dimly lit, very wide and long ruined hall. Light streams in through cracks in the walls and ceiling, which is very high above you. There is a solid stone altar at the far end, engraved with a runic symbol.\nThere is a doorway that leads outside to the west. {door} There is a metal device affixed to the wall next to the large stone door.",
   "west": "loadRoom|Forest/ruins-entrance",

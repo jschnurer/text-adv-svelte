@@ -1,5 +1,6 @@
 {
   "name": "Labyrinth, South Gate",
+  "coords": "Mountain B5",
   "slug": "Mountain/maze-south",
   "north": "loadRoom|Mountain/maze-center",
   "south": "loadRoom|Mountain/lake",

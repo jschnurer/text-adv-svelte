@@ -1,5 +1,6 @@
 {
   "name": "Cave to the Ocean Cliffs",
+  "coords": "Caves F6",
   "slug": "Caves/coast-exit",
   "north": "loadRoom|Caves/bat-den",
   "south": "loadRoom|Coast/rocky-cliffside",

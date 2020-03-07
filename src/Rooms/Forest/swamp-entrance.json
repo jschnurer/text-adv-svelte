@@ -1,5 +1,6 @@
 {
   "name": "Forest Path North of the Swamp",
+  "coords": "Forest D7",
   "slug": "Forest/swamp-entrance",
   "description": "You're on an overgrown path in the dense forest. It continues to the north and south. To the south, the land looks wetter and more swampy. You can smell a putrid stench coming from the south.",
   "north": "loadRoom|Forest/old-well",

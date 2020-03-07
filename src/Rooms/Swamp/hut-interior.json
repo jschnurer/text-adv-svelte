@@ -1,5 +1,6 @@
 {
   "name": "Inside the Creepy Hut",
+  "coords": "Swamp D1",
   "slug": "Swamp/hut-interior",
   "look": [
     "You're standing inside a ramshackle hut in the middle of the swamp. The interior is filled with all kinds of ephemera on crude shelves and tables. The ones of note are a steel sword and shield, a cracked cellphone, {scissors}and a crude map scrawled on a bit of parchment.",

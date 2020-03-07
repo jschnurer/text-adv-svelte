@@ -1,5 +1,6 @@
 {
   "name": "A Rocky Cliff Peninsula, High Above the Ocean",
+  "coords": "Coast F3",
   "slug": "Coast/peninsula",
   "description": "You're standing at the end of a peninsula on a rocky trail, at least eighty feet above the ocean below and a couple hundred feet away from the coastline. Just ahead of you the trail ends at the edge of the cliff. A hundred feet beyond that, across the open air you see the lighthouse, built atop a column of rock that's as tall as the cliff you're on.",
   "north": "loadRoom|Coast/rocky-trail",

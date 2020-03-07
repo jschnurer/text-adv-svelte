@@ -1,5 +1,6 @@
 {
   "name": "Mushroom Forest",
+  "coords": "Caves B3",
   "slug": "Caves/mushrooms",
   "north": "loadRoom|Caves/sunless-lake",
   "east": [

@@ -1,5 +1,6 @@
 {
   "name": "Underground Chasm",
+  "coords": "Caves C2",
   "slug": "Caves/chasm",
   "south": [
     {

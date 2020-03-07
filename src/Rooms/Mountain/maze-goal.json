@@ -1,5 +1,6 @@
 {
   "name": "Heart of the Labyrinth",
+  "coords": "Mountain ???",
   "slug": "Mountain/maze-goal",
   "description": "You're standing in a circular area. It's a dead end. You turn around and find that even the passage that brought you here is gone! In the center of the circular area there is a black, stone pedestal. It's a smooth cylindrical column about a foot in diameter and four feet tall. It's engraved with writing that circles it, spiraling a message around and around from top to bottom.",
   "north": [

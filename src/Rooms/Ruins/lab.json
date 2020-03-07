@@ -1,5 +1,6 @@
 {
   "name": "Ruined Lab",
+  "coords": "Ruins C3",
   "slug": "Ruins/lab",
   "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass bottles, instruments, and other scientific equipment. {rug}\nAn open doorway leads outside to the west and there are steps that lead down into darkness.",
   "west": "loadRoom|Ruins/ruined-square-south",

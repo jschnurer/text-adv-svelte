@@ -1,5 +1,6 @@
 {
   "name": "Steep Rocky Incline",
+  "coords": "Mountain C6",
   "slug": "Mountain/steep-rocky-incline",
   "east": "loadRoom|Mountain/caves-entrance",
   "west": "loadRoom|Mountain/lake",

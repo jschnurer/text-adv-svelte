@@ -1,5 +1,6 @@
 {
   "name": "Sand Dunes",
+  "coords": "Coast C1",
   "slug": "Coast/dunes",
   "description": "You're standing atop a sand dune. More dunes stretch out in every direction. Long, stiff grass grows in patches in places where it could take root. Various bugs skitter to and fro, leaving tiny little paths in the sand. It's pretty windy here. Far to the east on the beach, you can see a lighthouse.\nA trail through the dunes leads to the north toward a high ridge. To the south the dunes continue to a beach and beyond that, the ocean.",
   "north": "loadRoom|Swamp/ridge",

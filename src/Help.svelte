@@ -74,6 +74,11 @@
     game world, you could always have a piece of paper and jot down the names of
     the areas with lines connecting them. Oldschool!
   </p>
+  <p>
+    <a href={window.hostDir + '/adventure-blank-map.pdf'} target="_blank">
+      Click here to download a blank map to get you started!
+    </a>
+  </p>
   <h4>Items and Inventory</h4>
   <p>
     When you acquire things in the game, usually by using "take [target]", they
@@ -124,6 +129,7 @@
     tragedy, you can restart from the last cairn you touched.
   </p>
   <p>
-  If you need more help, you can view the <a href="walkthrough" target="_blank">Spoiler-riffic Walkthrough.</a>
+    If you need more help, you can view the
+    <a href="walkthrough" target="_blank">Spoiler-riffic Walkthrough.</a>
   </p>
 </room>

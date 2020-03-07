@@ -1,5 +1,6 @@
 {
   "name": "Sunless Lake",
+  "coords": "Caves B2",
   "slug": "Caves/sunless-lake",
   "south": "loadRoom|Caves/mushrooms",
   "dark": true,

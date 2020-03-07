@@ -1,5 +1,6 @@
 {
   "name": "White Sand Beaches",
+  "coords": "Coast C2",
   "slug": "Coast/beach-central",
   "description": "You're standing on a white sand beach. Shells cover the sand near the water. Waves from the sparkling blue ocean crash over the beach before receding. Far to the east you can see a lighthouse. The beach continues to the east and west. You could also travel north into the sand dunes.",
   "north": "loadRoom|Coast/dunes",

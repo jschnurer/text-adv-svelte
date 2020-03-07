@@ -1,5 +1,6 @@
 {
   "name": "Forest Bridge, North Bank",
+  "coords": "Forest B2",
   "slug": "Forest/broken-bridge-north",
   "description": "You're standing on the north bank of a raging river that bisects a dense forest. The roaring of the river shatters the eerie silence. The river is at least 50 feet across.\nAn overgrown trail leads through the trees to the north.",
   "north": "loadRoom|Forest/forest-cave-entrance",

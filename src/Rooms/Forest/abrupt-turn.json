@@ -1,5 +1,6 @@
 {
   "name": "An Abrupt Turn in the Forest Path",
+  "coords": "Forest E5",
   "slug": "Forest/abrupt-turn",
   "description": "The forest path turns abruptly here, heading north and east. A large, 4' tall stone stands higher than the long grass at the edges of the path. It is engraved with a runic symbol.",
   "north": "loadRoom|Forest/bend-in-the-path",

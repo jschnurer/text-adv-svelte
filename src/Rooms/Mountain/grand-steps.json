@@ -1,5 +1,6 @@
 {
   "name": "Grand Steps",
+  "coords": "Mountain A1",
   "slug": "Mountain/grand-steps",
   "up": "loadRoom|Mountain/summit",
   "east": "loadRoom|Mountain/campsite",

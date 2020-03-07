@@ -1,5 +1,6 @@
 {
   "name": "A Bend in the Forest Path",
+  "coords": "Forest E4",
   "slug": "Forest/bend-in-the-path",
   "description": "The path through the dense forest slowly bends here, leading west and south. Long grass grows on either side of the path, before the trees take over. {sack}",
   "south": "loadRoom|Forest/abrupt-turn",

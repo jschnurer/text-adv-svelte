@@ -1,5 +1,6 @@
 {
   "name": "Hidden Cache",
+  "coords": "Caves F4",
   "slug": "Caves/cache",
   "south": "loadRoom|Caves/bat-den",
   "dark": true,

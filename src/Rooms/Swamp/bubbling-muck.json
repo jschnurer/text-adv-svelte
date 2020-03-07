@@ -1,5 +1,6 @@
 {
   "name": "Stinking, Bubbling Muck",
+  "coords": "Swamp C3",
   "slug": "Swamp/bubbling-muck",
   "description": "This place is putrid! Foul-smelling gas bubbles up through the endless expanse of black muck. The area is a cacophony of *blorps* and *glups*. Occasionally, there's a whoosh sound and a jet of yellow-green gas vents out of the ground nearby. The air here reeks and burns the lungs. You shouldn't stay here long.\nThere are no giant mosquitoes here. Even they can't stand it.\nThe hellish terrain only allows travel north and south. There are a bunch of old rotting logs mostly buried in the muck laid end to end. It's like a rotting road heading west over a peninsula into the lake.",
   "north": "loadRoom|Swamp/standing-water",

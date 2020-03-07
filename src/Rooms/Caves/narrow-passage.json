@@ -1,5 +1,6 @@
 {
   "name": "Very Narrow Passage",
+  "coords": "Caves D3",
   "slug": "Caves/narrow-passage",
   "north": "loadRoom|Caves/pit-chamber",
   "south": "loadRoom|Caves/temple-exit",

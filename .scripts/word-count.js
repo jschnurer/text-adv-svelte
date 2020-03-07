@@ -36,6 +36,7 @@ console.log("=============================================");
 console.log("WORD COUNTS:");
 console.log("");
 console.log(counts);
+console.log("Total Rooms: " + roomFiles.length);
 console.log("Total Word Count: " + total);
 
 function walk(dir) {

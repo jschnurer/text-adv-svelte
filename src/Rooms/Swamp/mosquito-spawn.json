@@ -1,5 +1,6 @@
 {
   "name": "Mosquito Spawning Pool",
+  "coords": "Swamp A3",
   "slug": "Swamp/mosquito-spawn",
   "description": "This area is made up of narrow channels of wet, sucking muck weaving around and between pools of stagnant, black water. The pools are choked by endless clusters of round, gelatinous eggs. The eggs shake and quiver of their own volition. Occasionally, one rips open and a newborn giant mosquito crawls out and starts skittering around.\nThe air is likewise choked with clouds of mosquitoes. You are constantly fighting them off. A few even manage to land on you before you're able to brush them away.\nThe channels of muck lead north and south. To the east the way is blocked by a reeking lake.",
   "north": "loadRoom|Swamp/toppled-log",

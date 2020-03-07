@@ -1,5 +1,6 @@
 {
   "name": "Labyrinth, North Gate",
+  "coords": "Mountain B3",
   "slug": "Mountain/maze-north",
   "north": "loadRoom|Mountain/winding-path",
   "south": "loadRoom|Mountain/maze-center",

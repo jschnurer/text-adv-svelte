@@ -1,5 +1,6 @@
 {
   "name": "Shallow Bay",
+  "coords": "Coast A2",
   "slug": "Coast/shallow-bay",
   "description": "You're standing on a white sand beach at the shore of a shallow bay. Waves from the sparkling blue ocean crash over the beach before receding. The beach continues to the east and curves around the bay before turning south.",
   "south": "loadRoom|Coast/bird-nest",

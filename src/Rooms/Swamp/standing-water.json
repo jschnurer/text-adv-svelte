@@ -1,5 +1,6 @@
 {
   "name": "A Pool of Standing Water",
+  "coords": "Swamp C2",
   "slug": "Swamp/standing-water",
   "description": "You've found a large pool of standing water. It would almost be more of a lake--that is, if it was any deeper than a couple feet. The water has a film of algae across its surface. Strange, white plants that look like large puffballs grow sparsely on the pool.\nThe terrain allows you to head west and south. To the southwest, a fetid lake blocks the way.",
   "west": "loadRoom|Swamp/dead-tree",
