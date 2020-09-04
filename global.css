@@ -1,0 +1,116 @@
+html, body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+}
+
+body {
+  color: #aaa;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lora', serif;
+  font-size: 1.25em;
+  padding-top: 1em;
+}
+
+bg {
+  background-image: url(/adventure/bg.jpeg);
+  background-size: cover;
+  opacity: 0.12;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+main {
+  z-index: 1;
+  max-width: 800px;
+  margin: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 92vh;
+  box-shadow: 0 0 10em #222;
+  background-color: #222;
+  padding: 1em;
+}
+
+room {
+  display: block;
+  flex: 1;
+  overflow: auto;
+}
+
+room>p:first-child, room h3 {
+  margin-top: 0;
+}
+
+input, textarea {
+  background-color: #444;
+  border: 1px #555 solid;
+  color: #eee;
+  font-size: 1.25em;
+  padding: .25em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
+
+button {
+  font-size: 1em;
+  padding: .25em;
+  cursor: pointer;
+}
+
+hint {
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  cursor: help;
+}
+
+speech {
+  color: #efefef;
+}
+
+frow {
+  display: flex;
+  flex-direction: row;
+}
+
+fcol {
+  display: flex;
+  flex-direction: column;
+}
+
+pre {
+  font-family: 'PT Mono';
+}
+
+waitForInput {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+waitForInput::before, waitForInput::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid;
+}
+
+waitForInput::before {
+  margin-right: .25em;
+}
+
+waitForInput::after {
+  margin-left: .25em;
+}
+
+a {
+  color: rgb(152, 152, 255);
+}
+
+a:visited {
+  color: rgb(139, 65, 139);
+}
