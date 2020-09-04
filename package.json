@@ -3,11 +3,14 @@
   "name": "text-adventure-game",
   "version": "1.0.0",
   "scripts": {
+    "host:gh": "replace-in-file /__hostdir__/g /text-adv-svelte ./public/index.html --isRegex",
     "host:server": "replace-in-file /__hostdir__/g /adventure ./public/index.html --isRegex",
     "host:local": "replace-in-file /__hostdir__/g \"\" ./public/index.html --isRegex",
+    "host:gh:css": "replace-in-file /__hostdir__/g /text-adv-svelte ./public/global.css --isRegex",
     "host:server:css": "replace-in-file /__hostdir__/g /adventure ./public/global.css --isRegex",
     "host:local:css": "replace-in-file /__hostdir__/g \"\" ./public/global.css --isRegex",
     "build": "run-s copy:templates host:server host:server:css build:rollup",
+    "build:gh": "run-s copy:templates host:gh host:gh:css build:rollup",
     "build:rollup": "rollup -c",
     "autobuild": "rollup -c -w",
     "copy:templates": "copy-files-from-to",
@@ -16,7 +19,7 @@
     "start:dev": "sirv public --single --dev",
     "rebuild:dev": "run-s copy:templates host:local host:local:css",
     "wordcount": "node ./.scripts/word-count.js",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build:gh",
     "deploy": "gh-pages -d public"
   },
   "devDependencies": {
