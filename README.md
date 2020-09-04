@@ -1,3 +1,9 @@
+# Text Adventure
+This is a web-based text adventure game built with svelte.
+
+# Want to play?
+Play the game by visiting https://jschnurer.github.io/text-adv-svelte!
+
 # Adding new rooms
 After adding a new room (json file), the `room-index.js` file must be updated to import it. The `room-index.js` file is imported by the engine to load all rooms initially.
 
