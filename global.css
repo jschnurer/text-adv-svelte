@@ -15,7 +15,7 @@ body {
 }
 
 bg {
-  background-image: url(/adventure/bg.jpeg);
+  background-image: url(/text-adv-svelte/bg.jpeg);
   background-size: cover;
   opacity: 0.12;
   top: 0;
