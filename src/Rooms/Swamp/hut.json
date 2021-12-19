@@ -55,6 +55,10 @@
       ],
       "look": "The runic symbols are made of twisted wicker or vine like the dreamcatchers. Some of them you recognize but from where? Oh, you remember! Some of these runes you've seen on the cairns throughout the island.",
       "take": "That might be a really, REALLY bad idea. You decide to leave it for now."
+    },
+    {
+      "slug": "lake",
+      "look": "It's algae-coated with a black film over its surface."
     }
   ]
 }
