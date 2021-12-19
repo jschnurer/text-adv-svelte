@@ -127,7 +127,7 @@
     },
     {
       "slug": "blackboard",
-      "look": "The blackboard reads:\n]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - s\\south - s\\east - e\\west - w\\up - u\\down - d\\clear - cl"
+      "look": "The blackboard reads:\n]Some commands have shortcuts so you don't have to type the whole word:\\look - l\\take - t\\inventory - i\\north - n\\south - s\\east - e\\west - w\\up - u\\down - d\\clear - cl"
     },
     {
       "slug": "whiteboard",
