@@ -18,6 +18,9 @@
     },
     {
       "slug": "mechanism",
+      "altSlugs": [
+        "machine"
+      ],
       "look": [
         {
           "cmd": "ifFlag",
