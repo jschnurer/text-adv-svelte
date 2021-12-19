@@ -78,12 +78,10 @@
                 {
                   "yes": [
                     "\"Wrong answer, interloper.\"",
-                    [
-                      {
-                        "cmd": "waitForInput",
-                        "args": "callCommon|rhode_kill"
-                      }
-                    ]
+                    {
+                      "cmd": "waitForInput",
+                      "args": "callCommon|rhode_kill"
+                    }
                   ],
                   "no": "callCommon|no_harm",
                   "nay": "callCommon|no_harm"
