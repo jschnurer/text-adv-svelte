@@ -2,16 +2,11 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
+  export let allowTogglingHints = false;
   export let showHints = false;
   $: onOrOff = showHints ? "on" : "off";
   $: opposite = showHints ? "off" : "on";
 </script>
-
-<style>
-  p {
-    margin: initial 1em;
-  }
-</style>
 
 <h3>Help</h3>
 <room>
@@ -75,7 +70,7 @@
     the areas with lines connecting them. Oldschool!
   </p>
   <p>
-    <a href={window.hostDir + '/adventure-blank-map.pdf'} target="_blank">
+    <a href={window.hostDir + "/adventure-blank-map.pdf"} target="_blank">
       Click here to download a blank map to get you started!
     </a>
   </p>
@@ -132,4 +127,32 @@
     If you need more help, you can view the
     <a href="walkthrough" target="_blank">Spoiler-riffic Walkthrough.</a>
   </p>
+  {#if allowTogglingHints}
+    <h4>Hints / Enable Clicking</h4>
+    <p>
+      If you'd like, you can enable the experimental "hint" feature. This will
+      cause interactable things to be marked with a dashed underline. They will
+      then be interactable via clicking.
+    </p>
+    <p>
+      Hints are currently {onOrOff}. After toggling hints on or off, hints will
+      begin appearing the next time text is written on the screen.
+    </p>
+    <p>
+      <button
+        on:click={() => {
+          dispatch("toggleHints");
+          showHints = !showHints;
+        }}
+      >
+        Turn Hints {opposite}
+      </button>
+    </p>
+  {/if}
 </room>
+
+<style>
+  p {
+    margin: initial 1em;
+  }
+</style>

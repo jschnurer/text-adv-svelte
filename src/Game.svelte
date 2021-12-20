@@ -24,7 +24,7 @@
           () => (output.scrollTop = output.scrollHeight + output.offsetTop),
           1
         ),
-      function() {
+      function () {
         gameState = gameState;
       }
     );
@@ -34,7 +34,7 @@
     }
   });
 
-  const focus = el => {
+  const focus = (el) => {
     el.focus();
   };
 
@@ -46,7 +46,7 @@
     }
   };
 
-  const loadPrevInput = dir => {
+  const loadPrevInput = (dir) => {
     if (!previousInputs.length) {
       return;
     }
@@ -82,6 +82,10 @@
     if (!ent.startsWith("dev|")) {
       ent = ent.toLowerCase();
     }
+    submitUserEntry(ent);
+  }
+
+  const submitUserEntry = (ent) => {
     gameState.handleUserEntry(ent);
     previousInputs = [...previousInputs, ent];
     if (previousInputs.length > 10) {
@@ -114,7 +118,7 @@
       ")>",
     "gi"
   );
-  const sanitize = text => {
+  const sanitize = (text) => {
     var oldHtml;
     do {
       oldHtml = text;
@@ -123,15 +127,15 @@
     return text.replace(/</g, "&lt;");
   };
 
-  const convertSyntax = text => {
+  const convertSyntax = (text) => {
     let nt = text
-      .replace(/%(.+?)%/g, "<hint>$1</hint>")
       .replace(/\^(.+?)\^/g, "<h3>$1</h3>")
       .replace(/~(.+?)~/g, "<entry>$1</entry>")
       .replace(/#(.+?)#/g, "<pre>$1</pre>")
       .replace(/\\/g, "<br />")
       .replace(/"(.+?)"/g, '<speech>"$1"</speech>')
-      .replace(/^\+(.+?)\+$/, "<waitForInput>$1</waitForInput>");
+      .replace(/^\+(.+?)\+$/, "<waitForInput>$1</waitForInput>")
+      .replace(/%(.+?)%/g, `<hint>$1</hint>`);
 
     if (nt.startsWith("]")) {
       return nt.replace(/^]+/, "");
@@ -140,7 +144,7 @@
     }
   };
 
-  const getClass = line => {
+  const getClass = (line) => {
     if (line.startsWith("]]")) {
       return "indent2";
     } else if (line.startsWith("]")) {
@@ -149,16 +153,98 @@
 
     return "";
   };
+
+  const hintize = (line) => {
+    if (line.indexOf("<hint>") === -1) {
+      return [{ type: "html", value: line }];
+    }
+
+    let chunks = [];
+    let matches = line.match(/<hint>(.+?)<\/hint>/gi);
+
+    let tempLine = line;
+
+    matches.forEach((x) => {
+      let ix = tempLine.indexOf(x);
+
+      if (ix > 0) {
+        chunks.push({ type: "html", value: tempLine.substr(0, ix) });
+        tempLine = tempLine.substr(ix);
+      }
+
+      const hintMatch = x.match(/<hint>(.+?)<\/hint>/);
+
+      chunks.push({ type: "hint", value: hintMatch[1] });
+      tempLine = tempLine.substr(hintMatch[0].length);
+    });
+
+    if (tempLine.length) {
+      chunks.push({ type: "html", value: tempLine });
+    }
+
+    return chunks;
+  };
+
+  const clickHint = (item) => {
+    submitUserEntry("look " + item.target.innerText);
+  }
 </script>
+
+{#if helpVisible}
+  <Help
+    showHints={gameState.options.showHints}
+    on:toggleHints={() =>
+      (gameState.options.showHints = !gameState.options.showHints)}
+  />
+  <button on:click={() => (helpVisible = false)}>Ok, ok. Let me play!</button>
+{:else if gameState}
+  <room bind:this={output}>
+    {#if gameState.isGameOver}
+      <h3>GAME OVER</h3>
+    {:else if gameState.isEnd}
+      <h3>The End</h3>
+    {/if}
+
+    {#each gameState.text.split("\n").filter((x) => !!x) as line}
+      <p class={getClass(line)}>
+        {#if line.indexOf("^") === 0}
+          {@html convertSyntax(line)}
+        {:else}
+          {#each hintize(convertSyntax(sanitize(line))) as chunk}
+            {#if chunk.type === "html"}
+              {@html chunk.value}
+            {:else}
+              <hint on:click={clickHint}>{chunk.value}</hint>
+            {/if}
+          {/each}
+        {/if}
+      </p>
+    {/each}
+  </room>
+  {#if gameState.isGameOver}
+    <button on:click={() => location.reload()}>Try again</button>
+  {:else if gameState.isEnd}
+    <button on:click={() => location.reload()}>New Game</button>
+  {:else}
+    <form on:submit|preventDefault={submit} id="inputForm">
+      <input use:focus bind:value={entry} on:keydown={keydown} id="userInput" />
+      <span on:click={help}>❔</span>
+    </form>
+  {/if}
+{/if}
 
 <style>
   form {
     display: flex;
     flex-direction: row;
+    gap: .5em;
+    align-items: center;
+    flex: none;
   }
 
   form > input {
     flex: auto;
+    width: 10px;
   }
 
   form > span {
@@ -172,7 +258,6 @@
     display: inline-block;
     cursor: pointer;
     padding: 0 0.2em;
-    margin: 0.3em 0 0 0.5em;
   }
 
   button {
@@ -195,36 +280,3 @@
     content: "> ";
   }
 </style>
-
-{#if helpVisible}
-  <Help
-    showHints={gameState.options.showHints}
-    on:toggleHints={() => (gameState.options.showHints = !gameState.options.showHints)} />
-  <button on:click={() => (helpVisible = false)}>Ok, ok. Let me play!</button>
-{:else}
-  {#if gameState}
-    <room bind:this={output}>
-      {#if gameState.isGameOver}
-        <h3>GAME OVER</h3>
-      {:else if gameState.isEnd}
-        <h3>The End</h3>
-      {/if}
-
-      {#each gameState.text.split('\n').filter(x => !!x) as line}
-        <p class={getClass(line)}>
-          {@html convertSyntax(sanitize(line))}
-        </p>
-      {/each}
-    </room>
-    {#if gameState.isGameOver}
-      <button on:click={() => location.reload()}>Try again</button>
-    {:else if gameState.isEnd}
-      <button on:click={() => location.reload()}>New Game</button>
-    {:else}
-      <form on:submit|preventDefault={submit}>
-        <input use:focus bind:value={entry} on:keydown={keydown} />
-        <span on:click={help}>❔</span>
-      </form>
-    {/if}
-  {/if}
-{/if}

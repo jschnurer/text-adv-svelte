@@ -1,40 +1,16 @@
 export default function write(msg) {
   let wc = this.writeCapturing;
 
-  if (this.options.showHints) {
-    let hintMsg = msg;
-
-    (this.room.features || []).forEach(x => {
-      let slugs = [];
-      x.slug.split('|').forEach(z => slugs.push(z));
-      if (x.altSlugs) {
-        slugs = slugs.concat(x.altSlugs);
-      }
-
-      slugs.forEach(slug => {
-        hintMsg = hintMsg.replace(new RegExp("\\b" + slug + "\\b", 'gi'), (match) => {
-          return '%' + match + '%';
-        });
-      });
-    });
-
-    if (wc) {
-      this.capturedText = "\n" + hintMsg;
-    } else {
-      this.text += "\n" + hintMsg;
-    }
+  if (wc) {
+    this.capturedText = "\n" + msg;
   } else {
-    if (wc) {
-      this.capturedText = "\n" + msg;
-    } else {
-      this.text += "\n" + msg;
-    }
+    this.text += "\n" + msg;
   }
 
   if (wc) {
-    this.capturedText = replaceVariables(replaceNotices(this.capturedText, this), this);
+    this.capturedText = addHints(replaceVariables(replaceNotices(this.capturedText, this), this), this).replace(/%%/g, "%");
   } else {
-    this.text = replaceVariables(replaceNotices(this.text, this), this);
+    this.text = addHints(replaceVariables(replaceNotices(this.text, this), this), this).replace(/%%/g, "%");
   }
 
   if (!wc) {
@@ -75,4 +51,29 @@ function replaceVariables(haystack, gameState) {
     }
     return val;
   });
+}
+
+function addHints(msg, gameState) {
+  if (gameState.options.showHints
+    && !msg.match(/^\^.+?\^$/)) {
+    let hintMsg = msg;
+
+    (gameState.room.features || []).forEach(x => {
+      let slugs = [];
+      x.slug.split('|').forEach(z => slugs.push(z));
+      if (x.altSlugs) {
+        slugs = slugs.concat(x.altSlugs);
+      }
+
+      slugs.forEach(slug => {
+        hintMsg = hintMsg.replace(new RegExp("\\b" + slug + "\\b", 'gi'), (match) => {
+          return '%' + match + '%';
+        });
+      });
+    });
+
+    return hintMsg;
+  } else {
+    return msg;
+  }
 }
