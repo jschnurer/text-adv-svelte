@@ -11,7 +11,10 @@ body {
   box-sizing: border-box;
   font-family: 'Lora', serif;
   font-size: 1.25em;
-  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
 }
 
 bg {
@@ -28,14 +31,14 @@ bg {
 main {
   z-index: 1;
   max-width: 800px;
-  margin: auto;
   position: relative;
   display: flex;
   flex-direction: column;
-  height: 92vh;
   box-shadow: 0 0 10em #222;
   background-color: #222;
   padding: 1em;
+  flex: auto;
+  overflow: hidden;
 }
 
 room {
@@ -113,4 +116,10 @@ a {
 
 a:visited {
   color: rgb(139, 65, 139);
+}
+
+@media only screen and (max-width: 400px) {
+  main {
+    font-size: .85em;
+  }
 }
