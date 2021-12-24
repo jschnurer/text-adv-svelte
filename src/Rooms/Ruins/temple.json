@@ -23,8 +23,8 @@
     {
       "slug": "altar",
       "look": [
-        "ifFlagWrite|G.TEMPLEOPEN|It's pretty large and its made of stone. It's shifted forward, revealing steps leading downward into darkness",
-        "ifFlagWrite|!G.TEMPLEOPEN|It's pretty large and its made of stone."
+        "ifFlagWrite|G.TEMPLEOPEN|It's pretty large and it's made of stone. It's shifted forward, revealing steps leading downward into darkness",
+        "ifFlagWrite|!G.TEMPLEOPEN|It's pretty large and it's made of stone."
       ],
       "roomDesc": [
         {
@@ -98,11 +98,11 @@
                   "args": [
                     "G.TEMPLEOPEN",
                     [
-                      "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts forward, revealing steps leading down to darkness. The knight didn't seem to notice at all.",
+                      "You grip the rusty metal rod and pull the lever downward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
                       "unsetFlag|G.TEMPLEOPEN"
                     ],
                     [
-                      "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts back, sealing the stairway that leads down to darkness. The knight didn't seem to notice at all.",
+                      "You grip the rusty metal rod and push the lever upward with all your might and it clunks into the place. A moment later there is a grinding sound as the altar shifts forward, revealing steps leading down to darkness. The knight didn't seem to notice at all.",
                       "setFlag|G.TEMPLEOPEN"
                     ]
                   ]
