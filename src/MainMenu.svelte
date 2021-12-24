@@ -103,7 +103,6 @@
   on:click={() => dispatch('continueGame')}>
   Continue Saved Game
 </button>
-<p>&nbsp;</p>
 <p>
   If you want to move your saved game onto a different browser, you can export
   it to text and then import it in a different browser.
@@ -112,7 +111,6 @@
 {#if hasSavedGame}
   <button on:click={startExport}>Export Saved Game →</button>
 {/if}
-<p>&nbsp;</p>
 <p>
   Download and print a few
   <a href={window.hostDir + '/adventure-blank-map.pdf'} target="_blank">
@@ -120,6 +118,12 @@
   </a>
   and fill them in as you play the game!<br />(Make sure to find the in-game compass first!)
 </p>
+<p>
+    Did you like the game? Hate it? Or did you find a bug or a typo? I'd love
+    to hear about it! Go check out the
+    <a href="https://github.com/jschnurer/text-adv-svelte#readme">readme at github</a>
+    for my contact info!
+  </p>
 {#if exportString}
   <Modal showClose={true} on:close={() => (exportString = '')}>
     <p>
