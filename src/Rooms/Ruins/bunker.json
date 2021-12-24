@@ -23,7 +23,8 @@
         "etavoner rune"
       ],
       "destroyedFlag": "TOOKRUNE",
-      "roomDesc": "Lying in the dust next to the note is a magical rune representing etavoner. You have no idea how you know that.",
+      "look": "The magical rune represents etavoner. You have no idea how you know this.",
+      "roomDesc": "Lying in the dust is a magical rune representing etavoner. You have no idea how you know that.",
       "take": [
         "You take the etavoner rune from the floor.",
         "addItem|ETAVONER_RUNE",
