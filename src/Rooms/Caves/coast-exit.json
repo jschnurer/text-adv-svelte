@@ -1,11 +1,9 @@
 {
   "name": "Cave to the Ocean Cliffs",
-  "coords": "Caves F6",
+  "coords": "Caves G6",
   "slug": "Caves/coast-exit",
   "north": "loadRoom|Caves/bat-den",
   "south": "loadRoom|Coast/rocky-cliffside",
   "description": "You're in a small, rocky cave. It smells of salt and seagulls. Light filters in from the south, revealing a chamber of rough gray stone. There are long-abandoned bird nests all over the chamber's floor.\nTo the south, the cave opens up to the ocean air and heads out onto a ledge. To the north, it continues into darkness.",
-  "features": [
-
-  ]
+  "features": []
 }
