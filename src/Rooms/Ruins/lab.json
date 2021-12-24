@@ -2,7 +2,7 @@
   "name": "Ruined Lab",
   "coords": "Ruins C3",
   "slug": "Ruins/lab",
-  "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass bottles, instruments, and other scientific equipment. {rug}\nAn open doorway leads outside to the west and there are steps that lead down into darkness.",
+  "description": "You find yourself inside a ruined building that has been retrofitted into some sort of science lab. There are tables and shelves filled with all manner of glass bottles, instruments, and other scientific equipment. {rug}\nAn open doorway leads outside to the west.",
   "west": "loadRoom|Ruins/ruined-square-south",
   "down": [
     {
@@ -73,7 +73,7 @@
         "glass bottles"
       ],
       "look": [
-        "You don't really know what any of this stuff is. It just looks rather sciencey. There are many glass bottles of every shape and size. Some are broken but most remain intact. One of the bottles is stoppered with a cork and has a red liquid inside. It's got a label that reads \"potion of healing\".",
+        "You don't really know what any of this stuff is. It just looks rather sciencey. There are many glass bottles of every shape and size. Some are broken but most remain intact. {potion}",
         "setFlag|SAWPOTION"
       ]
     },
@@ -90,6 +90,9 @@
         "You take the bottle labeled \"potion of healing\".",
         "addItem|POTION",
         "setFlag|TOOKPOTION"
+      ],
+      "notice": [
+        "ifFlagWrite|!TOOKPOTION|One of the bottles is stoppered with a cork and has a red liquid inside. It's got a label that reads \"potion of healing\"."
       ],
       "use": {
         "": "Now's not the time. You might need it later."
