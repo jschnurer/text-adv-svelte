@@ -4,6 +4,15 @@
   export let isDark = false;
   export let isLightOn = false;
   export let exits = [];
+
+  $: coordsNum = coords ? coords.split(" ")[1] : undefined;
+  $: coordsXY =
+    coordsNum && coordsNum !== "???"
+      ? [coordsNum[0], Number(coordsNum[1])]
+      : undefined;
+
+  const letters = ["A", "B", "C", "D", "E", "F", "G"];
+  const rows = [0, 1, 2, 3, 4, 5, 6];
 </script>
 
 <style>
@@ -101,6 +110,21 @@
   .down::after {
     content: "🠗";
   }
+
+  table {
+    border-spacing: 2px;
+    margin: 0;
+  }
+
+  td {
+    background-color: gray;
+    width: 0.5em;
+    height: 0.5em;
+  }
+
+  td.active {
+    background-color: white;
+  }
 </style>
 
 {#if coords}
@@ -118,6 +142,19 @@
           <div class="exit {exit}" />
         {/each}
       </div>
+    {/if}
+
+    {#if coordsXY && hasCompass}
+      <table class="map">
+        {#each rows as num}
+          <tr>
+            {#each letters as letter}
+              <td
+                class={coordsXY[0] === letter && coordsXY[1] - 1 === num ? 'active' : ''} />
+            {/each}
+          </tr>
+        {/each}
+      </table>
     {/if}
   </div>
 {/if}
