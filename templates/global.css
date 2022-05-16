@@ -12,9 +12,9 @@ body {
   font-family: 'Lora', serif;
   font-size: 1.25em;
   display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  align-items: center;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1em;
 }
 
 bg {

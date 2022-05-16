@@ -17,7 +17,7 @@
 </script>
 
 <style>
-  div {
+  .menu-holder {
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -27,12 +27,12 @@
 </style>
 
 <bg />
-<main>
-  {#if !playing}
-    <div>
+{#if !playing}
+  <main>
+    <div class="menu-holder">
       <MainMenu on:newGame={newGame} on:continueGame={continueGame} />
     </div>
-  {:else}
-    <Game {loadGame} />
-  {/if}
-</main>
+  </main>
+{:else}
+  <Game {loadGame} />
+{/if}
