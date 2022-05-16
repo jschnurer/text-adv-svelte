@@ -53,6 +53,7 @@
     <li title="Travel upward."><span class="shortcut">u</span>p</li>
     <li title="Travel downward."><span class="shortcut">d</span>own</li>
     <li title="Enters a building."><span class="shortcut">enter</span> [target]</li>
+    <li title="Touches a cairn and saves your game."><span class="shortcut">touch</span> cairn</li>
     <li title="Clears the game window of all text."><span class="shortcut">cl</span>ear</li>
     <li title="Moves the target out of the way."><span class="shortcut">move</span> [target]</li>
     <li title="Uses the specified object."><span class="shortcut">use</span> [target]</li>
