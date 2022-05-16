@@ -4,6 +4,7 @@
   import Help from "./Help.svelte";
   import getGameState from "./Helpers/getGameState.js";
   import Commands from "./Commands.svelte";
+  import Location from "./Location.svelte";
 
   export let loadGame = false;
 
@@ -12,7 +13,13 @@
   let cmdIx = -1;
   let output = null;
   $: gameState = gs;
-  $: knowsAnyIncantations = gameState ? gameState.knowsAnyIncantations() : false;
+  $: hasCompass = gameState
+    ? gameState.inventory.some(x => x.id === "COMPASS")
+    : false;
+  $: knowsAnyIncantations = gameState
+    ? gameState.knowsAnyIncantations()
+    : false;
+  $: coords = gameState && gameState.room && gameState.room.coords ? gameState.room.coords : "";
 
   let helpVisible = false;
 
@@ -238,6 +245,12 @@
   :global(entry)::before {
     content: "> ";
   }
+
+  .side-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
 </style>
 
 <main>
@@ -286,4 +299,7 @@
     {/if}
   {/if}
 </main>
-<Commands showIncantations={knowsAnyIncantations} />
+<div class="side-menu">
+  <Commands showIncantations={knowsAnyIncantations} />
+  <Location coords={coords} hasCompass={hasCompass} />
+</div>
