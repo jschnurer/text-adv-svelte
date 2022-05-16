@@ -117,7 +117,7 @@
   }
 
   td {
-    background-color: gray;
+    background-color: rgb(87, 87, 87);
     width: 0.5em;
     height: 0.5em;
   }
