@@ -12,6 +12,7 @@
       ]
     }
   ],
+  "upFlag": "G.LABRUGMOVED",
   "east": "loadRoom|Caves/bat-den",
   "dark": true,
   "description": "You're in a stone basement. The basement continues to the east where the worked stone gives way to a natural cavern. A ladder leads upward to the ceiling.",

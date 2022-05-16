@@ -6,6 +6,25 @@
   import Commands from "./Commands.svelte";
   import Location from "./Location.svelte";
 
+  function getRoomExits(gameState) {
+    if (!gameState
+    || !gameState.room) {
+      return [];
+    }
+
+    let room = gameState.room;
+    let exits = [];
+
+    exits.push(room.north && (!room.northFlag || gameState.getFlag(room.northFlag)) ? "north" : undefined);
+    exits.push(room.south && (!room.southFlag || gameState.getFlag(room.southFlag)) ? "south" : undefined);
+    exits.push(room.east && (!room.eastFlag || gameState.getFlag(room.eastFlag)) ? "east" : undefined);
+    exits.push(room.west && (!room.westFlag || gameState.getFlag(room.westFlag)) ? "west" : undefined);
+    exits.push(room.up && (!room.upFlag || gameState.getFlag(room.upFlag)) ? "up" : undefined);
+    exits.push(room.down && (!room.downFlag || gameState.getFlag(room.downFlag)) ? "down" : undefined);
+
+    return exits.filter(x => x);
+  }
+
   export let loadGame = false;
 
   let gs;
@@ -20,6 +39,9 @@
     ? gameState.knowsAnyIncantations()
     : false;
   $: coords = gameState && gameState.room && gameState.room.coords ? gameState.room.coords : "";
+  $: exits = getRoomExits(gameState);
+  $: isDark = gameState && gameState.room ? gameState.room.dark : false;
+  $: isLightOn = gameState && gameState.getFlag("G.HASLIGHT");
 
   let helpVisible = false;
 
@@ -301,5 +323,5 @@
 </main>
 <div class="side-menu">
   <Commands showIncantations={knowsAnyIncantations} />
-  <Location coords={coords} hasCompass={hasCompass} />
+  <Location coords={coords} hasCompass={hasCompass} exits={exits} isDark={isDark} isLightOn={isLightOn} />
 </div>
