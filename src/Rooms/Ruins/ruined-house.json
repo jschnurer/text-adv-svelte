@@ -36,7 +36,14 @@
             "CHESTOPEN",
             "It's already open!",
             [
-              "You clear some rubble off the top of the metal chest and open it. There's a heavy-duty flashlight inside.",
+              {
+                "cmd": "ifFlag",
+                "args": [
+                  "TOOKFLASHLIGHT",
+                  "You clear some rubble off the top of the metal chest and open it. There's nothing inside.",
+                  "You clear some rubble off the top of the metal chest and open it. There's a heavy-duty flashlight inside."
+                ]
+              },
               "setFlag|SAWFLASHLIGHT",
               "setFlag|CHESTOPEN"
             ]
