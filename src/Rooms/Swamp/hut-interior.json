@@ -307,7 +307,7 @@
                     "\"I once lived near a small village; Its name doth escape me now. 'Twas there that I worked my trade. Under my care, the sick were cured, crops flourished, and healthy babies were born. 'Tis true that most in the village believed that I performed the black arts of the devil and such nonsense, but there were some that were grateful. I lived unmolested there for many years.\"",
                     "She shifts uncomfortably. \"Then one day a witch hunter came from the Order of...\" She pauses. \"Hmm. I seem to have forgotten. Anyway, a witch hunter had come for me. He invaded my home with hate and fear and murder in his eyes. He ran his cold steel through my belly with naught a word. But as I lay upon the floor with my humours spreading out about me, he finally spake.\"",
                     "\"He said to me 'Thy soul shalt be condemned to that faraway place, the island of the lost'.\"",
-                    "She takes a deep breath",
+                    "She takes a deep breath.",
                     {
                       "cmd": "waitForInput",
                       "args": [

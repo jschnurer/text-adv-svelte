@@ -1,9 +1,17 @@
 <script>
+	import { createEventDispatcher } from 'svelte';
+
   export let coords = "";
   export let hasCompass = false;
   export let isDark = false;
   export let isLightOn = false;
   export let exits = [];
+
+  const dispatch = createEventDispatcher();
+
+  function travel(dir) {
+    dispatch("travel", { direction: dir });
+  }
 
   $: coordsNum = coords ? coords.split(" ")[1] : undefined;
   $: coordsXY =
@@ -49,6 +57,11 @@
     position: absolute;
     width: 1em;
     height: 1em;
+    cursor: pointer;
+  }
+
+  .exit:hover {
+    color: white;
   }
 
   .north {
@@ -139,7 +152,7 @@
       {/if}
       <div class="room">
         {#each exits as exit}
-          <div class="exit {exit}" />
+          <div class="exit {exit}" on:click={() => travel(exit)} title={exit} />
         {/each}
       </div>
     {/if}

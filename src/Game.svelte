@@ -124,6 +124,7 @@
     }
     entry = "";
     cmdIx = -1;
+    document.getElementById("userInput").focus();
   };
 
   const help = () => {
@@ -219,6 +220,10 @@
   const clickHint = item => {
     submitUserEntry("look " + item.target.innerText);
   };
+
+  function travel(event) {
+    submitUserEntry(event.detail.direction);
+  }
 </script>
 
 <style>
@@ -322,6 +327,18 @@
   {/if}
 </main>
 <div class="side-menu">
-  <Commands showIncantations={knowsAnyIncantations} />
-  <Location coords={coords} hasCompass={hasCompass} exits={exits} isDark={isDark} isLightOn={isLightOn} />
+  <Commands
+    showIncantations={knowsAnyIncantations}
+    on:command={(event) => {
+      submitUserEntry(event.detail.command);
+    }}
+  />
+  <Location
+    coords={coords}
+    hasCompass={hasCompass}
+    exits={exits}
+    isDark={isDark}
+    isLightOn={isLightOn}
+    on:travel={travel}
+  />
 </div>
