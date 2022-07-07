@@ -9,7 +9,7 @@
         "Ever since college you've climbed the ranks. You've worked on political campaigns, you've led your hometown as mayor, you were even a senator for many years. Now, you're the U.S. ambassador to the United Nations. Whenever tensions rise between member states, you're quick to calm them. You've always had a knack for it. Somehow, it just came naturally to you. You can read emotions and you can quiet them or amplify them. You've even come up with a few other tricks.",
         "Now you're walking home from the office. A man steps out of the shadows. He's wearing the insignia you've come to know very well. The assassin of the Order of the Griffin lunges forward with knife in hand. You produce the little silver box that you keep with you always and snap it open.",
         "\"Partne,\" you incant sternly. The man drops the knife to the ground and turns to mist. The mist flows into the box and you snap it shut. The lid rattles as he tries to escape his new prison. \"Etalosi,\" you incant again. The box glows briefly and then quiets down. You'll have to dispose of this later. The attacks are getting more frequent...",
-        "]The memories returns to you.\\You can now \"incant partne\", the Charm of Ensnaring!\\You can also now \"incant etalosi\", the Charm of Sealing!",
+        "]The memories return to you.\\You can now \"incant partne\", the Charm of Ensnaring!\\You can also now \"incant etalosi\", the Charm of Sealing!",
         "setFlag|G.PARTNE",
         "setFlag|G.ETALOSI",
         {

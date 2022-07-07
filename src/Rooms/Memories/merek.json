@@ -2,7 +2,7 @@
   "name": "Memory of the Warrior",
   "slug": "Memories/merek",
   "description": [
-    "You're a young boy standing in a village aflame. Raiders on horseback chase down your neighbors and cut them down. A man in long, black robes wearing a wooden mask conjures a ball of flame in his hands and hurls it onto the roof of the only house not yet on fire. He lets out a maniacally laugh. With tears in your eyes, you run.",
+    "You're a young boy standing in a village aflame. Raiders on horseback chase down your neighbors and cut them down. A man in long, black robes wearing a wooden mask conjures a ball of flame in his hands and hurls it onto the roof of the only house not yet on fire. He lets out a maniacal laugh. With tears in your eyes, you run.",
     {
       "cmd": "waitForInput",
       "args": [
@@ -14,7 +14,7 @@
             {
               "cmd": "waitForInput",
               "args": [
-                "You've been on a long journey the past few months. Following a trail of rumors and heresay. The peasants you speak to fear you. They are right to. You ride with the violent glory of god. You've finally found your first sorcerer. The evil witch is just inside the rundown house ahead of you. You're excited but also nervous and a little bit afraid. You'll have to work on that last bit. You remember back and can see the black-robed sorcerer with the wooden mask and how his eyes laughed as he slaughtered your friends and family. You steel your resolve and kick down the door.",
+                "You've been on a long journey the past few months. Following a trail of rumors and hearsay. The peasants you speak to fear you. They are right to. You ride with the violent glory of god. You've finally found your first sorcerer. The evil witch is just inside the rundown house ahead of you. You're excited but also nervous and a little bit afraid. You'll have to work on that last bit. You remember back and can see the black-robed sorcerer with the wooden mask and how his eyes laughed as he slaughtered your friends and family. You steel your resolve and kick down the door.",
                 {
                   "cmd": "waitForInput",
                   "args": "loadRoom|Memories/rhode"

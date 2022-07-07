@@ -238,7 +238,7 @@
   "features": [
     {
       "slug": "woman",
-      "look": "She's beautiful! She has golden hair and is wearing a formal suit jacket and skirt. Her eyes are closed. She looks very calm and doesn't response to what's going on around her at all. Is she even awake?",
+      "look": "She's beautiful! She has golden hair and is wearing a formal suit jacket and skirt. Her eyes are closed. She looks very calm and doesn't respond to what's going on around her at all. Is she even awake?",
       "greet": "She doesn't respond in any way.",
       "ask": "She doesn't respond in any way."
     },

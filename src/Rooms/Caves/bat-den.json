@@ -56,11 +56,11 @@
           "args": [
             "WALLDESTROYED",
             "The northern wall of the chamber has a large hole in it, leading to another chamber to the north.",
-            "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall."
+            "The northern wall of the chamber looks weak. It has fractures snaking across it like a spiderweb. In the shadowy light, you see a faint glimmer all about the wall."
           ]
         }
       ],
-      "look": "It has fractures snaking across it like a spiderweb. In the shadowly light, you see a faint glimmer all about the wall.",
+      "look": "It has fractures snaking across it like a spiderweb. In the shadowy light, you see a faint glimmer all about the wall.",
       "smash|kick|break|destroy": "There's no way you'd be able to damage it with your bare hands.",
       "use": {
         "SLEDGE": [
