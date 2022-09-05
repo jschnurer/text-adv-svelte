@@ -67,7 +67,7 @@
             "PAILDOWN",
             "You can't see it. It's all the way down at the bottom of the well.",
             [
-              "The pail's sitting on the edge of the well and is attached to the well via a rope.",
+              "The pail's sitting on the edge of the well and is attached to the well via a rope. You'd have to %drop% the pail to use the crank.",
               "callCommon|look_pail_on_edge"
             ]
           ]
@@ -134,7 +134,7 @@
                 "You turn the crank on the side of the well over and over. Eventually the pail returns to the surface. You grab it and set it on the edge of the well.",
                 "unsetFlag|PAILDOWN"
               ],
-              "There's no need. The pail's already on the edge of the well. You'd have to drop the pail first."
+              "There's no need. The pail's already on the edge of the well. You'd have to %drop% the pail first."
             ]
           }
         ]
