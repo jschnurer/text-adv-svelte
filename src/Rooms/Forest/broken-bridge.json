@@ -21,7 +21,7 @@
         "args": [
           "FISH_DISTRACTED",
           "gameOver|You wade out into the cold, rocky river until it's deep enough to swim. You start to swim and can feel yourself being swept with the current.\nYou smash against jagged rocks concealed beneath the white-water rapids. You tumble and go under.\nYour bearings lost in the murky water, you smash into the sharp rocks again and again. You feel something in your leg snap, something in your arm twists the wrong way.\nThe last thing you experience is bashing your head against rock.",
-          "gameOver|You wade out into the murky water and begin to swim. The river begins carrying you downstream.\nYou feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood.\nGray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths."
+          "gameOver|You wade out into the murky water and begin to swim. The river begins carrying you downstream.\nYou feel a stabbing pain in your leg. It's quickly followed by another in your side and another and another. The murky water begins to roil as the river reddens with your blood.\nGray, toothy fish whirl around you in a feeding frenzy, taking chunks of your flesh. You begin to feel light headed as the current pulls you down to the murky depths. If only you had a way to distract the fish first."
         ]
       }
     ]
