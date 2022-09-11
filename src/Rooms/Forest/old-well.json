@@ -96,6 +96,10 @@
           ]
         }
       ],
+      "push": [
+        "ifFlagWrite|PAILDOWN|You can't do anything with the pail while it's at the bottom of the well.",
+        "ifFlagWrite|!PAILDOWN|If you want to drop the pail into the well, try %drop pail%."
+      ],
       "use": {
         "": [
           "ifFlagWrite|PAILDOWN|You can't do anything with the pail while it's at the bottom of the well.",
