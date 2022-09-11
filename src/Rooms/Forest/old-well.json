@@ -97,6 +97,10 @@
         }
       ],
       "use": {
+        "": [
+          "ifFlagWrite|PAILDOWN|You can't do anything with the pail while it's at the bottom of the well.",
+          "ifFlagWrite|!PAILDOWN|If you want to drop the pail into the well, try %drop pail%."
+        ],
         "ETAVONER_RUNE": [
           "You put the etavoner rune into the pail.",
           "removeItem|ETAVONER_RUNE",
