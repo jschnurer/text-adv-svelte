@@ -41,6 +41,14 @@
     align-items: center;
   }
 
+  @media only screen and (max-width: 800px) {
+    .location {
+      flex: auto;
+      align-self: stretch;
+      width: auto;
+    }
+  }
+
   h4 {
     margin: 0;
   }

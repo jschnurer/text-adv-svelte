@@ -1,10 +1,10 @@
 <script>
   import { onMount } from "svelte";
-  import config from "./config.json";
+  import Commands from "./Commands.svelte";
   import Help from "./Help.svelte";
   import getGameState from "./Helpers/getGameState.js";
-  import Commands from "./Commands.svelte";
   import Location from "./Location.svelte";
+  import config from "./config.json";
 
   function getRoomExits(gameState) {
     if (!gameState
@@ -31,6 +31,7 @@
   let previousInputs = [];
   let cmdIx = -1;
   let output = null;
+  let isMiniSideMenuOpen = false;
   $: gameState = gs;
   $: hasCompass = gameState
     ? gameState.inventory.some(x => x.id === "COMPASS")
@@ -224,6 +225,10 @@
   function travel(event) {
     submitUserEntry(event.detail.direction);
   }
+
+  function toggleMiniSideMenu() {
+    isMiniSideMenuOpen = !isMiniSideMenuOpen;
+  }
 </script>
 
 <style>
@@ -278,6 +283,47 @@
     flex-direction: column;
     gap: 1em;
   }
+
+  .mini-side-menu-toggle {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .mini-side-menu-toggle button {
+    background-color: #222;
+    color: #aaa;
+    border: 1px #aaa solid;
+    border-radius: 5px;
+    font-variant: small-caps;
+  }
+
+  .mini-side-menu-toggle button:hover {
+    background-color: #333;
+    color: white;
+    border: 1px white solid;
+  }
+
+  @media only screen and (max-width: 800px) {
+    .side-menu.closed {
+      display: none;
+    }
+    .side-menu {
+      opacity: .9;
+      background-color: #222;
+      position: fixed;
+      inset: 50px 0 0 0;
+      z-index: 2;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .mini-side-menu-toggle {
+      display: block;
+      z-index: 3;
+    }
+  }
 </style>
 
 <main>
@@ -326,7 +372,8 @@
     {/if}
   {/if}
 </main>
-<div class="side-menu">
+
+<div class={`side-menu ${isMiniSideMenuOpen ? "open" : "closed"}`}>
   <Commands
     showIncantations={knowsAnyIncantations}
     on:command={(event) => {
@@ -341,4 +388,14 @@
     isLightOn={isLightOn}
     on:travel={travel}
   />
+</div>
+
+<div class="mini-side-menu-toggle">
+  <button on:click={toggleMiniSideMenu}>
+    {#if isMiniSideMenuOpen}
+      x
+    {:else}
+      &lt;
+    {/if}
+  </button>
 </div>

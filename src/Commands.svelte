@@ -46,6 +46,14 @@
     width: 270px;
   }
 
+  @media only screen and (max-width: 800px) {
+    .commands {
+      flex: auto;
+      align-self: stretch;
+      width: auto;
+    }
+  }
+
   h4 {
     margin-top: 0;
   }
