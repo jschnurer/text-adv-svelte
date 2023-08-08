@@ -135,6 +135,9 @@
     <li on:click={executeCommand} title="Opens the specified object.">
       <span class="shortcut">open</span> [target]
     </li>
+    <li on:click={executeCommand} title="Pushes the specified object.">
+      <span class="shortcut">push</span> [target]
+    </li>
     <li on:click={executeCommand} title="Closes the specified object.">
       <span class="shortcut">close</span> [target]
     </li>
