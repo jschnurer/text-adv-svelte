@@ -24,6 +24,9 @@
     },
     {
       "slug": "coin",
+      "altSlugs": [
+        "silver coin"
+      ],
       "targetFlag": "SAWCOIN",
       "destroyedFlag": "TOOKCOIN",
       "notice": "Through the holes you can see an old silver coin.",

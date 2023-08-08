@@ -74,6 +74,9 @@
   },
   {
     "slug": "coin",
+    "altSlugs": [
+      "silver coin"
+    ],
     "id": "COIN",
     "look": [
       "It's an ancient silver coin. It's so old that it's been rubbed smooth. Maybe it's lucky."
