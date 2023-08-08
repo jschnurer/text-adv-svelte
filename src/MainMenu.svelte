@@ -60,7 +60,7 @@
 
 <h1>Adventure</h1>
 <p>A world of mystery and adventure awaits!</p>
-{#if location.origin.toString().indexOf("itch.io") === -1}
+{#if location.origin.toString().indexOf("github.io") !== -1}
 <p style="background-color: red; color: white; font-weight: bold; width:100%;">
   This game is available on itch.io! <a href="https://enigmabrand.itch.io/adventure">Please click here to play on itch.io instead!</a>
 </p>
