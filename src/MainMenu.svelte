@@ -1,6 +1,5 @@
 <script>
-  import { onMount } from "svelte";
-  import { createEventDispatcher } from "svelte";
+  import { createEventDispatcher, onMount } from "svelte";
   import Modal from "./Modal.svelte";
 
   const dispatch = createEventDispatcher();
@@ -59,6 +58,68 @@
   };
 </script>
 
+<h1>Adventure</h1>
+<p>A world of mystery and adventure awaits!</p>
+{#if location.origin.toString().indexOf("itch.io") === -1}
+<p style="background-color: red; color: white; font-weight: bold; width:100%;">
+  This game is available on itch.io! <a href="https://enigmabrand.itch.io/adventure">Please click here to play on itch.io instead!</a>
+</p>
+{/if}
+<button on:click={() => dispatch("newGame")}>New Game</button>
+<button
+  class:continueDisabled
+  disabled={continueDisabled}
+  on:click={() => dispatch("continueGame")}
+>
+  Continue Saved Game
+</button>
+<p>
+  If you want to move your saved game onto a different browser, you can export
+  it to text and then import it in a different browser.
+</p>
+<button on:click={startImport}>Import Saved Game ←</button>
+{#if hasSavedGame}
+  <button on:click={startExport}>Export Saved Game →</button>
+{/if}
+<p>
+  Download and print a few
+  <a href={window.hostDir + "/adventure-blank-map.pdf"} target="_blank">
+    blank maps
+  </a>
+  and fill them in as you play the game!<br />(Make sure to find the in-game
+  compass first!)
+</p>
+<p>
+  Did you like the game? Hate it? Or did you find a bug or a typo? I'd love to
+  hear about it! Go check out the
+  <a href="https://github.com/jschnurer/text-adv-svelte#readme"
+    >readme at github</a
+  >
+  for my contact info!
+</p>
+{#if exportString}
+  <Modal showClose={true} on:close={() => (exportString = "")}>
+    <p>
+      Copy this save code and put it somewhere safe. Then, on another computer,
+      you can import this save by clicking Import Saved Game and pasting this
+      code in.
+    </p>
+    <textarea
+      value={exportString}
+      readonly="readonly"
+      class="export-text"
+      bind:this={exportTextbox}
+    />
+    <span class="copy" on:click={copyExport}>
+      <span>
+        📄
+        <span>📄</span>
+      </span>
+      Copy to clipboard
+    </span>
+  </Modal>
+{/if}
+
 <style>
   button {
     width: 15em;
@@ -93,55 +154,3 @@
     left: 0.25em;
   }
 </style>
-
-<h1>Adventure</h1>
-<p>A world of mystery and adventure awaits!</p>
-<button on:click={() => dispatch('newGame')}>New Game</button>
-<button
-  class:continueDisabled
-  disabled={continueDisabled}
-  on:click={() => dispatch('continueGame')}>
-  Continue Saved Game
-</button>
-<p>
-  If you want to move your saved game onto a different browser, you can export
-  it to text and then import it in a different browser.
-</p>
-<button on:click={startImport}>Import Saved Game ←</button>
-{#if hasSavedGame}
-  <button on:click={startExport}>Export Saved Game →</button>
-{/if}
-<p>
-  Download and print a few
-  <a href={window.hostDir + '/adventure-blank-map.pdf'} target="_blank">
-    blank maps
-  </a>
-  and fill them in as you play the game!<br />(Make sure to find the in-game compass first!)
-</p>
-<p>
-    Did you like the game? Hate it? Or did you find a bug or a typo? I'd love
-    to hear about it! Go check out the
-    <a href="https://github.com/jschnurer/text-adv-svelte#readme">readme at github</a>
-    for my contact info!
-  </p>
-{#if exportString}
-  <Modal showClose={true} on:close={() => (exportString = '')}>
-    <p>
-      Copy this save code and put it somewhere safe. Then, on another computer,
-      you can import this save by clicking Import Saved Game and pasting this
-      code in.
-    </p>
-    <textarea
-      value={exportString}
-      readonly="readonly"
-      class="export-text"
-      bind:this={exportTextbox} />
-    <span class="copy" on:click={copyExport}>
-      <span>
-        📄
-        <span>📄</span>
-      </span>
-      Copy to clipboard
-    </span>
-  </Modal>
-{/if}
