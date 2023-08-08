@@ -9,7 +9,7 @@
 	<title>Adventure</title>
 
 	<script>
-		window.hostDir = '__hostdir__';
+		window.hostDir = location.href.replace(/[^/]*$/, '');
 	</script>
 
 	<!-- Start Single Page Apps for GitHub Pages -->

@@ -6,12 +6,17 @@
     "host:gh": "replace-in-file /__hostdir__/g /text-adv-svelte ./public/index.html --isRegex",
     "host:server": "replace-in-file /__hostdir__/g /adventure ./public/index.html --isRegex",
     "host:local": "replace-in-file /__hostdir__/g \"\" ./public/index.html --isRegex",
+    "host:itch": "replace-in-file /__hostdir__\//g \"\" ./public/index.html --isRegex",
     "host:gh:css": "replace-in-file /__hostdir__/g /text-adv-svelte ./public/global.css --isRegex",
     "host:server:css": "replace-in-file /__hostdir__/g /adventure ./public/global.css --isRegex",
     "host:local:css": "replace-in-file /__hostdir__/g \"\" ./public/global.css --isRegex",
+    "host:itch:css": "replace-in-file /__hostdir__\//g \"\" ./public/global.css --isRegex",
     "build": "run-s copy:templates host:server host:server:css build:rollup",
     "build:gh": "run-s copy:templates host:gh host:gh:css build:rollup",
     "build:rollup": "rollup -c",
+
+    "build:itch": "run-s copy:templates host:itch host:itch:css build:rollup",
+
     "autobuild": "rollup -c -w",
     "copy:templates": "copy-files-from-to",
     "dev": "run-s copy:templates host:local host:local:css autobuild start:dev",
