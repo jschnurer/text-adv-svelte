@@ -10,6 +10,11 @@ const unknownMsgs = [
 ];
 
 export default function unknownCmd(cmd) {
+  if (cmd.match(/".+?"/)) {
+    this.write(`Hmm... Try typing that again without the quotes around it.`);
+    return;
+  }
+
   let msg = unknownMsgs[Math.floor(Math.random()*unknownMsgs.length)];
   msg = msg.replace(/{cmd}/g, cmd);
   this.write(msg);
