@@ -1,7 +1,7 @@
 {
   "name": "A White Room",
   "slug": "Tutorial/center",
-  "description": "Welcome to Adventure. You're standing in an empty room with white walls, floor, and ceiling. There's a table here with a pile of stuff on it. There are doors to the north, east and west.\n\nHint: You can investigate things by using the \"look [target]\" command. If you want to just get the description of the area you're in, you can simply type \"look\". Try looking at the \"table\" or the \"stuff\". On the wall is a sign. You could look at that too!\\\\You can also go to other areas with the commands \"north\", \"south\", \"east\" and \"west\".",
+  "description": "Welcome to Adventure. You're standing in an empty room with white walls, floor, and ceiling. There's a table here with a pile of stuff on it. On the wall is a sign. There are doors to the north, east and west.\n\nHint: You can investigate things by using the \"look [target]\" command. If you want to just get the description of the area you're in, you can simply type \"look\". Try looking at the \"table\" or the \"stuff\". You can look at that \"sign\" too!\\\\You can also go to other areas with the commands \"north\", \"south\", \"east\" and \"west\".",
   "north": [
     {
       "cmd": "ifFlag",
