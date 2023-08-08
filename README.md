@@ -2,7 +2,7 @@
 This is a web-based text adventure game built with svelte.
 
 # Want to play?
-Play the game by visiting https://jschnurer.github.io/text-adv-svelte!
+Play the game by visiting https://enigmabrand.itch.io/adventure !
 
 # Contact Info
 Did you enjoy the game? Did you hate it? Or did you find a bug or a typo? Let me know! You can contact me at justinschnurer <at> gmail <dot> com. Or if it's a bug or typo, you can raise an issue here on github!
