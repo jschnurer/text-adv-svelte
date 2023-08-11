@@ -2,10 +2,7 @@
 This is a web-based text adventure game built with svelte.
 
 # Want to play?
-Play the game by visiting https://enigmabrand.itch.io/adventure !
-
-# Contact Info
-Did you enjoy the game? Did you hate it? Or did you find a bug or a typo? Let me know! You can contact me at justinschnurer <at> gmail <dot> com. Or if it's a bug or typo, you can raise an issue here on github!
+Play the game by visiting https://enigmabrand.itch.io/adventure!
 
 # Adding new rooms
 After adding a new room (json file), the `room-index.js` file must be updated to import it. The `room-index.js` file is imported by the engine to load all rooms initially.

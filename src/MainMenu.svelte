@@ -89,14 +89,6 @@
   and fill them in as you play the game!<br />(Make sure to find the in-game
   compass first!)
 </p>
-<p>
-  Did you like the game? Hate it? Or did you find a bug or a typo? I'd love to
-  hear about it! Go check out the
-  <a href="https://github.com/jschnurer/text-adv-svelte#readme"
-    >readme at github</a
-  >
-  for my contact info!
-</p>
 {#if exportString}
   <Modal showClose={true} on:close={() => (exportString = "")}>
     <p>

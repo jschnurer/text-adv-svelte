@@ -10,13 +10,6 @@
 
 <h3>Help</h3>
 <room>
-  <h4>Feedback</h4>
-  <p>
-    Did you like the game? Hate it? Or did you find a bug or a typo? I'd love
-    to hear about it! Go check out the
-    <a href="https://github.com/jschnurer/text-adv-svelte#readme">readme at github</a>
-    for my contact info!
-  </p>
   <h4>Playing the Game</h4>
   <p>Control the game and interact with the world by typing commands.</p>
   <p>
