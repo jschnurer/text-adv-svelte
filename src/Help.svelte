@@ -132,7 +132,7 @@
   </p>
   <p>
     If you need more help, you can view the
-    <a href="walkthrough" target="_blank">Spoiler-riffic Walkthrough.</a>
+    <a href="https://github.com/jschnurer/text-adv-svelte/wiki/Adventure-Walkthrough" target="_blank">Spoiler-riffic Walkthrough.</a>
   </p>
   {#if allowTogglingHints}
     <h4>Hints / Enable Clicking</h4>
